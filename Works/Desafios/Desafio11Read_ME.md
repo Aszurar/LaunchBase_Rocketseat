@@ -1,6 +1,5 @@
 <h1 align="center">
     <img alt="Launchbase" src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/logo.png" width="400px" />
-    <img alt="Lucas de Lima" src="https://scontent.fjdo10-1.fna.fbcdn.net/v/t1.0-9/s960x960/70909916_922540688107098_1385669501818765312_o.jpg?_nc_cat=108&_nc_sid=85a577&_nc_eui2=AeE5IYLIhRlGguaA6-hbE1H7g8OVxfoW_yCDw5XF-hb_IDiChIWWbGQLoYfAj0IPZTuNUE8-FAYBNGCEDHttcxMK&_nc_oc=AQlij1UNwB8xj4R81U3hTCZ99zsR3li_Ec3jerHO3xM6YM0dMPf2Kndh9ajByI4x83Y&_nc_ht=scontent.fjdo10-1.fna&_nc_tp=7&oh=2e892ead856f1b061e6295f3c8519005&oe=5F0C843B">
 </h1>
 <h1 align="center">
     Minhas práticas nos desafios do **LaunchBase** da **Rocketseat**
