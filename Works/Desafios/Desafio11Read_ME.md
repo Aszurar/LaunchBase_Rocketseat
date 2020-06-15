@@ -2,7 +2,7 @@
     <img alt="Launchbase" src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/logo.png" width="400px" />
 </h1>
 <h1 align="center">
-    Minhas práticas nos desafios do **LaunchBase** da **Rocketseat**
+    Minhas práticas nos desafios do LaunchBase da Rocketseat!.
 </h1>
 
 <h3 align="center">
@@ -73,9 +73,9 @@ Com base nas regras acima imprima na tela as mensagens:
 - **Se** a pessoa **NÃO** estiver aposentada: `Marcos, você ainda não pode se aposentar!`;
 
 Na minha estrutura de condição utilizei a organização das condições da seguinte forma:
-- **(**Se a pessoa for do sexo masculino **E** tiver contribuido com 35 anos ou mais **E** ter o somatório de 95 anos ou mais dos anos de contribuição com a idade **)**  
+- **(** Se a pessoa for do sexo masculino **E** tiver contribuido com 35 anos ou mais **E** ter o somatório de 95 anos ou mais dos anos de contribuição com a idade **)**  
 - **OU** **(** Se a pessoa for do sexo feminino **E** tiver contribuido com 30 anos ou mais **E** ter o somatório de 85 anos ou mais dos anos de contribuição com a idade **)**
 - **ENTÃO** 
     `Ela está apta a se aposentar,` 
 - **SENÃO**
-    `Ela não está aptar a se aposentar.` 
+    `Ela não está apta a se aposentar.` 
