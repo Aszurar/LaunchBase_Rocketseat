@@ -1,6 +1,6 @@
-Cálculo de IMC
+//Cálculo de IMC
 const nome = 'Carlos';
-const peso = 84;
+const peso = 100;
 const altura = 1.70;
 const sexo = 'masculino';
 const imc = peso/(altura * altura);
@@ -11,7 +11,7 @@ if(imc >= 30){
     console.log('Carlos você não está acima do peso.');
 }
 //-----------------------------------------------------------
-
+/*
 //Cálculo de aposentadoria
 const nome = 'Silvana';
 const sexo = 'F';
@@ -35,3 +35,4 @@ if((sexo === 'M' && contribuicao >= 35 && regra >= 95) || (sexo === 'F' && contr
 }else{
     console.log(`${nome}, você ainda não pode se aposentar.`);
 }
+*/
