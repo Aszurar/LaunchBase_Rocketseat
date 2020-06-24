@@ -1,100 +1,98 @@
-//Construção e impressão de objetos
-// const empresas = [
+// Construção e impressão de objetos
+// const companies = [
 
 //     {
-//         nome: 'Rocketseat',
-//         cor: 'roxo',
-//         foco: 'Programação',
-//         endereco: {
-//             rua: 'Guilherme Gembala',
-//             numero: 260
+//         name: 'Rocketseat',
+//         color: 'roxo',
+//         focus: 'Programação',
+//         address: {
+//             street: 'Guilherme Gembala',
+//             number: 260
 //         }
 //     },
 
 //     {
-//         nome: 'Sorveteiros',
-//         cor: 'morango',
-//         foco: 'sorvete',
-//         endereco: {
-//             rua: 'Agente Fiscalizador de Sorvetes',
-//             numero: 333
+//         name: 'Sorveteiros',
+//         color: 'morango',
+//         focus: 'sorvete',
+//         address: {
+//             street: 'Agente Fiscalizador de Sorvetes',
+//             number: 333
 //         }
 //     },
     
 //     {
-//         nome: 'SushiSÃO',
-//         cor: 'shoyu',
-//         foco: 'sushi',
-//         endereco: {
-//             rua: 'Cedro de Sushi Apimentado',
-//             numero: 76
+//         name: 'SushiSÃO',
+//         color: 'shoyu',
+//         focus: 'sushi',
+//         address: {
+//             street: 'Cedro de Sushi Apimentado',
+//             number: 76
 //         }
 //     }, 
 
 //     {
-//         nome: 'Padaria20',
-//         cor: 'laranja',
-//         foco: 'massas',
-//         endereco: {
-//             rua: 'Guilherme Alves',
-//             numero: 23
+//         name: 'Padaria20',
+//         color: 'laranja',
+//         focus: 'massas',
+//         address: {
+//             street: 'Guilherme Alves',
+//             number: 23
 //         }
 //     }
 // ]
 
-// i = 0;
-// while(i < empresas.length){
-//     console.log(`A empresa ${empresas[i].nome} está localizada na rua ${empresas[i].endereco.rua}, ${empresas[i].endereco.numero}`);
-//     i++;
-// }
+// companies.forEach(company => {
+//     console.log(`A empresa ${company.name} está localizada na rua ${company.address.street}, ${company.address.number}`);
+
+// });
+   
 //====================================================================================================================================
 
 //Vetores e objetos
-const programadores = [
+const programmers = [
     {
-        nome: 'Lucas',
-        idade: 22,
-        tecnologias: [
-            {nome: 'C', especialidade: 'Desktop'},
-            {nome: 'C++', especialidade: 'Desktop'},
-            {nome: 'Python', especialidade: 'Desktop'},
-            {nome: 'javascript', especialidade: 'Desktop'},
-            {nome: 'HTML5 & CSS', especialidade: 'Desktop'}
+        name: 'Lucas',
+        age: 22,
+        technologies: [
+            {name: 'C', specialty: 'Desktop'},
+            {name: 'C++', specialty: 'Desktop'},
+            {name: 'Python', specialty: 'Desktop'},
+            {name: 'javascript', specialty: 'Desktop'},
+            {name: 'HTML5 & CSS', specialty: 'Desktop'}
         ]
     },
     
     {
-        nome: 'Jose',
-        idade: 21,
-        tecnologias: [
-            {nome: 'C', especialidade: 'Desktop'},
-            {nome: 'Python', especialidade: 'Desktop'},
+        name: 'Jose',
+        age: 21,
+        technologies: [
+            {name: 'C', specialty: 'Desktop'},
+            {name: 'Python', specialty: 'Desktop'}
         ]
     },
 
     {
-        nome: 'Thiago',
-        idade: 20,
-        tecnologias: [
-            {nome: 'C++', especialidade: 'Desktop'},
-            {nome: 'JAVA', especialidade: 'Desktop'},
-            {nome: 'Python', especialidade: 'Desktop'}
+        name: 'Thiago',
+        age: 20,
+        technologies: [
+            {name: 'C++', specialty: 'Desktop'},
+            {name: 'JAVA', specialty: 'Desktop'},
+            {name: 'Python', specialty: 'Desktop'}
         ]
     },
 
     {
-        nome: 'Carlos',
-        idade: 32,
-        tecnologias: [
-            {nome: 'JAVA', especialidade: 'Desktop'},
-            {nome: 'Python', especialidade: 'Desktop'}
+        name: 'Carlos',
+        age: 32,
+        technologies: [
+            {name: 'JAVA', specialty: 'Desktop'},
+            {name: 'Python', specialty: 'Desktop'}
         ]
     }
 
-] //O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop
+] 
 
-j = 0
-while(j < programadores.length){
-    console.log(`O usuário ${programadores[j].nome} tem ${programadores[j].idade} anos e usa a tecnologia ${programadores[j].tecnologias[0].nome} com especialidade ${programadores[j].tecnologias[0].especialidade}`);
-    j++;
-}
+programmers.forEach(programmer => {
+    console.log(`O usuário ${programmer.name} tem ${programmer.age} anos e usa a tecnologia ${programmer.technologies[0].name} com especialidade ${programmer.technologies[0].specialty}`);
+});
