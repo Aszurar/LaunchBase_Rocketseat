@@ -1,106 +1,94 @@
-//Usuários e tecnologias
-//entrar no array de objetos e checar o array de tecnologias
-// function checagemGeral(usuarios) {
-    
-//     usuarios.forEach(sorvete => {
-//         //console.log(`${sorvete.nome} trabalha com ${sorvete.tecnologias}`);
-        
-//         sorvete.tecnologias.forEach(napolitano => {
-//             if(napolitano == 'CSS'){
-//                //console.log(true);
-//                console.log(`${sorvete.nome} trabalha com ${napolitano}`);   
+//Usuários e technologies
+const users = [
+    { name: 'Carlos', technologies: ['HTML', 'CSS', 'SORVETE'] },
+    { name: 'Jasmine', technologies: ['JavaScript', 'CSS'] },
+    { name: 'Tuane', technologies: ['HTML', 'Node.js'] }
+]
+
+// function generalCheck(users) {
+//     users.forEach(user => {
+//         // console.log(`${user.name} trabalha com ${user.technologies}`);
+//        user.technologies.forEach(technology => {
+//             if (technology == 'CSS') {
+//                 console.log(`${user.name} trabalha com ${technology}`);
 //             }
-//         });
+//        });
 //     });
 
 // }
 
-// function checaSeUsuarioUsaCSS(usuario){
-//     for(let i = 0; i < usuario.tecnologias.length; i++){
-//         if(usuario.tecnologias[i] == 'CSS'){
-//             //console.log(true);
-//             console.log(usuario.tecnologias[i]);//testando
-//             return true;
-//         }else {
-//             console.log(usuario.tecnologias[i]);//testando
-//             //console.log(false);
-//             return false;
+function checaSeUsuarioUsaCSS(user) {
+    let returnCatch = false;
 
-//         }
-//     }
-// }
-
-// function usuarioCSS(usuarios){
-//     for(let j = 0; j < usuarios.length; j++){
-//         let usuarioTrabalhaComCSS = checaSeUsuarioUsaCSS(usuarios[j]);
-//         console.log(usuarioTrabalhaComCSS);//testando
-
-//         if(usuarioTrabalhaComCSS){
-//             console.log(`${usuarios[j].nome} trabalha com CSS`);
-//         }
-//     }
-// }
-
-// const usuarios = [
-//     { nome: 'Carlos', tecnologias: ['HTML', 'CSS', 'SORVETE']},
-//     { nome: 'Jasmine', tecnologias: ['JavaScript', 'CSS'] },
-//     { nome: 'Tuane', tecnologias: ['HTML', 'Node.js'] }
-// ]
-
-// usuarioCSS(usuarios);
-// // let teste = []
-// //checagemGeral(usuarios);
-// //console.log(teste);
-// // checagemGeral(usuarios);
-//==================================================================================================================================
-//Soma de despesas
-
-function somaNumeros(lista){
-    let i = 0, j = 0;
-    let soma = 0;
-    let adicao = 0;
-    while(i < lista.receitas.length){
-        soma = soma + lista.receitas[i];
-        i++;
-    }
-    while(j < lista.despesas.length){
-        adicao = adicao + lista.despesas[j];
-        j++;
-    }
-    return (soma - adicao);
-}
-
-function CalculaSaldo(usuario){
-    usuario.forEach(elemento => {
-        saldo = somaNumeros(elemento);
-        //console.log(receitaTotal);
-        if(saldo >= 0){
-            console.log(`${elemento.nome} possui saldo POSITIVO de ${saldo.toFixed(2)}`);
-        }else{
-            console.log(`${elemento.nome} possui saldo NEGATIVO de ${saldo.toFixed(2)}`);
+    for (let i = 0; i < user.technologies.length; i++) {
+        if (user.technologies[i] == 'CSS') {
+            returnCatch = true;
         }
-    });
+
+    }
+    return returnCatch;
+
+}
+
+for (let j = 0; j < users.length; j++) {
+    let userTrabalhaComCSS = checaSeUsuarioUsaCSS(users[j]);
+
+    if (userTrabalhaComCSS) {
+        console.log(`${users[j].name} trabalha com CSS`);
+    }
 }
 
 
-const clientes = [
-    {
-      nome: "Salvio",
-      receitas: [115.3, 48.7, 98.3, 14.5],
-      despesas: [85.3, 13.5, 19.9]
-    },
+//generalCheck(users);
+//==================================================================================================================================
+//Soma de despesa
+// function somaNumeros(list) {
+//     let i = 0, j = 0;
+//     let sum = 0;
+//     let addSum = 0;
 
-    {
-      nome: "Marcio",
-      receitas: [24.6, 214.3, 45.3],
-      despesas: [185.3, 12.1, 120.0]
-    },
+//     while (i < list.revenues.length) {
+//         sum = sum + list.revenues[i];
+//         i++;
+//     }
+//     while (j < list.expenses.length) {
+//         addSum = addSum + list.expenses[j];
+//         j++;
+//     }
 
-    {
-      nome: "Lucia",
-      receitas: [9.8, 120.3, 340.2, 45.3],
-      despesas: [450.2, 29.9]
-    }
-  ];
+//     return (sum - addSum);
+// }
+// // 
+// function CalculaSaldo(user) {
 
-  CalculaSaldo(clientes);
+//     user.forEach(element => {
+//         balance = sumNumeros(element);
+//         if (balance >= 0) {
+//             console.log(`${element.name} possui saldo POSITIVO de ${balance.toFixed(2)}`);
+//         } else {
+//             console.log(`${element.name} possui saldo NEGATIVO de ${balance.toFixed(2)}`);
+//         }
+//     });
+// }
+
+// const clients = [
+//     {
+//         name: "Salvio",
+//         revenues: [115.3, 48.7, 98.3, 14.5],
+//         expenses: [85.3, 13.5, 19.9]
+//     },
+//     // 
+//     {
+//         name: "Marcio",
+//         revenues: [24.6, 214.3, 45.3],
+//         expenses: [185.3, 12.1, 120.0]
+//     },
+//     // 
+//     {
+//         name: "Lucia",
+//         revenues: [9.8, 120.3, 340.2, 45.3],
+//         expenses: [450.2, 29.9]
+//     }
+// ];
+// // 
+// CalculaSaldo(clients);
