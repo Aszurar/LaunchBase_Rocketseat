@@ -1,0 +1,45 @@
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap";
+*{ /*selecionando todos blocos do html e zerando propriedade padrões do navegador*/
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    background: #17001b;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    padding: 32px;
+    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.1); /*preto com tranparência*/
+}
+
+header div {
+    text-align: center;
+}
+
+header div a {
+    color: white;
+    font-size: 18px;
+    line-height: 28px;/*ajustar a altura do texto, no caso dando um espaçamento pela altura*/
+    margin: 0 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ header div a:hover { /*{ hover é para adicionar efeitos no texto como transições de cores ou imagens/botões */
+    color: #bf40f1;
+    transition: 800ms;
+}  
+
+#wrapper {
+    text-align: center;
+    padding: 32px;
+}
+
+#wrapper img {
+    border-radius: 50%;
+    border: 5px solid #bf40f1;
+}
