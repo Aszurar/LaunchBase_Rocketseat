@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Aurora X",
+    "window.zoomLevel": 2,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "terminal.integrated.inheritEnv": false
+}

@@ -1,0 +1,80 @@
+@import'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+:root {
+    --color-orange: rgb(226, 157, 28);
+    --color-purple: rgb(188, 27, 251);
+}
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    background: url('/Wallpaper\ LaunchBase\ -\ 1920x1080.png');
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding: 240px;
+}
+
+header div {
+    text-align: center;
+}
+
+header div a {
+    color: white;
+    margin: 0 16px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid  var(--color-purple);
+    
+}
+
+.about a{
+    color: var(--color-orange);
+    border-bottom: 1px solid  var(--color-orange);
+
+}
+
+.about a:hover{
+    border-bottom: 1px solid  var(--color-purple);
+    align-items: center;
+    text-align: center;
+
+}
+header div a:hover {
+    color: var(--color-purple);
+    transition: 800ms;
+}
+
+header h1 {
+    margin-top: 500px;
+    text-align: center;
+}
+
+header h1 a {
+    text-decoration: none;
+    margin: 0 16px;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid  var(--color-orange);
+
+}
+
+header h1 a:hover {
+    color: var(--color-orange);
+    transition: 800ms;
+
+}
+
+@media (max-width: 1080px) {
+
+    body {
+        margin-left: 20px;
+    }
+
+}
