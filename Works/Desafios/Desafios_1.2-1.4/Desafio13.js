@@ -1,4 +1,4 @@
-//Usuários e technologies
+// Usuários e technologies
 // const users = [
 //     { name: 'Carlos', technologies: ['HTML', 'CSS', 'SORVETE'] },
 //     { name: 'Jasmine', technologies: ['JavaScript', 'CSS'] },
@@ -8,16 +8,16 @@
 // function generalCheck(users) {
 //     users.forEach(user => {
 //         console.log(`${user.name} trabalha com ${user.technologies.join(", ")}`);
-//        user.technologies.forEach(technology => {
+//         user.technologies.forEach(technology => {
 //             if (technology == 'CSS') {
 //                 console.log(`${user.name} trabalha com ${technology}`);
 //             }
-    //   });
-//      });
+//         });
+//     });
 
 // }
-
-// function checaSeUsuarioUsaCSS(user) {
+// //1º método pensado
+// function checaSeUsuarioUsaCSS2(user) {
 //     let returnCatch = false;
 
 //     for (let i = 0; i < user.technologies.length; i++) {
@@ -28,6 +28,15 @@
 //     }
 //     return returnCatch;
 
+// }
+// //2º método pensado
+// function checaSeUsuarioUsaCSS(user) {
+//     for (let technology of user.technologies) {
+//         if (technology === 'CSS') {
+//             return true;
+//         }
+//     }
+//     return false;
 // }
 
 // for (let j = 0; j < users.length; j++) {
@@ -62,32 +71,59 @@ const clients = [
     }
 ];
 
-function numbersSum(list) {
-    let i = 0, j = 0;
-    let sum = 0;
-    let addSum = 0;
+//1º FORMA QUE PENSEI EM FAZER!
+// function numbersSum(list) {
+//     let i = 0, j = 0;
+//     let sum = 0;
+//     let addSum = 0;
 
-    while (i < list.revenues.length) {
-        sum += list.revenues[i];
-        i++;
+//     while (i < list.revenues.length) {
+//         sum += list.revenues[i];
+//         i++;
+//     }
+//     while (j < list.expenses.length) {
+//         addSum += list.expenses[j];
+//         j++;
+//     }
+
+//     return (sum - addSum);
+// }
+
+// function balanceCalculate(user) {
+//     user.forEach(element => {
+//         let balance = numbersSum(element);
+//         if (balance >= 0) {
+//             console.log(`${element.name} possui saldo POSITIVO de ${balance.toFixed(2)}`);
+//         } else {
+//             console.log(`${element.name} possui saldo NEGATIVO de ${balance.toFixed(2)}`);
+//         }
+//     });
+// }
+
+// balanceCalculate(clients);
+
+// 2º FORMA INDICADA PELA QUESTÃO
+function numbersSum2(numbers) {
+    let sum = 0;
+    for(let number of numbers){
+        sum += number;
     }
-    while (j < list.expenses.length) {
-        addSum += list.expenses[j];
-        j++;
+    return sum;
+}
+
+function balanceCalculate2 (revenues, expenses) {
+    const totalRevenues = numbersSum2(revenues);
+    const totalexpenses = numbersSum2(expenses);
+
+    return (totalRevenues - totalexpenses);
+}
+
+for(let client of clients){
+    let balance = balanceCalculate2(client.revenues, client.expenses);
+    
+    if(balance >= 0){
+        console.log(`${client.name} possui o saldo POSITIVO de ${balance.toFixed(2)}`);
+    }else{
+        console.log(`${client.name} possui o saldo NEGATIVO de ${balance.toFixed(2)}`);
     }
- 
-    return (sum - addSum);
 }
- 
-function balanceCalculate(user) {
-    user.forEach(element => {
-        let balance = numbersSum(element);
-        if (balance >= 0) {
-            console.log(`${element.name} possui saldo POSITIVO de ${balance.toFixed(2)}`);
-        } else {
-            console.log(`${element.name} possui saldo NEGATIVO de ${balance.toFixed(2)}`);
-        }
-    });
-}
- 
-balanceCalculate(clients);

@@ -20,7 +20,8 @@
         <h1>Rocketseat</h1>
         <p>Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca
             do próximo nível 🚀</p>
-        <ul>Tecnologias:
+        <ul>
+            <div>Tecnologias:</div>
             <li>Javascript</li>
             <li>HTML</li>
             <li>CSS</li>
@@ -28,15 +29,73 @@
             <li>ReactJS</li>
             <li>React Native</li>
         </ul>
+        <div id="links-footer" class="links">
+            <a href="https://www.youtube.com/c/RocketSeat/videos" target="_blank">Youtube</a>
+            <a href="https://www.facebook.com/rocketseat/" target="_blank">Facebook</a>
+            <a href="https://www.linkedin.com/school/rocketseat/?originalSubdomain=br" target="_blank">Linkedin</a>
+            <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br" target="_blank">Instagram</a>
+            <a href="https://twitter.com/rocketseat" target="_blank">Twitter</a>
+        </div>
     </div>
 
-    <div id="links-footer" class="links">
-        <a href="https://www.youtube.com/c/RocketSeat/videos" target="_blank">Youtube</a>
-        <a href="https://www.facebook.com/rocketseat/" target="_blank">Facebook</a>
-        <a href="https://www.linkedin.com/school/rocketseat/?originalSubdomain=br" target="_blank">Linkedin</a>
-        <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br" target="_blank">Instagram</a>
-        <a href="https://twitter.com/rocketseat" target="_blank">Twitter</a>
-    </div>
+
+
+    <form action="" class="technologies">
+        <fieldset>
+            <legend>
+                <h2>Tecnologias</h2>
+            </legend>
+
+            <div class="items-grid">
+                <li data-id="CSS">
+                    <a href="https://www.youtube.com/watch?v=HN1UjzRSdBk">
+                        <img src="CSS3.svg" alt="CSS">
+                        <span>CSS</span>
+                    </a>
+                </li>
+
+                <li data-id="HTML">
+                    <a href="https://rocketseat.com.br/starter/curso-gratuito-javascript">
+                        <img src="HTML5.svg" alt="HTML">
+                        <span>HTML</span>
+                    </a>
+                </li>
+
+                <li data-id="Javascript">
+                    <a href="https://rocketseat.com.br/starter/curso-gratuito-javascript">
+
+                        <img src="curso-javascript.svg" alt="Javascript">
+                        <span>Javascript</span>
+                    </a>
+                </li>
+
+                <li data-id="Nodejs">
+                    <a href="https://rocketseat.com.br/starter/curso-gratuito-nodejs">
+
+                        <img src="curso-nodejs.svg" alt="Nodejs">
+                        <span>Nodejs</span>
+                    </a>
+                </li>
+
+                <li data-id="ReactJS">
+                    <a href="https://rocketseat.com.br/starter/curso-gratuito-reactjs">
+
+                        <img src="curso-reactjs.svg" alt="ReactJS">
+                        <span>ReactJS</span>
+                    </a>
+                </li>
+
+                <li data-id="React Native">
+                    <a href="https://rocketseat.com.br/starter/curso-gratuito-react-native">
+                        <img src="curso-react-native.svg" alt="React Native">
+                        <span>React Native</span>
+                    </a>
+                </li>
+
+                <input type="hidden" name="items">
+            </div>
+        </fieldset>
+    </form>
 </body>
 
 </html>

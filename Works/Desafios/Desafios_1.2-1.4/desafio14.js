@@ -54,6 +54,7 @@ function createOperations(operations) {
     });
 }
 
+// function 
 
 function getHigherTransactionByType(type) {
     let assist = 0;
@@ -65,7 +66,7 @@ function getHigherTransactionByType(type) {
             returnCheck = transaction;
         }
     });
-    return returnCheck;
+    return returnCheck, 'sorvete';
 }
 
 function getAverageTransactionValue() {
