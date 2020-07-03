@@ -19,26 +19,26 @@ const operations = [
         type: 'credit',
         value: 70
     },
-    // {
-    //     type: 'debit',
-    //     value: 30
-    // },
-    // {
-    //     type: 'credit',
-    //     value: 130  
-    // }
+    {
+        type: 'debit',
+        value: 30
+    },
+    {
+        type: 'credit',
+        value: 130  
+    }
 ];
 
 //utilizando somente uma transação
-// function createTransaction(transaction) {
-//     user.transactions.push(transaction);
+function createTransaction(transaction) {
+    user.transactions.push(transaction);
 
-//     if (transaction.type == 'credit') {
-//         user.balance += transaction.value;
-//     } else {
-//         user.balance -= transaction.value;
-//     }
-// }
+    if (transaction.type == 'credit') {
+        user.balance += transaction.value;
+    } else {
+        user.balance -= transaction.value;
+    }
+}
 
 
 //utilizando um array de várias transações
@@ -59,25 +59,21 @@ function createOperations(operations) {
 function getHigherTransactionByType(type) {
     let assist = 0;
     let returnCheck = {}
+    
     user.transactions.forEach(transaction => {
-
         if ((transaction.type == type) && (transaction.value > assist)) {
             assist = transaction.value;
             returnCheck = transaction;
         }
     });
-    return returnCheck, 'sorvete';
+    return returnCheck;
 }
 
 function getAverageTransactionValue() {
     let sum = 0;
 
     user.transactions.forEach(transaction => {
-        if (transaction.type == 'credit') {
             sum += transaction.value;
-        } else {
-            sum -= transaction.value;
-        }
     });
     return (sum / user.transactions.length);
 }
@@ -101,7 +97,7 @@ function getTransactionsCount() { // { credit: 5, debit: 3 }
 
 createOperations(operations);
 
-//createTransaction({ type: 'credit', value: 50.5});
+// createTransaction({ type: 'credit', value: 50.5});
 console.table(user);
 console.table(user.transactions);
 

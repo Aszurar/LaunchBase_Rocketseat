@@ -10,7 +10,8 @@
 }
 
 body {
-    background: url('Wallpaper\ LaunchBase\ -\ 1920x1080.svg') no-repeat;
+    background: url('./assets/Wallpaper\ LaunchBase\ -\ 1920x1080.svg') no-repeat;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
 }
 

@@ -2,7 +2,7 @@
 :root {
     --color-orange: rgb(226, 157, 28);
     --color-purple: rgb(188, 27, 251);
-    --color-dark:   rgba(144, 67, 231, 0.575);
+    --color-dark:   rgba(132, 99, 170, 0.575);
     --color-bright: white;
     --color-white:  rgba(182, 135, 236, 0.678);
     --color-background:  #0d000f;
@@ -55,7 +55,7 @@ header {
 
 .links a span {
     margin-right: 16px;
-    background-image: url('arrow-left.svg');
+    background-image: url('./assets/arrow-left.svg');
 
     display: flex;
 
@@ -117,7 +117,7 @@ form {
 form fieldset{
     margin-top: 64px;
     
-    border 0;
+    border: 0;
 }
 
 form legend{
@@ -142,10 +142,10 @@ form legend{
     background-color: var(--color-dark);
     list-style: none;
 
-    border: 2px solid var(--color-dark);
+    border: 3px solid var(--color-dark);
     border-radius: 8px;
 
-    height: 180px;
+    min-height: 180px;
 
     padding: 32px 24px 16px;
     
@@ -161,18 +161,21 @@ form legend{
     cursor: pointer;
 
 }
-.items-grid a {
+.items-grid li a {
     text-decoration: none;
 
     display: flex;
     flex-direction: column;
+}
+.items-grid li a img{
+    border-radius: 20%;
 }
 
 .items-grid li a span{
     margin-top: 12px;
     font-weight: bold;
     text-align: center;
-    color: var(--color-background);
+    color: var(--color-bright);
 }
 
 .technologies {
@@ -183,10 +186,11 @@ form legend{
 }
 
 .items-grid li:hover{
-    border: 2px solid var(--color-orange);
-    background-color: var(--color-bright);
+    border: 3px solid var(--color-bright);
+     /* background-color: var(--color-bright);  */
     transition: 800ms;
-} 
+}  
+
 #links-footer a:hover{
     color: var(--color-orange);
     border-bottom: 1px solid var(--color-orange);
