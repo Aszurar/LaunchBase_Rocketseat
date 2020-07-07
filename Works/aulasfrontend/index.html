@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Lucas de Lima</title>
-        <link rel="icon" href="/../Desafios/iconeDesafio21/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <div class="links">
-                <a href="/">Sobre</a>
-                <a href="/">Aulas</a>
+
+<head>
+    <title>Lucas de Lima</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="links">
+            <a href="index.html">Sobre</a>
+            <a href="classes.html">Aulas</a>
+        </div>
+    </header>
+
+    <div id="wrapper">
+        <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
+            alt="Lucas de Lima">
+        <h1>Lucas de Lima</h1>
+        <!-- <h2>Estudante de Engenharia da Computação - <a href="https://www.ufpb.br/"target="_blank" >UFPB</a> </h1> -->
+        <!-- <h2>Estudante de Desenvolvimento Web - <a href="https://rocketseat.com.br" target="_blanck" >Rocketseat</a> </h2> -->
+        <p>Estudando programação com foco em Javascript, Python, HTML e CSS com o objetivo de se tornar um desenvolvedor
+            fullstack</p>
+    </div>
+    
+    <div id="links-footer" class="links">
+        <!--utilização de classes para agrupar blocos diferentes e facilitar a estilização-->
+        <a href="https://www.linkedin.com/in/lucas-de-lima-azsura/" target="_blank">Linkedin</a>
+        <a href="https://github.com/Aszurar" target="_blank">Github</a>
+        <a href="mailto:lms.souza39@gmail.com" target="_blank">Email</a>
+        <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">Facebook</a>
+    </div>
+
+    <form action="" class="student">
+        <fieldset>
+            <legend>
+                <h2>Estudante</h2>
+            </legend>
+
+            <div class="items-grid">
+
+                <li data-id="UFPB">
+                    <a href="https://www.ufpb.br/" target="_blanck">
+                        <img src="assets/ufpb.svg" alt="Universidade Federal da Paraíba">
+                        <span>Engenharia da Computação</span>
+                    </a>
+                </li>
+
+                <li data-id="Rocketseat">
+                    <a href="https://rocketseat.com.br/launchbase" target="_blanck">
+                        <img src="assets/rocketseat.svg" alt="Rocketseat">
+                        <span>Rocketseat</span>
+                        <p>LaunchBase</p>
+                    </a>
+                </li>
             </div>
-        </header>
 
-        <div id="wrapper">
-            <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4" alt="Lucas de Lima">
-            <h1>Lucas de Lima</h1>
-            <h2>Estudante de Engenharia da Computação - <a href="https://www.ufpb.br/"target="_blank" >UFPB</a> </h1>
-            <h2>Estudante de Desenvolvimento Web - <a href="https://rocketseat.com.br" target="_blanck" >Rocketseat</a> </h2>
-            <p>Estudando programação com foco em Javascript, Python, HTML e CSS com o objetivo de se tornar um desenvolvedor fullstack</p>
-        </div>
-        
-        <div id="links-footer" class="links"> <!--utilização de classes para agrupar blocos diferentes e facilitar a estilização-->
-            <a href="https://www.linkedin.com/in/lucas-de-lima-azsura/" target="_blank">Linkedin</a>
-            <a href="https://github.com/Aszurar" target="_blank">Github</a>
-            <a href="mailto:lms.souza39@gmail.com" target="_blank">Email</a>
-            <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">Facebook</a>
-        </div>
+        </fieldset>
+    </form>
 
-    </body>
+</body>
+
 </html>

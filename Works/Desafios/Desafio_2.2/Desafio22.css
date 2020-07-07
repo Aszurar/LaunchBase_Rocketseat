@@ -1,7 +1,9 @@
 @import'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 :root {
-    --color-orange: rgb(226, 157, 28);
-    --color-purple: rgb(188, 27, 251);
+    --color-orange: rgb(255, 201, 22);
+    --color-purple: rgb(113, 89, 193);
+    --color-white: white;
+    --color-border-icon: rgb(226, 157, 28);
 }
 * {
     margin: 0;
@@ -13,65 +15,125 @@ body {
     background: url('./assets/Wallpaper\ LaunchBase\ -\ 1920x1080.svg') no-repeat;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 header {
-    padding: 240px;
+    border-bottom: 1px solid #333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-purple);
+    width: 100%;
 }
 
+.logo img{
+    margin: 0 20px;
+    padding: 0 36px;
+    border-right: 1px solid var(--color-border-icon);
+}
 header div {
     text-align: center;
 }
 
-header div a {
-    color: white;
+.menu a {
+    color: var(--color-white);
     margin: 0 16px;
     font-size: 20px;
     line-height: 30px;
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 1px solid  var(--color-purple);
     
 }
 
-.about a{
+.menu a:hover {
     color: var(--color-orange);
-    border-bottom: 1px solid  var(--color-orange);
+    border-bottom: 3px solid var(--color-orange);
+    transition: 150ms linear 0s;
+}
+
+.socials{
+    border-left: 1px solid var(--color-border-icon);
+    margin: 0 20px;
+    padding: 0 36px;
+}
+.socials a img{
+    height: 100%;
+    width: auto;
+    margin: 0px 0px 0px 20px;
+    height: 18px;
+}
+.links{
+    margin-top: 590px;
+    padding: 30px;
+    text-align: center;
+    border-top: 2px solid #333;
+    background-color: var(--color-purple);
 
 }
 
-.about a:hover{
-    border-bottom: 1px solid  var(--color-purple);
+.text p{
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: bold;
+    max-width: 800px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+
+.links strong{
+    font-size: 24px;
+    color: var(--color-white);
+}
+form{
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-
-}
-header div a:hover {
-    color: var(--color-purple);
-    transition: 800ms;
+    margin-bottom: 20px;
 }
 
-header h1 {
-    margin-top: 500px;
-    text-align: center;
+form div{
+    display: flex;
+    align-items: center;
+    height: 48px;
+    margin-top: 15px;
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 0 20px;
 }
 
-header h1 a {
+form div input{
+    font-size: 16px;
+    background-color: var(--color-white);
+    cursor: text;
+    outline: none;
+}
+
+form div button{
+    cursor: pointer;
+}
+
+.links a {
     text-decoration: none;
-    margin: 0 16px;
-    color: white;
+    color: var(--color-white);
+    font-weight: bold;
     font-size: 20px;
     line-height: 30px;
-    border-bottom: 1px solid  var(--color-orange);
-
+    margin: 0px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 30px;
 }
 
-header h1 a:hover {
+.links a:hover {
+    border-bottom: 2px solid var(--color-orange);
     color: var(--color-orange);
     transition: 800ms;
 
 }
-
 @media (max-width: 900px) {
 
     body {
