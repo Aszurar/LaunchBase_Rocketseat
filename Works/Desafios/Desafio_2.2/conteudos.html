@@ -2,6 +2,8 @@
 
 <head>
     <link rel="icon" href="assets/favicon.ico" type="image/ico" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="conteudos.css">
 </head>
@@ -58,7 +60,7 @@
         <div class="main">
             <selection class="cards">
 
-                <a href="https://rocketseat.com.br/starter">
+                <div class="card" id="starter" frameId="start">
                     <div class="starter">
                         <div class="card__image-container">
                             <span>01</span>
@@ -76,11 +78,10 @@
                         </div>
 
                     </div>
-                </a>
+                </div>
 
 
-
-                <a href="https://rocketseat.com.br/launchbase">
+                <div class="card" id="launchbase" frameId="launch">
                     <div class="launchbase">
                         <div class="card__image-container">
                             <span>02</span>
@@ -98,10 +99,9 @@
                         </div>
 
                     </div>
-                </a>
+                </div>
 
-
-                <a href="https://rocketseat.com.br/gostack">
+                <div class="card" id="gostack" frameId="go">
                     <div class="gostack">
                         <div class="card__image-container">
                             <span>03</span>
@@ -120,15 +120,35 @@
                         </div>
 
                     </div>
-                </a>
+                </div>
 
             </selection>
         </div>
     </div>
 
+    <div class="modal-overlay">
+        <div class="modal">
+           
+            <a class="max-modal">
+                <i class="material-icons">fullscreen</i>
+            </a>
+            
+            <a class="min-modal">
+                <i class="material-icons">fullscreen_exit</i>
+            </a>
+            
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+            
+            <div class="modal-contant">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
 
-
+<script src="script.js"></script>
 </body>
 
 </html>

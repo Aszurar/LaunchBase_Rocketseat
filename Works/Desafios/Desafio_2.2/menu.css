@@ -6,8 +6,10 @@
   --color-dark: rgba(113, 89, 193, 0.7);
   --color-green: rgb(4, 211, 97);
   --color-white: white;
-  --color-background: #0d000f;
+  --color-background: rgb(25, 20, 42);
   --color-black: black;
+  --color-modal-ovarlay: rgba(25, 20, 42, 0.8);
+  --color-modal:rgb(175, 151, 248);
 }
 
 * {

@@ -35,7 +35,7 @@ body {
   grid-row-gap: 24px;
 }
 
-.cards a {
+.card {
   text-decoration: none;
   display: flex;
 }
@@ -200,3 +200,108 @@ body {
   border: 3px solid var(--color-green);
   transition: 750ms;
 }
+
+/* =====MODAL===== */
+.modal-overlay {
+  background-color: var(--color-modal-ovarlay);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  /* background-color: var(--color-modal); */
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  position: relative;
+  border-radius: 15px;
+  color: var(--color-black);
+
+
+}
+
+.modal .close-modal{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+ 
+}
+
+.modal .max-modal{
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+}
+.modal .min-modal{
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* modal-overlay active */
+.modal-overlay.active{
+  opacity: 1;
+  visibility: visible;
+  
+}
+
+iframe {
+  width: 96.5%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
+  border-radius: 10px;
+}
+
+/* modal-active */
+.modal.starter{
+  background-color: var(--color-white);
+  padding:0;
+  border: 0;
+  padding-left: 30px;
+  transition: none;
+}
+
+.modal.launchbase{
+  background-color: var(--color-orange-card);
+  padding:0;
+  border: 0;
+  padding-left: 30px;
+  transition: none;
+}
+
+.modal.gostack{
+  background-color: var(--color-green);
+  padding:0;
+  border: 0;
+  padding-left: 30px;
+  transition: none;
+}
+
+/* modal-max */
+.modal.maximize{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal.maximize iframe{
+  width: 100%;
+}
+
+.modal.maximize .max-modal{
+  visibility: hidden;
+}
+
+.modal.maximize .min-modal{
+  visibility: visible;
+} 
