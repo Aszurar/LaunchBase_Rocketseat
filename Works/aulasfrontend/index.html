@@ -27,11 +27,17 @@
         </div>
 
         <div class="socials">
-            <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">
-                <i style='font-size:24px' class='fab'>&#xf09a;</i>
-            </a>
+
             <a href="https://www.linkedin.com/in/lucas-de-lima-azsura/" target="_blank">
                 <i style='font-size:24px' class='fab'>&#xf08c;</i>
+            </a>
+
+            <a href="https://github.com/Aszurar" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf09b;</i>
+            </a>
+
+            <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf09a;</i>
             </a>
 
             <a href="https://www.instagram.com/lucazura/" target="_blank">
@@ -107,14 +113,14 @@
             <div class="items-grid">
 
                 <li data-id="UFPB">
-                    <a href="https://www.ufpb.br/" target="_blanck">
+                    <a href="https://www.ufpb.br/" target="_blank">
                         <img src="assets/ufpb.svg" alt="Universidade Federal da Paraíba">
                         <span>Engenharia da Computação</span>
                     </a>
                 </li>
 
-                <li data-id="Rocketseat">
-                    <a href="https://rocketseat.com.br/launchbase" target="_blanck">
+                <li class="student-card" data-id="Rocketseat">
+                    <a class="text-rocketseat">
                         <img src="assets/rocketseat.svg" alt="Rocketseat">
                         <span>Rocketseat</span>
                         <p>LaunchBase</p>
@@ -125,7 +131,32 @@
         </fieldset>
     </form>
 
-    <script src="discord.js"></script>
+    <div class="student-overlay">
+        <div class="modal-student">
+            
+            <a class="max-modal">
+                <i class="material-icons">fullscreen</i>
+            </a>
+            
+            <a class="min-modal">
+                <i class="material-icons">fullscreen_exit</i>
+            </a>
+            
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            
+            <div class="content-student">
+                <h1 class="title">LaunchBase - Rocketseat</h1>
+                <iframe src="https://www.rocketseat.com.br/launchbase" frameborder="0"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>

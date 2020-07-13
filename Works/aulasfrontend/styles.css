@@ -32,8 +32,7 @@ body {
   position: relative;
   border-radius: 10px;
   background-color:  var(--color-black);
-  border: 2px solid #99AAB5;
-  
+  border: 2px solid var(--color-bluepast);
 
 }
 
@@ -55,7 +54,7 @@ body {
 .modal_discord .close-modal:hover{
   background-color: var(--color-transparent);
   transition: 300ms;
-  border-radius: 50px;
+  border-radius: 20%;
 }
 
 .contant_discord{
@@ -234,6 +233,165 @@ form legend {
 /* #Rocketseat img{
   border-radius: 50%;
 } */
+
+/* =====MODAL===== */
+.student-overlay {
+  background-color: var(--color-transparent);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-student {
+  background-color: var(--color-black-no);
+  width: 80%;
+  height: 85%;
+  margin: 5vh auto;
+  position: relative;
+  border-radius: 15px;
+  color: var(--color-white);
+
+
+
+}
+
+.modal-student .close-modal{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer; 
+}
+
+
+.modal-student .max-modal{
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+}
+.modal-student .min-modal{
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.modal-student .close-modal:hover{
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+  color: var(--color-orange);
+}
+
+.modal-student .min-modal:hover{
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+  color: var(--color-orange);
+}
+
+.modal-student .max-modal:hover{
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+  color: var(--color-orange);
+}
+
+/* modal-overlay active */
+.student-overlay.active{
+  opacity: 1;
+  visibility: visible;
+  
+}
+.content-student{
+  align-items: center;
+  justify-content: center;
+  
+}
+.content-student h1{
+  text-align: center;
+  padding-top: 28px;
+  color: var(--color-orange);
+
+}
+
+ .content-student iframe{
+  width: 95%;
+  height: 85%;
+  position: absolute;
+  top: 5%;
+  border-radius: 10px;
+  margin-top: 35px;
+  margin-left: 2.5%;
+  border-radius: 15px;
+
+}
+
+/* modal-max */
+.modal-student.maximize{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-student.maximize iframe{
+  margin: 30px 0 0 0;
+  width: 100%;
+  height: 90%;
+}
+
+.modal-student.maximize .max-modal{
+  visibility: hidden;
+}
+
+.modal-student.maximize .min-modal{
+  visibility: visible;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*==========CARDS==========*/
 
