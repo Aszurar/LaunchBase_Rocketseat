@@ -1,12 +1,3 @@
-@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap";
-:root {
-  --color-blue-blue-background: #345e94a2;
-  --color-blue-dark: #030018;
-  --color-white: white;
-  --color-blue-border:rgb(0, 247, 255);
-  
-}
-
 * {
   /*selecionando todos blocos do html e zerando propriedade padrões do navegador*/
   padding: 0;
@@ -15,34 +6,101 @@
 }
 
 body {
-  background: var(--color-blue-dark);
-  font-family: "Source Sans Pro", sans-serif;
+  background: var(--color-dark-light);
   color: var(--color-white);
 }
 
-header {
-  padding: 32px;
-  border-bottom: 1px solid #333;
-  background: rgba(0, 0, 0, 0.1); /*preto com tranparência*/
+.here a{
+  color: var(--color-black);
+  border-bottom: 3px solid var(--color-black);
 }
 
-.links {
-  text-align: center;
+.discord-overlay {
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--color-blue-transparent);
 }
 
-.links a {
-  color: var(--color-white);
+.modal_discord{
+  width: 37%;
+  height: 160px;
+  margin: 5vh auto;
+  position: relative;
+  border-radius: 10px;
+  background-color:  var(--color-black);
+  border: 2px solid #99AAB5;
+  
+
+}
+
+
+.discord-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_discord .close-modal{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  border: 2px solid var(--color-black);
+
+}
+
+.modal_discord .close-modal:hover{
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 50px;
+}
+
+.contant_discord{
+  display: flex;
+  width: 92%;
+  height: 100%;
+}
+
+.contant_discord .image{
+  width: 200px;
+  height: 100%;
+}
+.contant_discord .image img{
+  margin: 15px 15px;
+  border-radius: 50%;
+  width: 70%;
+  height: 125px;
+  border: 2px solid var(--color-bluebold);
+}
+
+.contant_discord .text h1{
   font-size: 18px;
-  line-height: 28px; /*ajustar a altura do texto, no caso dando um espaçamento pela altura*/
-  margin: 0 16px;
-  text-decoration: none;
+  margin-top: 20px;
+
+}
+
+.contant_discord .text p{
+  margin-top: 7px;
+  font-size: 15px;
   font-weight: bold;
 }
 
-.links a:hover {
-  /*{ hover é para adicionar efeitos no texto como transições de cores ou imagens/botões */
-  color: var(--color-blue-border);
-  transition: 1500ms;
+.contant_discord .logo{
+  width: 40%;
+  height: 90%;
+}
+
+.contant_discord .logo img{
+  margin: 40px 0px 40px 40px;
+}
+
+.contant_discord .logo img:hover{
+  background-color: var(--color-bluebold);
+  border-radius: 15px;
+  transition: 800ms;
 }
 
 #wrapper {
@@ -53,7 +111,7 @@ header {
 
 #wrapper img {
   border-radius: 50%;
-  border: 5px solid var(--color-blue-border);
+  border: 5px solid var(--color-bluebold);
   height: 300px;
 }
 #wrapper h1 {
@@ -76,26 +134,21 @@ header {
 }
 
 #wrapper h2 a:hover {
-  color: var(--color-blue-blue-background);
+  color: var(--color-blue-transparent);
   transition: 800ms;
 }
 
 #wrapper p {
   max-width: 500px; /*vai quebrar a linha, e zoar a ecntralização*/
-  margin: 10px auto; /* corrigindo a centralização acima!*/
+  margin: 5px auto; /* corrigindo a centralização acima!*/
   font-size: 24px;
   line-height: 34px;
 }
 
-#links-footer a {
-  border-bottom: 1px solid #0b0018;
-}
 
 form {
-  background-color: var(--color-blue-blue-background);
-  margin: 20px auto;
+  background-color: var(--color-blue-transparent);
   padding: 64px;
-
   border-radius: 8px;
   max-width: 730px;
 }
@@ -130,10 +183,10 @@ form legend {
 }
 
 .items-grid li {
-  background-color: var(--color-blue-blue-background);
+  background-color: var(--color-blue-transparent);
   list-style: none;
 
-  border: 4px solid var(--color-blue-blue-background);
+  border: 4px solid var(--color-blue-transparent);
   border-radius: 8px;
 
   min-width: 180px;
@@ -167,12 +220,13 @@ form legend {
   color: var(--color-white);
 }
 .items-grid li a p {
-  color: var(--color-blue-border);
+  color: var(--color-black);
   font-weight: bold;
 }
 .items-grid li:hover {
   /* border: 4px solid var(--color-white); */
-  border: 4px solid rgb(0, 247, 255);
+  border: 4px solid #000000;
+  ;
   transition: 800ms;
 }
 
@@ -235,22 +289,22 @@ form legend {
 }
 
 .modal{
-  background-color: var(--color-blue-dark);
+  background-color: var(--color-dark-light);
   width: 90%;
   height: 90%;
   margin: 5vh auto;
   position: relative; /*permitindo em conjunto com o position absolute do close-modal o ícone de ser posto em qualquer região da tela*/
   border-radius: 2%;
 }
-
+/* 
 .modal .close-modal{
   color: var(--color-white);
   position: absolute; /*Configurando o ícone x de fechar podendo se posicionado em qualquer parte da região do modal(caixa branca)
   isso é feito a partir do positition relative declarado no modal*/
-  right: 8px; /*configurando o close para a direia 8 px do limite da caixa branca*/
-  top: 8px; /* e 8 px do topo*/
-  cursor: pointer;
-}
+  /* right: 8px; configurando o close para a direia 8 px do limite da caixa branca */
+  /* top: 8px; e 8 px do topo */
+  /* cursor: pointer; */
+/* } */ 
 
 /* =====MODAL.Active===== */
 .modal-overlay.active{

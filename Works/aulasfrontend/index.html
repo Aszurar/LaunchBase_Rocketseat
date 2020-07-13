@@ -5,16 +5,88 @@
 <head>
     <title>Lucas de Lima</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body>
+
     <header>
         <div class="links">
-            <a href="index.html">Sobre</a>
-            <a href="classes.html">Aulas</a>
+            <div class="here">
+                <a href="index.html">Sobre</a>
+            </div>
+
+            <div>
+                <a href="portfolio.html">Portfólio</a>
+            </div>
+            <!-- <a href="classes.html">Aulas</a> -->
+        </div>
+
+        <div class="socials">
+            <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf09a;</i>
+            </a>
+            <a href="https://www.linkedin.com/in/lucas-de-lima-azsura/" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf08c;</i>
+            </a>
+
+            <a href="https://www.instagram.com/lucazura/" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf16d;</i>
+            </a>
+
+            <a href="mailto:lms.souza39@gmail.com">
+                <i style='font-size:24px' class='far'>&#xf0e0;</i>
+            </a>
+
+            <a class="discord">
+                <i style='font-size:23px' class='fab'>&#xf392;</i>
+            </a>
+
+            <a href="https://steamcommunity.com/profiles/76561198081343709/" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf1b6;</i>
+            </a>
+
+            <a href="https://account.xbox.com/pt-BR/Profile?xr=mebarnav" target="_blank">
+                <i style='font-size:24px' class='fab'>&#xf412;</i>
+            </a>
+
         </div>
     </header>
+
+    <div class="discord-overlay">
+        <div class="modal_discord">
+
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="contant_discord">
+                <div class="image">
+                    <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
+                        alt="Lucas de Lima">
+                </div>
+
+                <div class="text">
+                    <h1>USERNAME</h1>
+                    <p>Lucas de Lima#9622</p>
+                    <h1>EMAIL</h1>
+                    <p>lms.souza39@gmail.com</p>
+                </div>
+
+                <div class="logo">
+                    <a href="https://discord.com/new" target="_blank">
+                        <img src="/assets/discord.svg" alt="discord">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 
     <div id="wrapper">
         <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
@@ -24,14 +96,6 @@
         <!-- <h2>Estudante de Desenvolvimento Web - <a href="https://rocketseat.com.br" target="_blanck" >Rocketseat</a> </h2> -->
         <p>Estudando programação com foco em Javascript, Python, HTML e CSS com o objetivo de se tornar um desenvolvedor
             fullstack</p>
-    </div>
-    
-    <div id="links-footer" class="links">
-        <!--utilização de classes para agrupar blocos diferentes e facilitar a estilização-->
-        <a href="https://www.linkedin.com/in/lucas-de-lima-azsura/" target="_blank">Linkedin</a>
-        <a href="https://github.com/Aszurar" target="_blank">Github</a>
-        <a href="mailto:lms.souza39@gmail.com" target="_blank">Email</a>
-        <a href="https://www.facebook.com/lucas.delima.549436" target="_blank">Facebook</a>
     </div>
 
     <form action="" class="student">
@@ -61,6 +125,7 @@
         </fieldset>
     </form>
 
+    <script src="discord.js"></script>
 </body>
 
 </html>

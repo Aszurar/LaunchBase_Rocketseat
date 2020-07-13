@@ -1,0 +1,76 @@
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap";
+:root {
+  --color-blue-transparent: #7289dab9;
+  --color-dark-light: #23272A;
+  --color-white: white;
+  --color-transparent: #e9ecf04b;
+  --color-bluebold:#7289DA;
+  --color-black:#000000;
+  --color-black-no:#2C2F33;
+}
+
+* {
+    /*selecionando todos blocos do html e zerando propriedade padrões do navegador*/
+    padding: 0;
+    border: 0;
+    margin: 0;
+  }
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+    background: var(--color-bluebold); /*(preto com tranparência*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: var(--color-white);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.links a {
+  color: var(--color-white);
+  font-size: 20px;
+  line-height: 30px; /*ajustar a altura do texto, no caso dando um espaçamento pela altura*/
+  margin: 0 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  /*{ hover é para adicionar efeitos no texto como transições de cores ou imagens/botões */
+  color: var(--color-black);
+  border-bottom: 3px solid var(--color-black);
+  transition: 150ms linear 0s;
+}
+
+.socials{
+  border-left: 1px solid var(--color-black);
+  margin: 0 20px;
+  padding: 0 36px;
+}
+
+.discord{
+  cursor: pointer;
+}
+.socials a{
+  text-decoration: none;
+  height: 100%;
+  width: auto;
+  margin: 0px 0px 0px 15px;
+  color: var(--color-white);
+}
+
+.socials a:hover{
+  color: var(--color-black);
+  transition: 800ms;
+}
