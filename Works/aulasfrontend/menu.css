@@ -2,12 +2,13 @@
 :root {
   --color-blue-transparent: #7289dab9;
   --color-dark-light: #23272A;
+  --color-dark-light-transparent: #23272acc;
   --color-white: white;
   --color-transparent: #e9ecf04b;
   --color-bluebold:#7289DA;
   --color-black:#000000;
-  --color-black-no:#2C2F33;
-  --color-orange: rgb(12, 11, 11);
+  --color-gray: gray;
+  --color-orange: rgb(253, 149, 31);
   --color-bluepast:#99AAB5;
 }
 
