@@ -1,6 +1,7 @@
 const discordOverlay = document.querySelector('.discord-overlay');
 const discord = document.querySelector('.discord');
 
+// modais dos cards Projetos e Certificados
 const modalOverlay = document.querySelector('.modal-overlay');
 const cards = document.querySelectorAll('.card');
 const modal = document.querySelector('.modal');
@@ -33,6 +34,7 @@ cards.forEach(card => {
 document.querySelector('.close-modal-overlay').addEventListener("click", function() {
     modalOverlay.classList.remove("active");
     modal.classList.remove("maximize");
+    modalOverlay.querySelector("iframe").src='';
     
 });
 
