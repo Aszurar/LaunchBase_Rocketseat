@@ -14,6 +14,8 @@ for (const card of cardsProjects) {
 document.querySelector('.close-modal').addEventListener("click", function(){
     cardOverlay.classList.remove('active');
     cardModal.classList.remove("maximize");
+    cardOverlay.querySelector("iframe").src='';
+
 });
 
 document.querySelector(".max-modal").addEventListener("click", function() {

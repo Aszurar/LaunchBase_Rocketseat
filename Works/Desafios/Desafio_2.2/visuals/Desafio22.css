@@ -1,5 +1,5 @@
 body {
-  background: url("./assets/Wallpaper\ LaunchBase\ -\ 1920x1080.svg") no-repeat;
+  background: url("../assets/Wallpaper\ LaunchBase\ -\ 1920x1080.svg") no-repeat;
   height: 100vh;
   overflow: hidden;
 }
@@ -8,6 +8,7 @@ body {
   color: var(--color-orange);
   border-bottom: 3px solid var(--color-orange);
 }
+
 .links {
   margin-top: 565px;
   padding: 30px;
@@ -29,6 +30,7 @@ body {
   font-size: 24px;
   color: var(--color-white);
 }
+
 form {
   color: var(--color-white);
   display: flex;
@@ -76,6 +78,7 @@ form div button {
   color: var(--color-orange);
   transition: 800ms;
 }
+
 @media (max-width: 900px) {
   body {
     margin-left: 20px;

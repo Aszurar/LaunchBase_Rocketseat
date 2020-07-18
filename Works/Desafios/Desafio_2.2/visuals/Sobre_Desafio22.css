@@ -6,6 +6,7 @@ body {
   color: var(--color-orange);
   border-bottom: 3px solid var(--color-orange);
 }
+
 #wrapper {
   text-align: center;
   padding: 32px;
@@ -36,12 +37,15 @@ body {
 #links-footer a {
   display: unset;
 }
+
 #wrapper ul {
   font-weight: bold;
 }
+
 #wrapper ul div {
   font-size: 24px;
 }
+
 #wrapper ul li {
   font-size: 20px;
   list-style-position: inside;
@@ -100,12 +104,14 @@ form legend {
 
   cursor: pointer;
 }
+
 .items-grid li a {
   text-decoration: none;
 
   display: flex;
   flex-direction: column;
 }
+
 .items-grid li a img {
   border-radius: 20%;
 }

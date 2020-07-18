@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap";
+
 :root {
   --color-orange: rgb(255, 201, 22);
   --color-orange-card: rgb(253, 149, 31);
@@ -9,7 +10,7 @@
   --color-background: rgb(25, 20, 42);
   --color-black: black;
   --color-modal-ovarlay: rgba(25, 20, 42, 0.8);
-  --color-modal:rgb(175, 151, 248);
+  --color-modal: rgb(175, 151, 248);
 }
 
 * {
@@ -42,6 +43,7 @@ header {
 header div {
   text-align: center;
 }
+
 .menu {
   display: flex;
 }

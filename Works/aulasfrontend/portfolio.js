@@ -17,7 +17,8 @@ cards.forEach(card => {
         card.addEventListener("click", function(){
         const typecard = card.getAttribute("id");
         modalOverlay.classList.add("active");
-        modal.classList.add(typecard)
+        modal.classList.add(typecard);
+        modalOverlay.querySelector("iframe").src=`${typecard}.html`;
     });
 });
 
@@ -32,6 +33,7 @@ cards.forEach(card => {
 document.querySelector('.close-modal-overlay').addEventListener("click", function() {
     modalOverlay.classList.remove("active");
     modal.classList.remove("maximize");
+    
 });
 
 document.querySelector(".max-modal").addEventListener("click", function() {
