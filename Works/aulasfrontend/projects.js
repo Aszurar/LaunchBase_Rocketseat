@@ -1,5 +1,5 @@
 const cardOverlay = document.querySelector('.card-project-overlay');
-const cardsProjects = document.querySelectorAll('.card-project');
+const cardsProjects = document.querySelectorAll('.image-project');
 const cardModal = document.querySelector('.card-project-modal');
 
 //tentativa frustrada de criar um elemento html via javascript

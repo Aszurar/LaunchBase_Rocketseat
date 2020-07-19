@@ -38,6 +38,7 @@ body {
 .card {
   text-decoration: none;
   display: flex;
+  cursor: pointer;
 }
 
 .card__image-container {

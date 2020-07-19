@@ -22,25 +22,29 @@ body h1{
 .card-project {
     background-color: var(--color-dark-light);
     border-radius: 15px;
-    cursor: pointer;
     border: 3px solid var(--color-black);
 }
   
 .card-project:hover {
     border: 3px solid var(--color-bluebold);
-    transition: 750ms;
+    transition: 800ms;
 }
-  
+ 
+.card-project a{
+    text-decoration: none;
+}
 .image-project img{
     width: 100%;
     border-radius: 10px;
     height: 200px;
+    cursor: pointer;
   
 }
 
 .card-project__technologies{
     text-align: center;
     font-size: 28px;
+    margin-top: 15px;
 }
 
 .card-project__technologies i{
@@ -51,8 +55,28 @@ body h1{
 .card-project__content{
     padding: 24px;
     font-weight: bold;
+    text-align: center;
 }
-  
+ 
+
+.card-project__content{
+    color: var(--color-bluebold);
+    background-color: var(--color-black);
+    border-top: 3px solid var(--color-bluebold);
+    border-bottom: 3px solid var(--color-bluebold);
+    height: 50px;
+    cursor: pointer;
+
+
+}
+.card-project__content:hover{
+    border-top: 3px solid var(--color-black);
+    border-bottom: 3px solid var(--color-black);
+    color: var(--color-black);
+    background-color: var(--color-bluebold);
+    transition: 800ms;
+}
+
 .card-project__info{
     display: grid;
     grid-template-columns: 1fr 1fr;
