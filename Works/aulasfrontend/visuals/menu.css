@@ -1,0 +1,278 @@
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap";
+:root {
+  --color-blue-transparent: #7289dab9;
+  --color-dark-light: #23272a;
+  --color-dark-light-transparent: #23272acc;
+  --color-white: white;
+  --color-transparent: #e9ecf04b;
+  --color-bluebold: #7289da;
+  --color-black: #000000;
+  --color-gray: gray;
+  --color-orange: rgb(253, 149, 31);
+  --color-bluepast: #99aab5;
+}
+
+* {
+  /*selecionando todos blocos do html e zerando propriedade padrões do navegador*/
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 1px solid #000000;
+  background: var(--color-bluebold); /*(preto com tranparência*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: var(--color-white);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.links a {
+  color: var(--color-white);
+  font-size: 20px;
+  line-height: 30px; /*ajustar a altura do texto, no caso dando um espaçamento pela altura*/
+  margin: 0 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  /*{ hover é para adicionar efeitos no texto como transições de cores ou imagens/botões */
+  color: var(--color-black);
+  border-bottom: 3px solid var(--color-black);
+  transition: 150ms linear 0s;
+}
+
+.socials {
+  border-left: 1px solid var(--color-black);
+  margin: 0 20px;
+  padding: 0 36px;
+}
+
+.discord {
+  cursor: pointer;
+}
+
+.xbox {
+  cursor: pointer;
+}
+
+.socials a {
+  text-decoration: none;
+  height: 100%;
+  width: auto;
+  margin: 0px 0px 0px 15px;
+  color: var(--color-white);
+}
+
+.socials a:hover {
+  color: var(--color-black);
+  transition: 800ms;
+}
+
+.discord-overlay {
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--color-blue-transparent);
+}
+
+.modal_discord {
+  width: 37%;
+  height: 160px;
+  margin: 5vh auto;
+  position: relative;
+  border-radius: 10px;
+  background-color: var(--color-black);
+  border: 2px solid var(--color-bluepast);
+}
+
+.discord-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_discord .close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  border-radius: 20%;
+}
+
+.modal_discord .close-modal:hover {
+  background-color: var(--color-white);
+  transition: 750ms;
+  border-radius: 20%;
+  color: var(--color-black);
+}
+
+.contant_discord {
+  display: flex;
+  width: 92%;
+  height: 100%;
+}
+
+.contant_discord .image {
+  width: 200px;
+  height: 100%;
+}
+
+.contant_discord .image img {
+  margin: 15px 15px;
+  border-radius: 50%;
+  width: 70%;
+  height: 125px;
+  border: 2px solid var(--color-white);
+}
+
+.contant_discord .text h1 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.contant_discord .text p {
+  margin-top: 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contant_discord .logo {
+  width: 40%;
+  height: 90%;
+}
+
+.contant_discord .logo img {
+  margin: 40px 0px 40px 40px;
+}
+
+.contant_discord .logo img:hover {
+  background-color: var(--color-bluebold);
+  border-radius: 15px;
+  transition: 800ms;
+}
+
+.xbox-overlay {
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--color-blue-transparent);
+}
+
+.modal_xbox {
+  width: 37%;
+  height: 160px;
+  margin: 5vh auto;
+  position: relative;
+  border-radius: 10px;
+  background-color: var(--color-bluebold);
+  border: 2px solid var(--color-white);
+}
+
+.xbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_xbox .close-modal-xbox {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  border: 2px solid var(--color-black);
+  border-radius: 20%;
+}
+
+.modal_xbox .close-modal-xbox:hover {
+  background-color: var(--color-transparent);
+  transition: 750ms;
+  border-radius: 20%;
+  color: var(--color-black);
+}
+
+.contant_xbox {
+  display: flex;
+  width: 92%;
+  height: 100%;
+}
+
+.contant_xbox .image {
+  width: 200px;
+  height: 100%;
+}
+
+.contant_xbox .image img {
+  margin: 15px 15px;
+  border-radius: 50%;
+  width: 70%;
+  height: 125px;
+  border: 2px solid var(--color-white);
+}
+
+.contant_xbox .text h1 {
+  font-size: 18px;
+}
+
+.contant_xbox .text .gamerscore {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.gamerscore img {
+  height: 20px;
+}
+
+.gamerscore p {
+  margin-left: 5px;
+}
+
+.gamerscore h1 {
+  margin-right: 10px;
+}
+
+.local {
+  margin-top: 8px;
+}
+
+.text .xbox1 img {
+  margin-top: 7px;
+  height: 40px;
+}
+
+.contant_xbox .text p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contant_xbox .logo {
+  width: 40%;
+  height: 90%;
+  margin: 40px 0px 0px 40px;
+}
+
+.contant_xbox .logo img:hover {
+  background-color: var(--color-black);
+  border-radius: 10px;
+  transition: 800ms;
+}

@@ -9,13 +9,13 @@ const cards = document.querySelectorAll('.card'); //pegando todos os 6 cards de 
 //no for abaixo estamos pegando cada card do vetor de cards, ouvindo o evento de click, quando clicamos neles e assim 
 //adicionando a nova classe, active no modal-overlay
 for (const card of cards) {
-    card.addEventListener("click", function(){
+    card.addEventListener("click", function () {
         const videoId = card.getAttribute("id");
         modalOverlay.classList.add('active');
-        modalOverlay.querySelector("iframe").src=`https://www.youtube.com/embed/${videoId}`;
+        modalOverlay.querySelector("iframe").src = `https://www.youtube.com/embed/${videoId}`;
     });
 }
 
-document.querySelector('.close-modal').addEventListener("click", function(){
+document.querySelector('.close-modal').addEventListener("click", function () {
     modalOverlay.classList.remove('active');
 });

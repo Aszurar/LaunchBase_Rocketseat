@@ -1,0 +1,206 @@
+body {
+  color: var(--color-white);
+}
+
+/*==========CARDS==========*/
+body h1 {
+  text-align: center;
+  overflow: visible;
+}
+
+.cards-certificates {
+  max-width: 1500px;
+  margin: 2% auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card-certificate {
+  background-color: var(--color-dark-light);
+  border-radius: 15px;
+  border: 3px solid var(--color-black);
+}
+
+.card-certificate:hover {
+  border: 3px solid var(--color-white);
+  transition: 750ms;
+}
+
+.image-certificate img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.card-certificate__technologies {
+  text-align: center;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.card-certificate__technologies i {
+  margin: 0 8px;
+}
+
+.card-certificate__technologies img {
+  height: 28px;
+  margin: 0 8px;
+}
+
+.card-certificate__info,
+.card-certificate__content {
+  padding: 24px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+}
+
+.card-certificate__content {
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-top: 3px solid var(--color-white);
+  border-bottom: 3px solid var(--color-white);
+  height: 80px;
+  cursor: pointer;
+}
+
+.card-certificate__content:hover {
+  border-top: 3px solid var(--color-black);
+  border-bottom: 3px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  transition: 800ms;
+}
+
+.card-certificate__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-certificate__type {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  filter: brightness(90%);
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.modal.maximize .cards-certificates {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 1500px;
+}
+
+/* =====MODAL===== */
+.card-certificate-overlay {
+  background-color: var(--color-dark-light-transparent);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-certificate-modal {
+  background-color: var(--color-white);
+  width: 62.9%;
+  height: 90%;
+  margin: 5vh auto;
+  position: relative; /*permitindo em conjunto com o position absolute do close-modal o ícone de ser posto em qualquer região da tela*/
+  border-radius: 15px;
+  color: var(--color-black);
+}
+
+/* =====MODAL.Active===== */
+.card-certificate-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content #pageIframe {
+  text-align: center;
+  width: 100%;
+  position: absolute; /*criando um novo contexto para que o vídeo ocupe toda tela branca*/
+  top: 5%;
+  height: 90%;
+}
+
+.card-certificate-modal .close-modal {
+  color: var(--color-black);
+  position: absolute; /*Configurando o ícone x de fechar podendo se posicionado em qualquer parte da região do modal(caixa branca)
+    isso é feito a partir do positition relative declarado no modal*/
+  right: 8px; /*configurando o close para a direia 8 px do limite da caixa branca */
+  top: 8px; /*e 8 px do topo */
+  cursor: pointer;
+}
+
+.card-certificate-modal .max-modal {
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+}
+
+.card-certificate-modal .min-modal {
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.card-certificate-modal .close-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+.card-certificate-modal .max-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+.card-certificate-modal .min-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+/* modal-max */
+.card-certificate-modal.maximize {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.card-certificate-modal.maximize .modal-content iframe {
+  height: 100%;
+  max-width: 62.5%;
+  margin: auto 19%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-black);
+  border-radius: 15px;
+}
+
+.card-certificate-modal.maximize .max-modal {
+  visibility: hidden;
+  border-radius: 0;
+  border: 0;
+}
+
+.card-certificate-modal.maximize .min-modal {
+  visibility: visible;
+}

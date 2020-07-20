@@ -3,10 +3,11 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Portfólio</title>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../visuals/menu.css">
+    <link rel="stylesheet" href="../visuals/portfolio.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -16,6 +17,7 @@
 
     <header>
         <div class="links">
+
             <div>
                 <a href="index.html">Sobre</a>
             </div>
@@ -56,7 +58,7 @@
                 <i style='font-size:24px' class='fab'>&#xf1b6;</i>
             </a>
 
-            <a href="https://account.xbox.com/pt-BR/Profile?xr=mebarnav" target="_blank">
+            <a class="xbox">
                 <i style='font-size:24px' class='fab'>&#xf412;</i>
             </a>
 
@@ -71,6 +73,7 @@
             </a>
 
             <div class="contant_discord">
+
                 <div class="image">
                     <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
                         alt="Lucas de Lima">
@@ -85,20 +88,72 @@
 
                 <div class="logo">
                     <a href="https://discord.com/new" target="_blank">
-                        <img src="/assets/discord.svg" alt="discord">
+                        <img src="../assets/discord.svg" alt="discord">
                     </a>
                 </div>
+
             </div>
 
         </div>
     </div>
 
+
+    <div class="xbox-overlay">
+        <div class="modal_xbox">
+
+            <a class="close-modal-xbox">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="contant_xbox">
+                <div class="image">
+                    <img src="https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RWwcxuUQ9WVT6xh5XaeeZD02wEfGZeuD.XMoGFVYkwHDqjXslwJkYzyJc5xJOgMs7uML8RrT3MIFN_ZqAZwPbWTz6ubwuzGuWfesXot94uBtbRerz1_58oKkoqtBAlurqOtVI54FZJEsNEdnuMqlo1PM-&format=jpg&h=253&w=253"
+                        alt="Lucas de Lima">
+                </div>
+
+                <div class="text">
+
+                    <div class="gamerscore">
+                        <h1>Aszurar</h1>
+                        <img src="../assets/gamerscore.svg" alt="gamescore">
+                        <p>12.868</p>
+                    </div>
+
+                    <p>Lucas Lima</p>
+
+                    <div class="local">
+                        <div>
+                            <p>Localidade</p>
+                            <h1>João Pessoa</h1>
+                        </div>
+
+                        <div class="xbox1">
+                            <img src="../assets/live1.png" alt="1 ano de livegold">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="logo">
+                    <a href="https://xbox.com/pt-BR" target="_blank">
+                        <img src="../assets/xbox.svg" alt="xbox">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
     <div class="grid">
         <div class="main">
             <selection class="cards">
 
-                <div class="card" id="projects" frameId="projects">
+                <div class="card" id="projects">
                     <div class="projects">
+
                         <div class="card__image-container">
                             <span>01</span>
 
@@ -108,8 +163,10 @@
                                     <h1>Projetos</h1>
                                 </div>
 
-                                <img src="assets/projects.svg" alt="">
+                                <img src="../assets/projects.svg" alt="projetos">
+
                             </div>
+
                         </div>
 
                         <div class="card__info">
@@ -132,8 +189,10 @@
                     </div>
                 </div>
 
-                <div class="card" id="certificates" frameId="certificates">
+
+                <div class="card" id="certificates">
                     <div class="certificates">
+
                         <div class="card__image-container">
                             <span>02</span>
 
@@ -143,8 +202,10 @@
                                     <h1>Certificados</h1>
                                 </div>
 
-                                <img src="assets/certificates.svg" alt="">
+                                <img src="../assets/certificates.svg" alt="certificados">
+
                             </div>
+
                         </div>
 
                         <div class="card__info">
@@ -152,9 +213,11 @@
                         </div>
 
                         <div class="curses">
-                            <img id="eldorado" src="assets/Logo-Eldorado-PB-60-min.svg" alt="">
-                            <img id="ufpb" src="assets/ufpb.svg" alt="">
+                            <img id="eldorado" src="../assets/Logo-Eldorado-PB-60-min.svg"
+                                alt="Instituto de Pesquisas Eldorado">
+                            <img id="ufpb" src="../assets/ufpb.svg" alt="Universidade Federal da Paraíba">
                         </div>
+
                         <div class="card__about">
                             <p>Quantidade</p>
                             <p class="card__level">3</p>
@@ -165,7 +228,6 @@
 
             </selection>
         </div>
-
     </div>
 
 
@@ -184,14 +246,12 @@
                 <i class="material-icons">close</i>
             </a>
 
-            <!-- <div class="modal-contant-projects"> -->
-                <iframe src="" frameborder="0"></iframe>
-            <!-- </div> -->
+            <iframe src="" frameborder="0"></iframe>
 
         </div>
     </div>
 
-    <script src="portfolio.js"></script>
+    <script src="../scripts/portfolio.js"></script>
 
 </body>
 
