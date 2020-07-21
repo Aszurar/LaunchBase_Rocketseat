@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Lucas de Lima</title>
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../visuals/menu.css">
-    <link rel="stylesheet" href="../visuals/styles.css">
+    <title>Portfólio</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./visuals/menu.css">
+    <link rel="stylesheet" href="./visuals/portfolio.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -18,13 +18,14 @@
     <header>
         <div class="links">
 
-            <div class="here">
+            <div>
                 <a href="index.html">Sobre</a>
             </div>
 
-            <div>
+            <div class="here">
                 <a href="portfolio.html">Portfólio</a>
             </div>
+            <!-- <a href="classes.html">Aulas</a> -->
         </div>
 
         <div class="socials">
@@ -87,7 +88,7 @@
 
                 <div class="logo">
                     <a href="https://discord.com/new" target="_blank">
-                        <img src="../assets/discord.svg" alt="discord">
+                        <img src="./assets/discord.svg" alt="discord">
                     </a>
                 </div>
 
@@ -105,7 +106,6 @@
             </a>
 
             <div class="contant_xbox">
-
                 <div class="image">
                     <img src="https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RWwcxuUQ9WVT6xh5XaeeZD02wEfGZeuD.XMoGFVYkwHDqjXslwJkYzyJc5xJOgMs7uML8RrT3MIFN_ZqAZwPbWTz6ubwuzGuWfesXot94uBtbRerz1_58oKkoqtBAlurqOtVI54FZJEsNEdnuMqlo1PM-&format=jpg&h=253&w=253"
                         alt="Lucas de Lima">
@@ -115,21 +115,20 @@
 
                     <div class="gamerscore">
                         <h1>Aszurar</h1>
-                        <img src="../assets/gamerscore.svg" alt="gamescore">
+                        <img src="./assets/gamerscore.svg" alt="gamescore">
                         <p>12.868</p>
                     </div>
 
                     <p>Lucas Lima</p>
 
                     <div class="local">
-
                         <div>
                             <p>Localidade</p>
                             <h1>João Pessoa</h1>
                         </div>
 
                         <div class="xbox1">
-                            <img src="../assets/live1.png" alt="1 ano de livegold">
+                            <img src="./assets/live1.png" alt="1 ano de livegold">
                         </div>
 
                     </div>
@@ -138,7 +137,7 @@
 
                 <div class="logo">
                     <a href="https://xbox.com/pt-BR" target="_blank">
-                        <img src="../assets/xbox.svg" alt="xbox">
+                        <img src="./assets/xbox.svg" alt="xbox">
                     </a>
                 </div>
 
@@ -147,47 +146,93 @@
         </div>
     </div>
 
-    <div id="wrapper">
-        <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
-            alt="Lucas de Lima">
-        <h1>Lucas de Lima</h1>
-        <!-- <h2>Estudante de Engenharia da Computação - <a href="https://www.ufpb.br/"target="_blank" >UFPB</a> </h1> -->
-        <!-- <h2>Estudante de Desenvolvimento Web - <a href="https://rocketseat.com.br" target="_blanck" >Rocketseat</a> </h2> -->
-        <p>Estudando programação com foco em Javascript, Python, HTML e CSS com o objetivo de se tornar um desenvolvedor
-            fullstack</p>
+
+    <div class="grid">
+        <div class="main">
+            <selection class="cards">
+
+                <div class="card" id="projects">
+                    <div class="projects">
+
+                        <div class="card__image-container">
+                            <span>01</span>
+
+                            <div class="img__card">
+
+                                <div class="tittle">
+                                    <h1>Projetos</h1>
+                                </div>
+
+                                <img src="./assets/projects.svg" alt="projetos">
+
+                            </div>
+
+                        </div>
+
+                        <div class="card__info">
+                            <p>Projetos, exercícios e práticas Web desenvolvidos com o que há de melhor no mercado!</p>
+                        </div>
+
+                        <div class="technologies">
+                            <i class='fab'>&#xf38b;</i>
+                            <i class='fab'>&#xf13b;</i>
+                            <i class='fab'>&#xf3b8;</i>
+                            <i class='fab'>&#xf3d3;</i>
+                            <i class='fab'>&#xf41b;</i>
+                        </div>
+
+                        <div class="card__about">
+                            <p>Quantidade</p>
+                            <p class="card__level">3</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="card" id="certificates">
+                    <div class="certificates">
+
+                        <div class="card__image-container">
+                            <span>02</span>
+
+                            <div class="img__card">
+
+                                <div class="tittle">
+                                    <h1>Certificados</h1>
+                                </div>
+
+                                <img src="./assets/certificates.svg" alt="certificados">
+
+                            </div>
+
+                        </div>
+
+                        <div class="card__info">
+                            <p>Certificados e Cursos concluídos com sucesso.</p>
+                        </div>
+
+                        <div class="curses">
+                            <img id="eldorado" src="./assets/Logo-Eldorado-PB-60-min.svg"
+                                alt="Instituto de Pesquisas Eldorado">
+                            <img id="ufpb" src="./assets/ufpb.svg" alt="Universidade Federal da Paraíba">
+                        </div>
+
+                        <div class="card__about">
+                            <p>Quantidade</p>
+                            <p class="card__level">3</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </selection>
+        </div>
     </div>
 
-    <form action="" class="student">
-        <fieldset>
 
-            <legend>
-                <h2>Estudante</h2>
-            </legend>
-
-            <div class="items-grid">
-
-                <li data-id="UFPB">
-                    <a href="https://www.ufpb.br/" target="_blank">
-                        <img src="../assets/ufpb.svg" alt="Universidade Federal da Paraíba">
-                        <span>Engenharia da Computação</span>
-                    </a>
-                </li>
-
-                <li class="student-card" data-id="Rocketseat">
-                    <a class="text-rocketseat">
-                        <img src="../assets/rocketseat.svg" alt="Rocketseat">
-                        <span>Rocketseat</span>
-                        <p>LaunchBase</p>
-                    </a>
-                </li>
-
-            </div>
-
-        </fieldset>
-    </form>
-
-    <div class="student-overlay">
-        <div class="modal-student">
+    <div class="modal-overlay">
+        <div class="modal">
 
             <a class="max-modal">
                 <i class="material-icons">fullscreen</i>
@@ -197,20 +242,16 @@
                 <i class="material-icons">fullscreen_exit</i>
             </a>
 
-            <a class="close-modal">
+            <a class="close-modal-overlay">
                 <i class="material-icons">close</i>
             </a>
 
-
-            <div class="content-student">
-                <h1 class="title">LaunchBase - Rocketseat</h1>
-                <iframe src="https://www.rocketseat.com.br/launchbase" frameborder="0"></iframe>
-            </div>
+            <iframe src="" frameborder="0"></iframe>
 
         </div>
     </div>
 
-    <script src="../scripts/index.js"></script>
+    <script src="./scripts/portfolio.js"></script>
 
 </body>
 
