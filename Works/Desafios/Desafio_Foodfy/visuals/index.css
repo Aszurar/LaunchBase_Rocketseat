@@ -48,4 +48,41 @@ body {
 .table{
     margin-left: 25.6%;
     margin-top: 2.5%;
+    margin-right: 25.6%;
+}
+
+.cards{
+    margin-top: 1.8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+}
+
+.image-card{
+    margin: 0;
+}
+
+.image-card img{
+    border-radius: 15px;
+    width: 300px;
+    height: 140px;
+}
+
+.content-card{
+    margin-top: 6%;
+    margin-bottom: 7%;
+
+}
+
+.content-card h1{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.content-card p{
+    color: var(--color-gray);
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0.3%;
 }
