@@ -58,6 +58,10 @@ body {
     gap: 2%;
 }
 
+.card{
+    cursor: pointer;
+}
+
 .image-card{
     margin: 0;
 }
@@ -86,3 +90,5 @@ body {
     line-height: 16px;
     margin-top: 0.3%;
 }
+
+
