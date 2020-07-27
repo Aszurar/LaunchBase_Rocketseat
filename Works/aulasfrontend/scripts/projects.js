@@ -5,8 +5,12 @@ const cardModal = document.querySelector('.card-project-modal');
 for (const card of cardsProjects) {
     card.addEventListener("click", function () {
         const videoId = card.getAttribute("id");
+        const titlecard = card.getAttribute("title");
+        console.log(titlecard);
         cardOverlay.classList.add('active');
         cardOverlay.querySelector("iframe").src = `https://www.youtube.com/embed/${videoId}`;
+        
+        cardModal.querySelector("h1").innerText = titlecard;
     });
 }
 

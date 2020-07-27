@@ -123,7 +123,7 @@ iframe {
   width: 95%;
   height: 90%;
   position: absolute; /*criando um novo contexto para que o vídeo ocupe toda tela branca*/
-  top: 5%;
+  top: 6%;
   margin-left: 40px;
   border-radius: 15px;
 }
@@ -184,7 +184,8 @@ iframe {
 .card-project-modal.maximize iframe {
   width: 99%;
   margin-left: 10px;
-  height: 95%;
+  top: 5%;
+  height: 94.5%;
 }
 
 .card-project-modal.maximize .max-modal {
