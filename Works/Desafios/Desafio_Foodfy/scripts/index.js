@@ -9,21 +9,13 @@ cards.forEach(card => {
         const authormodal = card.querySelector("p").textContent;
 
         modalOverlay.classList.add("active");
-        
+
         modalOverlay.querySelector("img").src = `./assets/${imgcard}.png`;
         modal.querySelector("h1").innerText = titlemodal;
         modal.querySelector("p").innerText = authormodal;
-        
+
     });
 });
-
-// cards.forEach(card => {
-//     const typecard = card.getAttribute("id");
-
-//     document.querySelector('.close-modal-overlay').addEventListener("click", function () {
-//         modal.classList.remove(typecard);
-//     });
-// });
 
 document.querySelector('.close-modal-overlay').addEventListener("click", function () {
     modalOverlay.classList.remove("active");

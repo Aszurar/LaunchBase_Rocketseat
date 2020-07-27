@@ -22,6 +22,8 @@
 body {
   font-family: "Roboto", sans-serif;
   color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 header {
@@ -67,10 +69,22 @@ header div {
   border-left: 1px solid var(--color-orange);
   margin: 0 20px;
   padding: 0 36px;
+  text-decoration: none;
 }
 
-.socials a img {
+.socials a {
+  text-decoration: none;
+}
+
+.socials a i {
   height: 100%;
   width: auto;
   margin: 0px 0px 0px 20px;
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+.socials a i:hover {
+  color: var(--color-orange);
+  transition: 150ms linear 0s;
 }
