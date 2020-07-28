@@ -1,0 +1,23 @@
+Iniciando servidor:
+0. criar uma pasta com um server.js
+1. npm init -y
+2. npm install express
+
+
+3. dps de instalar acima e configurar incialmente o servidor assim:
+
+const express = require('express'); 
+const server = express();  o express
+
+server.get("/", function(req, res){ 
+    return res.send("Hi");
+});
+
+server.listen(5000, function() {
+    console.log("Server is runnning");
+});
+
+Instale outra dependência:
+npm install -D nodemon
+
+ela ajuda a reiniciar o servidor de forma mais prática
