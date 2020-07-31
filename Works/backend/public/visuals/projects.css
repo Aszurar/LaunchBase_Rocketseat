@@ -1,0 +1,199 @@
+body {
+  color: var(--color-bluebold);
+}
+
+/*==========CARDS==========*/
+body h1 {
+  text-align: center;
+  overflow: visible;
+}
+
+.cards-projects {
+  max-width: 1500px;
+  margin: 2% auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card-project {
+  background-color: var(--color-dark-light);
+  border-radius: 15px;
+  border: 3px solid var(--color-black);
+}
+
+.card-project:hover {
+  border: 3px solid var(--color-bluebold);
+  transition: 800ms;
+}
+
+.card-project a {
+  text-decoration: none;
+}
+
+.image-project img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.card-project__technologies {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 15px;
+}
+
+.card-project__technologies i {
+  margin: 0 8px;
+}
+
+.card-project__info,
+.card-project__content {
+  padding: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-project__content {
+  color: var(--color-bluebold);
+  background-color: var(--color-black);
+  border-top: 3px solid var(--color-bluebold);
+  border-bottom: 3px solid var(--color-bluebold);
+  height: 50px;
+  cursor: pointer;
+}
+
+.card-project__content:hover {
+  border-top: 3px solid var(--color-black);
+  border-bottom: 3px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-bluebold);
+  transition: 800ms;
+}
+
+.card-project__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-project__type {
+  background-color: var(--color-bluebold);
+  color: var(--color-black);
+  filter: brightness(90%);
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.modal.maximize .cards-projects {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 1500px;
+}
+
+/* =====MODAL===== */
+.card-project-overlay {
+  background-color: var(--color-dark-light-transparent);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-project-modal {
+  background-color: var(--color-bluebold);
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  position: relative; /*permitindo em conjunto com o position absolute do close-modal o ícone de ser posto em qualquer região da tela*/
+  border-radius: 15px;
+  color: var(--color-black);
+}
+
+/* =====MODAL.Active===== */
+.card-project-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+iframe {
+  width: 95%;
+  height: 90%;
+  position: absolute; /*criando um novo contexto para que o vídeo ocupe toda tela branca*/
+  top: 6%;
+  margin-left: 40px;
+  border-radius: 15px;
+}
+
+.card-project-modal .close-modal {
+  color: var(--color-black);
+  position: absolute; /*Configurando o ícone x de fechar podendo se posicionado em qualquer parte da região do modal(caixa branca)
+    isso é feito a partir do positition relative declarado no modal*/
+  right: 8px; /*configurando o close para a direia 8 px do limite da caixa branca */
+  top: 8px; /*e 8 px do topo */
+  cursor: pointer;
+}
+
+.card-project-modal .max-modal {
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+}
+
+.card-project-modal .min-modal {
+  position: absolute;
+  top: 8px;
+  right: 32px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.card-project-modal .close-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+.card-project-modal .max-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+.card-project-modal .min-modal:hover {
+  background-color: var(--color-transparent);
+  transition: 300ms;
+  border-radius: 20%;
+}
+
+/* modal-max */
+.card-project-modal.maximize {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  margin-bottom: 40%;
+}
+
+.card-project-modal.maximize iframe {
+  width: 99%;
+  margin-left: 10px;
+  top: 5%;
+  height: 94.5%;
+}
+
+.card-project-modal.maximize .max-modal {
+  visibility: hidden;
+  border-radius: 0;
+  border: 0;
+}
+
+.card-project-modal.maximize .min-modal {
+  visibility: visible;
+}

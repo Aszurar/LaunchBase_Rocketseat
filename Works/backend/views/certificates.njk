@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/visuals/menu.css">
+    <link rel="stylesheet" href="/visuals/certificates.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+
+    <h1>Certificados</h1>
+
+    <section class="cards-certificates">
+
+        <div class="card-certificate" id="1">
+
+            <div class="image-certificate">
+                <img src="/assets/certi1.png" alt="1º certificado">
+            </div>
+
+            <div class="card-certificate__content">
+                <p>Conceitos e Fundamentos: Lógica de Programação, Orientação a Objetos, Swift, JavaScript e RESTful API
+                    | Instituto de Pesquisas Eldorado.</p>
+            </div>
+
+            <div class="card-certificate__technologies">
+                <i class='fab'>&#xf3b8;</i>
+                <img src="/assets/swift2.svg" alt="swift">
+            </div>
+
+            <div class="card-certificate__info">
+                <p>65 horas</p>
+                <p class="card-certificate__type">HackaTruck MakerSpace</p>
+            </div>
+
+        </div>
+
+
+        <div class="card-certificate" id="2">
+
+            <div class="image-certificate">
+                <img src="/assets/certi2.png" alt="2º certificado">
+            </div>
+
+            <div class="card-certificate__content">
+                <p>Prática de Cloud Services | Instituto de Pesquisas Eldorado.</p>
+            </div>
+
+            <div class="card-certificate__technologies">
+                <i class='fas'>&#xf0c2;</i>
+            </div>
+
+            <div class="card-certificate__info">
+                <p>40 horas</p>
+                <p class="card-certificate__type">HackaTruck MakerSpace</p>
+            </div>
+
+        </div>
+
+
+        <div class="card-certificate" id="3">
+
+            <div class="image-certificate">
+                <img src="/assets/certi3.png" alt="3º certificado">
+            </div>
+
+            <div class="card-certificate__content">
+                <p>Revisando Números Complexos | Universidade Federal da Paraíba.</p>
+            </div>
+
+            <div class="card-certificate__technologies">
+                <i class='fas'>&#xf044;</i>
+            </div>
+
+            <div class="card-certificate__info">
+                <p>6 horas</p>
+                <p class="card-certificate__type">UFPB</p>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- <iframe src="" frameborder="0"></iframe> -->
+
+    <div class="card-certificate-overlay">
+        <div class="card-certificate-modal">
+
+            <a class="max-modal">
+                <i class="material-icons">fullscreen</i>
+            </a>
+
+            <a class="min-modal">
+                <i class="material-icons">fullscreen_exit</i>
+            </a>
+
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="modal-content">
+                <iframe src="" frameborder="0" id="pageIframe"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/scripts/certificates.js"></script>
+</body>
+
+</html>

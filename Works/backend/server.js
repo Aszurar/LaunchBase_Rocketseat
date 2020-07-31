@@ -6,16 +6,29 @@ const nunjucks = require('nunjucks');//tamplate engine que é utilizado para ter
 const server = express(); //executando o express
 
 //configurando o servidor para que consiga exibir arquivos de estilos estáticos
-server.use(express.static('public'));
+server.use(express.static("public"));
 
 //configurando o nunjucks para renderizar uma página html.
-server.set("view engine", "html");
+server.set("view engine", "njk");
 nunjucks.configure("views", {
     express: server
 });
 
 server.get("/", function(req, res){ //adicionando a rota do get, ouvindo uma requisição e respondendo ao cliente.
     return res.render("index"); //retornando o index como página inicial
+});
+
+
+server.get("/portfolio", function(req, res){ //adicionando a rota do get, ouvindo uma requisição e respondendo ao cliente.
+    return res.render("portfolio"); //retornando o index como página inicial
+});
+
+server.get("/projects", function(req, res){ //adicionando a rota do get, ouvindo uma requisição e respondendo ao cliente.
+    return res.render("projects"); //retornando o index como página inicial
+});
+
+server.get("/certificates", function(req, res){ //adicionando a rota do get, ouvindo uma requisição e respondendo ao cliente.
+    return res.render("certificates"); //retornando o index como página inicial
 });
 
 server.listen(5000, function() {

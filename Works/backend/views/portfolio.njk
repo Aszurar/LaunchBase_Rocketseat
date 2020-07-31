@@ -1,0 +1,131 @@
+{% extends "layout.njk" %} 
+<!-- Importando do layout html o menu -->
+
+
+    <!-- Bloco de título e visual que será posto no layout caso seja clicado em Portfólio -->
+{% block head %}
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="/visuals/portfolio.css">
+
+{% endblock %}
+
+
+{% block tabs %}
+    <div>
+        <a href="/">Sobre</a>
+    </div>
+
+    <div class="here">
+{% endblock %} 
+
+
+<!-- bloco de conteudo indo pro layout, e caso seja clicado em Portfólio, esse conteúdo será resgatado -->
+{% block content %} 
+
+    <div class="grid">
+        <div class="main">
+            <selection class="cards">
+
+                <div class="card" id="projects">
+                    <div class="projects">
+
+                        <div class="card__image-container">
+                            <span>01</span>
+
+                            <div class="img__card">
+
+                                <div class="tittle">
+                                    <h1>Projetos</h1>
+                                </div>
+
+                                <img src="/assets/projects.svg" alt="projetos">
+
+                            </div>
+
+                        </div>
+
+                        <div class="card__info">
+                            <p>Projetos, exercícios e práticas Web desenvolvidos com o que há de melhor no mercado!</p>
+                        </div>
+
+                        <div class="technologies">
+                            <i class='fab'>&#xf38b;</i>
+                            <i class='fab'>&#xf13b;</i>
+                            <i class='fab'>&#xf3b8;</i>
+                            <i class='fab'>&#xf3d3;</i>
+                            <i class='fab'>&#xf41b;</i>
+                        </div>
+
+                        <div class="card__about">
+                            <p>Quantidade</p>
+                            <p class="card__level">4</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="card" id="certificates">
+                    <div class="certificates">
+
+                        <div class="card__image-container">
+                            <span>02</span>
+
+                            <div class="img__card">
+
+                                <div class="tittle">
+                                    <h1>Certificados</h1>
+                                </div>
+
+                                <img src="/assets/certificates.svg" alt="certificados">
+
+                            </div>
+
+                        </div>
+
+                        <div class="card__info">
+                            <p>Certificados e Cursos concluídos com sucesso.</p>
+                        </div>
+
+                        <div class="curses">
+                            <img id="eldorado" src="/assets/Logo-Eldorado-PB-60-min.svg"
+                                alt="Instituto de Pesquisas Eldorado">
+                            <img id="ufpb" src="/assets/ufpb.svg" alt="Universidade Federal da Paraíba">
+                        </div>
+
+                        <div class="card__about">
+                            <p>Quantidade</p>
+                            <p class="card__level">3</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </selection>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay">
+        <div class="modal">
+
+            <a class="max-modal">
+                <i class="material-icons">fullscreen</i>
+            </a>
+
+            <a class="min-modal">
+                <i class="material-icons">fullscreen_exit</i>
+            </a>
+
+            <a class="close-modal-overlay">
+                <i class="material-icons">close</i>
+            </a>
+
+            <iframe src="" frameborder="0"></iframe>
+
+        </div>
+    </div>
+
+    <script src="/scripts/portfolio.js"></script>
+
+    {% endblock %}

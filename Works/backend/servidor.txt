@@ -21,3 +21,24 @@ Instale outra dependência:
 npm install -D nodemon
 
 ela ajuda a reiniciar o servidor de forma mais prática
+
+4.
+Após isso configurar o script do arquivo package.json assim:
+ "scripts": {
+    "start": "nodemon server.js"
+  },
+
+5. Após isso configurar o serivdor para arquivos de estilos estáticos e configurar o template engine Nunjucks
+ e por fim retornar ao usuário a página web
+const nunjucks = require('nunjucks');
+
+server.use(express.static("public"));
+
+server.set("view engine", "html");
+nunjucks.configure("views", {
+    express: server
+});
+
+server.get("/", function(req, res){ 
+    return res.render("index");
+});
