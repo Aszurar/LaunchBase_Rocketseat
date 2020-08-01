@@ -1,35 +1,33 @@
+
 <!DOCTYPE html>
 
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/visuals/menu.css">
-    
-    {% block head %} {% endblock %}
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <head>
 
-    <!-- Bloco de título e visual que será substituído caso seja clicado em Portfólio -->
+        <meta charset="UTF-8">
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/visuals/menu.css">
 
+        {% block head %}{% endblock %}
 
-</head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-<body>
+        <!-- Bloco de título e visual que será substituído caso seja clicado em Portfólio -->
+    </head>
 
-    <header>
-         <div class="links">
-        
-            {% block tabs %}
-    
-            {% endblock %} 
-                        <a href="/portfolio">Portfólio</a>
-                    </div>
-                    
-          </div>            
+    <body>
+
+        <header>
+            <div class="links">
+
+                {% block tabs %}{% endblock %}
+                <a href="/portfolio">Portfólio</a>
+            </div>
+
+        </div>
 
         <div class="socials">
 
@@ -78,8 +76,7 @@
             <div class="contant_discord">
 
                 <div class="image">
-                    <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
-                        alt="Lucas de Lima">
+                    <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4" alt="Lucas de Lima">
                 </div>
 
                 <div class="text">
@@ -100,7 +97,6 @@
         </div>
     </div>
 
-
     <div class="xbox-overlay">
         <div class="modal_xbox">
 
@@ -111,8 +107,7 @@
             <div class="contant_xbox">
 
                 <div class="image">
-                    <img src="https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RWwcxuUQ9WVT6xh5XaeeZD02wEfGZeuD.XMoGFVYkwHDqjXslwJkYzyJc5xJOgMs7uML8RrT3MIFN_ZqAZwPbWTz6ubwuzGuWfesXot94uBtbRerz1_58oKkoqtBAlurqOtVI54FZJEsNEdnuMqlo1PM-&format=jpg&h=253&w=253"
-                        alt="Lucas de Lima">
+                    <img src="https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RWwcxuUQ9WVT6xh5XaeeZD02wEfGZeuD.XMoGFVYkwHDqjXslwJkYzyJc5xJOgMs7uML8RrT3MIFN_ZqAZwPbWTz6ubwuzGuWfesXot94uBtbRerz1_58oKkoqtBAlurqOtVI54FZJEsNEdnuMqlo1PM-&format=jpg&h=253&w=253" alt="Lucas de Lima">
                 </div>
 
                 <div class="text">
@@ -151,9 +146,8 @@
         </div>
     </div>
 
-    {% block content %}{% endblock %} 
+    {% block content %}{% endblock %}
     <!-- bloco de conteúdo vindo do about, bloco dinấmico -->
-
 
     <script src="/scripts/index.js"></script>
 
