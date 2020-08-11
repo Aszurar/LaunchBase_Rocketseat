@@ -9,7 +9,8 @@ body {
 
 #wrapper {
   text-align: center;
-  padding: 32px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -53,11 +54,13 @@ body {
 
 form {
   background-color: var(--color-dark);
-  margin: 90px auto;
-  padding: 64px;
-
+  padding: 20px;
+  height: 300px;
   border-radius: 8px;
-  max-width: 730px;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form fieldset {
@@ -65,19 +68,19 @@ form fieldset {
 }
 
 form legend {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
 
   align-items: center;
   justify-content: space-between;
   width: 100%;
 
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .items-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
 
   gap: 16px;
 }
@@ -89,11 +92,10 @@ form legend {
   border: 3px solid var(--color-dark);
   border-radius: 8px;
 
-  min-height: 180px;
+  padding: 32px 12px 8px;
 
-  padding: 32px 24px 16px;
-
-  /* width: 165; */
+  width: 180px;
+  height: 180px;
 
   display: flex;
   flex-direction: column;
@@ -105,18 +107,12 @@ form legend {
   cursor: pointer;
 }
 
-.items-grid li a {
-  text-decoration: none;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.items-grid li a img {
+.items-grid li img {
   border-radius: 20%;
+  height: 120px;
 }
 
-.items-grid li a span {
+.items-grid li span {
   margin-top: 12px;
   font-weight: bold;
   text-align: center;
@@ -124,8 +120,7 @@ form legend {
 }
 
 .technologies {
-  width: 90%;
-  max-width: 1100px;
+  width: 100%;
 
   margin: 0 auto;
 }
@@ -136,6 +131,6 @@ form legend {
   transition: 800ms;
 }
 
-.items-grid li a span {
+.items-grid li span {
   pointer-events: none;
 }

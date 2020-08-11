@@ -1,20 +1,12 @@
-<!DOCTYPE html>
+{% extends "layoutcards.njk" %} 
 
-<html>
+{% block style %}
+    <link rel="stylesheet" href="/visuals/projects.css">
+{% endblock %}
+        
 
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="/visuals/menu.css">
-        <link rel="stylesheet" href="/visuals/projects.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    </head>
-
-    <body>
-
-        <h1>Projetos</h1>
+{% block content %}
+            <h1>Projetos</h1>
 
         <section class="cards-projects">
             {% for item in items %}
@@ -72,6 +64,5 @@
         </div>
 
         <script src="/scripts/projects.js"></script>
-    </body>
 
-</html>
+{% endblock %}

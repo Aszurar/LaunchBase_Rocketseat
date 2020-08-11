@@ -1,13 +1,4 @@
 {% extends "layout.njk" %} 
-<!-- Importando do layout html o menu -->
-
-{% block head %} 
-    <title>Lucas de Lima</title>
-    <link rel="stylesheet" href="/visuals/styles.css">
-
-{% endblock %}
-
-
 
 {% block tabs %}
     <div class= here>
@@ -20,36 +11,33 @@
 {% block content %}
 
     <div id="wrapper">
-        <img src="https://avatars1.githubusercontent.com/u/64987824?s=460&u=51e8a76f68447d04bb10d3f57e77df673874bad6&v=4"
-            alt="Lucas de Lima">
-        <h1>Lucas de Lima</h1>
-        <!-- <h2>Estudante de Engenharia da Computação - <a href="https://www.ufpb.br/"target="_blank" >UFPB</a> </h1> -->
-        <!-- <h2>Estudante de Desenvolvimento Web - <a href="https://rocketseat.com.br" target="_blanck" >Rocketseat</a> </h2> -->
-        <p>Estudando programação com foco em Javascript, Python, HTML e CSS com o objetivo de se tornar um desenvolvedor
-            fullstack</p>
+        <img src="{{about.avatar_url}}"
+            alt=" Imagem de {{about.name}}">
+        <h1>{{about.name}}</h1>
+        <p>{{about.description}}</p>
     </div>
 
     <form action="" class="student">
         <fieldset>
 
             <legend>
-                <h2>Estudante</h2>
+                <h2>{{about.student[0].title}}</h2>
             </legend>
 
             <div class="items-grid">
 
                 <li data-id="UFPB">
-                    <a href="https://www.ufpb.br/" target="_blank">
-                        <img src="/assets/ufpb.svg" alt="Universidade Federal da Paraíba">
-                        <span>Engenharia da Computação</span>
+                    <a href="https://www.{{about.student[1].alt}}.br/" target="_blank">
+                        <img src="/assets/{{about.student[1].alt}}.svg" alt="Imagem da {{about.student[0].ufpb}}">
+                        <span>{{about.student[1].ufpb}}</span>
                     </a>
                 </li>
 
                 <li class="student-card" data-id="Rocketseat">
                     <a class="text-rocketseat">
-                        <img src="/assets/rocketseat.svg" alt="Rocketseat">
-                        <span>Rocketseat</span>
-                        <p>LaunchBase</p>
+                        <img src="/assets/{{about.student[0].rocket}}.svg" alt="Imagem da {{about.student[0].rocket}}">
+                        <span>{{about.student[0].rocket}}</span>
+                        <p>{{about.student[2].launch}}</p>
                     </a>
                 </li>
 
@@ -75,8 +63,8 @@
 
 
             <div class="content-student">
-                <h1 class="title">LaunchBase - Rocketseat</h1>
-                <iframe src="https://www.rocketseat.com.br/launchbase" frameborder="0"></iframe>
+                <h1 class="title">{{about.student[2].launch}} - {{about.student[0].rocket}}</h1>
+                <iframe src="https://www.{{about.student[0].rocket}}.com.br/launchbase" frameborder="0"></iframe>
             </div>
 
         </div>

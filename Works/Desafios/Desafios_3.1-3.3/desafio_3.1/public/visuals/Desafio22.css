@@ -1,7 +1,6 @@
 body {
   background: url("../assets/Wallpaper\ LaunchBase\ -\ 1920x1080.svg") no-repeat;
   height: 100vh;
-  overflow-y: hidden;
 
 }
 
@@ -12,7 +11,7 @@ body {
 
 .links {
   margin-top: 565px;
-  padding: 30px;
+  padding: 15px 0;
   text-align: center;
   border-top: 2px solid #333;
   background-color: var(--color-purple);

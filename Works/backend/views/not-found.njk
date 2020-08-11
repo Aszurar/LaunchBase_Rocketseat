@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>ERRO 404 | Página não encontrada!</title>
+    <link rel="stylesheet" href="/visuals/not-found.css">
+{% endblock %}
+
+{% block tabs %}
+    <div>
+        <a href="/">Sobre</a>
+    </div>
+
+    <div>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+
+        <div class="erro">
+
+            <div class="erronumber">
+                <span>404</span>
+            </div>
+
+            <div class="card__image-container">
+
+                <div class="main">
+                    <div class="img__card">
+                        <img src="/assets/404-error.svg" alt="Erro 404">
+                    </div>
+
+                    <div class="card__info">
+                        <p>Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe.</p>
+                        <p>Verifique o nome do endereço solicitado.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card__about">
+                <p>ERRO</p>
+                <p class="erro__number">404</p>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
