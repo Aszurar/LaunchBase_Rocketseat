@@ -205,3 +205,20 @@ iframe {
 .card-project-modal.maximize .min-modal {
   visibility: visible;
 }
+
+
+/* =====Featured===== */
+.featured-wrapper.image-project{
+  position: relative;
+}
+.featured{
+  position: absolute;
+  background: #f7d05f;
+  color: var(--color-black);
+  padding: 2px 8px;
+  border-radius: 16px;
+  left: 5px;
+  top: -10px;
+  font-weight: bold;
+}
+

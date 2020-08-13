@@ -1,8 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block title %}
-    <title>ERRO 404 | Página não encontrada!
-    </title>
+    <title>{{errodata.title}}</title>
 {% endblock %}
 
 {% block visuals %}
@@ -31,27 +30,26 @@
         <div class="erro">
 
             <div class="erronumber">
-                <span>404</span>
+                <span>{{errodata.number}}</span>
             </div>
 
             <div class="card__image-container">
 
                 <div class="main">
                     <div class="img__card">
-                        <img src="/assets/404-error.svg" alt="Erro 404">
+                        <img src="/assets/{{errodata.number}}.svg" alt="Imagem do Erro {{errodata.number}}">
                     </div>
 
                     <div class="card__info">
-                        <p>Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe.</p>
-                        <p>Verifique o nome do endereço solicitado.</p>
+                        <p>{{errodata.description}}</p>
                     </div>
                 </div>
 
             </div>
 
             <div class="card__about">
-                <p>ERRO</p>
-                <p class="erro__number">404</p>
+                <p>{{errodata.info}}</p>
+                <p class="erro__number">{{errodata.number}}</p>
             </div>
 
         </div>

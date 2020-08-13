@@ -22,7 +22,8 @@ module.exports = [
                 "#xf3b8",
                 "#xf3d3"],
         duration: "4 min",
-        type: "LaunchBase"
+        type: "LaunchBase",
+        featured: true,
     },
 
     {
@@ -35,7 +36,8 @@ module.exports = [
                 "#xf3b8",
                 "#xf3d3"],
         duration: "3 min",
-        type: "Projeto Pessoal"
+        type: "Projeto Pessoal",
+        featured: true
     },
 
     {
@@ -48,6 +50,8 @@ module.exports = [
                 "#xf3b8",
                 "#xf3d3"],
         duration: "1 min",
-        type: "LaunchBase"
+        type: "LaunchBase",
+        featured: true
+
     }
 ]

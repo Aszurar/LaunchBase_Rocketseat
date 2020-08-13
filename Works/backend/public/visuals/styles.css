@@ -59,40 +59,42 @@ body {
   line-height: 34px;
 }
 
+.blocos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 form {
   background-color: var(--color-blue-transparent);
-  padding: 64px;
+  padding: 30px;
   border-radius: 8px;
-  max-width: 730px;
 }
 
 form fieldset {
-  /* margin-top: 64px; */
   border: 0;
 }
 
 form legend {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
   align-items: center;
   justify-content: space-between;
 
   width: 100%;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .student {
-  width: 90%;
+  width: 100%;
   max-width: 700px;
-
-  margin: 10px auto;
+  height: 300px;
 }
 
 .items-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  gap: 16px; /*espaço entre os itens do grid*/
+  gap: 18px; 
 }
 
 .items-grid li {
@@ -103,6 +105,7 @@ form legend {
   border-radius: 8px;
 
   min-width: 180px;
+  max-height: 180px;
   padding: 32px 24px 16px;
 
   display: flex;
@@ -122,6 +125,7 @@ form legend {
 
 .items-grid li a img {
   border-radius: 20%;
+  height: 140px;
 }
 
 .items-grid li a span {

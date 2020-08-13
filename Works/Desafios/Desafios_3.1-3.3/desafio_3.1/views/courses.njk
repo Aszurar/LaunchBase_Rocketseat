@@ -29,88 +29,37 @@
 
     <div class="past">
         <div class="main">
-            <selection class="cards">
+            <section class="cards">
 
-                <div class="card" id="starter" frameid="start">
+                {% for item in courses %}
+                    <div class="card" id="{{item.title}}" frameid="go">
 
-                    <div class="starter">
+                        <div class="{{item.title}}">
 
-                        <div class="card__image-container">
-                            <span>01</span>
+                            <div class="card__image-container">
+                                <span>{{item.numbers}}</span>
 
-                            <div class="img__card">
-                                <img src="../assets/rocket.svg" alt="">
+                                <div class="img__card">
+                                    <img src="../assets/{{item.title}}.svg" alt="Ícone do {{item.title}}">
+                                </div>
+
+                                <div class="card__info">
+                                    <p>{{item.description}}</p>
+                                </div>
+
                             </div>
 
-                            <div class="card__info">
-                                <p>Torne-se um programado desejado no mercado com esses cursos gratuitos</p>
+                            <div class="card__about">
+                                <p>{{item.duration}}</p>
+                                <p class="card__price">{{item.price}}</p>
                             </div>
 
-                        </div>
-
-                        <div class="card__about">
-                            <p>5 módulos</p>
-                            <p class="card__price">Free</p>
                         </div>
 
                     </div>
-
-                </div>
-
-                <div class="card" id="launchbase" frameid="launch">
-
-                    <div class="launchbase">
-
-                        <div class="card__image-container">
-                            <span>02</span>
-
-                            <div class="img__card">
-                                <img src="../assets/LaunchBase.svg" alt="">
-                            </div>
-
-                            <div class="card__info">
-                                <p>Domine a programação do zero e tenha acesso às melhores oportunidades do mercado</p>
-                            </div>
-
-                        </div>
-
-                        <div class="card__about">
-                            <p>8 módulos</p>
-                            <p class="card__price">Pago</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="card" id="gostack" frameid="go">
-
-                    <div class="gostack">
-
-                        <div class="card__image-container">
-                            <span>03</span>
-
-                            <div class="img__card">
-                                <img src="../assets/GoStack.svg" alt="">
-                            </div>
-
-                            <div class="card__info">
-                                <p>Treinamento imersivo nas tecnologias mais modernas de desenvolvimento web e mobile
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="card__about">
-                            <p>15 módulos</p>
-                            <p class="card__price">Pago</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </selection>
+                {% endfor %}
+            
+            </section>
         </div>
     </div>
 

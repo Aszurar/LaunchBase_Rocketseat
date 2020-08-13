@@ -13,8 +13,11 @@
 
                 <div class="card-project">
 
-                    <div class="image-project" id="{{item.id}}" title="{{item.title}}">
+                    <div class="image-project {{'featured-wrapper' if item.featured}}" id="{{item.id}}" title="{{item.title}}">
                         <img src="/assets/{{item.title}}.png" alt="A imagem de {{item.title}}">
+                            {% if item.featured %}
+                                <div class="featured">Destaque!</div>
+                            {% endif %}
                     </div>
 
                     <a href="{{item.link}}" target="_blank">

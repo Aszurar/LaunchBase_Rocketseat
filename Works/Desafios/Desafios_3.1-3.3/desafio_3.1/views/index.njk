@@ -26,29 +26,27 @@
 {% block content %}
 
     <div class="text">
-        <p>
-            Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀
-        </p>
+        <p>{{index.description}}</p>
 
     </div>
 
     <div class="links">
-        <strong>Receba nossos conteúdos exclusivos!</strong>
+        <strong>{{index.hit}}</strong>
 
         <form action="">
             <div>
-                <input type="text" placeholder="Digite seu email" value="">
+                <input type="text" placeholder="{{index.button.buttontext}}" value="">
 
                 <button type="submit">
-                    <img src="../assets/send.svg" alt="Enviar">
+                    <img src="../assets/{{index.button.alt}}.svg" alt="{{index.button.alt}}">
                 </button>
 
             </div>
         </form>
-
-        <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Comunidade</a>
-        <a href="mailto:oi@rocketseat.com.br" target="_blank">Email</a>
-        <a href=" tel:+5547992078767" target="_blank">Telefone</a>
+        
+        {% for item in index.links %}
+              <a href="{{item.link}}" target="_blank">{{item.title}}</a>
+        {% endfor %}
 
     </div>
     

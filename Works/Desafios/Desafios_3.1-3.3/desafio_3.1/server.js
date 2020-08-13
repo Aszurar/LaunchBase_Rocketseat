@@ -3,31 +3,63 @@ const nunjucks = require('nunjucks');
 
 const server = express();
 
+const coursesdata = require('./coursesdata');
+
 server.use(express.static("public"));
 
 server.set("view engine", "njk");
 nunjucks.configure("views", {
-    express:server
+    express:server,
+    autoescape: false
 });
 
 server.get("/", function(req, res){
-    return res.render("index");
+    const index = {
+        description: "Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀",
+        hit: "Receba nossos conteúdos exclusivos",
+        button: {buttontext: "Digite seu email", alt: "Enviar"},
+        links: [
+            {title: "Comunidade", link: "https://discordapp.com/invite/gCRAFhc"},
+            {title: "Email", link: "mailto:oi@rocketseat.com.br"},
+            {title: "Telefone", link: "tel:+5547992078767"}
+        ]
+    }
+    return res.render("index", {index: index});
 });
 
 server.get("/about", function(req, res){
-    return res.render("about");
+    const about = {
+        img: "https://avatars0.githubusercontent.com/u/28929274?s=200&v=4",
+        title: "Rocketseat",
+        description: "As melhores tecnologias em programação, usadas pela Nubank, Netflix, Uber, Instagram e Airbnb, direto ao ponto e do jeito certo. 🚀",
+        subtitle: "Tecnologias",
+        cards: [ "CSS",
+                 "HTML",
+                 "Javascript",
+                 "Nodejs",
+                 "ReactJS",
+                 "React Native"
+               ]
+    }
+    return res.render("about", { about: about});
 });
 
 server.get("/courses", function(req, res){
-    return res.render("courses");
+    return res.render("courses", { courses: coursesdata});
 });
 
 server.use(function(req, res) {
-    res.status(404).render("not-found");
+    const errodata = {
+        title: "ERRO 404 | Página não encontrada!",
+        number: "404",
+        description: "Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe. <br><br> Verifique o nome do endereço solicitado.",
+        info: "ERRO"
+    }
+
+    res.status(404).render("not-found", { errodata: errodata});
   });
 
 server.listen("5002", function(){
     console.log("Server is running");
-    
 })
 

@@ -2,13 +2,19 @@ Iniciando servidor:
 0. criar uma pasta com um server.js
 1. npm init -y
 2. npm install express
+>npm - gerenciador de pacotes
+>iniciar o servidor: npm start
+3.instalar o express:
+npm install express
 
 
 3. dps de instalar acima e configurar incialmente o servidor assim:
-
+Importando o express
 const express = require('express'); 
-const server = express();  o express
+iniciando o express no servidor
+const server = express();  
 
+Servidor está ouvindo as requisições e respondendo 
 server.get("/", function(req, res){ 
     return res.send("Hi");
 });
@@ -21,14 +27,19 @@ Instale outra dependência:
 npm install -D nodemon
 
 ela ajuda a reiniciar o servidor de forma mais prática
+No caso, os arquivos javascript atualizam os arquivos javascript automaticamente
 
 4.
 Após isso configurar o script do arquivo package.json assim:
  "scripts": {
     "start": "nodemon server.js"
-  },
+  }
 
-5. Após isso configurar o serivdor para arquivos de estilos estáticos e configurar o template engine Nunjucks
+5. Instalar o Nunjucks:
+npm install nunjucks
+>Reuso de código, lógicas de blocos de código dinâmicos
+
+6. Após isso configurar o servidor para arquivos de estilos estáticos e configurar o template engine Nunjucks
  e por fim retornar ao usuário a página web
 const nunjucks = require('nunjucks');
 
