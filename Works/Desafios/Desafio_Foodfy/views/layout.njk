@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./visuals/menu.css">
+    {% block head %}{% endblock %}
+
+<body>
+    <header>
+
+        <nav class="menu">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo.png" alt="Foodfy">
+                </a>
+            </div>
+
+            {% block links %}{% endblock %}
+
+
+        </nav>
+
+    </header>
+
+{% block content %}{% endblock %}
+
+</body>
+
+</html>

@@ -1,14 +1,14 @@
-{% extends "layoutcards.njk" %} 
+{% extends "layoutcards.njk" %}
 
 {% block style %}
-     <link rel="stylesheet" href="/visuals/certificates.css"> 
+    <link rel="stylesheet" href="/visuals/certificates.css">
 {% endblock %}
 
 {% block content %}
     <h1>Certificados</h1>
 
     <section class="cards-certificates">
-        {% for item in cert %}      
+        {% for item in cert %}
             <div class="card-certificate" id="{{item.id}}">
 
                 <div class="image-certificate">

@@ -1,22 +1,27 @@
-{% extends "layoutcards.njk" %}
+{% extends "layout.njk" %}
 
-{% block style %}
-    <link rel="stylesheet" href="/visuals/projects.css">
+{% block head %}
+    <title>{{item.info}}</title>
+    <link rel="stylesheet" href="/visuals/video.css">
+{% endblock %}
+
+{% block tabs %}
+    <div>
+        <a href="/">Sobre</a>
+    </div>
 {% endblock %}
 
 {% block content %}
-    <h1>Projetos</h1>
 
-    <section class="cards-projects">
-        {% for item in items %}
+    <main class="screen">
+        <h1>{{item.title}}</h1>
+
+        <section class="video">
 
             <div class="card-project">
 
-                <div class="image-project {{'featured-wrapper' if item.featured}}" id="{{item.id}}" title="{{item.title}}">
-                    <img src="/assets/{{item.title}}.png" alt="A imagem de {{item.title}}">
-                    {% if item.featured %}
-                        <div class="featured">Destaque!</div>
-                    {% endif %}
+                <div class="video-project" id="{{item.id}}" title="{{item.title}}">
+                    <iframe src="https://www.youtube.com/embed/{{item.id}}" frameborder="0" id="pageIframe"></iframe>
                 </div>
 
                 <a href="{{item.link}}" target="_blank">
@@ -38,10 +43,7 @@
                 </div>
 
             </div>
-        {% endfor %}
 
-    </section>
-
-    <script src="/scripts/projects.js"></script>
-
+        </section>
+    </main>
 {% endblock %}
