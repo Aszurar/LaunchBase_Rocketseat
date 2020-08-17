@@ -1,50 +1,49 @@
-.here a {
-  border-bottom: 2px solid var(--color-black);
-  font-weight: bold;
+
+body {
+    font-family: Roboto;
 }
 
-.table {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.here a{
+    border-bottom: 2px solid var(--color-black);
+    font-weight: bold;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.principal{
+    margin-top: 50px;
 }
 
-.card {
-  cursor: pointer;
+.image-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-card {
-  margin: 0;
+.image-principal img{
+    border-radius: 15px;
 }
 
-.image-card img {
-  border-radius: 15px;
-  width: 300px;
-  height: 140px;
+.text {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.content-card {
-  margin-top: 20px;
-  margin-bottom: 30px;
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.content-card h1 {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
+.title h1{
+    font-size: 36px;
+    color: var(--color-black);
+    line-height: 42px;
 }
 
-.content-card p {
-  color: var(--color-gray);
-  font-size: 14px;
-  line-height: 16px;
-  margin-top: 5px;
+.title p{
+    font-size: 20px;
+    color: var(--color-gray);
+    line-height: 24px;
 }

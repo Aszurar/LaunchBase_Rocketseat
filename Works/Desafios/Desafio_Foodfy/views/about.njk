@@ -1,94 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.njk" %}
 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./visuals/menu.css">
+{% block head %}
     <link rel="stylesheet" href="./visuals/about.css">
-    <title>Foodfy</title>
-</head>
+    <title>{{about.title}}</title>
+{% endblock %}
 
-<body>
+{% block links %}
+    <div class="links">
 
-    <header>
-        <nav class="menu">
+        <div class="here">
+            <a href="/about">Sobre</a>
+        </div>
 
-            <div class="logo">
-                <a href="index.html">
-                    <img src="./assets/logo.png" alt="Foodfy">
-                </a>
-            </div>
+        <div id="recipe">
+            <a href="/recipes">Receitas</a>
+        </div>
 
-            <div class="links">
+    </div>
+{% endblock %}
 
-                <div class="here">
-                    <a href="about.html">Sobre</a>
-                </div>
-
-                <div id="recipe">
-                    <a href="recipe.html">Receitas</a>
-                </div>
-                
-            </div>
-
-        </nav>
-
-    </header>
-
+{% block content %}
     <div class="text">
 
-        <h1>Sobre o Foodfy</h1>
+        <h1>{{about.subtitle}}</h1>
+        <p>{{about.about}}</p>
 
-        <p>
-            Suspendisse placerat neque neque. Morbi dictum nulla non sapien rhoncus, et mattis erat commodo. Aliquam vel
-            lacus a justo mollis luctus. Proin vel auctor eros, sed eleifend nunc. Curabitur eget tincidunt risus.
-            Mauris malesuada facilisis magna, vitae volutpat sapien tristique eu. Morbi metus nunc, interdum in erat
-            placerat, aliquam iaculis massa. Duis vulputate varius justo pharetra maximus. In vehicula enim nec nibh
-            porta tincidunt. Vestibulum at ultrices turpis, non dictum metus. Vivamus ligula ex, semper vitae eros ut,
-            euismod convallis augue.<br>
-            <br>
-            Fusce nec pulvinar nunc. Duis porttitor tincidunt accumsan. Quisque pulvinar mollis ipsum ut accumsan. Proin
-            ligula lectus, rutrum vel nisl quis, efficitur porttitor nisl. Morbi ut accumsan felis, eu ultrices lacus.
-            Integer in tincidunt arcu, et posuere ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at
-            accumsan. Donec libero neque, vulputate semper orci et, malesuada sodales eros. Nunc ut nulla faucibus enim
-            ultricies euismod.
-        </p>
+        <h2 class="subtitle">{{about.info}}</h2>
+        <p>{{about.startinfo}}</p>
 
-        <h2 class="subtitle">Como tudo começou…</h2>
-
-        <p> Suspendisse placerat neque neque. Morbi dictum nulla non sapien rhoncus, et mattis erat commodo. Aliquam vel
-            lacus a justo mollis luctus. Proin vel auctor eros, sed eleifend nunc. Curabitur eget tincidunt risus.
-            Mauris malesuada facilisis magna, vitae volutpat sapien tristique eu. Morbi metus nunc, interdum in erat
-            placerat, aliquam iaculis massa. Duis vulputate varius justo pharetra maximus. In vehicula enim nec nibh
-            porta tincidunt. Vestibulum at ultrices turpis, non dictum metus. Vivamus ligula ex, semper vitae eros ut,
-            euismod convallis augue.<br>
-            <br>
-            Fusce nec pulvinar nunc. Duis porttitor tincidunt accumsan. Quisque pulvinar mollis ipsum ut accumsan. Proin
-            ligula lectus, rutrum vel nisl quis, efficitur porttitor nisl. Morbi ut accumsan felis, eu ultrices lacus.
-            Integer in tincidunt arcu, et posuere ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at
-            accumsan. Donec libero neque, vulputate semper orci et, malesuada sodales eros. Nunc ut nulla faucibus enim
-            ultricies euismod.
-        </p>
-
-        <h2 class="subtitle2">Nossas receitas</h2>
-
-        <p>
-            Fusce nec pulvinar nunc. Duis porttitor tincidunt accumsan. Quisque pulvinar mollis ipsum ut accumsan. Proin
-            ligula lectus, rutrum vel nisl quis, efficitur porttitor nisl. Morbi ut accumsan felis, eu ultrices lacus.
-            Integer in tincidunt arcu, et posuere ligula. Morbi cursus facilisis feugiat. Praesent euismod nec nisl at
-            accumsan. Donec libero neque, vulputate semper orci et, malesuada sodales eros. Nunc ut nulla faucibus enim
-            ultricies euismod.
-        </p>
+        <h2 class="subtitle2">{{about.recipes}}</h2>
+        <p>{{about.recipesinfo}}</p>
 
     </div>
 
     <div class="copyright">
-        <p>Todos direitos reservados, receitas Foodfy.</p>
+        <p>{{about.copyright}}.</p>
     </div>
-
-    <script src="./scripts/about.js"></script>
-</body>
-
-</html>
+{% endblock %}
