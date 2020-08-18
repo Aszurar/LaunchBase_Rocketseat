@@ -52,10 +52,11 @@ server.get("/recipes", function(req, res){
 server.get("/recipe", function(req, res){
     const recipe = {
         title: "Receitas",
-        copyright:"Todos direitos reservados, receitas Foodfy."
+        copyright:"Todos direitos reservados, receitas Foodfy.",
+        subtitle: ["Ingredientes", "Modo de preparo", "Informações adicionais"]
    
     };
-    return res.render("recipe", {recipes: recipes});
+    return res.render("recipe", {recipes: recipes, recipe: recipe});
 });
 
 server.listen(5000, function() {

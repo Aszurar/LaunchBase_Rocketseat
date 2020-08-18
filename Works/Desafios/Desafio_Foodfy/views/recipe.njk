@@ -26,8 +26,46 @@
         <div class="text">
             <div class="title">
                 <h1>{{recipes[0].title}}</h1>
-                <p>por {{recipes[0].author}}</p>
+                <p>por
+                    {{recipes[0].author}}</p>
             </div>
+
+            <section class="details">
+                <div class="ingredients">
+                    <div class="subtitle1">
+                        <h1>Ingredientes</h1>
+                        <span class="button">ESCONDER</span>
+                    </div>
+
+                    {% for item in recipes[0].ingredients %}
+                        <li class="data">{{item}}</li>
+                    {% endfor %}
+                </div>
+
+                <div class="preparation">
+                    <div class="subtitle2">
+                        <h1>Modo de preparo</h1>
+                        <span class="button">ESCONDER</span>
+                    </div>
+
+                    {% for item in recipes[0].preparation %}
+                        <li class="data">{{item}}</li>
+                    {% endfor %}
+                </div>
+
+                <div class="info">
+                    <div class="subtitle3">
+                        <h1>Informações adicionais</h1>
+                        <span class="button">ESCONDER</span>
+                    </div>
+
+                    <li class="data">{{recipes[0].information}}</li>
+                </div>
+
+            </section>
+
         </div>
     </main>
+
+    <script src="./scripts/recipe.js""></script>
 {% endblock %}
