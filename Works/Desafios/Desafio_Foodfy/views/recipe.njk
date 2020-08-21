@@ -1,8 +1,8 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="./visuals/recipe.css">
-    <title></title>
+    <link rel="stylesheet" href="/visuals/recipe.css">
+    <title>{{recipe.title}}</title>
 {% endblock %}
 
 {% block links %}
@@ -20,46 +20,52 @@
 {% block content %}
     <main class="principal">
         <div class="image-principal">
-            <img src="{{recipes[0].image}}" alt="">
+            <img src="{{recipe.image}}" alt="Imagem do {{recipe.title}}">
         </div>
 
         <div class="text">
             <div class="title">
-                <h1>{{recipes[0].title}}</h1>
+                <h1>{{recipe.title}}</h1>
                 <p>por
-                    {{recipes[0].author}}</p>
+                    {{recipe.author}}</p>
             </div>
 
             <section class="details">
                 <div class="ingredients">
                     <div class="subtitle1">
-                        <h1>Ingredientes</h1>
-                        <span class="button">ESCONDER</span>
+                        <h1>{{info.subtitle[0]}}</h1>
+                        <span class="button1">ESCONDER</span>
                     </div>
 
-                    {% for item in recipes[0].ingredients %}
-                        <li class="data">{{item}}</li>
-                    {% endfor %}
+                    <div class="data1">
+                        {% for item in recipe.ingredients %}
+                            <li>{{item}}</li>
+                        {% endfor %}
+                    </div>
+
                 </div>
 
                 <div class="preparation">
                     <div class="subtitle2">
-                        <h1>Modo de preparo</h1>
-                        <span class="button">ESCONDER</span>
+                        <h1>{{info.subtitle[1]}}</h1>
+                        <span class="button2">ESCONDER</span>
                     </div>
 
-                    {% for item in recipes[0].preparation %}
-                        <li class="data">{{item}}</li>
-                    {% endfor %}
+                    <div class="data2">
+                        {% for item in recipe.preparation %}
+                            <li>{{item}}</li>
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <div class="info">
                     <div class="subtitle3">
-                        <h1>Informações adicionais</h1>
-                        <span class="button">ESCONDER</span>
+                        <h1>{{info.subtitle[2]}}</h1>
+                        <span class="button3">ESCONDER</span>
                     </div>
-
-                    <li class="data">{{recipes[0].information}}</li>
+                    <div class="data3">
+                        <li class="data">{{recipe.information}}</li>
+                    </div>
                 </div>
 
             </section>
@@ -67,5 +73,9 @@
         </div>
     </main>
 
-    <script src="./scripts/recipe.js""></script>
+    <div class="copyright">
+        <p>{{info.copyright}}</p>
+    </div>
+
+    <script src="/scripts/recipe.js"></script>
 {% endblock %}

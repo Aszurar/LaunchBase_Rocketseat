@@ -49,15 +49,21 @@ server.get("/recipes", function(req, res){
     return res.render("recipes", {recipes: recipes, recipe: recipe});
 });
 
-server.get("/recipe", function(req, res){
-    const recipe = {
-        title: "Receitas",
+server.get("/recipe/:index", function (req, res) {
+    const recipeIndex = req.params.index;
+
+    const info = {
         copyright:"Todos direitos reservados, receitas Foodfy.",
         subtitle: ["Ingredientes", "Modo de preparo", "Informações adicionais"]
    
     };
-    return res.render("recipe", {recipes: recipes, recipe: recipe});
-});
+
+    console.log(recipeIndex);
+    console.log(req.params.index);
+    console.log(recipes[recipeIndex]);
+    
+    return res.render("recipe", { recipe: recipes[recipeIndex], info: info});
+  });
 
 server.listen(5000, function() {
     console.log("Server is running");
