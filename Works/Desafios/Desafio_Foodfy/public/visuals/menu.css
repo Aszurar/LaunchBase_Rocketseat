@@ -16,11 +16,13 @@
   margin: 0;
   border: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
 }
 
 header {
@@ -68,16 +70,30 @@ header {
   margin-left: 30px;
 }
 
+.content-flex{
+  height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+   justify-content: space-between;
+}
+
+.content{
+  margin-bottom: 50px;
+}
+
 .copyright {
   background: var(--color-backgournd-down);
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
 
 }
 
 .copyright p {
-  margin: 23px 0;
+  /* margin: 23px 0; */
   line-height: 16px;
   font-size: 14px;
   text-align: center;

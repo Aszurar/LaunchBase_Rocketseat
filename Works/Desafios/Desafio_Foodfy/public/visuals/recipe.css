@@ -20,6 +20,8 @@ body {
 
 .image-principal img{
     border-radius: 15px;
+    height: 280px;
+    width: 940px;
 }
 
 .text {
@@ -176,5 +178,4 @@ body {
 
 .data3.active{
     visibility: hidden;
-    height: 0;
 }

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/visuals/menu.css">
+        {% block head %}{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/visuals/menu.css">
-    {% block head %}{% endblock %}
+        <body>
+            <header>
+                <nav class="menu">
 
-<body>
-    <header>
+                    <div class="logo">
+                        <a href="/">
+                            <img src="/assets/logo.png" alt="Foodfy">
+                        </a>
+                    </div>
 
-        <nav class="menu">
+                    {% block links %}{% endblock %}
 
-            <div class="logo">
-                <a href="/">
-                    <img src="/assets/logo.png" alt="Foodfy">
-                </a>
+                </nav>
+
+            </header>
+
+            <div class="content-flex">
+                <div class="content">
+                    {% block content %}{% endblock %}
+                </div>
+
+                <div class="copyright">
+                    <p>Todos direitos reservados, receitas Foodfy.</p>
+                </div>
             </div>
+        </body>
 
-            {% block links %}{% endblock %}
-
-
-        </nav>
-
-    </header>
-
-{% block content %}{% endblock %}
-
-</body>
-
-</html>
+    </html>
