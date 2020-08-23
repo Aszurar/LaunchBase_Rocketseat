@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --color-blue-transparent: #7289dab9;
+  --color-dark-light: #23272a;
+  --color-dark-light-transparent: #23272acc;
+  --color-white: white;
+  --color-transparent: #e9ecf04b;
+  --color-bluebold: #7289da;
+  --color-black: #000000;
+  --color-gray: gray;
+  --color-orange: rgb(253, 149, 31);
+  --color-bluepast: #99aab5;
+}
+
+* {
+  /*selecionando todos blocos do html e zerando propriedade padrões do navegador*/
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: var(--color-white);
+}
+
+header {
+  background-color: var(--color-bluebold);
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  box-sizing: border-box;
+  /* faz com que o conteúdo vá até o limite da largura disponível - resolve o problema com padding */
+}
+
+.links {
+  font-size: 22px;
+}
+
+/* forma de realizar um separamento entre elementos utilizando só uma propriedade, nesse caso, a + a quer dizer pegar um elemento a e seu antecessor e aplicar a propriedade no meio deles! */
+.links a + a {
+  margin-left: 32px;
+}
+
+.links a {
+ text-decoration: none;
+ color: var(--color-dark-light);
+ position: relative;
+}
+
+.links a.active{
+  font-weight: bold;
+  color: var(--color-white);
+ }
+
+ .links a:hover{
+   color: var(--color-white);
+ }
+
+ /* criando um pseudoelemento após(after) o primeiro a do links, ferramenta utilizada para decorar elementros  */
+.links a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-white);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+ .links a:hover::after{
+  width: 100%;
+  /* a propriedade de transição é utilizada em animações, ela pode ser aplicada a diversos elementos, na dúvida basta utilizar o termo all, mas nesse */
+  /* caso espeficamente, sabemos que é o width ara fazer a sensação de preenschimento da esquerda para direita */
+  transition: width 500ms ease-in-out;
+ /*o ease-inout é  aforma da animação, nessa opção, a animação vai começar e terminar devagar, mas no meio irá rápido  */
+}

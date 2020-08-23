@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/visuals/menu.css">
+
+        {% block head %}
+            <title>Gym Manager</title>
+            <link rel="stylesheet" href="/visuals/styles.css">
+        {% endblock %}
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+        <!-- Bloco de título e visual que será substituído caso seja clicado em Portfólio -->
+    </head>
+
+    <body>
+
+        <header>
+            <div class="links">
+                    <a href="/" class="active">Instructors</a>
+                    <a href="/members">Members</a>
+            </div>
+
+        </header>
+
+
+    {% block content %}{% endblock %}
+    <!-- bloco de conteúdo vindo do about, bloco dinấmico -->
+
+</body>
+
+</html>
