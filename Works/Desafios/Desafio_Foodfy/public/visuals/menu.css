@@ -74,11 +74,11 @@ header {
   height: 100vh; 
   display: flex;
   flex-direction: column; 
-   justify-content: space-between;
+  justify-content: space-between;
 }
 
 .content{
-  margin-bottom: 50px;
+  /* justify-content: space-between; */
 }
 
 .copyright {
@@ -87,6 +87,7 @@ header {
   justify-content: center;
   align-items: center;
   bottom: 0;
+  /* position: static; */
   width: 100%;
   padding: 20px 0;
 

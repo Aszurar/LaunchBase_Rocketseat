@@ -166,7 +166,7 @@ module.exports = [
     },
 
     {
-      image: 'https://lh3.googleusercontent.com/proxy/1HZPoWMSfR__GMF_HRMPKUqqLApD1XJAcXQjYzmvu-Wl1qtdNbs0KTAK4BGXMDwsACZwaZcky1pQEKtpZ35_TD6F3P3RFpK7px08ZVn7eLM',
+      image: 'http://blog.taqi.com.br/wp-content/uploads/2016/12/2.png',
       title: 'Cupcake Gelado de Nutella',
       author: 'Bruno de Oliveira',
       ingredients: [
@@ -225,5 +225,87 @@ module.exports = [
        
       ],
       information: 'O bobó dura até 2 dias na geladeira e 3 meses no congelador. Já o caldo de camarão dura 5 dias na geladeira e até 6 meses no congelador. <br> Para descongelar o bobó: deixe da noite para o dia na geladeira ou descongele direto na panela em fogo baixo, tampado, por cerca de 15 minutos, mexendo de vez em quando para não grudar no fundo.<br> Para descongelar no micro-ondas: leve o bobó tampado com um prato e aqueça em potência alta por 6 minutos, parando na metade do tempo para mexer. Uma forma de adiantar é preparar o caldo e cozinhar a mandioca no dia anterior ao preparo.'
+    },
+
+    {
+      image: 'http://ficavaiterjanta.tempsite.ws/wp-content/uploads/2016/08/hot-roll-sassa-sushi.jpg',
+      title: 'Sushi - Hot Sushi',
+      author: 'Luisa Moratori',
+      ingredients: [
+        '3 folhas de alga nori',
+        '1 xícara de arroz especial para sushi',
+        'kani ou atum sólido para recheio',
+        'cream cheese',
+        'cebolinha',
+        '1 lata de cerveja',
+        'farinha de trigo',
+        'farinha de rosca',
+        '1 colher de sopa de sal',
+        '1 colher de sopa de açúcar',
+        '5 colheres de sopa de vinagre de arroz'
+      ],
+      preparation: [
+        'Lave cerca de 1 xícara de arroz até a água, até que ela escorra transparente. Depois deixe por cerca de 15 minutos de molho na água. Coloque para cozinhar na mesma água. À medida que a água for secando, coloque mais um pouco, uma ou duas vezes. A intenção é que o arroz fique bem grudento. Depois que estiver pronto, em outra panela, coloque o açúcar, o sal e o vinagre de arroz. Esquente até dissolver o sal e o açúcar. Misture essa solução ao arroz e deixe esfriar.',
+        'Com o arroz frio, coloque 1 folha de alga nori (com o lado brilhante para baixo) sobre uma esteira (existe a esteira própria, mas utilizo aquelas de jogo americano que dá no mesmo). Espalhe o arroz numa fina camada (senão o sushi fica muito grande). Deixe cerca de 2 cm de alga sem arroz em cada ponta, para enrolar.',
+        'Coloque, próximo à borda do arroz, um filete de recheio. Recomendo que corte o kani ao meio. Se for utilizar atum, misture com um pouco de cream cheese.',
+        'Enrole cuidadosamente, para não rasgar a alga nori, e apertando para o sushi não ficar grande (pessoalmente, não gosto dele muito grande).',
+        'Depois de enrolar, espere uns minutinhos para ter certeza que está bem fechadinho, e corte. Existe uma faca especial, porém uma faca de pão, bem afiada, da Tramontina, atende bem para cortar.',
+        'Coloque em um prato, passe o cream cheese por cima e coloque cebolinha para decorar.',
+       
+      ],
+      information: 'Quer fazer seu sushi virar hot? Simples!: <br> Em uma tigela misture meia lata de cerveja (qualquer uma, de sua preferência) com trigo até fazer uma mistura líquida, meio espessa, uniforme. Passe o rolo (antes de cortar) no creme, passe na farinha de rosca, passe novamente no creme e de novo na farinha de rosca. Frite por cerca de 1 minuto em fogo algo e óleo bem quente. Deixe esfriar um pouco e corte. Recomendo que o hot seja com recheio de atum.'
+    },
+
+    {
+      image: 'https://www.clubedereceita.com.br/wp-content/uploads/2019/08/costela-de-porco-com-molho-barbecue.jpg',
+      title: 'Costela Suína ao molho Barbecue',
+      author: 'Alberto Valle',
+      ingredients: [
+        '1,5 kg de costela de porco de tamanho pequeno',
+        '1 xícara de 240 ml de molho barbecue',
+        '1 colher de sopa de cominho em pó',
+        '1 colher de sopa de pimenta chilli em pó',
+        '1 colher de sopa de páprica em pó',
+        'Sal e pimenta-do-reino moída na hora a gosto',
+      ],
+      preparation: [
+        'Em um pequeno pote, faça um tempero misturando o cominho, a pimenta- chili, a páprica, o sal e a pimenta-do-reino',
+        'Tampe o pote e agite-o para que o tempero fique bem homogêneo',
+        'Limpe a costela de porco removendo qualquer excesso de gordura que esteja depositado sobre a carne',
+        'Passe o tempero preparado nos dois lados da peça de costela de porco somente na parte da carne',
+        'Pincele a costelinha com o molho barbecue',
+        'Reserve o molho que sobrar, pois vamos usá-lo mais tarde',
+        'Ponha a costela inteira na grelha mais alta da churrasqueira, e se quiser forre a grelha de baixo com papel alumínio',
+        'Isto é para evitar que pingue qualquer gordura no fogo, pois se isto acontecer, uma chama alta será levantada',
+        'Depois de colocar a costela de porco na grelha, abaixe o fogo e deixe-a grelhando por 1 hora. Não é necessário virar a costelinha de porco',
+        'Se você estiver usando uma churrasqueira que tenha tampa, feche-a enquanto a costela de porco grelha',
+        'Retire o papel alumínio e pincele com o molho barbecue toda a peça',
+        'Deixe grelhando por mais aproximadamente 5 minutos',
+        'Você poderá servi-la inteira ou então costada em pedaços individuais'
+       
+      ],
+      information: 'Para acompanhar, batatas fritas, mandioca com bacon bem tostadinho por cima são uma ótima pedida. Você pode inclusive colocar um potinho com molho barbecue ou molho Cheddar para acompanhar. <br> Outro acompanhamento que vai bem é uma salada de repolho e aquele pão de alho.'
+    },
+
+    {
+      image: 'https://www.receiteria.com.br/wp-content/uploads/receitas-de-carne-de-sol-na-nata-5.jpg',
+      title: 'Carne de Sol com Nata',
+      author: 'Neuma Carolina',
+      ingredients: [
+        '1kg de carne de sol cozinha com água durante meia hora em uma panela de pressão e desfiada em seguida',
+        '1 litro de leite',
+        '3 cebolas cortadas em tiras',
+        '200g de queijo mussarela picado',
+        '150g de nata',
+        '1 caixa de creme de leite',
+        '2 colheres de sopa de amido de milho dissolvido em 1 xícara de chá com leite',
+        '3 colheres de sopa de manteiga de garrafa'
+      ],
+      preparation: [
+        'Em uma panela coloque a manteiga de garrafa para aquecer. Acrescente a carne de sol aos poucos e deixe esquentar.',
+        'Acrescente a cebola, o leite, o creme de leite e o amido de milho dissolvido no leite. Acrescente em seguida o queijo mussarela picado, a nata e misture bem.',
+        'Deixe ferver mantendo em fogo médio por 15 minutos e sempre mexendo. Sirva acompanhado de arroz e de purê de batata. A receita serve até seis pessoas.',
+      ],
+      information: 'Para acompanhar, cuscuz e uma salada de feijão fradinho ou grão de bico são ótimas pedidas!.'
     }
   ];
