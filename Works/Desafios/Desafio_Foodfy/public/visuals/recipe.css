@@ -55,7 +55,7 @@ body {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    max-width: 940px;
+    width: 940px;   
 }
 
 .subtitle1{
@@ -167,16 +167,13 @@ body {
     cursor: pointer;
 }
 .data1.active{
-    visibility: hidden;
-    height: 0;
+    display: none;
 }
 
 .data2.active{
-    visibility: hidden;
-    height: 0;
+    display: none;
 }
 
 .data3.active{
-    visibility: hidden;
-
+    display: none;
 }

@@ -92,7 +92,7 @@ body {
 }
 
 /* card 01 */
-.starter {
+.Starter {
   position: relative;
   display: flex;
   width: 300px;
@@ -105,31 +105,31 @@ body {
   border: 3px solid var(--color-background);
 }
 
-.starter .card__image-container span {
+.Starter .card__image-container span {
   border: 3px solid var(--color-purple);
   color: var(--color-purple);
 }
 
-.starter .card__info p {
+.Starter .card__info p {
   color: var(--color-purple);
 }
 
-.starter .card__about {
+.Starter .card__about {
   color: var(--color-purple);
 }
-.starter .card__price {
+.Starter .card__price {
   background-color: var(--color-purple);
   padding: 5px 20px;
   border-radius: 20px;
 }
 
-.starter:hover {
+.Starter:hover {
   border: 3px solid var(--color-purple);
   transition: 750ms;
 }
 
 /* card 02 */
-.launchbase {
+.Launchbase {
   position: relative;
   display: flex;
   width: 300px;
@@ -142,30 +142,30 @@ body {
   border: 3px solid var(--color-background);
 }
 
-.launchbase .card__image-container span {
+.Launchbase .card__image-container span {
   border: 3px solid var(--color-orange-card);
   color: var(--color-orange-card);
 }
 
-.launchbase .card__info p {
+.Launchbase .card__info p {
   color: var(--color-orange-card);
 }
 
-.launchbase .card__about {
+.Launchbase .card__about {
   color: var(--color-orange-card);
 }
-.launchbase .card__price {
+.Launchbase .card__price {
   background-color: var(--color-orange-card);
   padding: 5px 20px;
   border-radius: 20px;
 }
 
-.launchbase:hover {
+.Launchbase:hover {
   border: 3px solid var(--color-orange-card);
   transition: 750ms;
 }
 
-.gostack {
+.GoStack {
   position: relative;
   display: flex;
   width: 300px;
@@ -178,130 +178,25 @@ body {
   border: 3px solid var(--color-background);
 }
 
-.gostack .card__image-container span {
+.GoStack .card__image-container span {
   border: 3px solid var(--color-green);
   color: var(--color-green);
 }
 
-.gostack .card__info p {
+.GoStack .card__info p {
   color: var(--color-green);
 }
 
-.gostack .card__about {
+.GoStack .card__about {
   color: var(--color-green);
 }
-.gostack .card__price {
+.GoStack .card__price {
   background-color: var(--color-green);
   padding: 5px 20px;
   border-radius: 20px;
 }
 
-.gostack:hover {
+.GoStack:hover {
   border: 3px solid var(--color-green);
   transition: 750ms;
 }
-
-/* =====MODAL===== */
-.modal-overlay {
-  background-color: var(--color-modal-ovarlay);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.modal {
-  /* background-color: var(--color-modal); */
-  width: 90%;
-  height: 90%;
-  margin: 5vh auto;
-  position: relative;
-  border-radius: 15px;
-  color: var(--color-black);
-
-
-}
-
-.modal .close-modal{
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
- 
-}
-
-.modal .max-modal{
-  position: absolute;
-  top: 8px;
-  right: 32px;
-  cursor: pointer;
-}
-.modal .min-modal{
-  position: absolute;
-  top: 8px;
-  right: 32px;
-  cursor: pointer;
-  visibility: hidden;
-}
-
-/* modal-overlay active */
-.modal-overlay.active{
-  opacity: 1;
-  visibility: visible;
-  
-}
-
-iframe {
-  width: 96.5%;
-  height: 90%;
-  position: absolute;
-  top: 5%;
-  border-radius: 10px;
-}
-
-/* modal-active */
-.modal.starter{
-  background-color: var(--color-white);
-  padding:0;
-  border: 0;
-  padding-left: 30px;
-  transition: none;
-}
-
-.modal.launchbase{
-  background-color: var(--color-orange-card);
-  padding:0;
-  border: 0;
-  padding-left: 30px;
-  transition: none;
-}
-
-.modal.gostack{
-  background-color: var(--color-green);
-  padding:0;
-  border: 0;
-  padding-left: 30px;
-  transition: none;
-}
-
-/* modal-max */
-.modal.maximize{
-  margin: 0;
-  border: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-.modal.maximize iframe{
-  width: 100%;
-}
-
-.modal.maximize .max-modal{
-  visibility: hidden;
-}
-
-.modal.maximize .min-modal{
-  visibility: visible;
-} 

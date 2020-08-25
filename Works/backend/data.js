@@ -53,5 +53,21 @@ module.exports = [
         type: "LaunchBase",
         featured: true
 
-    }
+    }, 
+
+    {
+        id: "pox7hb57Z3c",
+        title: "Proffy",
+        link: "",
+        info: "Proffy | Plataforma de aulas online.",
+        tech: [ "#xf38b",
+                "#xf13b",
+                "#xf3b8",
+                "#xf3d3",
+                "#xf41b"],
+        duration: "8 min",
+        type: "Next Level Week 2",
+
+    }, 
+
 ]

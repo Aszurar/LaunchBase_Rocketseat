@@ -20,7 +20,7 @@ body{
 
 .video {
     margin: 0 auto;
-    max-width: 800px;
+    width: 900px;
 }
 
 .card-project {
@@ -57,7 +57,7 @@ iframe {
 
 .card-project__technologies {
   text-align: center;
-  font-size: 28px;
+  font-size: 35px;
   margin-top: 15px;
 }
 
@@ -83,6 +83,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 26px;
 }
 
 .card-project__content:hover {
@@ -97,16 +98,17 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  font-size: 20px;
+
 }
 
 .card-project__type {
   background-color: var(--color-bluebold);
   color: var(--color-black);
   filter: brightness(90%);
-  padding: 5px 20px;
+  padding: 10px 20px;
   border-radius: 20px;
   text-align: center;
-  font-size: 14px;
   align-items: center;
 }
 

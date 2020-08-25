@@ -29,4 +29,14 @@ module.exports = [
         duration: "6 horas",
         type: "UFPB"
     },
+
+    {
+        id: "4",
+        img: "certi4",
+        alt: "4º certificado",
+        info: "Inteligência Artificial para Todos | Universidade Federal da Paraíba.",
+        tech: [ `<i class='fa'>&#xf17b;</i>`],
+        duration: "20 horas",
+        type: "UFPB"
+    }
 ]

@@ -12,7 +12,7 @@ module.exports = [
         ],
         info: [
             {title: "Quantidade"},
-            {quantity: "4"}
+            {quantity: "5"}
         ]
     },
 
@@ -27,7 +27,7 @@ module.exports = [
         ],
         info: [
             {title: "Quantidade"},
-            {quantity: "3"}
+            {quantity: "4"}
         ]
     }
 ]

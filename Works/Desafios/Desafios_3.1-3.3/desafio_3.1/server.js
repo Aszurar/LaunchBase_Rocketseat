@@ -48,6 +48,20 @@ server.get("/courses", function(req, res){
     return res.render("courses", { courses: coursesdata});
 });
 
+server.get("/courses/:index", function(req, res) {
+    const id = req.params.index;
+    
+    const dataId = coursesdata.find( function (dataId){
+        return dataId.title == id;
+    });
+
+    if (!dataId) {
+       return res.send("Video not founded!.");
+    }
+
+    return res.render("course", { item: dataId} );
+  });
+
 server.use(function(req, res) {
     const errodata = {
         title: "ERRO 404 | Página não encontrada!",

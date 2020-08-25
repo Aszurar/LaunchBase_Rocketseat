@@ -11,6 +11,7 @@
   --color-black: black;
   --color-modal-ovarlay: rgba(25, 20, 42, 0.8);
   --color-modal: rgb(175, 151, 248);
+  --color-dark-light: #23272a;
 }
 
 * {
