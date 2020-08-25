@@ -11,8 +11,8 @@ module.exports = [
             "&#xf41b"
         ],
         info: [
-            {title: "Quantidade"},
-            {quantity: "5"}
+            { title: "Quantidade" },
+            { quantity: "5" }
         ]
     },
 
@@ -21,13 +21,13 @@ module.exports = [
         title: "Certificados",
         description: "Certificados e Cursos concluídos com sucesso.",
         tech: [
-            {name: "Eldorado", alt: "Instituto de Pesquisas Eldorado"},
-            {name: "ufpb", alt: "Universidade Federal da Paraíba"}
+            { name: "Eldorado", alt: "Instituto de Pesquisas Eldorado" },
+            { name: "ufpb", alt: "Universidade Federal da Paraíba" }
 
         ],
         info: [
-            {title: "Quantidade"},
-            {quantity: "4"}
+            { title: "Quantidade" },
+            { quantity: "4" }
         ]
     }
 ]

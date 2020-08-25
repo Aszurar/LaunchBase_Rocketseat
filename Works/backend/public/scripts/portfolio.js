@@ -1,29 +1,6 @@
-const discordOverlay = document.querySelector('.discord-overlay');
-const discord = document.querySelector('.discord');
-
-const xboxOverlay = document.querySelector('.xbox-overlay');
-const xbox = document.querySelector('.xbox');
-
-// modais dos cards Projetos e Certificados
 const modalOverlay = document.querySelector('.modal-overlay');
 const cards = document.querySelectorAll('.card');
 const modal = document.querySelector('.modal');
-
-discord.addEventListener("click", function () {
-    discordOverlay.classList.add("active");
-});
-
-document.querySelector(".close-modal").addEventListener("click", function () {
-    discordOverlay.classList.remove("active");
-});
-
-xbox.addEventListener("click", function () {
-    xboxOverlay.classList.add("active");
-});
-
-document.querySelector(".close-modal-xbox").addEventListener("click", function () {
-    xboxOverlay.classList.remove("active");
-});
 
 cards.forEach(card => {
     card.addEventListener("click", function () {

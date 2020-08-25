@@ -94,7 +94,7 @@ form legend {
 .items-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px; 
+  gap: 18px;
 }
 
 .items-grid li {

@@ -47,28 +47,31 @@ server.get("/certificates", function (req, res) {
     return res.render("certificates", { cert: certdata });
 });
 
+const errodata = {
+    title: "ERRO 404 | Página não encontrada!",
+    number: "404",
+    description: "Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe. <br><br> Verifique o nome do endereço solicitado.",
+    info: "ERRO"
+}
+
+
 server.get("/video", function (req, res) {
     // pegando o id do vído e mandando para a página de modo que a única coisa que mude seja o vídeo na página
+
+
     const id = req.query.id;
     const video = videos.find(function (video) {
         return video.id == id;
     })
 
     if (!video) {
-        return res.send("Video not found!");
+        return res.render("not-found", { errodata: errodata });
     }
 
     return res.render("video", { item: video });
 });
 
 server.use(function (req, res) {
-    const errodata = {
-        title: "ERRO 404 | Página não encontrada!",
-        number: "404",
-        description: "Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe. <br><br> Verifique o nome do endereço solicitado.",
-        info: "ERRO"
-    }
-
     res.status(404).render("not-found", { errodata: errodata });
 });
 

@@ -6,4 +6,3 @@ for (const card of cardsProjects) {
         window.open(`/video?id=${videoId}`);
     });
 }
-
