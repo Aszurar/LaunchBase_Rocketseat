@@ -75,6 +75,6 @@ server.use(function (req, res) {
     res.status(404).render("not-found", { errodata: errodata });
 });
 
-server.listen(5001, function () {
+server.listen(5000, function () {
     console.log("Server is runnning");
 });

@@ -27,15 +27,15 @@ module.exports = [
     },
 
     {
-        id: "nvQ6eyZvf9E",
+        id: "1gKqENEklSk",
         title: "Site Pessoal",
-        link: "https://lucaslima.rj.r.appspot.com",
-        info: "Portfólio | Site pessoal cirado a partir dos conhecimentos do 2º módulo do LaunchBase.",
+        link: "",
+        info: "Portfólio | Site pessoal cirado a partir dos conhecimentos da 2º fase do LaunchBase.",
         tech: ["#xf38b",
             "#xf13b",
             "#xf3b8",
             "#xf3d3"],
-        duration: "3 min",
+        duration: "2 min",
         type: "Projeto Pessoal",
         featured: true
     },
