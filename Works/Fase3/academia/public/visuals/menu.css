@@ -9,7 +9,7 @@
   --color-bluebold: #7289da;
   --color-black: #000000;
   --color-gray: gray;
-  --color-orange: rgb(253, 149, 31);
+  --color-yellow: #F7DF1E;
   --color-bluepast: #99aab5;
 }
 
@@ -76,3 +76,7 @@ header {
   transition: width 500ms ease-in-out;
  /*o ease-inout é  aforma da animação, nessa opção, a animação vai começar e terminar devagar, mas no meio irá rápido  */
 }
+
+/* .links a.active::after{
+  width: 100%;
+} */

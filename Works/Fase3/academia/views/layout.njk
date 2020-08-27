@@ -11,13 +11,8 @@
         {% block head %}
             <title>Gym Manager</title>
             <link rel="stylesheet" href="/visuals/styles.css">
-        {% endblock %}
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
-        <!-- Bloco de título e visual que será substituído caso seja clicado em Portfólio -->
+        {% endblock head %}
+        
     </head>
 
     <body>
@@ -31,7 +26,7 @@
         </header>
 
 
-    {% block content %}{% endblock %}
+    {% block content %}{% endblock content %}
     <!-- bloco de conteúdo vindo do about, bloco dinấmico -->
 
 </body>
