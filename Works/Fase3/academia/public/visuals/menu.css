@@ -11,6 +11,8 @@
   --color-gray: gray;
   --color-yellow: #F7DF1E;
   --color-bluepast: #99aab5;
+  --color-orange: rgb(255, 201, 22);
+  --color-orange-card: rgb(253, 149, 31);
 }
 
 * {

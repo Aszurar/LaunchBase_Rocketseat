@@ -7,8 +7,8 @@ body {
 
 .card{
     background-color: var(--color-bluebold);
-    width: 1200px;
-    height: 700px;
+    width: 1000px;
+    height: 820px;
     /* espaçamento ao centro(funciona apenas com o height/width configurados */
     margin: 45px auto;
 
@@ -79,18 +79,65 @@ body {
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--color-gray);
+    color: var(--color-white);
 }
 
 .details .item span {
     padding: 8px 16px;
     background-color: var(--color-yellow);
     border-radius: 16px;
-    color: var(--color-gray);
+    color: var(--color-dark-light);
     margin-right: 4px;
     margin-top: 8px;
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+.details .item span:hover{
+    background-color: var(--color-orange-card);
+    transition: 1.3s;
+}
+
+/* FORM */
+
+input {
+    width: 100%;
+    outline: none;
+    font-size: 22px;
+    color: var(--color-dark-light);
+    font-weight: bold;
+    padding: 16px 8px;
+    border-radius: 4px;
+    background-color: var(--color-bluepast);
+}
+
+input[type="radio"] {
+    /* iniitial faz com que não seja aplicado o width 100%, e sim, fique o padrão para que não quebre */
+    width: initial; 
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--color-white);
+}
+
+button[type="submit"] {
+    padding: 16px 38px;
+    background-color: var(--color-dark-light);
+    color: var(--color-bluebold);
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 32px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--color-black);
+    transition: 1.3s;
 }

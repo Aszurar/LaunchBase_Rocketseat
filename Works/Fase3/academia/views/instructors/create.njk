@@ -8,37 +8,73 @@
       style="background: url(https://source.unsplash.com/collection/8353395/700x700) no-repeat center center / cover"></section>
       <section class="details">
       
-      <h3>Detalhes</h3>
+      <h3>Novo Instrutor</h3>
 
       <div class="item">
-         <div>Instrutor</div>
-         <div>Guilherme Saraiva</div>
-      </div>
-
-      <div class="item">
-         <div>Idade</div>
-         <div>29</div>
-      </div>
-
-      <div class="item">
-         <div>Sexo</div>
-         <div>Masculino</div>
+         <div>Avatar URL</div>
+         <div>
+            <input 
+               type="url" 
+               name="avatar_url"
+               placeholder="https://..."
+               >
+         </div>
       </div>
       
       <div class="item">
-         <div>Acompanhamento</div>
-            
+         <div>Instrutor</div>
+         <div>
+            <input 
+               type="text" 
+               name="name"
+               placeholder="Nome do Instrutor" 
+               >
+         </div>
+      </div>
+
+
+      <div class="item">
+         <div>Data de Nascimento</div>
+         <div>
+         {# INPUT TIPO DATE, CONFIGURA PARA RECEBER JÁ UM DATA COM CALENDÁRIO DISPONÍVEL #}
+            <input
+               type="date" 
+               name="birth"
+               >
+         </div>
+      </div>
+      
+      <div class="item">
+         <div>Sexo</div>
             <div>
-               <span>Musculação</span>
-               <span>Crossfit</span>
+
+            {# INPUT RADIO É O DE MARCAR UMA BOLINHA #}
+               <span><input type="radio" 
+                            name="gender" 
+                            value="M" checked >Masculino</span>
+                            {# CHECKED É UMA PROPRIEDADE EM QUE POR PADRÃO JÁ 
+                            VAI DEIXAR SELECIONADO  O INPUT TIPO RADIO, INDICANDO AO 
+                            USUÁRIO QUE ELE TERÁ QUE MARCAR UMA DAS OPÇÕES, NÃO PODE DEIXAR EM BRANCO #}
+               
+               <span><input type="radio" 
+                            name="gender"
+                            value="F">Feminino</span>
             </div>
       </div>
 
       <div class="item">
-         <div>Desde</div>
-         <div>01/01/2019</div>
+         <div>Area de Atuação</div>
+            <div>
+               <input 
+                     type="text" 
+                      name="services"
+                      placeholder="Separe os serviços prestados por vírgula"
+                      >
+            </div>
       </div>
-      
+
+      <button type="submit">Salvar</button>
+
       </section>
    </form>
 {% endblock content%}
