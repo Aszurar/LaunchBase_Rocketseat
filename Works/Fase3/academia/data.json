@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "José",
+      "birth": 0,
+      "gender": "M",
+      "services": "Crossfit",
+      "avatar_url": "https://www.google.com/",
+      "created_at": 1598912570643
+    }
+  ]
+}
