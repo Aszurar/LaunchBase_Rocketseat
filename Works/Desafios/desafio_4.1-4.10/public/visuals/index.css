@@ -11,9 +11,9 @@ body{
 
 .card{
     background-color: var(--color-dark-light);
-    margin: 45px auto;
+    margin: 25px auto;
     max-width: 1000px;
-    max-height: 800px;
+    max-height: 870px;
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -33,7 +33,7 @@ body{
 
     from{
         /* transform: translateY(90px); */
-        transform: translateY(-100px);
+        transform: translateY(-150px);
     }
 
     to{
@@ -42,7 +42,7 @@ body{
 }
 
 .details{
-    padding: 40px;
+    padding: 20px 40px;
 }
 
 .details .item{
@@ -100,6 +100,131 @@ body{
 
 .details span + span{
     background-color: var(--color-purple);
+}
+
+
+/* FORM */
+input {
+    width: 100%;
+    outline: none;
+    font-size: 22px;
+    color: var(--color-dark-light);
+    font-weight: bold;
+    padding: 12px 6px;
+    border-radius: 8px;
+    background-color: var(--color-bluebold);
+}
+
+
+select{
+    width: 100%;
+    outline:none;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 12px 6px;
+    border-radius: 8px;
+    color: var(--color-dark-light);
+    background-color: var(--color-bluebold);
+}
+
+input[type="radio"] {
+    /* iniitial faz com que não seja aplicado o width 100%, e sim, fique o padrão para que não quebre */
+    width: initial; 
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--color-white);
+}
+
+input[type="checkbox"]{
+    width: initial;
+    margin-right: 6px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    align-items: center;
+}
+
+/* escondendo o marcador padrão do navegador */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container span{
+    background-color: #eee;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* criando um novo marcador arredondado */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+/* cinca quando estiver em cima */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* quando é selecionado, o  */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  /* Crie o indicador (o ponto / círculo - oculto quando não marcado */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* Mostra o indicador (ponto / círculo) quando marcado */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+
+
+button[type="submit"] {
+    padding: 16px 38px;
+    background-color: var(--color-bluepast);
+    color: var(--color-black);
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 32px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--color-black);
+    color: var(--color-bluebold);
+    transition: 1.3s;
 }
 
 

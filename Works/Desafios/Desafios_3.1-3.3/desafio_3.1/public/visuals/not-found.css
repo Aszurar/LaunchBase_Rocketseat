@@ -9,6 +9,7 @@ body {
   justify-content: center;
   margin-top: 70px;
 }
+
 .erro {
   background-color: var(--color-black);
   width: 900px;
@@ -43,7 +44,7 @@ body {
   display: flex;
   align-items: center;
   margin: 30px;
-  padding: 70px 40px
+  padding: 70px 40px;
 }
 
 .img__card {
@@ -57,7 +58,6 @@ body {
   height: 250px;
   border: 2px solid black;
   border-radius: 15px;
-  
 }
 
 .card__info {
@@ -76,6 +76,7 @@ body {
   margin: 20px 0;
   color: var(--color-black);
 }
+
 .card__about {
   margin: 30px;
   display: grid;

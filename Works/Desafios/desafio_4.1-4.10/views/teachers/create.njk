@@ -1,0 +1,96 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <form class="card" method="post" action="/teachers">
+        <section class="avatar" 
+        style="background: url(https://source.unsplash.com/collection/628604/500x500) no-repeat center center / cover"></section>
+        <section class="details">
+
+            <h3>Novo Professor</h3>
+
+            
+            <div class="item">
+                <div>Avatar URL:</div>
+                <div>
+                    <input 
+                        type="text"
+                        name="avatar_url"
+                        placeholder="https://..."
+                        >
+                </div>
+            </div>
+            
+            <div class="item">
+                <div>Professor:</div>
+                <div>
+                    <input 
+                    type="text"
+                    name="name"
+                    placeholder="Digite o nome do Professor."
+                    >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento:</div>
+                <div>
+                    <input 
+                        type="date"
+                        name="birth"
+                    >
+                </div>
+            </div>
+
+           <div class="item">
+                <div>Grau de escolaridade:</div>
+                <select name="level">
+                    <option value="value1">Ensino Médio Completo</option>
+                    <option value="value2">Ensino Superio Completo</option>
+                    <option value="value3">Mestrado</option>
+                    <option value="value4">Doutarado</option>
+                </select>
+            </div>
+
+             <div class="item">
+                <div>Tipo de Aula</div>
+                <div class="typeclass">
+                    <span><input 
+                            type="checkbox"
+                            name ="type"
+                            value="O"
+                            >Online</span>
+                    <span><input 
+                            type="checkbox"
+                            name="type"
+                            value="P"
+                            >Presencial</span> 
+                    
+                    <label class="container">Online
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Matéria:</div>
+                <select name="classes">
+                    <option value="class1">Artes</option>
+                    <option value="class2">Biologia</option>
+                    <option value="class3">Espanhol</option>
+                    <option value="class4">Física</option>
+                    <option value="class5">Geografia</option>
+                    <option value="class6">História</option>
+                    <option value="class7">Inglês</option>
+                    <option value="class8">Matemática</option>
+                    <option value="class9">Química</option>
+                    <option value="class10">Redação</option>
+                    <option value="class11">Inglês</option>
+                </select>
+            </div>
+
+            <button type="submit">Salvar</button>
+        </section>
+    </form>
+{% endblock %}

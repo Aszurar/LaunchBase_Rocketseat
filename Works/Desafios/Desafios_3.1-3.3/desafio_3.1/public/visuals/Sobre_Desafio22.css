@@ -127,7 +127,6 @@ form legend {
 
 .items-grid li:hover {
   border: 3px solid var(--color-orange);
-  /* background-color: var(--color-bright);  */
   transition: 800ms;
 }
 

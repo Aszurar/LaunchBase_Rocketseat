@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block visuals %}
-    <link rel="stylesheet" href="../visuals/Sobre_Desafio22.css">
+    <link rel="stylesheet" href="/visuals/Sobre_Desafio22.css">
 {% endblock %}
 
 {% block mark %}
@@ -31,7 +31,6 @@
         <img src="{{about.img}}" alt="Imagem da {{about.title}}">
         <h1>{{about.title}}</h1>
         <p>{{about.description}}</p>
-        <!-- <ul> <div>Tecnologias:</div> <li>Javascript</li> <li>HTML</li> <li>CSS</li> <li>Nodejs</li> <li>ReactJS</li> <li>React Native</li> </ul> -->
     </div>
 
     <div class="border">
@@ -46,7 +45,7 @@
 
                     {% for item in about.cards %}
                         <li data-id="{{item}}">
-                            <img src="../assets/{{item}}.svg" alt="Ícone do {{item}}">
+                            <img src="/assets/{{item}}.svg" alt="Ícone do {{item}}">
                             <span>{{item}}</span>
                         </li>
                     {% endfor %}
