@@ -2,6 +2,21 @@
 const fs = require('fs');
 // Arquivo json não precisa ter o modulo.export para ser exportado
 const data = require('./data.json');
+
+// show
+exports.show = function(req, res) {
+    const { id } = req.params;
+
+    // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
+    // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
+    const foundInstructor = data.instructors.find(function(instructor){
+        return instructor.id == id;
+    });
+
+    if(!foundInstructor) return res.send("Instructor not found!");
+
+    return res.send(foundInstructor);
+}
 // create
 exports.post = function(req, res) {
     // req.body é o método usado para pegar dados do front end pelo método post
@@ -9,7 +24,7 @@ exports.post = function(req, res) {
     // pegando todas chaves do objeto body que contem as chaves e os valores dos dados inseridos
     const keys = Object.keys(req.body);
     //Object é um construtor que criará um objeto, . keys é para pegar todas chaves do objeto passado como parâmetro
-    // Com isso, o Keys será um veto com todas chaves do body(objeto que possui os pares chaves e valor)
+    // Com isso, o Keys será um vetor com todas chaves do body(objeto que possui os pares chaves e valor)
 
     keys.forEach(key => {
         // comparação para descobrir se alguma chave/input está vazio, se estiver, então mande uma mensagem ou renderize uma página

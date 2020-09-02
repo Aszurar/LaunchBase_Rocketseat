@@ -44,32 +44,29 @@
            <div class="item">
                 <div>Grau de escolaridade:</div>
                 <select name="level">
-                    <option value="value1">Ensino Médio Completo</option>
-                    <option value="value2">Ensino Superio Completo</option>
-                    <option value="value3">Mestrado</option>
-                    <option value="value4">Doutarado</option>
+                    <option value="hischool">Ensino Médio Completo</option>
+                    <option value="univers">Ensino Superio Completo</option>
+                    <option value="masters">Mestrado</option>
+                    <option value="doctorate">Doutarado</option>
                 </select>
             </div>
 
              <div class="item">
                 <div>Tipo de Aula</div>
                 <div class="typeclass">
-                    <span><input 
-                            type="checkbox"
-                            name ="type"
-                            value="O"
-                            >Online</span>
-                    <span><input 
-                            type="checkbox"
-                            name="type"
-                            value="P"
-                            >Presencial</span> 
+                    <div class="test">
+                        <label class="container">Online
+                            <input name="type" value="on" type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
                     
-                    <label class="container">Online
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-
+                    <div class="test" id="test2">
+                        <label class="container">Presencial
+                            <input name="type" value="off" type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
 

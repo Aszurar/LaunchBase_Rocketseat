@@ -8,7 +8,7 @@ body {
 .card{
     background-color: var(--color-bluebold);
     width: 1000px;
-    height: 820px;
+    height: 800px;
     /* espaçamento ao centro(funciona apenas com o height/width configurados */
     margin: 45px auto;
 
