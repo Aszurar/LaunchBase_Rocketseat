@@ -3,6 +3,8 @@ const fs = require('fs');
 // Arquivo json não precisa ter o modulo.export para ser exportado
 const data = require('./data.json');
 
+const { age, date } = require('./tools');
+
 // show
 exports.show = function(req, res) {
     const { id } = req.params;
@@ -15,8 +17,19 @@ exports.show = function(req, res) {
 
     if(!foundInstructor) return res.send("Instructor not found!");
 
-    return res.send(foundInstructor);
+    const instructor = {
+        // espalhando os dados do foundInstrucotr aqui
+        ...foundInstructor,
+        
+        // formatando os dados para a apresentação no navegador
+        age: age(foundInstructor.birth),
+        services: foundInstructor.services.split(","),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
+    }
+
+    return res.render("instructors/show", { instructor });
 }
+
 // create
 exports.post = function(req, res) {
     // req.body é o método usado para pegar dados do front end pelo método post
@@ -72,7 +85,25 @@ exports.post = function(req, res) {
     // return res.send(req.body);
 }
 
-
 // update
+exports.edit = function(req, res){
+    
+    const { id } = req.params;
 
+    // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
+    // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
+    const foundInstructor = data.instructors.find(function(instructor){
+        return instructor.id == id;
+    });
+
+    if(!foundInstructor) return res.send("Instructor not found!");
+    
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth),
+    }
+
+
+    return res.render("instructors/edit", { instructor });
+}
 // delete

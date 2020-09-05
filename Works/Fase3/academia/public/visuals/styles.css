@@ -8,7 +8,7 @@ body {
 .card{
     background-color: var(--color-bluebold);
     width: 1000px;
-    height: 800px;
+    max-height: 804px;
     /* espaçamento ao centro(funciona apenas com o height/width configurados */
     margin: 45px auto;
 
@@ -17,7 +17,7 @@ body {
 
     /* caixa de sombras */
     /* 1º - eixo x - eixo y - bluer -  */
-    box-shadow: 0px 2px  20px  -2px var(--color-black);
+    box-shadow: 0px 2px  20px  -2px var(--color-bluepast);
 
     opacity: 0;
     
@@ -62,8 +62,8 @@ body {
 /* pegando o primeiro div dentro das classes item*/
 .details h3,
 .details .item div:nth-child(1) {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 24px;
     color: var(--color-black);
     letter-spacing: 0.7px;
     font-weight: normal;
@@ -76,7 +76,7 @@ body {
 }
 
 .details h3{
-    font-size: 25px;
+    font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
     color: var(--color-white);
@@ -125,8 +125,9 @@ input::placeholder {
     color: var(--color-white);
 }
 
-button[type="submit"] {
-    padding: 16px 38px;
+button[type="submit"],
+.button {
+    padding: 16px 40px;
     background-color: var(--color-dark-light);
     color: var(--color-bluebold);
     width: 100%;
@@ -137,7 +138,14 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover{
+button[type="submit"], .button:hover{
     background-color: var(--color-black);
     transition: 1.3s;
+}
+
+.button{
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
 }

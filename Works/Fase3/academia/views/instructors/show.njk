@@ -4,44 +4,41 @@
    <div class="card">
       <section 
       class="avatar"
-      {# configurando a imagem de fundo vindo de um api de coleção de imagens de academia do unsplash, focando no centro da imagem, configurando para não repetir e abranger a tela inteir\ #}
-      style="background: url(https://source.unsplash.com/collection/8353395/700x700) no-repeat center center / cover"></section>
+      style="background: url({{instructor.avatar_url}}) no-repeat center center / cover"></section>
       <section class="details">
       
       <h3>Detalhes</h3>
 
       <div class="item">
          <div>Instrutor</div>
-         <div>Guilherme Saraiva</div>
+         <div>{{instructor.name}}</div>
       </div>
 
       <div class="item">
          <div>Idade</div>
-         <div>29</div>
+         <div>{{instructor.age}} anos</div>
       </div>
 
       <div class="item">
          <div>Sexo</div>
-         <div>Masculino</div>
+         <div>{{"Masculino" if instructor.gender == "M" else "Feminino"}}</div>
       </div>
       
       <div class="item">
          <div>Acompanhamento</div>
             
             <div>
-               <span>Musculação</span>
-               <span>Crossfit</span>
+            {% for service in instructor.services %}
+               <span>{{ service }}</span>
+            {% endfor %}
             </div>
       </div>
 
       <div class="item">
          <div>Desde</div>
-         <div>01/01/2019</div>
+         <div>{{instructor.created_at}}</div>
       </div>
       
-      <div class="item">
-         <a href="#" class="button">Editar</a>
-      </div>
       </section>
    </div>
 {% endblock content%}
