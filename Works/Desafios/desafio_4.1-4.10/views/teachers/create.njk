@@ -6,11 +6,11 @@
         style="background: url(https://source.unsplash.com/collection/628604/500x500) no-repeat center center / cover"></section>
         <section class="details">
 
-            <h3>Novo Professor</h3>
+            <h3>{{create.subtitle}}</h3>
 
             
             <div class="item">
-                <div>Avatar URL:</div>
+                <div>{{create.titles[0]}}:</div>
                 <div>
                     <input 
                         type="text"
@@ -21,18 +21,18 @@
             </div>
             
             <div class="item">
-                <div>Professor:</div>
+                <div>{{create.titles[1]}}:</div>
                 <div>
                     <input 
                     type="text"
                     name="name"
-                    placeholder="Digite o nome do Professor."
+                    placeholder="Digite o nome do Professor..."
                     >
                 </div>
             </div>
 
             <div class="item">
-                <div>Data de Nascimento:</div>
+                <div>{{create.titles[2]}}:</div>
                 <div>
                     <input 
                         type="date"
@@ -42,27 +42,27 @@
             </div>
 
            <div class="item">
-                <div>Grau de escolaridade:</div>
+                <div>{{create.titles[3]}}:</div>
                 <select name="level">
-                    <option value="hischool">Ensino Médio Completo</option>
-                    <option value="univers">Ensino Superio Completo</option>
-                    <option value="masters">Mestrado</option>
-                    <option value="doctorate">Doutarado</option>
+                    <option value="hischool">{{create.level[0]}}</option>
+                    <option value="univers">{{create.level[1]}}</option>
+                    <option value="masters">{{create.level[2]}}</option>
+                    <option value="doctorate">{{create.level[3]}}</option>
                 </select>
             </div>
 
              <div class="item">
-                <div>Tipo de Aula</div>
+                <div>{{create.titles[4]}}:</div>
                 <div class="typeclass">
-                    <div class="test">
-                        <label class="container">Online
-                            <input name="type" value="on" type="checkbox" checked>
-                            <span class="checkmark"></span>
+                    <div class="test test1">
+                        <label class="container">{{create.type[0]}}
+                            <input name="type" value="on" type="checkbox">
+                            <span class="checkmark" id="check1"></span>
                         </label>
                     </div>
                     
-                    <div class="test" id="test2">
-                        <label class="container">Presencial
+                    <div class="test test2">
+                        <label class="container">{{create.type[1]}}
                             <input name="type" value="off" type="checkbox">
                             <span class="checkmark"></span>
                         </label>
@@ -72,22 +72,30 @@
 
             <div class="item">
                 <div>Matéria:</div>
-                <select name="classes">
-                    <option value="class1">Artes</option>
-                    <option value="class2">Biologia</option>
-                    <option value="class3">Espanhol</option>
-                    <option value="class4">Física</option>
-                    <option value="class5">Geografia</option>
-                    <option value="class6">História</option>
-                    <option value="class7">Inglês</option>
-                    <option value="class8">Matemática</option>
-                    <option value="class9">Química</option>
-                    <option value="class10">Redação</option>
-                    <option value="class11">Inglês</option>
-                </select>
+                {# <select name="classes">
+                    <option value="Artes">Artes</option>
+                    <option value="Biologia">Biologia</option>
+                    <option value="Espanhol">Espanhol</option>
+                    <option value="Física">Física</option>
+                    <option value="Geografia">Geografia</option>
+                    <option value="História">História</option>
+                    <option value="Inglês">Inglês</option>
+                    <option value="Matemática">Matemática</option>
+                    <option value="Química">Química</option>
+                    <option value="Redação">Redação</option>
+                    <option value="Inglês">Inglês</option>
+                </select> #}
+
+                <input 
+                    type="text" 
+                    name="classes"
+                    placeholder="Informe a matéria que será lecionada..."
+                    >
             </div>
 
-            <button type="submit">Salvar</button>
+            <button type="submit">{{create.save}}</button>
         </section>
     </form>
+
+    <script src="/scripts/create.js"></script>
 {% endblock %}

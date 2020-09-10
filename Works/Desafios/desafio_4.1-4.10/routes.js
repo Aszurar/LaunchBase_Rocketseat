@@ -11,8 +11,17 @@ routes.get("/teachers", function(req, res){
 });
 
 routes.get("/teachers/create", function(req, res){
-    return res.render("teachers/create");
+    const create = {
+        subtitle: "Novo Professor",
+        titles: ["Avatar URL", "Professor", "Data de Nascimento", "Grau de escolaridade", "Tipo de Aula"],
+        type: ["Online", "Presencial"],
+        level: ["Ensino Médio Completo", "Ensino Superio Completo", "Mestrado", "Doutarado"],
+        save: "Salvar"
+    }
+    return res.render("teachers/create", { create });
 });
+
+routes.get("/teachers/:id", teachers.show);
 
 routes.post("/teachers", teachers.post);
 

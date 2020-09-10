@@ -9,8 +9,11 @@
   --color-black: #000000;
   --color-gray: gray;
   --color-orange: rgb(253, 149, 31);
+  --color-orange-dark: rgb(187, 92, 24);
+
   --color-bluepast: #99aab5;
   --color-green: rgb(4, 211, 97);
+  --color-green-dark: rgb(4, 119, 56);
   --color-purple: rgb(113, 89, 193);
 
 }
