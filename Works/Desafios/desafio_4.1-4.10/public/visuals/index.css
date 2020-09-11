@@ -163,11 +163,11 @@ input[type="checkbox"]{
 }
 .test1{
     color: var(--color-dark-light);
-    background-color: var(--color-green);
+    background-color: var(--color-green-dark);
 }
 
 .test2{
-    background-color: var(--color-orange);
+    background-color: var(--color-orange-dark);
     height: 28px;
 }
 
@@ -180,7 +180,7 @@ input[type="checkbox"]{
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--color-dark-light);
+    color: var(--color-bluebold);
 }
 
 /* escondendo o marcador padrão do navegador */
@@ -243,33 +243,33 @@ input[type="checkbox"]{
 
 .container:hover{
     transition: 1s;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .test1:hover{
     transition: 1s;
-    background-color: var(--color-green-dark);
+    background-color: var(--color-green);
 }
 
 .test2:hover{
     transition: 1s;
-    background-color: var(--color-orange-dark);
+    background-color: var(--color-orange);
 }
 
 .test1.active{
-    background-color: var(--color-green-dark);
+    background-color: var(--color-green);
 }
 
 .test2.active{
-    background-color: var(--color-orange-dark);
+    background-color: var(--color-orange);
 }
 
 .ct1.active{
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .ct2.active{
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .classes{
@@ -277,9 +277,10 @@ input[type="checkbox"]{
 }
 
 
-button[type="submit"] {
+button[type="submit"],
+.button{
     padding: 14px 38px;
-    background-color: var(--color-bluepast);
+    background-color: var(--color-bluebold);
     color: var(--color-black);
     width: 100%;
     border-radius: 4px;
@@ -290,6 +291,19 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover{
+    background-color: var(--color-black);
+    color: var(--color-bluebold);
+    transition: 1.3s;
+}
+
+.button{
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.button:hover{
     background-color: var(--color-black);
     color: var(--color-bluebold);
     transition: 1.3s;

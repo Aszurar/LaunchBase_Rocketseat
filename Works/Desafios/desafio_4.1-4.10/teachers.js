@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./data.json');
-const { age, graduation, type, classes, typeEdit } = require('./tools');
+const { age, graduation, type, classes, typeEdit, date } = require('./tools');
 
 const create = {
     subtitle: "Novo Professor",
@@ -82,6 +82,7 @@ exports.edit = function(req, res){
         ...foundTeacher,
         
         type: typeEdit(foundTeacher.type),
+        birth: date(foundTeacher.birth)
     }
 
 

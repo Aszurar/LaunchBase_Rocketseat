@@ -1,7 +1,5 @@
-const { on } = require("nodemon");
-
 module.exports = {
-    age: function (timestamp) {
+    age: function(timestamp) {
         const today = new Date();
         const birthday = new Date(timestamp);
 
@@ -15,7 +13,7 @@ module.exports = {
         return age;
     },
 
-    graduation: function (level) {
+    graduation: function(level) {
         let graduation;
 
         switch (level) {
@@ -37,7 +35,7 @@ module.exports = {
         return graduation;
     },
 
-    type: function (type) {
+    type: function(type) {
         let status;
 
         switch (type) {
@@ -55,7 +53,7 @@ module.exports = {
         return status;
     },
 
-    classes: function (classes) {
+    classes: function(classes) {
         let subjects;
 
         let re = /\b,|\be/;
@@ -64,13 +62,21 @@ module.exports = {
         return subjects;
     },
 
-    typeEdit: function (type) { 
+    typeEdit: function(type) { 
         
         if (Array.isArray(type)) {
             return "double"
         }
         
         return type;
-    }
+    },
+    
+    date: function(timestamp){
+        const date = new Date(timestamp);
+        const year = date.getUTCFullYear();
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2);
+        const day = `0${date.getUTCDate()}`.slice(-2);
 
+        return `${year}-${month}-${day}`;
+    }
 }
