@@ -30,7 +30,7 @@ body {
 header {
   background-color: var(--color-bluebold);
   width: 100%;
-  padding: 32px;
+  padding: 2rem;
   text-align: center;
   box-sizing: border-box;
   /* faz com que o conteúdo vá até o limite da largura disponível - resolve o problema com padding */
@@ -42,7 +42,7 @@ header {
 
 /* forma de realizar um separamento entre elementos utilizando só uma propriedade, nesse caso, a + a quer dizer pegar um elemento a e seu antecessor e aplicar a propriedade no meio deles! */
 .links a + a {
-  margin-left: 32px;
+  margin-left: 2rem;
 }
 
 .links a {

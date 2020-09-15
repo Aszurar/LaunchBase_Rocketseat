@@ -1,11 +1,11 @@
 {
   "instructors": [
     {
-      "id": "1",
-      "name": "Ana Bella Ferraz",
+      "id": 1,
+      "name": "Ana Bella",
       "birth": 915148800000,
       "gender": "F",
-      "services": "Natação, Ginástica, Crossfit",
+      "services": "Natação",
       "avatar_url": "https://www.google.com/",
       "created_at": 1598912570643
     },

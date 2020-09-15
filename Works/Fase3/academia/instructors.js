@@ -110,6 +110,8 @@ exports.edit = function (req, res) {
 //updaterealese
 exports.put = function (req, res) {
     const { id } = req.body;
+    // const keys = Object.keys(req.body);
+
     let index = 0;
 
     const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
@@ -121,12 +123,22 @@ exports.put = function (req, res) {
 
     if (!foundInstructor) return res.send("Instrutor não encontrado!.");
 
+    // keys.forEach(key => {
+        
+    //     if(req.body[key] == ""){
+    //         return res.send("Por favor, preencha todos os campo");
+    //     }
+    // });
+
+
     const instructor = {
         ...foundInstructor,
         ...req.body,
 
         birth: Date.parse(req.body.birth)
     }
+
+ 
 
 
     console.log(instructor);
@@ -144,3 +156,26 @@ exports.put = function (req, res) {
 }
 
 // delete
+exports.delete = function(req, res){
+    const { id } = req.body;
+    // console.log(id);
+
+    // Percorrendo um a um intrutor do data.json, e caso ele tenha o id diferente do atual, ento retorna verdadeiro
+    // e ele é salvo nesse novo array de instrutores. Caso ele seja igual ao id atual, então retorna falso e com isso ele não
+    // é adicionado nesse novo array de instrutores
+    const filteredInstructors = data.instructors.filter(function(instructor){
+        return instructor.id != id;
+    });
+
+    data.instructors = filteredInstructors;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("Write file erro!");
+
+        return res.redirect("/instructors");
+    });
+
+}
+
+
+

@@ -7,17 +7,17 @@ body {
 
 .card{
     background-color: var(--color-bluebold);
-    width: 1000px;
-    max-height: 804px;
+    max-width: 62.5rem;
+    max-height: 53.5rem;
     /* espaçamento ao centro(funciona apenas com o height/width configurados */
-    margin: 45px auto;
+    margin: 1.875rem auto;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     /* caixa de sombras */
     /* 1º - eixo x - eixo y - bluer -  */
-    box-shadow: 0px 2px  20px  -2px var(--color-bluepast);
+    box-shadow: 0rem 0.125rem  1.25rem  -0.125rem var(--color-bluepast);
 
     opacity: 0;
     
@@ -46,12 +46,12 @@ body {
 /* details */
 
 .details{
-    padding: 32px;
+    padding: 2rem;
 }
 
 .details .item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 20px 0;
+    border-bottom: 0.08rem solid rgba(0, 0, 0, 0.5);
+    padding: 1.25rem 0;
 }
 
 /* tirar o border do último  */
@@ -62,33 +62,33 @@ body {
 /* pegando o primeiro div dentro das classes item*/
 .details h3,
 .details .item div:nth-child(1) {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: var(--color-black);
-    letter-spacing: 0.7px;
+    letter-spacing: 0.044rem;
     font-weight: normal;
 }
 
 .details .item div:nth-child(2) {
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--color-white);
     font-weight: bold;
 }
 
 .details h3{
-    font-size: 24px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
     color: var(--color-white);
 }
 
 .details .item span {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     background-color: var(--color-yellow);
-    border-radius: 16px;
+    border-radius: 1rem;
     color: var(--color-dark-light);
-    margin-right: 4px;
-    margin-top: 8px;
+    margin-right: 0.25rem;
+    margin-top: 0.5rem;
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
@@ -148,4 +148,10 @@ button[type="submit"], .button:hover{
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
+}
+
+#form-delete button {
+    color: var(--color-black);
+    margin-top: 0.5rem;
+    background-color: var(--color-white);
 }
