@@ -12,13 +12,13 @@ body{
 .card{
     background-color: var(--color-dark-light);
     margin: 25px auto;
-    max-width: 1000px;
-    max-height: 870px;
+    max-width: 62.5rem;
+    max-height: 54.375rem;
 
     display: grid;
     grid-template-columns: 40% 60%;
 
-    box-shadow: 0px 2px 20px 8px var(--color-black);
+    box-shadow: 0rem 0.125rem 1.25rem 0.5rem var(--color-black);
 
     opacity: 0;
 
@@ -80,7 +80,7 @@ body{
 
 .details span {
     padding: 8px 16px;
-    background-color: red;
+    background-color: var(--color-red);
     border-radius: 16px;
     color: var(--color-black);
     margin-right: 4px;
@@ -92,14 +92,23 @@ body{
 
 .details span + span + span + span{
     background-color: var(--color-green);
+
 }
 
 .details span + span + span{
     background-color: var(--color-orange);
+
 }
 
 .details span + span{
     background-color: var(--color-purple);
+
+}
+
+.details span:hover{
+    transition: 1.3s;
+    background-color: var(--color-black);
+    color: var(--color-bluebold);
 }
 
 /* FORM */
@@ -276,6 +285,18 @@ input[type="checkbox"]{
     display: flex;
 }
 
+#ultimateButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#ultimateButtons .edit + .delete{
+    margin-left: 2rem;
+}
+
+
 
 button[type="submit"],
 .button{
@@ -303,6 +324,20 @@ button[type="submit"]:hover{
     text-align: center;
 }
 
+.edit .button{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 5.3rem;
+    padding-right: 5.3rem;
+
+}
+
+.delete button{
+    background-color: var(--color-white);
+    padding-left: 5.3rem;
+    padding-right: 5.3rem;
+}
+
 .button:hover{
     background-color: var(--color-black);
     color: var(--color-bluebold);
@@ -321,6 +356,7 @@ button[type="submit"]:hover{
     background-color: var(--color-black);
     color: var(--color-white);
 }
+
 
 
 

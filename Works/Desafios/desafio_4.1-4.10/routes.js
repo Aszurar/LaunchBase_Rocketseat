@@ -14,9 +14,7 @@ routes.get("/", function(req, res){
     return res.redirect("/teachers");
 });
 
-routes.get("/teachers", function(req, res){
-    return res.render("teachers/index");
-});
+routes.get("/teachers", teachers.index);
 
 routes.get("/teachers/create", function(req, res){
     
@@ -28,6 +26,10 @@ routes.get("/teachers/:id", teachers.show);
 routes.post("/teachers", teachers.post);
 
 routes.get("/teachers/:id/edit", teachers.edit);
+
+routes.put("/teachers", teachers.put);
+
+routes.delete("/teachers", teachers.delete);
 
 routes.get("/students", function(req, res){
     return res.render("students");

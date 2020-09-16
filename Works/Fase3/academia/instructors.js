@@ -3,7 +3,14 @@ const fs = require('fs');
 // Arquivo json não precisa ter o modulo.export para ser exportado
 const data = require('./data.json');
 
-const { age, date } = require('./tools');
+const { age, date, service } = require('./tools');
+
+
+// index
+exports.index = function(req, res) {
+
+    return res.render("instructors/index", { instructors: data.instructors });
+}
 
 // show
 exports.show = function (req, res) {
@@ -23,7 +30,6 @@ exports.show = function (req, res) {
 
         // formatando os dados para a apresentação no navegador
         age: age(foundInstructor.birth),
-        services: foundInstructor.services.split(","),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
     }
 
@@ -60,14 +66,13 @@ exports.post = function (req, res) {
     //atribuindo um id, um número para cada conjunto de dados
     const id = Number(data.instructors.length + 1);
 
-
     // adicionando objetos json no array instrucotrs, um após o outro [{;..}. {...},...]
     data.instructors.push({
         id,
         name,
         birth,
         gender,
-        services,
+        services: service(services),
         avatar_url,
         created_at
     });
@@ -101,6 +106,7 @@ exports.edit = function (req, res) {
     const instructor = {
         ...foundInstructor,
         birth: date(foundInstructor.birth),
+        services: service(foundInstructor.services),
     }
 
 
@@ -135,7 +141,8 @@ exports.put = function (req, res) {
         ...foundInstructor,
         ...req.body,
 
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(id),
     }
 
  
