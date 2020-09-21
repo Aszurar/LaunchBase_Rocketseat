@@ -1,0 +1,74 @@
+{
+  "teachers": [
+    {
+      "id": "11",
+      "name": "Gustavo",
+      "type": "on",
+      "birth": 643161600000,
+      "level": "hischool",
+      "classes": [
+        "Álgebra",
+        " Geometria",
+        " Aritmética",
+        " Física"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "created_at": 1600646337254
+    },
+    {
+      "id": 2,
+      "name": "Bruna",
+      "type": [
+        "on",
+        "off"
+      ],
+      "birth": 724982400000,
+      "level": "masters",
+      "classes": [
+        "História"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "created_at": 1600649430241
+    },
+    {
+      "id": "3",
+      "name": "Karen",
+      "type": "on",
+      "birth": 782611200000,
+      "level": "hischool",
+      "classes": [
+        "Biologia",
+        " Química"
+      ],
+      "avatar_url": "https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/105969048_267538964334687_2245683169376221659_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=XceWmFACzdsAX_MMVXh&_nc_tp=19&oh=53a532450208baaabc02b4f5568f496b&oe=5F924BD5",
+      "created_at": 1600649867101
+    },
+    {
+      "id": "4",
+      "name": "Thadeu",
+      "type": "off",
+      "birth": 845942400000,
+      "level": "hischool",
+      "classes": [
+        "Física 1",
+        " Álgebra",
+        " Química 1"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1524383880260-db51af30f5e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "created_at": 1600650399673
+    },
+    {
+      "id": 5,
+      "name": "Laura",
+      "type": "on",
+      "birth": 767145600000,
+      "level": "masters",
+      "classes": [
+        "Redação ",
+        " Português"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1553514029-1318c9127859?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
+      "created_at": 1600651132747
+    }
+  ]
+}

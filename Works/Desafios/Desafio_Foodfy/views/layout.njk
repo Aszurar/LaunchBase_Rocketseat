@@ -7,31 +7,31 @@
         <link rel="stylesheet" href="/visuals/menu.css">
         {% block head %}{% endblock %}
 
-        <body>
-            <header>
-                <nav class="menu">
+    <body>
+        <header>
+            <nav class="menu">
 
-                    <div class="logo">
-                        <a href="/">
-                            <img src="/assets/logo.png" alt="Foodfy">
-                        </a>
-                    </div>
-
-                    {% block links %}{% endblock %}
-
-                </nav>
-
-            </header>
-
-            <div class="content-flex">
-                <div class="content">
-                    {% block content %}{% endblock %}
+                <div class="logo">
+                    <a href="/">
+                        <img src="/assets/logo.png" alt="Foodfy">
+                    </a>
                 </div>
 
-                <div class="copyright">
-                    <p>Todos direitos reservados, receitas Foodfy.</p>
-                </div>
+                {% block links %}{% endblock %}
+
+            </nav>
+
+        </header>
+
+        <div class="content-flex">
+            <div class="content">
+                {% block content %}{% endblock %}
             </div>
-        </body>
 
-    </html>
+            <div class="copyright">
+                <p>Todos direitos reservados, receitas Foodfy.</p>
+            </div>
+        </div>
+    </body>
+
+</html>

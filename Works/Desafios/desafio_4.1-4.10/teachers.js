@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./data.json');
-const { age, graduation, type, classes, typeEdit, date } = require('./tools');
+const { age, graduation, type, classesArray, typeEdit, date } = require('./tools');
 
 const create = {
     subtitle: "Novo Professor",
@@ -11,7 +11,7 @@ const create = {
 }
 
 exports.index = function(req, res){
-    return res.render("teachers/index", { teacher: data});
+    return res.render("teachers/index", { teachers: data.teachers});
 }
 
 // show
@@ -30,7 +30,6 @@ exports.show = function(req, res){
         age: age(foundTeacher.birth),
         graduation: graduation(foundTeacher.level),
         type: type(foundTeacher.type),
-        classes: classes(foundTeacher.classes),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
     }
 
@@ -61,7 +60,7 @@ exports.post = function(req, res){
         type,
         birth,
         level,
-        classes,
+        classes: classesArray(req.body.classes),
         avatar_url,
         created_at
     }); 
@@ -89,7 +88,8 @@ exports.edit = function(req, res){
         ...foundTeacher,
         
         type: typeEdit(foundTeacher.type),
-        birth: date(foundTeacher.birth)
+        birth: date(foundTeacher.birth),
+        classes: classesArray(foundTeacher.classes)
     }
 
 
@@ -115,6 +115,7 @@ exports.put = function(req, res){
         ...req.body,
 
         birth: Date.parse(req.body.birth),
+        classes: classesArray(req.body.classes)
     }
 
     console.log(teacher);

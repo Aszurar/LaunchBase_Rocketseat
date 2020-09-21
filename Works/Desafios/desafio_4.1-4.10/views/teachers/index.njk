@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card">
+    <div class="card table-index">
         {# tag para formar uma tabela #}
         <table>
             {# cabeçalho da tabela #}
@@ -9,26 +9,29 @@
                 {# linha do cabeçalho  #}
                 <tr>
                     {# coluna do cabeçalho #}
-                    <th style="color: white">Instructor</th>
-                    <th style="color: white">Atendimento</th>
+                    <th>Professores</th>
+                    <th>Disciplinas</th>
+                    <th>Sobre</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td style="color: white">Lucas de Lima</td>
-                    <td style="color: white">Crossfit</td>
-                </tr>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td> 
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
+                            {{teacher.name}}
+                        </td>
+                        
+                        <td>
+                            {% for class in teacher.classes %}
+                                <span class="classes">{{class}}</span>
+                            {% endfor %}
+                        </td>
 
-                <tr>
-                    <td style="color: white">Lucas de Lima</td>
-                    <td style="color: white">Natação</td>
-                </tr>
-
-                <tr>
-                    <td style="color: white">Lucas de Lima</td>
-                    <td style="color: white">Musculação</td>
-                </tr>
+                        <td class="button-about"><a href="/teachers/{{teacher.id}}">VER</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

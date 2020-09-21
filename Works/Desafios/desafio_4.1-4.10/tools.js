@@ -53,8 +53,12 @@ module.exports = {
         return status;
     },
 
-    classes: function(classes) {
+    classesArray: function(classes) {
         let subjects;
+
+        if(Array.isArray(classes)){
+            return classes
+        }
 
         let re = /\b,|\be/;
         subjects = classes.split(re);

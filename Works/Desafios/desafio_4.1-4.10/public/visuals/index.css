@@ -79,15 +79,17 @@ body{
 }
 
 .details span {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     background-color: var(--color-red);
-    border-radius: 16px;
+    border-radius: 1rem;
     color: var(--color-black);
-    margin-right: 4px;
-    margin-top: 8px;
+    margin-right: 0.25rem;
+    margin-top: 0.5rem;
     display: inline-block;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1rem;
+    cursor: default;
+
 }
 
 .details span + span + span + span{
@@ -356,6 +358,138 @@ button[type="submit"]:hover{
     background-color: var(--color-black);
     color: var(--color-white);
 }
+
+/* TABELA */
+.table-index{
+    color: var(--color-white);
+    display: block;
+    padding: 2.5rem;
+    box-sizing: border-box;
+}
+
+.table-index table{
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table-index table thead tr th{
+    color: var(--color-bluebold);
+    text-align: center;
+}
+
+td, th{
+    padding: 1rem;
+    border-bottom: 0.063rem solid var(--color-bluebold);
+}
+
+th{
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-shadow: 0.188rem 0.063rem 0.4rem var(--color-black);
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+
+.table-index table tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+
+    align-items: center;
+    gap: 1rem;
+}
+
+.table-index table tbody tr td span{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0.188rem 0.063rem 0.4rem -0.1rem var(--color-black);
+    border: 0.125rem solid var(--color-black);
+}
+
+
+.button-about{
+    text-align: center;
+}
+
+.button-about a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-white);
+    padding: 0.4rem 1.5rem;
+    background-color: var(--color-bluebold);
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.button-about a:hover{
+    transition: 1.3s;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.table-index thead tr th:last-child, td:last-child{
+    text-align: center;
+}
+
+.table-index tbody tr td .classes{
+    color: var(--color-black);
+    border: none;
+    display: inline;
+    padding: 0;
+    box-shadow: none;
+    background-position: unset;
+    background-size: unset;
+    border-radius: unset;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--color-red);
+    cursor: default;
+}
+
+.table-index tbody tr td .classes + .classes{
+    margin-left: 0.5rem;
+}
+
+.table-index tbody tr td .classes + .classes + .classes + .classes{
+    background-color: var(--color-purple);
+    
+}
+
+.table-index tbody tr td .classes + .classes + .classes{
+    background-color: var(--color-orange);  
+}
+
+.table-index tbody tr td .classes + .classes{
+    background-color: var(--color-green);  
+}
+
+.table-index tbody tr td .classes:hover{
+    transition: 1.3s;
+    background-color: var(--color-black);
+    color: var(--color-bluebold);
+}
+
+.table-index tbody tr td .classes + .classes + .classes:hover{
+    transition: 1.3s;
+    background-color: var(--color-purple);
+    background-color: var(--color-black);
+    color: var(--color-bluebold);
+}
+
+
+
+
+
+
+
 
 
 
