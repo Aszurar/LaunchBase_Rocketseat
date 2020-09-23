@@ -51,11 +51,6 @@ header {
  position: relative;
 }
 
-.links a.active{
-  font-weight: bold;
-  color: var(--color-white);
- }
-
  .links a:hover{
    color: var(--color-white);
  }
@@ -64,11 +59,11 @@ header {
 .links a::after{
   content: "";
   width: 0%;
-  height: 2px;
+  height: 0.125rem;
   background-color: var(--color-white);
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -0.25rem;
 }
 
  .links a:hover::after{
@@ -82,3 +77,15 @@ header {
 /* .links a.active::after{
   width: 100%;
 } */
+
+
+.links a.active{
+  font-weight: bold;
+  color: var(--color-white);
+ }
+
+.links a.active::after{
+  font-weight: bold;
+  color: var(--color-white);
+  width: 100%;
+ }

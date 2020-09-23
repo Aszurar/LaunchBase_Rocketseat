@@ -8,7 +8,7 @@ body {
 .card{
     background-color: var(--color-bluebold);
     max-width: 62.5rem;
-    max-height: 55rem;
+    max-height: 75rem;
     /* espaçamento ao centro(funciona apenas com o height/width configurados */
     margin: 1.875rem auto;
 
@@ -51,7 +51,7 @@ body {
 
 .details .item {
     border-bottom: 0.08rem solid rgba(0, 0, 0, 0.5);
-    padding: 1.25rem 0;
+    padding: 1rem 0;
 }
 
 /* tirar o border do último  */
@@ -102,15 +102,14 @@ body {
 
 /* FORM */
 
-input {
+input, select {
     width: 100%;
     outline: none;
-    font-size: 22px;
+    font-size: 1.3rem;
     color: var(--color-dark-light);
     font-weight: bold;
-    padding: 16px 8px;
-    border-radius: 4px;
-    background-color: var(--color-bluepast);
+    border-radius: 0.25rem;
+    background-color: var(--color-bluebold);
 }
 
 input[type="radio"] {
@@ -216,7 +215,8 @@ tbody tr td span{
     border: 0.125rem solid var(--color-bluepast);
 }
 
-tbody tr td:last-child a{
+tbody tr td:last-child a,
+.table-container > a {
     color: var(--color-white);
     background-color: var(--color-dark-light);
     padding: 0.6rem 1.5rem;
@@ -224,11 +224,21 @@ tbody tr td:last-child a{
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.75rem;
+    font-weight: bold;
 }
 
-tbody tr td:last-child a:hover{
+tbody tr td:last-child a:hover, 
+.table-container > a:hover{
     transition: 1.3s;
-    background-color: var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* sinal de >, indica o filho direto daquele elemento, ou seja, caso tenha outros a dentro de outros elementos
+não importará, ele só pegara o a que é filhot direto do elemento!*/
+.table-container > a {
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 tbody tr td span + span{

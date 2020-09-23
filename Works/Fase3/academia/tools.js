@@ -24,20 +24,26 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2);
         const day = `0${date.getUTCDate()}`.slice(-2);
 
-        return `${year}-${month}-${day}`;
+        return{ 
+                day,
+                month,
+                year,
+                iso:`${year}-${month}-${day}`,
+                birthDay: `${day}/${month}`  
+              };
     },
 
     service: function (classes) {
-       if (Array.isArray(classes)) {
-           return classes
-       }
-       
+        if (Array.isArray(classes)) {
+            return classes
+        }
+
         let subjects;
 
         console.log(classes);
 
 
-        
+
         let re = /\b,|\be/;
         subjects = classes.split(re);
 
@@ -52,4 +58,40 @@ module.exports = {
         return subjects;
     },
 
+    bloods: function (blood) {
+        let typeBlood;
+
+        switch (blood) {
+
+            case "A0":
+                typeBlood = "A"
+                break;
+
+            case "A1":
+                typeBlood = "A+"
+                break;
+            case "B0":
+                typeBlood = "B"
+                break;
+            case "B1":
+                typeBlood = "B+"
+                break;
+            case "AB0":
+                typeBlood = "AB"
+                break;
+            case "AB1":
+                typeBlood = "AB+"
+                break;
+            case "O0":
+                typeBlood = "O"
+                break;
+            case "O1":
+                typeBlood = "O+"
+                break;
+            default:
+                break;
+        }
+
+        return typeBlood;
+    }
 }

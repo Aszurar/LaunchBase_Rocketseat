@@ -1,4 +1,28 @@
 {
+  "members": [
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "name": "Maria",
+      "email": "Maria58@gmail.com",
+      "birth": 977443200000,
+      "gender": "F",
+      "blood": "AB1",
+      "weight": "60",
+      "height": "158",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1539698103494-a76dd0436fbc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "name": "Aurea",
+      "email": "aureastarline@gmail.com",
+      "birth": 882748800000,
+      "gender": "F",
+      "blood": "A1",
+      "weight": "64",
+      "height": "160"
+    }
+  ],
   "instructors": [
     {
       "id": 1,
@@ -29,9 +53,9 @@
       "birth": 655948800000,
       "gender": "F",
       "services": [
-        "Musculação",
-        " Ginástica ",
-        " Yoga"
+        "Ginástica",
+        " Crossfit ",
+        " Musculação"
       ],
       "avatar_url": "https://images.unsplash.com/photo-1534367990512-edbdca781b00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
       "created_at": 1600290578719
@@ -59,6 +83,17 @@
       ],
       "avatar_url": "https://images.unsplash.com/photo-1576511420003-e33641629f94?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80",
       "created_at": 1600291823641
+    },
+    {
+      "id": 6,
+      "name": "Valéria",
+      "birth": 719539200000,
+      "gender": "F",
+      "services": [
+        "Musculação"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1541338784564-51087dabc0de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "created_at": 1600788100667
     }
   ]
 }

@@ -1,42 +1,23 @@
 // trabalhando com arquivos do sistema, filesystem
 const fs = require('fs');
 // Arquivo json não precisa ter o modulo.export para ser exportado
-const data = require('./data.json');
+const data = require('../data.json');
 
-const { age, date, service } = require('./tools');
+const { date, bloods } = require('../tools');
 
 
 // index
 exports.index = function(req, res) {
 
-    return res.render("instructors/index", { instructors: data.instructors });
-}
-
-// show
-exports.show = function (req, res) {
-    const { id } = req.params;
-
-    // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
-    // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
-    const foundInstructor = data.instructors.find(function (instructor) {
-        return instructor.id == id;
-    });
-
-    if (!foundInstructor) return res.send("Instructor not found!");
-
-    const instructor = {
-        // espalhando os dados do foundInstrucotr aqui
-        ...foundInstructor,
-
-        // formatando os dados para a apresentação no navegador
-        age: age(foundInstructor.birth),
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
-    }
-
-    return res.render("instructors/show", { instructor });
+    return res.render("members/index", { members: data.members });
 }
 
 // create
+exports.create = function(req, res) {
+    return res.render("members/create");
+}
+
+// POST
 exports.post = function (req, res) {
     // req.body é o método usado para pegar dados do front end pelo método post
 
@@ -53,28 +34,23 @@ exports.post = function (req, res) {
         }
 
     });
-    // Desistruturando dados
-    let { avatar_url, birth, name, services, gender } = req.body
 
     // Método parse do contrutor Date, pega o valor em string do método now e transforma em milisegundos da data padrão
-    birth = Date.parse(birth);
-
-    // Recebendo um novo dado, em que vem do construtor Date, que gera várias informações sobre datas
-    // utilizando o método now para pegar as informações de datas atuais
-    const created_at = Date.now();
+    birth = Date.parse(req.body.birth);
 
     //atribuindo um id, um número para cada conjunto de dados
-    const id = Number(data.instructors.length + 1);
+    let id = 1;
+    let lastMember = data.members[data.members.length - 1];
+    
+    if (lastMember) {
+        id = lastMember.id + 1;
+    }
 
     // adicionando objetos json no array instrucotrs, um após o outro [{;..}. {...},...]
-    data.instructors.push({
+    data.members.push({
         id,
-        name,
-        birth,
-        gender,
-        services: service(services),
-        avatar_url,
-        created_at
+        ...req.body,
+        birth
     });
 
     // criando o json para salavar os dados enviados pelo usuário
@@ -84,10 +60,34 @@ exports.post = function (req, res) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
         if (err) return res.send("Write file erro!");
 
-        return res.redirect("/instructors");
+        return res.redirect("/members");
     });
 
     // return res.send(req.body);
+}
+
+// SHOW
+exports.show = function (req, res) {
+    const { id } = req.params;
+
+    // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
+    // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
+    const foundMember = data.members.find(function (member) {
+        return member.id == id;
+    });
+
+    if (!foundMember) return res.send("Member not found!");
+
+    const member = {
+        // espalhando os dados do foundInstrucotr aqui
+        ...foundMember,
+
+        // formatando os dados para a apresentação no navegador
+        birth: date(foundMember.birth).birthDay,
+        blood: bloods(foundMember.blood)
+    }
+
+    return res.render("members/show", { member });
 }
 
 // update
@@ -97,20 +97,19 @@ exports.edit = function (req, res) {
 
     // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
     // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
-    const foundInstructor = data.instructors.find(function (instructor) {
-        return instructor.id == id;
+    const foundMember = data.members.find(function (member) {
+        return member.id == id;
     });
 
-    if (!foundInstructor) return res.send("Instructor not found!");
+    if (!foundMember) return res.send("Member not found!");
 
-    const instructor = {
-        ...foundInstructor,
-        birth: date(foundInstructor.birth),
-        services: service(foundInstructor.services),
+    const member = {
+        ...foundMember,
+        birth: date(foundMember.birth).iso,
     }
 
 
-    return res.render("instructors/edit", { instructor });
+    return res.render("members/edit", { member });
 }
 
 //updaterealese
@@ -120,14 +119,14 @@ exports.put = function (req, res) {
 
     let index = 0;
 
-    const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
-        if (id == instructor.id) {
+    const foundMember = data.members.find(function (member, foundIndex) {
+        if (id == member.id) {
             index = foundIndex;
             return true;
         }
     });
 
-    if (!foundInstructor) return res.send("Instrutor não encontrado!.");
+    if (!foundMember) return res.send("Instrutor não encontrado!.");
 
     // keys.forEach(key => {
         
@@ -137,28 +136,21 @@ exports.put = function (req, res) {
     // });
 
 
-    const instructor = {
-        ...foundInstructor,
+    const member = {
+        ...foundMember,
         ...req.body,
 
         birth: Date.parse(req.body.birth),
         id: Number(id),
     }
 
- 
-
-
-    console.log(instructor);
-
     // atualizando o instrutor no array de intrutores do data com as novas informações digitadas no re.body
-    data.instructors[index] = instructor;
-
-    console.log(instructor);
+    data.members[index] = member;
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
         if (err) return res.send("write file erro");
 
-        return res.redirect(`/instructors/${id}`);
+        return res.redirect(`/members/${id}`);
     });
 }
 
@@ -170,16 +162,16 @@ exports.delete = function(req, res){
     // Percorrendo um a um intrutor do data.json, e caso ele tenha o id diferente do atual, ento retorna verdadeiro
     // e ele é salvo nesse novo array de instrutores. Caso ele seja igual ao id atual, então retorna falso e com isso ele não
     // é adicionado nesse novo array de instrutores
-    const filteredInstructors = data.instructors.filter(function(instructor){
-        return instructor.id != id;
+    const filteredMembers = data.members.filter(function(member){
+        return member.id != id;
     });
 
-    data.instructors = filteredInstructors;
+    data.members = filteredMembers;
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Write file erro!");
 
-        return res.redirect("/instructors");
+        return res.redirect("/members");
     });
 
 }
