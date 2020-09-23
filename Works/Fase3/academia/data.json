@@ -25,17 +25,6 @@
   ],
   "instructors": [
     {
-      "id": 1,
-      "name": "",
-      "birth": 800928000000,
-      "gender": "F",
-      "services": [
-        "Musculação"
-      ],
-      "avatar_url": "https://images.unsplash.com/photo-1584380931214-dbb5b72e7fd0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1974&q=80",
-      "created_at": 1600290231786
-    },
-    {
       "id": 2,
       "name": "Bruna",
       "birth": 806457600000,
