@@ -120,7 +120,16 @@ exports.edit = function (req, res) {
 //updaterealese
 exports.put = function (req, res) {
     const { id } = req.body;
+
+    // verificação se algum campo esta vazio
     // const keys = Object.keys(req.body);
+
+    // keys.forEach(key => {
+    //     if (req.body[key] == "") {
+    //         return res.send("Please, fill all fields!");
+    //     }
+
+    // });
 
     let index = 0;
 

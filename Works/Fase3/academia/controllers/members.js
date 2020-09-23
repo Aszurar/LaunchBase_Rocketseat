@@ -117,6 +117,7 @@ exports.put = function (req, res) {
     const { id } = req.body;
     // const keys = Object.keys(req.body);
 
+
     let index = 0;
 
     const foundMember = data.members.find(function (member, foundIndex) {
