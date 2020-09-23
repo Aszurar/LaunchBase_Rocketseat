@@ -51,11 +51,6 @@ header{
     margin-left: 32px;
 }
 
-.links a.active{
-    color: var(--color-bluebold);
-    font-weight: bold;
-}
-
 .links a:hover{
     color: var(--color-bluebold);
     font-weight: bold;
@@ -76,3 +71,13 @@ header{
     transition: width 500ms ease-in-out;
 }
 
+.links a.active{
+    color: var(--color-bluebold);
+    font-weight: bold;
+}
+
+.links a.active::after{
+    color: var(--color-bluebold);
+    width: 100%;
+
+}

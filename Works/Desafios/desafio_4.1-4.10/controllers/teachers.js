@@ -1,6 +1,6 @@
 const fs = require('fs');
-const data = require('./data.json');
-const { age, graduation, type, classesArray, typeEdit, date } = require('./tools');
+const data = require('../data.json');
+const { age, graduation, type, classesArray, typeEdit, date } = require('../tools');
 
 const create = {
     subtitle: "Novo Professor",
@@ -14,29 +14,10 @@ exports.index = function(req, res){
     return res.render("teachers/index", { teachers: data.teachers});
 }
 
-// show
-exports.show = function(req, res){
-    const { id } = req.params;
-
-    const foundTeacher = data.teachers.find(function(teacher){
-        return teacher.id == id;
-    });
-
-    if(!foundTeacher) return res.send("Professor não encontrado!.");
-
-    const teacher = {
-        ...foundTeacher,
-
-        age: age(foundTeacher.birth),
-        graduation: graduation(foundTeacher.level),
-        type: type(foundTeacher.type),
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
-    }
-
-    return res.render("teachers/show", { teacher });
+// Criar - criar - salvar dados
+exports.create = function(req, res){
+    return res.render("teachers/create",  { create }  );
 }
-
-// criar novos dados
 exports.post = function(req, res){
 
     const keys = Object.keys(req.body);
@@ -74,6 +55,27 @@ exports.post = function(req, res){
 
 }
 
+// show
+exports.show = function(req, res){
+    const { id } = req.params;
+
+    const foundTeacher = data.teachers.find(function(teacher){
+        return teacher.id == id;
+    });
+
+    if(!foundTeacher) return res.send("Professor não encontrado!.");
+
+    const teacher = {
+        ...foundTeacher,
+
+        age: age(foundTeacher.birth),
+        graduation: graduation(foundTeacher.level),
+        type: type(foundTeacher.type),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
+    }
+
+    return res.render("teachers/show", { teacher });
+}
 // update - mostrar - atualizar
 exports.edit = function(req, res){
     const { id } = req.params;
@@ -95,7 +97,6 @@ exports.edit = function(req, res){
 
     return res.render("teachers/edit", { teacher, create })
 }
-
 exports.put = function(req, res){
     let { id } = req.body
     let index = 0;

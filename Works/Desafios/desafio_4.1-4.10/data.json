@@ -1,4 +1,18 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "name": "Bruna",
+      "type": "off",
+      "birth": 1072051200000,
+      "level": "hischool",
+      "classes": [
+        "Física"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "created_at": 1600900090497
+    }
+  ],
   "teachers": [
     {
       "id": "11",
