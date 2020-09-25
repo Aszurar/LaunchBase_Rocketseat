@@ -18,21 +18,25 @@
             <tbody>
                 {% for teacher in teachers %}
                     <tr>
-                        <td> 
+                        <td>
                             <span style="background-image: url({{teacher.avatar_url}})"></span>
                             {{teacher.name}}
                         </td>
-                        
+
                         <td>
                             {% for class in teacher.classes %}
                                 <span class="classes">{{class}}</span>
                             {% endfor %}
                         </td>
 
-                        <td class="button-about"><a href="/teachers/{{teacher.id}}">VER</a></td>
+                        <td class="button-about">
+                            <a href="/teachers/{{teacher.id}}">VER</a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        <a class="buttonCreate" href="/teachers/create">Novo</a>
     </div>
 {% endblock %}

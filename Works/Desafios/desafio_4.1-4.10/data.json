@@ -83,6 +83,19 @@
       ],
       "avatar_url": "https://images.unsplash.com/photo-1553514029-1318c9127859?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
       "created_at": 1600651132747
+    },
+    {
+      "id": 6,
+      "name": "Letícia",
+      "type": "on",
+      "birth": 756518400000,
+      "level": "masters",
+      "classes": [
+        "Artes ",
+        " Sociologia"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "created_at": 1600992370137
     }
   ]
 }

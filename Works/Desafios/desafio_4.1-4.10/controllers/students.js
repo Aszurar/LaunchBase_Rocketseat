@@ -3,10 +3,8 @@ const data = require('../data.json');
 const { age, graduation, type, classesArray, typeEdit, date } = require('../tools');
 
 const create = {
-    subtitle: "Novo Professor",
-    titles: ["Avatar URL", "Professor", "Data de Nascimento", "Grau de escolaridade", "Tipo de Aula"],
-    type: ["Online", "Presencial"],
-    level: ["Ensino Médio Completo", "Ensino Superio Completo", "Mestrado", "Doutarado"],
+    subtitle: "Novo Aluno",
+    titles: ["Avatar URL", "Nome", "Data de Nascimento"],
     save: "Salvar"
 }
 
@@ -28,22 +26,17 @@ exports.post = function(req, res){
         }
     });
 
-    let {avatar_url, birth, name, type, classes, level} = req.body
+    let {avatar_url, birth, name} = req.body
 
     birth = Date.parse(birth);
-    const created_at = Date.now();
 
     const id = Number(data.students.length + 1);
 
     data.students.push({
         id,
         name,
-        type,
         birth,
-        level,
-        classes: classesArray(req.body.classes),
         avatar_url,
-        created_at
     }); 
 
 
@@ -69,13 +62,11 @@ exports.show = function(req, res){
         ...foundStudent,
 
         age: age(foundStudent.birth),
-        graduation: graduation(foundStudent.level),
-        type: type(foundStudent.type),
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundStudent.created_at),
     }
 
     return res.render("students/show", { student });
 }
+
 // update - mostrar - atualizar
 exports.edit = function(req, res){
     const { id } = req.params;
@@ -89,9 +80,7 @@ exports.edit = function(req, res){
     const student = {
         ...foundStudent,
         
-        type: typeEdit(foundStudent.type),
-        birth: date(foundStudent.birth),
-        classes: classesArray(foundStudent.classes)
+        birth: date(foundStudent.birth)
     }
 
 
@@ -115,16 +104,11 @@ exports.put = function(req, res){
         ...foundStudent,
         ...req.body,
 
-        birth: Date.parse(req.body.birth),
-        classes: classesArray(req.body.classes)
+        birth: Date.parse(req.body.birth)
     }
-
-    console.log(student);
 
     data.students[index] = student;
     
-    console.log(data.students[index]);
-
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Write file erro");
 

@@ -22,17 +22,13 @@
                             <span style="background-image: url({{student.avatar_url}})"></span>
                             {{student.name}}
                         </td>
-                        
-                        <td>
-                            {% for class in student.classes %}
-                                <span class="classes">{{class}}</span>
-                            {% endfor %}
-                        </td>
 
                         <td class="button-about"><a href="/students/{{student.id}}">VER</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        <a class="buttonCreate" href="/students/create">Novo</a>
     </div>
 {% endblock %}

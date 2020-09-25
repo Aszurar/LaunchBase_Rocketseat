@@ -33,7 +33,7 @@ body{
 
     from{
         /* transform: translateY(90px); */
-        transform: translateY(-150px);
+        transform: translateY(-200px);
     }
 
     to{
@@ -53,8 +53,6 @@ body{
 .details .item:last-child{
     border: none;
 }
-
-
 
 .details h3,
 .details .item div:nth-child(1){
@@ -359,6 +357,7 @@ button[type="submit"]:hover{
     color: var(--color-white);
 }
 
+
 /* TABELA */
 .table-index{
     color: var(--color-white);
@@ -367,9 +366,27 @@ button[type="submit"]:hover{
     box-sizing: border-box;
 }
 
+.buttonCreate{
+    text-decoration: none;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    padding: 0.7rem 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.buttonCreate:hover{
+    transition: 1.3s;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
 .table-index table{
     border-spacing: 0;
     width: 100%;
+    margin-bottom: 1.7rem;
+
 }
 
 .table-index table thead tr th{
@@ -420,7 +437,7 @@ tbody tr:last-child td{
     text-decoration: none;
     font-weight: bold;
     color: var(--color-white);
-    padding: 0.4rem 1.5rem;
+    padding: 0.5rem 1rem;
     background-color: var(--color-bluebold);
     border-radius: 0.5rem;
     font-size: 0.8rem;
@@ -446,7 +463,7 @@ tbody tr:last-child td{
     background-size: unset;
     border-radius: unset;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
