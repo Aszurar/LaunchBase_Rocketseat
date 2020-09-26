@@ -418,6 +418,10 @@ tbody tr:last-child td{
     gap: 1rem;
 }
 
+.email, .grades{
+    text-align: center;
+}
+
 .table-index table tbody tr td span{
     height: 4rem;
     width: 4rem;

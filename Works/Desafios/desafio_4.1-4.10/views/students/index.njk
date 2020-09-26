@@ -10,7 +10,8 @@
                 <tr>
                     {# coluna do cabeçalho #}
                     <th>Professores</th>
-                    <th>Disciplinas</th>
+                    <th>Email</th>
+                    <th>Ano</th>
                     <th>Sobre</th>
                 </tr>
             </thead>
@@ -22,6 +23,10 @@
                             <span style="background-image: url({{student.avatar_url}})"></span>
                             {{student.name}}
                         </td>
+
+                        <td class="email">{{student.email}}</td>
+
+                        <td class="grades" >{{student.grades}}</td>
 
                         <td class="button-about"><a href="/students/{{student.id}}">VER</a></td>
                     </tr>

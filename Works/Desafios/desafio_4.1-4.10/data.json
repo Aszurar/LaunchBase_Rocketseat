@@ -1,16 +1,28 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bruna",
-      "type": "off",
-      "birth": 1072051200000,
-      "level": "hischool",
-      "classes": [
-        "Física"
-      ],
+      "birth": 1135209600000,
       "avatar_url": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-      "created_at": 1600900090497
+      "email": "Bru_m.silva38@gmail.com",
+      "grades": "1"
+    },
+    {
+      "id": 2,
+      "name": "Diego",
+      "birth": 1356134400000,
+      "email": "Didi2012_souza12@gmail.com",
+      "grades": "5",
+      "avatar_url": "https://images.unsplash.com/photo-1547226706-af7e2c20bcea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"
+    },
+    {
+      "id": "3",
+      "name": "Vanessa",
+      "birth": 1040515200000,
+      "email": "nessa_bright78@gmail.com",
+      "grades": "3",
+      "avatar_url": "https://images.unsplash.com/photo-1522010265321-fd346cc64d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"
     }
   ],
   "teachers": [
