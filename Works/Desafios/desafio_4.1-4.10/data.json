@@ -23,6 +23,30 @@
       "email": "nessa_bright78@gmail.com",
       "grades": "3",
       "avatar_url": "https://images.unsplash.com/photo-1522010265321-fd346cc64d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Jennifer",
+      "birth": 1135209600000,
+      "email": "jenni_m.silva39@gmail.com",
+      "grades": "1",
+      "avatar_url": "https://images.unsplash.com/photo-1514369118554-e20d93546b30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": "5",
+      "name": "Douglas",
+      "birth": 1387670400000,
+      "email": "doug10_m.c.martins@gmail.com",
+      "grades": "6",
+      "avatar_url": "https://images.unsplash.com/photo-1547082661-71362fc3969c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
+    },
+    {
+      "id": 6,
+      "name": "Yuri",
+      "birth": 1198281600000,
+      "email": "yuri_sakamoto98@gmail.com",
+      "grades": "8",
+      "avatar_url": "https://images.unsplash.com/photo-1596495578076-0c3a2be70d43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
     }
   ],
   "teachers": [

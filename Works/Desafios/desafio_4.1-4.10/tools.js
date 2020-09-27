@@ -94,13 +94,5 @@ module.exports = {
         }
        
         return grade;
-    },
-
-    // gradeIndex: function(grades){
-
-    //     console.log(grades);
-
-    //     return grades
-    // }
-
+    }
 }

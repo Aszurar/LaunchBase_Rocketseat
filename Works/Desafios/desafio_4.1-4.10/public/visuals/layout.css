@@ -79,5 +79,4 @@ header{
 .links a.active::after{
     color: var(--color-bluebold);
     width: 100%;
-
 }

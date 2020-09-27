@@ -500,9 +500,33 @@ tbody tr:last-child td{
 
 .table-index tbody tr td .classes + .classes + .classes:hover{
     transition: 1.3s;
-    background-color: var(--color-purple);
     background-color: var(--color-black);
     color: var(--color-bluebold);
+}
+
+.student td:nth-child(3){
+    text-align: center;
+}
+
+
+.grades{
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: default;
+    text-align: center; 
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.purple{
+    color: var(--color-black);
+    background-color: var(--color-purple);
+
+}
+.green{
+    color: var(--color-black);
+    background-color: var(--color-green);
 }
 
 

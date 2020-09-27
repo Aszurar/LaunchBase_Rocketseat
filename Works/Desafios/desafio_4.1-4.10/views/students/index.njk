@@ -18,7 +18,7 @@
 
             <tbody>
                 {% for student in students %}
-                    <tr>
+                    <tr class="student">
                         <td> 
                             <span style="background-image: url({{student.avatar_url}})"></span>
                             {{student.name}}
@@ -26,7 +26,7 @@
 
                         <td class="email">{{student.email}}</td>
 
-                        <td class="grades" >{{student.grades}}</td>
+                        <td> <span class="grades">{{student.grades}}</span></td>
 
                         <td class="button-about"><a href="/students/{{student.id}}">VER</a></td>
                     </tr>
@@ -36,4 +36,5 @@
 
         <a class="buttonCreate" href="/students/create">Novo</a>
     </div>
+    <script src="/scripts/index.js"></script>
 {% endblock %}
