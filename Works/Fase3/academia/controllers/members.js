@@ -38,7 +38,8 @@ exports.post = function (req, res) {
     // Método parse do contrutor Date, pega o valor em string do método now e transforma em milisegundos da data padrão
     birth = Date.parse(req.body.birth);
 
-    //atribuindo um id, um número para cada conjunto de dados
+    //atribuindo um id, um número para cada conjunto de dados de forma que não se repita os ID e garanta que um membro tenha uma ID novo,
+    // um número que ainda não tenha sido escolhido
     let id = 1;
     let lastMember = data.members[data.members.length - 1];
     

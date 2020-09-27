@@ -2,13 +2,13 @@
    e assim entrará no if, de modo que o evento não ocorra com o preventDefalout, que ele basicamente cancela o padrão,
    cancela o evento de submit#}
    <script>
-         const formDelete = document.querySelector("#form-delete");
+      const formDelete = document.querySelector("#form-delete");
          
-         formDelete.addEventListener("submit", function(event){
-            const confirmation = confirm("Tem certeza que deseja deletar?");
-            
-            if(!confirmation){
-               event.preventDefault()
-            }
-         })
+      formDelete.addEventListener("submit", function(event){
+         const confirmation = confirm("Tem certeza que deseja deletar?");
+         
+         if(!confirmation){
+            event.preventDefault()
+         }
+      })
     </script>

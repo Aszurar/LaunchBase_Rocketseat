@@ -1,10 +1,10 @@
 const fs = require('fs');
 const data = require('../data.json');
-const { age, date, grade, gradeIndex } = require('../tools');
+const { date, grade } = require('../tools');
 
 const create = {
     subtitle: "Novo Aluno",
-    titles: ["Avatar URL", "Nome", "Data de Nascimento", "Idade", "Email", "Ano Escolar" ],
+    titles: ["Avatar URL", "Nome", "Data de Nascimento", "Idade", "Email", "Ano Escolar", "Carga horária semanal", "Aniversário" ],
     grades: ["ano", "ano do Ensino Médio"],
     save: "Salvar"
 }
@@ -27,11 +27,16 @@ exports.post = function(req, res){
         }
     });
 
-    let {avatar_url, birth, name, email, grades} = req.body
+    let {avatar_url, birth, name, email, grades, credits} = req.body
 
     birth = Date.parse(birth);
 
-    const id = Number(data.students.length + 1);
+    let id = 1
+    let lastStudent = data.students[data.students - 1];
+
+    if (lastStudent) {
+        id = lastStudent.id + 1;
+    }
 
     data.students.push({
         id,
@@ -39,6 +44,7 @@ exports.post = function(req, res){
         birth,
         email,
         grades,
+        credits,
         avatar_url,
     }); 
 
@@ -64,7 +70,7 @@ exports.show = function(req, res){
     const student = {
         ...foundStudent,
 
-        age: age(foundStudent.birth),
+        age: date(foundStudent.birth).birthDay,
         grades: grade(foundStudent.grades)
     }
 
@@ -84,7 +90,7 @@ exports.edit = function(req, res){
     const student = {
         ...foundStudent,
         
-        birth: date(foundStudent.birth),
+        birth: date(foundStudent.birth).iso,
     }
 
 

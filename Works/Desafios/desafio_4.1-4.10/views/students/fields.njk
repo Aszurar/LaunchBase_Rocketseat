@@ -6,6 +6,7 @@
                         name="avatar_url"
                         placeholder="https://..."
                         value="{{student.avatar_url}}"
+                        required
                         >
                 </div>
             </div>
@@ -30,7 +31,8 @@
                         type="date"
                         name="birth"
                         value="{{student.birth}}"
-                    >
+                        required
+                        >
                 </div>
             </div>
 
@@ -42,7 +44,8 @@
                     type="email"
                     name="email"
                     placeholder="...@gmail/@outlook.com"
-                    value="{{student.email}}"
+                    value="{{student.email}}"   
+                    required
                     >
                 </div>
             </div>
@@ -60,6 +63,16 @@
                     <option value= "2" {% if student.grades == "2" %}selected{% endif %}>2º {{create.grades[1]}}</option>
                     <option value= "3" {% if student.grades == "3" %}selected{% endif %}>3º {{create.grades[1]}}</option>
                 </select>
+            </div>
+
+            <div class="item">
+                <div>{{create.titles[6]}}:</div>
+                <div>
+                    <input type="number"
+                           name="credits"
+                           value="{{student.credits}}"
+                           >            
+                </div>
             </div>
 
             <button type="submit">{{create.save}}</button>

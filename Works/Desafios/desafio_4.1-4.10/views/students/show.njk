@@ -14,9 +14,8 @@
             </div>
 
             <div class="item">
-                <div>{{create.titles[3]}}</div>
-                <div>{{student.age}}
-                    anos</div>
+                <div>{{create.titles[7]}}</div>
+                <div>{{student.age}}</div>
             </div>
             
             <div class="item">
@@ -29,6 +28,11 @@
                 <div>{{student.grades}}</div>
             </div>
 
+            <div class="item">
+                <div>{{create.titles[6]}}</div>
+                <div>{{student.credits}} h/s</div>
+            </div>
+
 
             <div class="item" id="ultimateButtons">
                 <div class="edit">
@@ -36,7 +40,7 @@
                 </div>
 
                 <div class="delete">
-                    <form action="/students?_method=DELETE" method="post">
+                    <form id="form-delete"action="/students?_method=DELETE" method="post">
                         <input type="hidden" name="id" value={{student.id}}>
                         <button type="submit">Deletar</button>
                     </form>
@@ -45,5 +49,5 @@
 
         </section>
     </div>
-
+{% include "../confirm.njk" %}
 {% endblock %}

@@ -6,6 +6,7 @@
                         name="avatar_url"
                         placeholder="https://..."
                         value="{{teacher.avatar_url}}"
+                        required
                         >
                 </div>
             </div>
@@ -14,11 +15,12 @@
                 <div>{{create.titles[1]}}:</div>
                 <div>
                     <input 
-                    type="text"
-                    name="name"
-                    placeholder="Digite o nome do Professor..."
-                    value="{{teacher.name}}"
-                    >
+                        type="text"
+                        name="name"
+                        placeholder="Digite o nome do Professor..."
+                        value="{{teacher.name}}"
+                        required
+                        >
                 </div>
             </div>
 
@@ -29,7 +31,8 @@
                         type="date"
                         name="birth"
                         value="{{teacher.birth}}"
-                    >
+                        required
+                        >
                 </div>
             </div>
 
@@ -56,7 +59,8 @@
                                    type="checkbox">
                            
                             <span class="checkmark" 
-                                  id="check1"></span>
+                                  id="check1">
+                                  </span>
                         </label>
                     </div>
                     
@@ -69,7 +73,8 @@
                                    checked {% endif %} 
                                    type="checkbox">
                             <span class="checkmark"
-                                  id="check2"></span>
+                                  id="check2">
+                                  </span>
                         
                         </label>
                     </div>
@@ -78,25 +83,12 @@
 
             <div class="item">
                 <div>Matéria:</div>
-                {# <select name="classes">
-                    <option value="Artes">Artes</option>
-                    <option value="Biologia">Biologia</option>
-                    <option value="Espanhol">Espanhol</option>
-                    <option value="Física">Física</option>
-                    <option value="Geografia">Geografia</option>
-                    <option value="História">História</option>
-                    <option value="Inglês">Inglês</option>
-                    <option value="Matemática">Matemática</option>
-                    <option value="Química">Química</option>
-                    <option value="Redação">Redação</option>
-                    <option value="Inglês">Inglês</option>
-                </select> #}
-
                 <input 
                     type="text" 
                     name="classes"
                     placeholder="Informe a matéria que será lecionada..."
                     value="{{teacher.classes}}"
+                    required
                     >
             </div>
 

@@ -49,12 +49,6 @@ module.exports = {
 
         console.log(subjects);
 
-        // if (!Array.isArray(classes)) {
-        //     subjects = Array(classes);
-
-        //     console.log(subjects);
-        // }
-
         return subjects;
     },
 
