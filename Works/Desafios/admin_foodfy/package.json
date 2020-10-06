@@ -1,16 +1,15 @@
 {
-  "name": "academia",
+  "name": "admin_foodfy",
   "version": "1.0.0",
-  "main": "serve.js",
+  "main": "server.js",
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:5005 --files 'public,views'"
+    "browsersync": "browser-sync start --proxy http://localhost:5010 --files 'public, views'"
   },
   "keywords": [],
   "dependencies": {
     "express": "^4.17.1",
-    "method-override": "^3.0.0",
     "nunjucks": "^3.2.2"
   },
   "devDependencies": {

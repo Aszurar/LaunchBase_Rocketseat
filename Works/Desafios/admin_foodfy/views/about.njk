@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/visuals/about.css">
+    <title>{{about.title}}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="text">
+
+        <h1>{{about.subtitle}}</h1>
+        <p>{{about.about}}</p>
+
+        <h2 class="subtitle">{{about.info}}</h2>
+        <p>{{about.startinfo}}</p>
+
+        <h2 class="subtitle2">{{about.recipes}}</h2>
+        <p>{{about.recipesinfo}}</p>
+
+    </div>
+{% endblock %}

@@ -54,10 +54,10 @@ exports.post = function (req, res) {
         birth
     });
 
-    // criando o json para salavar os dados enviados pelo usuário
+    // criando o json para salvar os dados enviados pelo usuário
     // data.json
     // JSON.stringify(req.body) - transformando o req.body em um formato JSON
-    // Callbackfunction, que retorna algo aavisando se hovue algum problema
+    // Callbackfunction, que retorna algo avisando se hovue algum problema
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
         if (err) return res.send("Write file erro!");
 
@@ -80,7 +80,7 @@ exports.show = function (req, res) {
     if (!foundMember) return res.send("Member not found!");
 
     const member = {
-        // espalhando os dados do foundInstrucotr aqui
+        // espalhando os dados do foundMembers aqui
         ...foundMember,
 
         // formatando os dados para a apresentação no navegador

@@ -40,15 +40,9 @@ module.exports = {
 
         let subjects;
 
-        console.log(classes);
-
-
-
         let re = /\b,|\be/;
         subjects = classes.split(re);
-
-        console.log(subjects);
-
+        
         return subjects;
     },
 
