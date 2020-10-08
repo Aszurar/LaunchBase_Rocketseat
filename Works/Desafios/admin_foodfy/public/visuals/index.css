@@ -68,6 +68,39 @@ body {
 
 .card {
   cursor: pointer;
+  position: relative;
+  margin-bottom: 1rem;
+
+}
+
+.card::before{
+  content: "";
+  width: 0%;
+  height: 0.5rem;
+  background-color: var(--color-pink);
+  right: 0;
+  top: -1rem;
+  position: absolute;
+  /* border-radius: 2rem; */
+}
+
+.card::after{
+  content: "";
+  width: 0%;
+  height: 0.5rem;
+  background-color: var(--color-pink);
+  position: absolute;
+  left: 0;
+}
+
+.card:hover::before{
+  width: 100%;
+  transition: width 1000ms ease-in-out;
+}
+
+.card:hover::after{
+  width: 100%;
+  transition: width 1000ms ease-in-out;
 }
 
 .image-card {

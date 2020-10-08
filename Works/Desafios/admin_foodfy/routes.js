@@ -3,7 +3,7 @@ const routes = express.Router();
 const recipes = require('./controllers/recipes');
 const data = require('./data');
 
-routes.get('/', function (req, res) {
+routes.get("/", function (req, res) {
     const index = {
         title: "Foodfy",
         slogan: "As melhores receitas",
@@ -50,9 +50,7 @@ routes.get("/recipe/:index", function (req, res) {
     return res.render("recipe", { info, recipe: data[recipeIndex] })
 })
 
-
-
-// routes.get('/recipes', recipes.index);
+routes.get("/recipes/create", recipes.create);
 
 
 module.exports = routes

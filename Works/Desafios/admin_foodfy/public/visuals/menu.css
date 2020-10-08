@@ -55,24 +55,45 @@ header {
   color: var(--color-black);
 }
 
-.links a {
-  text-decoration: none;
-  font-size: 16px;
-  color: var(--color-black);
-  transition: 150ms linear 0s;
-  line-height: 19px;
-}
-
 .links a + a{
   margin-left: 1.875rem;
 }
 
-.links a:hover {
-  border-bottom: 2px solid var(--color-black);
+.links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--color-black);
+  line-height: 19px;
+  position: relative;
+}
+
+.links a:hover{
+  color: var(--color-black);
+}
+
+.links a::after{
+  content: "";
+  width: 0%;
+  height: 0.125rem;
+  background-color: var(--color-black);
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: width 500ms ease-in-out;
 }
 
 .links a.active{
   font-weight: bold;
+}
+
+.links a.active::after{
+  font-weight: bold;
+  width: 100%;
+  background-color: var(--color-black);
 }
 
 .content-flex {
