@@ -1,5 +1,57 @@
-{% extends "layout.njk" %}
+{% extends "recipes/layoutManeger.njk" %}
+
+{% block head %}
+    <title>Adicionar</title>
+    <link rel="stylesheet" href="../visuals/fields.css">
+{% endblock %}
 
 {% block content %}
-    sorvete
+    <form class="card" method="POST" action="/recipes">
+
+        <div class="head_create">
+            <h1>Criando receita</h1>
+            <button type="submit">Salvar receita</button>
+        </div>
+
+        <div class="item">
+            <div>Imagem da receita</div>
+            <div>
+                <input type="url" 
+                       name="thumbnail" 
+                       placeholder="https://...">
+            </div>
+        </div>
+
+        <div class="item" id="ingredients">
+            <div>Ingredientes</div>
+            <div class="ingredients">
+                <input type="text" 
+                       name="ingredients[]" 
+                       placeholder="Pão de batata...">
+            </div>
+        </div>
+        <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+
+        <div class="item">
+            <div>Modo de preparo</div>
+            <div>
+                <input type="text" 
+                       name="preparation" 
+                       placeholder="Aqueça no forno por...">
+            </div>
+        </div>
+        <button type="button" class="add-preparation">Adicionar novo passo</button>
+
+
+        <div class="item">
+            <div>Informações adicionais</div>
+            <div>
+                <input type="text" 
+                       name="info" 
+                       placeholder="Pode ser guardado na geladeira por...">
+            </div>
+        </div>
+
+<script src="/scripts/addinfo.js"></script>
+    </form>
 {% endblock %}

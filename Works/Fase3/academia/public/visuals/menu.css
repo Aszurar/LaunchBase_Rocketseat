@@ -37,7 +37,7 @@ header {
 }
 
 .links {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 /* forma de realizar um separamento entre elementos utilizando só uma propriedade, nesse caso, a + a quer dizer pegar um elemento a e seu antecessor e aplicar a propriedade no meio deles! */
@@ -71,13 +71,8 @@ header {
   /* a propriedade de transição é utilizada em animações, ela pode ser aplicada a diversos elementos, na dúvida basta utilizar o termo all, mas nesse */
   /* caso espeficamente, sabemos que é o width ara fazer a sensação de preenschimento da esquerda para direita */
   transition: width 500ms ease-in-out;
- /*o ease-inout é  aforma da animação, nessa opção, a animação vai começar e terminar devagar, mas no meio irá rápido  */
+ /*o ease-inout é a forma da animação, nessa opção, a animação vai começar e terminar devagar, mas no meio irá rápido  */
 }
-
-/* .links a.active::after{
-  width: 100%;
-} */
-
 
 .links a.active{
   font-weight: bold;
