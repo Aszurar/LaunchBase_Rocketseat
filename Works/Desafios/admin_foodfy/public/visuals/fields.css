@@ -105,5 +105,41 @@ textarea{
 
  .title{
      text-align: center;
-     color: var(--color-black);
  }
+
+ .title h1{
+     font-size: 2.25rem;
+     color: var(--color-black);
+     line-height: 2.625rem;
+ }
+
+ .title p{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: var(--color-gray);
+ }
+
+ .card #itemShow + #itemShow{
+     margin-top: 2.563rem;
+ }
+
+ .item h2{
+    font-size: 1.5rem;
+    color: var(--color-black);
+    line-height: 1.75rem;
+ }
+
+ .item h2{
+     margin-bottom: 1.188rem;
+ }
+
+ .item li,
+ p{
+     list-style-type: '-';
+     color:var(--color-description);
+     font-size: 1.125rem;
+     line-height: 1.75rem;
+ }
+
+
+     

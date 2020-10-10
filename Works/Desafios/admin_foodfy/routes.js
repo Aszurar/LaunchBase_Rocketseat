@@ -31,13 +31,13 @@ routes.get("/about", function (req, res) {
     return res.render("about", { about })
 })
 
-routes.get("/recipes", function (req, res) {
-    const recipe = {
-        title: "Receitas"
-    };
+// routes.get("/recipes", function (req, res) {
+//     const recipe = {
+//         title: "Receitas"
+//     };
 
-    return res.render("recipes", { recipe, recipes: data })
-})
+//     return res.render("recipes", { recipe, recipes: data })
+// })
 
 routes.get("/recipe/:index", function (req, res) {
     
