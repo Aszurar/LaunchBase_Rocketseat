@@ -50,7 +50,13 @@ routes.get("/recipe/:index", function (req, res) {
     return res.render("recipe", { info, recipe: data[recipeIndex] })
 })
 
-routes.get("/recipes/create", recipes.create);
+// Mostrar formulário de nova receita
+routes.get("/admin/recipes/create", recipes.create);
+// Cadastrar nova receita
+routes.post("/admin/recipes", recipes.post);
+
+// MOstrar detalhers de uma nova receita
+routes.get("/admin/recipes/show", recipes.show)
 
 
 module.exports = routes
