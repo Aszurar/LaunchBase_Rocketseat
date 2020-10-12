@@ -73,6 +73,7 @@ textarea{
 textarea{
     min-height: 16.063rem;
     resize: none;
+    font-family: "Roboto", sans-serif;
 }
 
 ::-webkit-input-placeholder {
