@@ -31,13 +31,13 @@ routes.get("/about", function (req, res) {
     return res.render("about", { about })
 })
 
-// routes.get("/recipes", function (req, res) {
-//     const recipe = {
-//         title: "Receitas"
-//     };
+routes.get("/recipes", function (req, res) {
+    const recipe = {
+        title: "Receitas"
+    };
 
-//     return res.render("recipes", { recipe, recipes: data })
-// })
+    return res.render("recipes", { recipe, recipes: data })
+})
 
 routes.get("/recipe/:index", function (req, res) {
     
@@ -50,13 +50,20 @@ routes.get("/recipe/:index", function (req, res) {
     return res.render("recipe", { info, recipe: data[recipeIndex] })
 })
 
+
+// ADMIN
 // Mostrar formulário de nova receita
 routes.get("/admin/recipes/create", recipes.create);
+// MOstrar detalhers de uma nova receita
+routes.get("/admin/recipes/:id", recipes.show);
+// Editar Receitas:
+routes.get('/admin/recipes/:id/edit', recipes.edit)
+
 // Cadastrar nova receita
 routes.post("/admin/recipes", recipes.post);
 
-// MOstrar detalhers de uma nova receita
-routes.get("/admin/recipes/show", recipes.show)
+
+
 
 
 module.exports = routes
