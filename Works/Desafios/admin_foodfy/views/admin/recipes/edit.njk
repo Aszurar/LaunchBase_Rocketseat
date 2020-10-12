@@ -1,0 +1,19 @@
+{% extends "../layoutManeger.njk" %}
+
+{% block head %}
+    <title>Editar</title>
+    <link rel="stylesheet" href="../../visuals/fields.css">
+{% endblock %}
+
+{% block content %}
+  <form class="card" method="post" action="admin/recipes">
+    <div class="head_create">
+        <h1>Editando Receita</h1>
+        <button type="submit">Deletar</button>
+        <button type="submit">Salvar receita</button>
+    </div>
+    
+    {% include "admin/recipes/fields.njk" %}
+  
+  </form>  
+{% endblock %}

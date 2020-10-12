@@ -8,8 +8,8 @@
 {% block content %}
     <main class="card">
         <div class="head_show">
-                <h1>Receita: Tripo Bacon Burger</h1>
-                <a href="/" class="editButton">Editar receita</a>
+                <h1>{{names.subtitle[0]}} {{recipe.title}}</h1>
+                <a href="/" class="editButton">{{names.editButton}}</a>
         </div>
 
         <div class="thumbnail">
@@ -17,43 +17,29 @@
         </div>
 
         <div class="title">
-            <h1>Triplo bacon burger</h1>
-            <p>por Jorge Relato</p>
+            <h1>{{recipe.title}}</h1>
+            <p>{{recipe.chef}}</p>
         </div>
 
         <div class="item" id="itemShow">
-            <h2>Ingredientes</h2>
-            <li>3 kg de carne moída (escolha uma carne magra e macia);</li>
-            <li>300 g de bacon moído;</li>
-            <li>1 ovo;</li>
-            <li>3 colheres (sopa) de farinha de trigo;</li>
-            <li>3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde processados no liquidificador;</li>
-            <li>30 ml de água gelada;</li>
+            <h2>{{names.subtitle[1]}}</h2>
+            {% for item in recipe.ingredients %}
+                <li>   {{item}}</li>
+            {% endfor %}
         </div>
 
         <div class="item" id="itemShow">
-            <h2>Modo de preparo</h2>
-            <li>3 kg de carne moída (escolha uma carne magra e macia);</li>
-            <li>300 g de bacon moído;</li>
-            <li>1 ovo;</li>
-            <li>3 colheres (sopa) de farinha de trigo;</li>
-            <li>3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde processados no liquidificador;</li>
-            <li> 30 ml de água gelada;</li>
+            <h2>{{names.subtitle[2]}}</h2>
+            {% for item in recipe.preparation %}
+                <li>   {{item}}</li>
+            {% endfor %}
+
         </div>
 
         <div class="item" id="itemShow">
-            <h2>Informações adicionais</h2>
-            <p>Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. 
-               Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres! 
-               <br><br>
-               Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? 
-               A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu 
-               também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. 
-               Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, 
-               como queijom tomates e alface.
-            </p>
+            <h2>{{names.subtitle[3]}}</h2>
+            <p>{{recipe.info}}</p>
         </div>
-
     </main>
     
 {% endblock %}
