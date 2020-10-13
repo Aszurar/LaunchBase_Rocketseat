@@ -19,7 +19,7 @@ const ingredients = document.querySelector("#ingredients")
 const fieldIngredient = document.querySelectorAll(".ingredient")
 
 const preparations = document.querySelector("#preparations") 
-const fieldPreparation = document.querySelectorAll(".fieldPreparation")
+const fieldPreparation = document.querySelectorAll(".preparation")
 
 document.querySelector(".add-ingredient").addEventListener("click", addField(ingredients, fieldIngredient))
 document.querySelector(".add-preparation").addEventListener("click", addField(preparations, fieldPreparation))

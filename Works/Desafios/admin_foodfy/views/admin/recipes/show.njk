@@ -23,16 +23,20 @@
 
         <div class="item" id="itemShow">
             <h2>{{names.subtitle[1]}}</h2>
-            {% for item in recipe.ingredients %}
-                <li>   {{item}}</li>
-            {% endfor %}
+            <ul>
+                {% for item in recipe.ingredients %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
         </div>
 
         <div class="item" id="itemShow">
             <h2>{{names.subtitle[2]}}</h2>
-            {% for item in recipe.preparation %}
-                <li>   {{item}}</li>
-            {% endfor %}
+            <ul>
+                {% for item in recipe.preparation %}
+                    <li>   {{item}}</li>
+                {% endfor %}
+            </ul>
 
         </div>
 

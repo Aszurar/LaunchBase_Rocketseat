@@ -134,13 +134,19 @@ textarea{
      margin-bottom: 1.188rem;
  }
 
- .item li,
+ .item ul,
  p{
-     list-style-type: '-';
      color:var(--color-description);
      font-size: 1.125rem;
      line-height: 1.75rem;
  }
 
+ .item ul li{
+     list-style-type: none;
+ }
+
+ .item ul li::before{
+     content: '-  ';
+ }
 
      
