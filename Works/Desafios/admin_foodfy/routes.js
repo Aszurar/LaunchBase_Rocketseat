@@ -50,7 +50,6 @@ routes.get("/recipe/:index", function (req, res) {
     return res.render("recipe", { info, recipe: data[recipeIndex] })
 })
 
-
 // ADMIN
 // Listagem das receitas!
 routes.get("/admin/recipes", recipes.index)
@@ -63,9 +62,7 @@ routes.get('/admin/recipes/:id/edit', recipes.edit)
 
 // Cadastrar nova receita
 routes.post("/admin/recipes", recipes.post);
-
-
-
-
+// Atualizando receita!
+routes.put("/admin/recipes", recipes.put);
 
 module.exports = routes

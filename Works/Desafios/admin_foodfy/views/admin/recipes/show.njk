@@ -9,16 +9,16 @@
     <main class="card">
         <div class="head_show">
                 <h1>{{names.subtitle[0]}} {{recipe.title}}</h1>
-                <a href="/" class="editButton">{{names.editButton}}</a>
+                <a href="/admin/recipes/{{recipe.id}}/edit" class="editButton">{{names.editButton}}</a>
         </div>
 
         <div class="thumbnail">
-            <img src="/assets/burger.png" alt="Imagem do Tripo Bacon Burger">
+            <img src="{{recipe.thumbnail}}" alt="Imagem do Tripo Bacon Burger">
         </div>
 
         <div class="title">
             <h1>{{recipe.title}}</h1>
-            <p>{{recipe.chef}}</p>
+            <p>por {{recipe.chef}}</p>
         </div>
 
         <div class="item" id="itemShow">
@@ -34,7 +34,7 @@
             <h2>{{names.subtitle[2]}}</h2>
             <ul>
                 {% for item in recipe.preparation %}
-                    <li>   {{item}}</li>
+                    <li>{{item}}</li>
                 {% endfor %}
             </ul>
 
