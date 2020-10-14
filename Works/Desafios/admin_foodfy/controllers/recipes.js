@@ -6,10 +6,10 @@ const names = {
     editButton: "Editar receita"
 }
 
-// exports.index = function(req, res){
-
-//     return res.render("index", {index, recipes: data})
-// }
+// Listagem
+exports.index = function(req, res){
+    return res.render("admin/recipes/index", {recipes: data})
+}
 
 // Criação
 exports.create = function(req, res) {

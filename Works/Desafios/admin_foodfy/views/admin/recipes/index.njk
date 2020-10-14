@@ -1,0 +1,23 @@
+{% extends "../layoutManeger.njk" %}
+
+{% block head %}
+<title>Receitas</title>
+{% endblock %}
+
+{% block content %}
+    <main class="card">
+        
+        <div class="tilte">
+            <h1>Gerenciar receitas</h1>
+        </div>
+
+        <div class="cards">
+            {% for recipe in recipes %}
+                <div class="item">
+                    <img src="{{recipe.thumbnail}}" alt="Imagem da receita {{recipe.title}}">
+                    <h1>{{recipe.title}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

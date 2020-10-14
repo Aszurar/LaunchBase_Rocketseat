@@ -52,6 +52,8 @@ routes.get("/recipe/:index", function (req, res) {
 
 
 // ADMIN
+// Listagem das receitas!
+routes.get("/admin/recipes", recipes.index)
 // Mostrar formulário de nova receita
 routes.get("/admin/recipes/create", recipes.create);
 // MOstrar detalhers de uma nova receita

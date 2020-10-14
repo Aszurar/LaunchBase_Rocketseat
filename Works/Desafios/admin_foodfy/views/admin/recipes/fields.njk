@@ -4,6 +4,7 @@
                 <input type="text" 
                        name="title" 
                        placeholder="Purê de..."
+                       value= "{{recipe.title}}"
                        required
                        >
             </div>
@@ -15,6 +16,7 @@
                  <input type="text" 
                         name="chef" 
                         placeholder="Lucas de..."
+                        value= "{{recipe.chef}}"
                         required
                         >
             </div>
@@ -26,33 +28,42 @@
                 <input type="url" 
                        name="thumbnail" 
                        placeholder="https://..."
+                       value="{{recipe.thumbnail}}"
                        required
                        >
             </div>
         </div>
 
-        <div class="item" id="ingredients">
-            <div>Ingredientes</div>
-            <div class="ingredient">
-                <input type="text" 
-                       name="ingredients[]" 
-                       placeholder="Pão de batata..."
-                       required
-                       >
+        {% for item in recipe.ingredients %}    
+            <div class="item" id="ingredients">
+                <div>Ingredientes</div>
+                <div class="ingredient">
+                    <input type="text" 
+                        name="ingredients[]" 
+                        placeholder="Pão de batata..."
+                        value="{{item}}"
+                        required
+                        >
+                </div>
             </div>
-        </div>
+        {% endfor %}
+
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
 
-        <div class="item" id="preparations">
-            <div>Modo de preparo</div>
-            <div class="preparation">
-                <input type="text" 
-                       name="preparation" 
-                       placeholder="Aqueça no forno por..."
-                       required
-                       >
+    {% for item in recipe.preparation %}
+            <div class="item" id="preparations">
+                <div>Modo de preparo</div>
+                <div class="preparation">
+                    <input type="text" 
+                        name="preparation" 
+                        placeholder="Aqueça no forno por..."
+                        value="{{item}}"
+                        required
+                        >
+                </div>
             </div>
-        </div>
+    {% endfor %}
+
         <button type="button" class="add-preparation">Adicionar novo passo</button>
 
 
@@ -65,7 +76,7 @@
                           maxlength=1248
                           spellcheck=true
                           wrap=hard
-                          ></textarea>
+                          >{{recipe.info}}</textarea>
             </div>
         </div>
 
