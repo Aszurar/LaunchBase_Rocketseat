@@ -64,5 +64,7 @@ routes.get('/admin/recipes/:id/edit', recipes.edit)
 routes.post("/admin/recipes", recipes.post);
 // Atualizando receita!
 routes.put("/admin/recipes", recipes.put);
+// DELETAR receitas!
+routes.delete("/admin/recipes", recipes.delete);
 
 module.exports = routes

@@ -1,19 +1,33 @@
 {% extends "../layoutManeger.njk" %}
 
-{% block head %}
+{% block title %}
     <title>Editar</title>
-    <link rel="stylesheet" href="../../visuals/fields.css">
 {% endblock %}
 
 {% block content %}
-  <form class="card" method="POST" action="/admin/recipes?_method=PUT">
-    <div class="head_create">
-        <h1>Editando Receita</h1>
-        <input type="hidden" name="id" value="{{recipe.id}}">
-        <button type="submit">Salvar receita</button>
-    </div>
+  <div class="card">
 
-    {% include "admin/recipes/fields.njk" %}
-  
-  </form>  
+    <div class="head_create">
+      <h1>Editando Receita</h1>
+    </div>
+    
+    <form action="/admin/recipes?_method=DELETE" method="post" >
+      <div class="head_create">
+        <input type="hidden" name="id" value="{{recipe.id}}">
+        <button type="submit">Deletar</button>
+      </div>
+    </form>  
+
+    <form method="POST" action="/admin/recipes?_method=PUT">
+      <div class="head_create">
+          <input type="hidden" name="id" value="{{recipe.id}}">
+          <button type="submit">Salvar receita</button>
+      </div>
+
+      {% include "admin/recipes/fields.njk" %}
+    </form>
+
+
+  </div>
+
 {% endblock %}

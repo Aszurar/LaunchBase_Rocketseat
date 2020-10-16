@@ -1,4 +1,6 @@
 const fs = require('fs')
+const { stringify } = require('querystring')
+const { filter } = require('../data')
 const data = require('../data.json')
 
 const names = {
@@ -110,4 +112,20 @@ exports.put = function(req, res){
     })
 
     return res.redirect(`/admin/recipes/${id}`)
+}
+
+exports.delete = function(req, res){
+    const { id } = req.body
+
+    const filteredRecipe = data.recipes.filter(function(recipe){
+        return id != recipe.id
+    })
+
+    data.recipes = filteredRecipe
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if (err) return res.send('Write file erro!')
+
+        return res.redirect("/admin/recipes")
+    })
 }
