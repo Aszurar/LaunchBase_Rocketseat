@@ -1,0 +1,10 @@
+.titleindex{
+    display: flex;
+    justify-content: left;
+    text-align: unset;
+}
+
+.titleindex h1{
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+}

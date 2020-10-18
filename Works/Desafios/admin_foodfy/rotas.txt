@@ -1,0 +1,11 @@
+Sempre utilizamos  a / (barra)  nas nossas rotas
+routes.get("/users", UsersController.index)
+routes.get("/users/:id", UsersController.show)
+No exemplo acima nós devemos usar as barras no início pois elas representam nossas rotas.
+
+Já no exemplo que você trouxe, o código abaixo retorna uma resposta pedindo para renderizar o arquivo create que esta na pasta instructors, sacou? Você esta acessando um arquivo e não uma rota.
+return res.render("instructors/create");
+
+Mas você pode estar se perguntando, ahh e nesse caso?
+return res.redirect("/instructors");
+Neste caso você quer que ele redirecione para a rota /instructors e não para o arquivo, pois não faz sentido né!?

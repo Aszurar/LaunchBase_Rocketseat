@@ -1,23 +1,27 @@
 {% extends "../layoutManeger.njk" %}
 
-{% block head %}
+{% block title %}
 <title>Receitas</title>
+<link rel="stylesheet" href="/visuals/indexlist.css">
 {% endblock %}
 
 {% block content %}
     <main class="card">
         
-        <div class="title">
+        <div class="titleindex">
             <h1>Gerenciar receitas</h1>
         </div>
 
-        <div class="cards">
+        <main class="cards">
+        <h1>{{recipes[0].chef}}</h1>
+
             {% for recipe in recipes %}
                 <div class="item">
                     <img src="{{recipe.thumbnail}}" alt="Imagem da receita {{recipe.title}}">
                     <h1>{{recipe.title}}</h1>
                 </div>
             {% endfor %}
-        </div>
+        <h1>{{recipes[0].chef}}</h1>
+        </main>
     </main>
 {% endblock %}
