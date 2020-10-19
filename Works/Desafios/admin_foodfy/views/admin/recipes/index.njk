@@ -6,22 +6,27 @@
 {% endblock %}
 
 {% block content %}
-    <main class="card">
+    <div class="card">
         
         <div class="titleindex">
             <h1>Gerenciar receitas</h1>
         </div>
 
         <main class="cards">
-        <h1>{{recipes[0].chef}}</h1>
 
             {% for recipe in recipes %}
-                <div class="item">
+                <div class="recipe">
                     <img src="{{recipe.thumbnail}}" alt="Imagem da receita {{recipe.title}}">
-                    <h1>{{recipe.title}}</h1>
+                    
+                    <div class="info_thumb">
+                        <h4>{{recipe.title}}</h4>
+                        <p>por {{recipe.chef}}</p>
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
+
                 </div>
             {% endfor %}
-        <h1>{{recipes[0].chef}}</h1>
+        
         </main>
-    </main>
+    </div>
 {% endblock %}

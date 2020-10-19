@@ -10,7 +10,7 @@ const names = {
 
 // Listagem
 exports.index = function(req, res){
-    return res.render("admin/recipes/index", { recipes: data })
+    return res.render("admin/recipes/index", { recipes: data.recipes })
 }
 
 // Criação
@@ -103,6 +103,7 @@ exports.put = function(req, res){
     const recipe = {
         ...foundRecipe,
         ...req.body,
+        id: Number(id)
     }
 
     data.recipes[index] = recipe
