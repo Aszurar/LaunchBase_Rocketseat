@@ -44,7 +44,12 @@ exports.post = function (req, res) {
     const created_at = Date.now();
 
     //atribuindo um id, um número para cada conjunto de dados
-    const id = Number(data.instructors.length + 1);
+    let id = 1;
+    let lastInstructor = data.instructors[data.instructors.length - 1];
+    
+    if (lastInstructor) {
+        id = lastInstructor.id + 1;
+    }
 
     // adicionando objetos json no array instrucotrs, um após o outro [{;..}. {...},...]
     data.instructors.push({
@@ -123,13 +128,6 @@ exports.put = function (req, res) {
 
     // verificação se algum campo esta vazio
     // const keys = Object.keys(req.body);
-
-    // keys.forEach(key => {
-    //     if (req.body[key] == "") {
-    //         return res.send("Please, fill all fields!");
-    //     }
-
-    // });
 
     let index = 0;
 

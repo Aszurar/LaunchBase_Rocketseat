@@ -1,6 +1,7 @@
-//  confirmationirmação se a pessoa realmente quer deletar ou não?m caso queira, aperte o ok, se não, apaerte o cancel
-//     e assim entrará no if, de modo que o evento não ocorra com o preventDefalout, que ele basicamente cancela o padrão,
-//     cancela o evento de submit
+//confirmação se a pessoa realmente quer deletar ou não?
+//caso queira, aperte o ok, se não, aperte para cancelar
+//assim entrará no if, de modo que o evento não ocorra com o preventDefalout,
+// ele basicamente cancela o cancela o evento de submit
 const formDelete = document.querySelector("#form-delete");
 
 formDelete.addEventListener("submit", function (event) {

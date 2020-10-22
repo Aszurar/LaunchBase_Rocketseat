@@ -4,7 +4,8 @@
 
    <div class="card">
 
-      <section class="avatar" style="background: url({{instructor.avatar_url}}) no-repeat center center / cover"></section>
+      <section class="avatar" 
+      style="background: url({{instructor.avatar_url}}) no-repeat center center / cover"></section>
 
       <section class="details">
 
@@ -21,7 +22,9 @@
             <input type="hidden" name="id" value={{instructor.id}}>
             <button type="submit">Deletar</button>
          </form>
+
       </section>
    </div>
+   
    {% include "../confirm.njk" %}
 {% endblock content%}

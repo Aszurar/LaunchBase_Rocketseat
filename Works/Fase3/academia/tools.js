@@ -24,13 +24,13 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2);
         const day = `0${date.getUTCDate()}`.slice(-2);
 
-        return{ 
-                day,
-                month,
-                year,
-                iso:`${year}-${month}-${day}`,
-                birthDay: `${day}/${month}`  
-              };
+        return {
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+        };
     },
 
     service: function (classes) {
@@ -42,7 +42,7 @@ module.exports = {
 
         let re = /\b,|\be/;
         subjects = classes.split(re);
-        
+
         return subjects;
     },
 

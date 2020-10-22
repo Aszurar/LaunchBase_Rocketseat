@@ -17,7 +17,7 @@
 
          <tbody>
             {% for member in members %}
-
+               {# tr linha/ td colunas dentro do tbody #}
                <tr>
                   <td>
                      <span style="background-image: url({{member.avatar_url}});"></span>
@@ -44,5 +44,6 @@
             {% endfor %}
          </tbody>
       </table>
+      
    </div>
 {% endblock content%}

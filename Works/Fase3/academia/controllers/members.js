@@ -5,10 +5,8 @@ const data = require('../data.json');
 
 const { date, bloods } = require('../tools');
 
-
 // index
 exports.index = function(req, res) {
-
     return res.render("members/index", { members: data.members });
 }
 
@@ -23,7 +21,8 @@ exports.post = function (req, res) {
 
     // pegando todas chaves do objeto body que contem as chaves e os valores dos dados inseridos
     const keys = Object.keys(req.body);
-    //Object é um construtor que criará um objeto, . keys é para pegar todas chaves do objeto passado como parâmetro
+    //Object é um construtor que criará um objeto,
+    //. keys é para pegar todas chaves do objeto passado como parâmetro
     // Com isso, o Keys será um vetor com todas chaves do body(objeto que possui os pares chaves e valor)
 
     keys.forEach(key => {
@@ -35,11 +34,12 @@ exports.post = function (req, res) {
 
     });
 
-    // Método parse do contrutor Date, pega o valor em string do método now e transforma em milisegundos da data padrão
+    // Método parse do contrutor Date, pega o valor em string do método now e
+    // transforma em milisegundos da data padrão
     birth = Date.parse(req.body.birth);
 
-    //atribuindo um id, um número para cada conjunto de dados de forma que não se repita os ID e garanta que um membro tenha uma ID novo,
-    // um número que ainda não tenha sido escolhido
+    //atribuindo um id, um número para cada conjunto de dados de forma que não se repita 
+    // os ID e garanta que um membro tenha uma ID novo, um número que ainda não tenha sido escolhido
     let id = 1;
     let lastMember = data.members[data.members.length - 1];
     
@@ -47,7 +47,7 @@ exports.post = function (req, res) {
         id = lastMember.id + 1;
     }
 
-    // adicionando objetos json no array instrucotrs, um após o outro [{;..}. {...},...]
+    // adicionando objetos json no array instrucotrs, um após o outro [+ {,..,...}]
     data.members.push({
         id,
         ...req.body,
@@ -64,15 +64,14 @@ exports.post = function (req, res) {
         return res.redirect("/members");
     });
 
-    // return res.send(req.body);
 }
 
 // SHOW
 exports.show = function (req, res) {
     const { id } = req.params;
 
-    // returnando verdadeiro ou falso verificando o id da url para saber se é igual ao id do banco de dados
-    // se for verdadeiro, então armazene os dados do usuário do banco de dados na variável
+    // retornando verdadeiro ou falso, assim verificando o id da url para saber se é igual 
+    // ao id do banco de dados se for verdadeiro, então armazene na variável foundMember
     const foundMember = data.members.find(function (member) {
         return member.id == id;
     });
@@ -116,9 +115,8 @@ exports.edit = function (req, res) {
 //updaterealese
 exports.put = function (req, res) {
     const { id } = req.body;
-    // const keys = Object.keys(req.body);
-
-
+    // Nos casos do put e delete pegamos o id do formulário, e quem passa são os inputs
+    // hidden que ficam próximos aos buttons de submit
     let index = 0;
 
     const foundMember = data.members.find(function (member, foundIndex) {
@@ -130,14 +128,6 @@ exports.put = function (req, res) {
 
     if (!foundMember) return res.send("Instrutor não encontrado!.");
 
-    // keys.forEach(key => {
-        
-    //     if(req.body[key] == ""){
-    //         return res.send("Por favor, preencha todos os campo");
-    //     }
-    // });
-
-
     const member = {
         ...foundMember,
         ...req.body,
@@ -146,7 +136,8 @@ exports.put = function (req, res) {
         id: Number(id),
     }
 
-    // atualizando o instrutor no array de intrutores do data com as novas informações digitadas no re.body
+    // atualizando o instrutor no array de intrutores do data com as novas informações 
+    // digitadas no re.body
     data.members[index] = member;
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
@@ -159,10 +150,10 @@ exports.put = function (req, res) {
 // delete
 exports.delete = function(req, res){
     const { id } = req.body;
-    // console.log(id);
 
-    // Percorrendo um a um intrutor do data.json, e caso ele tenha o id diferente do atual, ento retorna verdadeiro
-    // e ele é salvo nesse novo array de instrutores. Caso ele seja igual ao id atual, então retorna falso e com isso ele não
+    // Percorrendo um a um intrutor do data.json, e caso ele tenha o id diferente do atual,
+    // então retorna verdadeiro e ele é salvo nesse novo array de instrutores. 
+    // Caso ele seja igual ao id atual, então retorna falso e com isso ele não
     // é adicionado nesse novo array de instrutores
     const filteredMembers = data.members.filter(function(member){
         return member.id != id;

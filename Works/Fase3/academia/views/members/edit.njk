@@ -4,7 +4,8 @@
 
    <div class="card">
 
-      <section class="avatar" style="background: url({{member.avatar_url}}) no-repeat center center / cover"></section>
+      <section class="avatar" 
+               style="background: url({{member.avatar_url}}) no-repeat center center / cover"></section>
 
       <section class="details">
 
@@ -22,8 +23,8 @@
             <button type="submit">Deletar</button>
          </form>
 
-
       </section>
+      
    </div>
    {% include "../confirm.njk" %}
 {% endblock content%}

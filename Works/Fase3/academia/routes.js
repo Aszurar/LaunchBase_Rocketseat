@@ -5,8 +5,9 @@ const members = require('./controllers/members')
 
 // HTTP - PROTOCÓLO DE TRANSFERÊNCIA DE DADOS DE HYPERTEXT
 // VERBS:
-// GET: Receber          // Resource > Uma entidade/recurso que representa o objeto real ou abstrado a ser atualizado/adicionado/deletado
-// POST: Criar ou Salvar um Novo Resource
+// Resource > Uma entidade/recurso que representa o objeto real ou abstrado a ser atualizado/adicionado/deletado
+// GET: Receber         
+// POST: Criar/Salvar um Novo Resource
 // PUT: Atualizar um Resource
 // Delete: Deletar Resource
 
@@ -29,6 +30,5 @@ routes.get('/members/:id/edit', members.edit);
 routes.post('/members', members.post);
 routes.put('/members', members.put);
 routes.delete('/members', members.delete);
-
 
 module.exports = routes

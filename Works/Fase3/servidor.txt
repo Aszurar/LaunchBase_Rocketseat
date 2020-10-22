@@ -67,6 +67,9 @@ Isso é a configuração de executar paralelamente os 2 servições nodemon e br
 Após, a configuração do nodemon,
 Após, a configuração do browsersunc, em que é inicializado antes do servicor, e sincroniza com tudo que for alterado das pastar public  e files
 
+9. Para o uso do req.body, é necessário configurar o servidor com esse middleware:
+server.use(express.urlencoded({ extended: true }));
+
 10. Instalando dependência que permite utilizar os métodos put e delete no formulário html!
 Usar a dependência method-override:
 npm install method-override
@@ -77,6 +80,6 @@ const methodOverride = require('method-override')
 
 configurar no server.js:
 configurando para que o post seja sobescrito por put antes do servidor ir para as rotas
-server.use(methodOverride('_methodx'))
-server.use(routes
+server.use(methodOverride('_method'))
+server.use(routes)
 

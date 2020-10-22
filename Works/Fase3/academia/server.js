@@ -4,10 +4,11 @@
  const methodOverride = require('method-override');
  
  const server = express();
-
+// Mais um middleware, necessário para que o req.body funcione!
  server.use(express.urlencoded({ extended: true }));
+ 
  server.use(express.static("public"));
-//  configurando para que o post seja sobescrito por put antes do servidor ir para as rotas
+//  configurando para que o post seja sobescrito por put ou delete antes do servidor ir para as rotas
  server.use(methodOverride('_method'))
  server.use(routes);
 
@@ -15,7 +16,6 @@
 // "configurações do meio do caminho"
 
 server.set("view engine", "njk");
-
 nunjucks.configure("views", {
     express: server,
     autoescape: false,

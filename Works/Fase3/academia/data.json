@@ -2,7 +2,7 @@
   "members": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-      "name": "Maria",
+      "name": "Maria Gomez",
       "email": "Maria58@gmail.com",
       "birth": 977443200000,
       "gender": "F",
@@ -25,23 +25,34 @@
     {
       "id": 3,
       "avatar_url": "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "name": "Rafeala",
+      "name": "Rafaela",
       "email": "rafa_silva67@gmail.com",
       "birth": 656553600000,
       "gender": "F",
       "blood": "AB0",
       "weight": "64",
       "height": "167"
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1558415737-d2d14ef33023?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "name": "Marcos",
+      "email": "marc_silvagomez78@hotmail.com",
+      "birth": 504057600000,
+      "gender": "M",
+      "blood": "A1",
+      "weight": "82",
+      "height": "177"
     }
   ],
   "instructors": [
     {
       "id": 2,
-      "name": "Bruna",
+      "name": "Bruna Ferrari",
       "birth": 806457600000,
       "gender": "F",
       "services": [
-        "Crossfit ",
+        "Crossfit",
         " Ginástica"
       ],
       "avatar_url": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
@@ -86,14 +97,16 @@
     },
     {
       "id": 6,
-      "name": "Valéria",
-      "birth": 719539200000,
+      "name": "Fernanda",
+      "birth": 661824000000,
       "gender": "F",
       "services": [
-        "Musculação"
+        "Boxe",
+        " Musculação ",
+        " Crossfit"
       ],
-      "avatar_url": "https://images.unsplash.com/photo-1541338784564-51087dabc0de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-      "created_at": 1600788100667
+      "avatar_url": "https://images.unsplash.com/photo-1514525263139-f7c8f10ae61d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "created_at": 1603318496623
     }
   ]
 }

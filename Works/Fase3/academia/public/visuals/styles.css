@@ -1,264 +1,269 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
-    background-color: var(--color-dark-light);
-    font-family: 'Roboto', 'sans-serif';
+  background-color: var(--color-dark-light);
+  font-family: "Roboto", "sans-serif";
 }
 
-.card{
-    background-color: var(--color-bluebold);
-    max-width: 62.5rem;
-    max-height: 75rem;
-    /* espaçamento ao centro(funciona apenas com o height/width configurados */
-    margin: 1.875rem auto;
+.card {
+  background-color: var(--color-bluebold);
+  max-width: 62.5rem;
+  max-height: 75rem;
+  /* espaçamento ao centro(funciona apenas com o height/width configurados */
+  margin: 1.875rem auto;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    /* caixa de sombras */
-    /* 1º - eixo x - eixo y - bluer -  */
-    box-shadow: 0rem 0.125rem  1.25rem  -0.125rem var(--color-bluepast);
+  /* caixa de sombras */
+  /* 1º - eixo x - eixo y - bluer -  */
+  box-shadow: 0rem 0.125rem 1.25rem -0.125rem var(--color-bluepast);
 
-    opacity: 0;
-    
-    /* animação */
-    animation: left;
-    animation-duration: 500ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 500ms;
-/* aniimação da esqueda, corm duração de 500 ms, em ease-in-out
-    apartitir de uma opaidade 0 translocando no eixo x 90 pixels da esquerda para direita
+  opacity: 0;
+
+  /* animação */
+  animation: left;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 500ms;
+  /* animação da esqueda, com duração de 500 ms, em ease-in-out
+    a partir de uma opaidade 0 translocando no eixo x 90 pixels da esquerda para direita
     parando em opacidade 1 */
 
-    animation-fill-mode: forwards;
-    /* forçando a animação parar no to com opacidade 1 */
+  animation-fill-mode: forwards;
+  /* forçando a animação parar no to com opacidade 1 */
 }
 
 @keyframes left {
-    from {
-        transform: translateX(-90px);
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    transform: translateX(-5.625rem);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* details */
 
-.details{
-    padding: 2rem;
+.details {
+  padding: 2rem;
 }
 
 .details .item {
-    border-bottom: 0.08rem solid rgba(0, 0, 0, 0.5);
-    padding: 1rem 0;
+  border-bottom: 0.08rem solid rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
 }
 
 /* tirar o border do último  */
-.details .item:last-child{
-    border:none
+.details .item:last-child {
+  border: none;
 }
 
 /* pegando o primeiro div dentro das classes item*/
 .details h3,
 .details .item div:nth-child(1) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: var(--color-black);
-    letter-spacing: 0.044rem;
-    font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-black);
+  letter-spacing: 0.044rem;
+  font-weight: normal;
 }
 
 .details .item div:nth-child(2) {
-    font-size: 1.375rem;
-    color: var(--color-white);
-    font-weight: bold;
+  font-size: 1.375rem;
+  color: var(--color-white);
+  font-weight: bold;
 }
 
-.details h3{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: var(--color-white);
+.details h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--color-white);
 }
 
 .details .item span {
-    padding: 0.5rem 1rem;
-    background-color: var(--color-yellow);
-    border-radius: 1rem;
-    color: var(--color-dark-light);
-    margin-right: 0.25rem;
-    margin-top: 0.5rem;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-yellow);
+  border-radius: 1rem;
+  color: var(--color-dark-light);
+  margin-right: 0.25rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
-.details .item span:hover{
-    background-color: var(--color-orange-card);
-    transition: 1.3s;
+.details .item span:hover {
+  background-color: var(--color-orange-card);
+  transition: 1.3s;
 }
 
 /* FORM */
 
-input, select {
-    width: 100%;
-    outline: none;
-    font-size: 1.3rem;
-    color: var(--color-dark-light);
-    font-weight: bold;
-    border-radius: 0.25rem;
-    background-color: var(--color-bluebold);
+input,
+select {
+  width: 100%;
+  outline: none;
+  font-size: 1.3rem;
+  color: var(--color-dark-light);
+  font-weight: bold;
+  border-radius: 0.25rem;
+  background-color: var(--color-bluebold);
 }
 
 input[type="radio"] {
-    /* iniitial faz com que não seja aplicado o width 100%, e sim, fique o padrão para que não quebre */
-    width: initial; 
-    margin-right: 4px;
+  /* initial faz com que não seja aplicado o width 100%, e sim, fique o padrão para que não quebre */
+  width: initial;
+  margin-right: 0.25rem;
 }
 
 input::placeholder {
-    font-size: 16px;
-    font-weight: normal;
-    color: var(--color-white);
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--color-white);
 }
 
 button[type="submit"],
 .button {
-    padding: 16px 40px;
-    background-color: var(--color-dark-light);
-    color: var(--color-bluebold);
-    width: 100%;
-    border-radius: 4px;
-    margin-top: 32px;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-dark-light);
+  color: var(--color-bluebold);
+  width: 100%;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  font-size: 1.375rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-button[type="submit"]:hover, .button:hover{
-    background-color: var(--color-black);
-    transition: 1.3s;
-    color: var(--color-white);
+button[type="submit"]:hover,
+.button:hover {
+  background-color: var(--color-black);
+  transition: 1.3s;
+  color: var(--color-white);
 }
 
-.button{
-    display: block;
-    box-sizing: border-box;
-    text-decoration: none;
-    text-align: center;
+.button {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
 }
 
 #form-delete button {
-    color: var(--color-bluebold);
-    margin-top: 0.5rem;
-    background-color: var(--color-gray);
+  color: var(--color-bluebold);
+  margin-top: 0.5rem;
+  background-color: var(--color-gray);
 }
 
-#form-delete button:hover{
-    transition: 1.3s;
-    background-color: var(--color-white);
-    color: var(--color-black);
+#form-delete button:hover {
+  transition: 1.3s;
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 /* INDEX INSTRUCTORS */
 
-.table-container{
-    color: var(--color-black);
-    display: block;
-    padding: 2.5rem;
-    box-sizing: border-box;
+.table-container {
+  color: var(--color-black);
+  display: block;
+  padding: 2.5rem;
+  box-sizing: border-box;
 }
 
-.table-container table{
-    border-spacing: 0;
+.table-container table {
+  border-spacing: 0;
 }
 
-thead{
-    color: var(--color-white);
+thead {
+  color: var(--color-white);
 }
 
-.table-container thead tr th{
-    text-align: left;
+.table-container thead tr th {
+  text-align: left;
 }
 
-td, th{
-    padding: 1rem;
-    border-bottom: 0.063rem solid var(--color-white);
+td,
+th {
+  padding: 1rem;
+  border-bottom: 0.063rem solid var(--color-white);
 }
 
-th{
-    text-transform: uppercase;
-    font-size: 1rem;
-    text-shadow: 0.188rem 0.063rem 0.4rem var(--color-black);
+th {
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-shadow: 0.188rem 0.063rem 0.4rem var(--color-black);
 }
 
-tbody tr:last-child td{
-    border-bottom: none;
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
-tbody tr td:first-child{
-    display: grid;
-    grid-template-columns: 4rem 1fr;
-    align-items: center;
-    gap: 1rem;
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  align-items: center;
+  gap: 1rem;
 }
 
-tbody tr td span{
-    width: 4rem;
-    height: 4rem;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 0.188rem 0.063rem 0.4rem -0.1rem var(--color-black);
-    border: 0.125rem solid var(--color-bluepast);
+tbody tr td span {
+  width: 4rem;
+  height: 4rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0.188rem 0.063rem 0.4rem -0.1rem var(--color-black);
+  border: 0.125rem solid var(--color-bluepast);
 }
 
 tbody tr td:last-child a,
 .table-container > a {
-    color: var(--color-white);
-    background-color: var(--color-dark-light);
-    padding: 0.6rem 1.5rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-dark-light);
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
-tbody tr td:last-child a:hover, 
-.table-container > a:hover{
-    transition: 1.3s;
-    background-color: var(--color-white);
-    color: var(--color-black);
+tbody tr td:last-child a:hover,
+.table-container > a:hover {
+  transition: 1.3s;
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
-/* sinal de >, indica o filho direto daquele elemento, ou seja, caso tenha outros a dentro de outros elementos
-não importará, ele só pegara o a que é filhot direto do elemento!*/
+/* sinal de >, indica o filho direto daquele elemento, ou seja,
+caso tenha outros a dentro de outros elementos
+não importará, ele só pegara o a que é filho direto do elemento!*/
 .table-container > a {
-    display: inline-block;
-    margin-bottom: 1rem;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
-tbody tr td span + span{
-    margin-left: 0.5rem;
+tbody tr td span + span {
+  margin-left: 0.5rem;
 }
 
-.services{
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    background-color: var(--color-yellow);
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
+.services {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-yellow);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
 }
 
-.services:hover{
-    transition: 1.3s;
-    background-color: var(--color-orange-card);
+.services:hover {
+  transition: 1.3s;
+  background-color: var(--color-orange-card);
 }
 
-.table-container thead tr th:last-child, td:last-child{
-    text-align: center;
+.table-container thead tr th:last-child,
+td:last-child {
+  text-align: center;
 }
