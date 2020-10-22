@@ -140,14 +140,6 @@ exports.put = function (req, res) {
 
     if (!foundInstructor) return res.send("Instrutor não encontrado!.");
 
-    // keys.forEach(key => {
-        
-    //     if(req.body[key] == ""){
-    //         return res.send("Por favor, preencha todos os campo");
-    //     }
-    // });
-
-
     const instructor = {
         ...foundInstructor,
         ...req.body,

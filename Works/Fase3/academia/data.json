@@ -2,7 +2,7 @@
   "members": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-      "name": "Maria Gomez",
+      "name": "Maria Gomes Soares",
       "email": "Maria58@gmail.com",
       "birth": 977443200000,
       "gender": "F",
@@ -43,6 +43,17 @@
       "blood": "A1",
       "weight": "82",
       "height": "177"
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
+      "name": "Gabriela de Lima",
+      "email": "gab_limacartilho21@gmail.com",
+      "birth": 851212800000,
+      "gender": "F",
+      "blood": "AB0",
+      "weight": "68",
+      "height": "169"
     }
   ],
   "instructors": [
@@ -97,16 +108,30 @@
     },
     {
       "id": 6,
-      "name": "Fernanda",
+      "name": "Fernanda Moraes",
       "birth": 661824000000,
       "gender": "F",
       "services": [
         "Boxe",
-        " Musculação ",
-        " Crossfit"
+        " Musculação",
+        " Crossfit",
+        " Natação"
       ],
       "avatar_url": "https://images.unsplash.com/photo-1514525263139-f7c8f10ae61d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
       "created_at": 1603318496623
+    },
+    {
+      "id": 7,
+      "name": "Marcela",
+      "birth": 703728000000,
+      "gender": "F",
+      "services": [
+        "Musculação",
+        " Ginástica ",
+        " Aeróbico"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1553531580-a000ac8df244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80",
+      "created_at": 1603328955466
     }
   ]
 }
