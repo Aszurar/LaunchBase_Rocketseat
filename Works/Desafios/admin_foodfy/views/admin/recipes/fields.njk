@@ -36,31 +36,34 @@
         
             <div class="item" id="ingredients">
                 <div>Ingredientes</div>
-                <div class="ingredient">
                 {% for item in recipe.ingredients %}
-                    <input type="text" 
-                        name="ingredients[]" 
-                        placeholder="Pão de batata..."
-                        value="{{item}}"
-                        required
-                        >
+                    <div class="ingredient">
+                        <input type="text" 
+                            name="ingredients[]" 
+                            placeholder="Pão de batata..."
+                            value="{{item}}"
+                            required
+                            >
+                    </div>
                 {% endfor %}
-                </div>
+
             </div>
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
             
             <div class="item" id="preparations">
                 <div>Modo de preparo</div>
-                <div class="preparation">
                 {% for item in recipe.preparation %}
-                    <input type="text" 
-                        name="preparation[]" 
-                        placeholder="Aqueça no forno por..."
-                        value="{{item}}"
-                        required
-                        >
+
+                    <div class="preparation">
+                        <input type="text" 
+                            name="preparation[]" 
+                            placeholder="Aqueça no forno por..."
+                            value="{{item}}"
+                            required
+                            >
+                    </div>
                 {% endfor %}
-                </div>
+            
             </div>
 
         <button type="button" class="add-preparation">Adicionar novo passo</button>
@@ -75,7 +78,8 @@
                           maxlength=1248
                           spellcheck=true
                           wrap=hard
-                          >{{recipe.info}}</textarea>
+                          >{{recipe.info}}
+                </textarea>
             </div>
         </div>
 

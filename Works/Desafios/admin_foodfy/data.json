@@ -3,7 +3,7 @@
     {
       "id": 1,
       "chef": "Jorge Relato",
-      "info": "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um \r\npouquinho de óleo ou manteiga e não amasse os hambúrgueres!\r\n\r\nVocê sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a \r\ncarne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a \r\nreceita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o \r\nhambúrguer no meio do pão e adicionar outros ingredientes, como queijom tomates e alface.",
+      "info": "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de \r\nóleo ou manteiga e não amasse os hambúrgueres!\r\n\r\nVocê sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? \r\nA ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. \r\nAssim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o \r\nhambúrguer no meio do pão e adicionar outros ingredientes, como queijo, tomates e alface.",
       "title": "Triplo bacon burger",
       "thumbnail": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
       "ingredients": [
@@ -27,7 +27,7 @@
     {
       "id": 2,
       "chef": "Fabiana Melo",
-      "info": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, \r\nela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias \r\npráticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de \r\nliquidificador, bolo de banana, bolo de chocolate e muito mais!",
+      "info": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. \r\nFeita toda no liquidificador, ela é bem prática para o dia a dia.",
       "title": "Pizza 4 estações",
       "thumbnail": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/pizza.png",
       "ingredients": [
@@ -141,7 +141,7 @@
     {
       "id": 7,
       "chef": "Rafaella Vagetti",
-      "info": "É possível substituir o leite condensado de chocolate por cobertura de sorvete sabor chocolate, fica \r\nótimo, por ser meio amargo quebra um pouco o doce.\r\nVocê sabia que a torta alemã, apesar do nome, é uma receita brasileira?\r\n\r\nDicas:\r\nO creme de manteiga é super importante para que sua torta fique impecável, por isso, para obter o \r\ncreme perfeito, é preciso que bata bem a manteiga junto com o açúcar com a batedeira, por mais ou \r\nmenos 5 minutos. Isso faz com o creme fique super fofinho e aerado.\r\nNa hora de acrescentar o creme de leite, é importante que ele esteja bem gelado. E é importante batê-\r\nlo bem junto ao creme, por uns 15 minutos, para que ele renda bem e fique liso e brilhante!\r\nEm vez de leite condensado sabor chocolate, que tal fazer uma ganache deliciosa?\r\nNa hora de fazer sua ganache, você pode adicionar uma colherzinha de rum ou essência de rum para \r\ndar um toque especial, fica uma delícia!\r\nAlém disso, é interessante inovar na decoração também: que tal fazer um chantilli super lindo e \r\nbrilhante para finalizar? Sua torta vai ficar ainda mais incrível!",
+      "info": "É possível substituir o leite condensado de chocolate por cobertura de sorvete sabor chocolate, fica ótimo, por ser \r\nmeio amargo quebra um pouco o doce.\r\nVocê sabia que a torta alemã, apesar do nome, é uma receita brasileira?\r\n\r\nDicas:\r\nO creme de manteiga é super importante para que sua torta fique impecável, por isso, para obter o creme perfeito, \r\né preciso que bata bem a manteiga junto com o açúcar com a batedeira, por mais ou \r\nmenos 5 minutos. Isso faz com o creme fique super fofinho e aerado.\r\n\r\nNa hora de acrescentar o creme de leite, é importante que ele esteja bem gelado. E é importante batê-lo bem \r\njunto ao creme, por uns 15 minutos, para que ele renda bem e fique liso e brilhante!\r\nEm vez de leite condensado sabor chocolate, que tal fazer uma ganache deliciosa?\r\n\r\nNa hora de fazer sua ganache, você pode adicionar uma colherzinha de rum ou essência de rum para dar um \r\ntoque especial, fica uma delícia!\r\nAlém disso, é interessante inovar na decoração também: que tal fazer um chantilli super lindo e brilhante para \r\nfinalizar? Sua torta vai ficar ainda mais incrível!",
       "title": "Torta Alemã",
       "thumbnail": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/08/09/tortaholandesa.jpg",
       "ingredients": [

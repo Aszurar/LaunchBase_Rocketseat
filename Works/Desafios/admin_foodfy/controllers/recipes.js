@@ -1,7 +1,7 @@
 const fs = require('fs')
-const { stringify } = require('querystring')
-const { filter } = require('../data')
 const data = require('../data.json')
+const { editInfo } = require('../tools')
+
 
 const names = {
     subtitle: ["Receita:", "Ingredientes", "Modo de preparo", "Informações adicionais"],
@@ -66,6 +66,7 @@ exports.show = function(req, res){
 
     const recipe = {
         ...foundRecipe,
+        info: editInfo(foundRecipe.info),
     }
 
     return res.render("admin/recipes/show", { recipe, names})

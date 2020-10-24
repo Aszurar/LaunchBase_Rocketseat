@@ -1,4 +1,3 @@
-
 function addField(structure, input) {
     // Campos Dinâmicos
 

@@ -23,8 +23,6 @@
 
     <h1 class="subtitle">{{index.text}}</h1>
 
-    <section class="table">
-
         <div class="cards">
             {% for item in recipes %}
                 {% if loop.index0 < 6 %}
@@ -50,7 +48,6 @@
             {% endfor %}
 
         </div>
-    </section>
 
     <script src="./scripts/index.js"></script>
 {% endblock %}
