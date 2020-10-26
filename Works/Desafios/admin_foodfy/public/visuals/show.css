@@ -1,0 +1,112 @@
+ /* Show */
+ .thumbnail img{
+  width: 100%;
+  max-height: 17.5rem;
+  border-radius: 0.938rem;
+  margin-top: 1.25rem;
+  object-fit: cover;
+  margin-bottom: 3.125rem;
+}
+
+.title{
+  text-align: center;
+}
+
+.title h1{
+  font-size: 2.25rem;
+  color: var(--color-black);
+  line-height: 2.625rem;
+}
+
+.title p{
+ font-size: 1.25rem;
+ line-height: 1.5rem;
+ color: var(--color-gray);
+}
+
+#itemShow + #itemShow{
+  margin-top: 2.563rem;
+}
+
+.item{
+  margin-top: 1.875rem;
+}
+
+.item h2{
+ font-size: 1.5rem;
+ color: var(--color-black);
+ line-height: 1.75rem;
+}
+
+.item h2{
+  margin-bottom: 1.188rem;
+}
+
+.item ul,
+p{
+  color:var(--color-description);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.item ul li{
+  list-style-type: none;
+}
+
+.item ul li::before{
+  content: '-  ';
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.subtitle h1 {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  margin-right: 0.5rem;
+  line-height: 1.75rem;
+}
+
+.subtitle span {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: var(--color-cop);
+  align-self: flex-end;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+/* ====button====*/
+.button1 {
+  cursor: pointer;
+}
+
+.button2 {
+  cursor: pointer;
+}
+
+.button3 {
+  cursor: pointer;
+}
+.data1.active {
+  display: none;
+}
+
+.data2.active {
+  display: none;
+}
+
+.data3.active {
+  display: none;
+}
+
+@media (max-width: 39.375rem){
+
+section{
+  padding: 0.5rem;
+  text-align: left;
+}
+}

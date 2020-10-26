@@ -17,11 +17,45 @@
     max-width: 58.75rem;
     margin-top: 1.875rem;
 }
+
 .recipe{
     display: grid;
     grid-template-columns: 38% 62%;
     gap: 1.25rem;
+    position: relative;
 }
+
+.recipe::before{
+    content: " ";
+    width: 0%;
+    height: 0.15rem;
+    background-color: var(--color-pinkred);
+    right: 0;
+    top: -0.6rem;
+    position: absolute;
+}
+
+.recipe::after{
+    content: " ";
+    width: 0%;
+    height: 0.15rem;
+    background-color: var(--color-pinkred);
+    left: 0;
+    top: 5.4rem;
+    position: absolute;
+}
+
+.recipe:hover::before{
+    width: 100%;
+    transition: width 1.5s ease-in-out;
+}
+
+.recipe:hover::after{
+    width: 100%;
+    transition: width 1.5s ease-in-out;
+}
+
+
 .recipe img{
     border-radius: 0.536rem;
     height: 5rem;
