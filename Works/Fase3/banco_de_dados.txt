@@ -1,0 +1,34 @@
+1. Instalar o BD:
+Criando o repositório de configuração
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# importando a chave de logein do repositório
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# atualizando as listas de updates
+sudo apt-get update
+
+# Instalando a última versão do PostgreSQL
+sudo apt-get -y install postgresql
+
+2.
+Inicializar o BD
+sudo /etc/init.d/postgresql-8.3 start
+
+Desligar o BD
+sudo /etc/init.d/postgresql-8.3 stop
+
+Reiniciar o BD
+sudo /etc/init.d/postgresql-8.3 restart
+
+
+4. Instalar o Postbird, que é um programa para gerenciar seu banco de dados com interface gráfica a fim de facilitar o uso!
+sudo snap install postbird
+
+para entrar nele, tanto a senha quanto o login são: postgres
+
+
+
+5.
+Adicionar o BD(PostgreSQL) a seu projeto Node(na pasta de seu projeto):
+npm install pg

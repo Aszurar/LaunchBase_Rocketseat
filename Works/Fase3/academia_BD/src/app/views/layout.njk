@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/visuals/menu.css">
+
+        {% block head %}
+            <title>Gym Manager</title>
+            <link rel="stylesheet" href="/visuals/styles.css">
+        {% endblock head %}
+        
+    </head>
+    <body>
+        <header>
+
+            <div class="links">
+                <a href="/instructors">Instructors</a>
+                <a href="/members">Members</a>
+            </div>
+
+        </header>
+
+    {% block content %}{% endblock content %}
+    <!-- bloco de conteúdo vindo do about, bloco dinấmico -->
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
