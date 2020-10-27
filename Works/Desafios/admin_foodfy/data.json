@@ -164,6 +164,121 @@
         "Leve à geladeira por no mínimo 3 horas ou até que o doce fique bem gelado.",
         "Retire o doce da geladeira e sirva a seguir."
       ]
+    },
+    {
+      "id": 8,
+      "chef": "Bruno de Oliveira",
+      "info": "Varie os sabores de sorvete",
+      "title": "Cupcake Gelado de Nutella",
+      "thumbnail": "http://blog.taqi.com.br/wp-content/uploads/2016/12/2.png",
+      "ingredients": [
+        "1 copo de 350g de Nutella",
+        "1 pacote de biscoito maisena",
+        "1 pote de sorvete ao gosto pessoal, no caso desta receita: flocos",
+        "170g de chocolate meio amargo",
+        "170ml de creme de leite"
+      ],
+      "preparation": [
+        "No liquidificador triture bem os biscoitos, coloque em uma tigela e misture com a nutella até virar uma massa.",
+        "Forre o fundo das forminhas de muffins e cubra com sorvete.",
+        "Leve para gelar. Derreta o chocolate e misture o creme de leite fazendo uma ganache. Desenforme os cupcakes, cubra com a ganache e sirva."
+      ]
+    },
+    {
+      "id": 9,
+      "chef": "Lucas de Lima",
+      "info": "O bobó dura até 2 dias na geladeira e 3 meses no congelador. Já o caldo de camarão dura 5 dias na geladeira e até 6 \r\nmeses no congelador.\r\nPara descongelar o bobó: deixe da noite para o dia na geladeira ou descongele direto na panela em fogo baixo, \r\ntampado, por cerca de 15 minutos, mexendo de vez em quando para não grudar no fundo.\r\nPara descongelar no micro-ondas: leve o bobó tampado com um prato e aqueça em potência alta por 6 minutos, \r\nparando na metade do tempo para mexer. Uma forma de adiantar é preparar o caldo e cozinhar a mandioca no dia \r\nanterior ao preparo.",
+      "title": "Bobó de Camarão",
+      "thumbnail": "https://www.saboresajinomoto.com.br/uploads/images/recipes/bobo-de-camarao-2.jpg",
+      "ingredients": [
+        "½ kg de camarão médio, limpo",
+        "1 kg de mandioca",
+        "200 ml de leite de coco (1 vidro pequeno)",
+        "4 colheres (sopa) de azeite de dendê",
+        "1 pimentão picado",
+        "1 cebola picada",
+        "3 dentes de alho picados",
+        "4 colheres (sopa) de azeite",
+        "4 colheres (sopa) de manteiga",
+        "2 colheres (sopa) de coentro picado",
+        "Sal e pimenta vermelha a gosto"
+      ],
+      "preparation": [
+        "Descasque a mandioca, corte em pedaços grandes e coloque numa panela com água.",
+        "Leve a panela ao fogo alto e deixe cozinhar até a mandioca ficar bem macia.",
+        "Espete com um garfo para verificar.",
+        "Enquanto a mandioca cozinha, separe e pique os ingredientes pedidos na receita.",
+        "Numa frigideira, coloque o azeite e leve ao fogo para esquentar.",
+        "Junte o alho e refogue por 2 minutos, não deixe queimar.",
+        "Acrescente o camarão na frigideira, mexa bem e refogue por 3 minutos.",
+        "Desligue o fogo e reserve.",
+        "Coloque a manteiga numa panela e leve ao fogo para derreter.",
+        "Quando estiver bem quente, junte a cebola e o pimentão.",
+        "Mexa e refogue por 5 minutos. Desligue o fogo.",
+        "Quando a mandioca estiver cozida, desligue o fogo e escorra a água.",
+        "Coloque a mandioca ainda quente no copo do liquidificador, junte o leite de coco, o dendê e o refogado de cebola com pimentão.",
+        "Bata muito bem até formar uma massa lisa.",
+        "Cuidado para a tampa do liquidificador não abrir, pressione bem com um pano de prato dobrado.",
+        "Se for preciso, bata a mandioca em duas etapas.Tenha paciência, faça aos poucos que sempre dá certo.",
+        "Coloque o camarão refogado numa panela, junte o creme de mandioca e leve ao fogo.",
+        "Quando ferver, tempere com sal e pimenta.",
+        "Desligue o fogo e junte o coentro e Misture bem e sirva quente."
+      ]
+    },
+    {
+      "id": 10,
+      "chef": "Luisa Moratori",
+      "info": "Quer fazer seu sushi virar hot? Simples!:\r\nEm uma tigela misture meia lata de cerveja (qualquer uma, de sua preferência) com trigo até fazer uma \r\nmistura líquida, meio espessa, uniforme. \r\nPasse o rolo (antes de cortar) no creme, passe na farinha de rosca, passe novamente no creme e de novo \r\nna farinha de rosca. \r\nFrite por cerca de 1 minuto em fogo algo e óleo bem quente. \r\nDeixe esfriar um pouco e corte. Recomendo que o hot seja com recheio de atum.",
+      "title": "Sushi - Hot Sushi",
+      "thumbnail": "http://ficavaiterjanta.tempsite.ws/wp-content/uploads/2016/08/hot-roll-sassa-sushi.jpg",
+      "ingredients": [
+        "3 folhas de alga nori",
+        "1 xícara de arroz especial para sushi",
+        "kani ou atum sólido para recheio",
+        "cream cheese",
+        "cebolinha",
+        "1 lata de cerveja",
+        "farinha de trigo",
+        "farinha de rosca",
+        "1 colher de sopa de sal",
+        "1 colher de sopa de açúcar",
+        "5 colheres de sopa de vinagre de arroz"
+      ],
+      "preparation": [
+        "Lave cerca de 1 xícara de arroz até a água, até que ela escorra transparente. Depois deixe por cerca de 15 minutos de molho na água. Coloque para cozinhar na mesma água. À medida que a água for secando, coloque mais um pouco, uma ou duas vezes. A intenção é que o arroz fique bem grudento. Depois que estiver pronto, em outra panela, coloque o açúcar, o sal e o vinagre de arroz. Esquente até dissolver o sal e o açúcar. Misture essa solução ao arroz e deixe esfriar.",
+        "Com o arroz frio, coloque 1 folha de alga nori (com o lado brilhante para baixo) sobre uma esteira (existe a esteira própria, mas utilizo aquelas de jogo americano que dá no mesmo). Espalhe o arroz numa fina camada (senão o sushi fica muito grande). Deixe cerca de 2 cm de alga sem arroz em cada ponta, para enrolar.",
+        "Coloque, próximo à borda do arroz, um filete de recheio. Recomendo que corte o kani ao meio. Se for utilizar atum, misture com um pouco de cream cheese.",
+        "Enrole cuidadosamente, para não rasgar a alga nori, e apertando para o sushi não ficar grande (pessoalmente, não gosto dele muito grande).",
+        "Depois de enrolar, espere uns minutinhos para ter certeza que está bem fechadinho, e corte. Existe uma faca especial, porém uma faca de pão, bem afiada, da Tramontina, atende bem para cortar.",
+        "Coloque em um prato, passe o cream cheese por cima e coloque cebolinha para decorar."
+      ]
+    },
+    {
+      "id": 11,
+      "chef": "Alberto Valle",
+      "info": "Para acompanhar, batatas fritas, mandioca com bacon bem tostadinho por cima são uma ótima pedida. \r\nVocê pode inclusive colocar um potinho com molho barbecue ou molho Cheddar para acompanhar.\r\nOutro acompanhamento que vai bem é uma salada de repolho e aquele pão de alho.",
+      "title": "Costela Suína ao molho Barbecue",
+      "thumbnail": "https://www.clubedereceita.com.br/wp-content/uploads/2019/08/costela-de-porco-com-molho-barbecue.jpg",
+      "ingredients": [
+        "1,5 kg de costela de porco de tamanho pequeno",
+        "1 xícara de 240 ml de molho barbecue",
+        "1 colher de sopa de cominho em pó",
+        "1 colher de sopa de pimenta chilli em pó"
+      ],
+      "preparation": [
+        "Em um pequeno pote, faça um tempero misturando o cominho, a pimenta- chili, a páprica, o sal e a pimenta-do-reino",
+        "Tampe o pote e agite-o para que o tempero fique bem homogêneo",
+        "Limpe a costela de porco removendo qualquer excesso de gordura que esteja depositado sobre a carne",
+        "Passe o tempero preparado nos dois lados da peça de costela de porco somente na parte da carne",
+        "Pincele a costelinha com o molho barbecue",
+        "Reserve o molho que sobrar, pois vamos usá-lo mais tarde",
+        "Ponha a costela inteira na grelha mais alta da churrasqueira, e se quiser forre a grelha de baixo com papel alumínio",
+        "Isto é para evitar que pingue qualquer gordura no fogo, pois se isto acontecer, uma chama alta será levantada",
+        "Depois de colocar a costela de porco na grelha, abaixe o fogo e deixe-a grelhando por 1 hora. Não é necessário virar a costelinha de porco",
+        "Se você estiver usando uma churrasqueira que tenha tampa, feche-a enquanto a costela de porco grelha",
+        "Retire o papel alumínio e pincele com o molho barbecue toda a peça",
+        "Deixe grelhando por mais aproximadamente 5 minutos"
+      ]
     }
   ]
 }

@@ -1,7 +1,6 @@
 function addField(structure, input) {
     // Campos Dinâmicos
-
-
+    
     // Clonando o último ingrediente adicionado
     const newField = input[input.length - 1].cloneNode(true);
 

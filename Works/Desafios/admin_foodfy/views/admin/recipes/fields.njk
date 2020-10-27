@@ -36,34 +36,55 @@
         
             <div class="item" id="ingredients">
                 <div>Ingredientes</div>
-                {% for item in recipe.ingredients %}
+               
+                {% if recipe.ingredients %}
+                    {% for item in recipe.ingredients %}
+                        <div class="ingredient">
+                            <input type="text" 
+                                name="ingredients[]" 
+                                placeholder="Pão de batata..."
+                                value="{{item}}"
+                                required
+                                >
+                        </div>
+                    {% endfor %}
+                {% else %}
                     <div class="ingredient">
                         <input type="text" 
                             name="ingredients[]" 
                             placeholder="Pão de batata..."
-                            value="{{item}}"
+                            value=""
                             required
                             >
                     </div>
-                {% endfor %}
-
+                {% endif %}
             </div>
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
             
             <div class="item" id="preparations">
                 <div>Modo de preparo</div>
-                {% for item in recipe.preparation %}
-
+                
+                {% if recipe.preparation %}
+                     {% for item in recipe.preparation %}
+                        <div class="preparation">
+                            <input type="text" 
+                                name="preparation[]" 
+                                placeholder="Aqueça no forno por..."
+                                value="{{item}}"
+                                required
+                                >
+                        </div>
+                    {% endfor %}
+                {% else %}
                     <div class="preparation">
                         <input type="text" 
-                            name="preparation[]" 
-                            placeholder="Aqueça no forno por..."
-                            value="{{item}}"
-                            required
-                            >
-                    </div>
-                {% endfor %}
-            
+                               name="preparation[]" 
+                               placeholder="Aqueça no forno por..."
+                               value="{{item}}"
+                               required
+                               >
+                        </div>
+                {% endif %}
             </div>
 
         <button type="button" class="add-preparation">Adicionar novo passo</button>
@@ -81,5 +102,4 @@
                           >{{recipe.info}}</textarea>
             </div>
         </div>
-
 <script src="../../scripts/addinfo.js"></script>

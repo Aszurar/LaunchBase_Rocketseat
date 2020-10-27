@@ -60,20 +60,21 @@
 input,
 textarea{
     border-radius: 0.25rem;
-    color: var(--color-black);
+    color: var(--color-pinkred-dark);
     border: 0.063rem solid var(--color-border);
     width: 100%;
     padding: 0.813rem 0;
     outline: none;
 
     font-size: 1.25rem;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 textarea{
     min-height: 16.063rem;
     resize: none;
     font-family: "Roboto", sans-serif;
+    font-weight: normal;
 }
 
 ::-webkit-input-placeholder {
