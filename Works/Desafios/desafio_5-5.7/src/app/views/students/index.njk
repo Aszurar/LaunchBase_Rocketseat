@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card table-index">
+        {# tag para formar uma tabela #}
+        <table>
+            {# cabeçalho da tabela #}
+            <thead>
+                {# linha do cabeçalho  #}
+                <tr>
+                    {# coluna do cabeçalho #}
+                    <th>Professores</th>
+                    <th>Email</th>
+                    <th>Ano</th>
+                    <th>Sobre</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for student in students %}
+                    <tr class="student">
+                        <td> 
+                            <span style="background-image: url({{student.avatar_url}})"></span>
+                            {{student.name}}
+                        </td>
+
+                        <td class="email">{{student.email}}</td>
+
+                        <td> <span class="grades">{{student.grades}}</span></td>
+
+                        <td class="button-about"><a href="/students/{{student.id}}">VER</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="buttonCreate" href="/students/create">Novo</a>
+    </div>
+    <script src="/scripts/index.js"></script>
+{% endblock %}

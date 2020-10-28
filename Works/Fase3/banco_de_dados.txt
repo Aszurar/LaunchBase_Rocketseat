@@ -32,3 +32,37 @@ para entrar nele, tanto a senha quanto o login são: postgres
 5.
 Adicionar o BD(PostgreSQL) a seu projeto Node(na pasta de seu projeto):
 npm install pg
+
+6. 
+Restruturação das pastas para src, app, lib e config
+
+
+7.
+Configuração do Banco de dados:
+Prédefinição das credenciais necessárias para que não seja necessário sempre realizar a validação na hora de acessar o bd:
+Para isso, cria-se uma pasta chamada config na pasta src
+Dentro dessa nova pasta, cria-se um novo arquivo chamado db.js, nesse arquivo faremos a configuração do banco de dados:
+
+const { Pool } require("pg")
+
+Credencias necessárias para acessar o bd e executar as querys
+module.exports = new Pool({
+    user: "postgres",
+    password: "postgres",
+    host: "localhost",
+    port: 5432,
+    database: "nomedobd"
+})
+
+
+8.
+Inserindo dados direto via postbird, via query, é necessário usar essa estrutura com todas colunas que guardaram os dados e seus valores dps
+INSERT INTO instructors(
+  name,
+  avatar_url,
+  gender,
+  services,
+  birth,
+  created_at
+) VALUES ('Lucas', 'http', 'm', 'se', '1997-12-22', '1997-12-24')
+RETURNING id

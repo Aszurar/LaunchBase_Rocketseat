@@ -1,5 +1,5 @@
 const { age, date, service } = require('../../lib/tools');
-
+const { db } = require('../../config/db')
 
 module.exports = {
     
@@ -21,11 +21,43 @@ module.exports = {
             }
 
         });
-
-        let { avatar_url, birth, name, services, gender } = req.body
         
-        return
+        // craindo o tamplate
+        const query = `
+            INSERT INTO instructors(
+                name,
+                avatar_url,
+                gender,
+                services,
+                birth,
+                created_at
+            ) VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING id
+        `
 
+        const values = [
+            req.body.name,
+            req.body.avatar_url,
+            req.body.gender,
+            req.body.services,
+            date(req.body.birth).iso,
+            date(Date.now()).iso
+
+        ]
+
+       // enviando dados para o banco de dados junto com suas credenciais
+        // passamos por parâmetro a query(tamplate dos dados a serem gravaodos)
+        // os valores que queremos guardar
+        // e por ultimo uma função callbak que nos mostrará resultados e erros caso
+        // ocorram
+        db.query(query, values, function(err, results){
+        //    Caso ocorra algum erro, mostre.
+        // por fim, mostre os resultados
+            console.log(err);
+            console.log(results);
+        })
+
+        return
     },
 
     show(req, res){

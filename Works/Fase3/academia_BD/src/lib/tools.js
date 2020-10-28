@@ -1,4 +1,7 @@
 module.exports = {
+// Novo modelo mais limpo para passsar uma função
+// em uma propriedade de um objeto:
+// method shorthand
     age(timestamp) {
 
         const today = new Date();

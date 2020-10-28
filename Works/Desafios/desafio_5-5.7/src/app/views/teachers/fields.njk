@@ -1,0 +1,95 @@
+            <div class="item">
+                <div>{{create.titles[0]}}:</div>
+                <div>
+                    <input 
+                        type="text"
+                        name="avatar_url"
+                        placeholder="https://..."
+                        value="{{teacher.avatar_url}}"
+                        required
+                        >
+                </div>
+            </div>
+            
+            <div class="item">
+                <div>{{create.titles[1]}}:</div>
+                <div>
+                    <input 
+                        type="text"
+                        name="name"
+                        placeholder="Digite o nome do Professor..."
+                        value="{{teacher.name}}"
+                        required
+                        >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>{{create.titles[2]}}:</div>
+                <div>
+                    <input 
+                        type="date"
+                        name="birth"
+                        value="{{teacher.birth}}"
+                        required
+                        >
+                </div>
+            </div>
+
+           <div class="item">
+                <div>{{create.titles[3]}}:</div>
+                <select name="level" value= "{{teacher.level}}">
+                    <option value="hischool">{{create.level[0]}}</option>
+                    <option value="univers">{{create.level[1]}}</option>
+                    <option value="masters">{{create.level[2]}}</option>
+                    <option value="doctorate">{{create.level[3]}}</option>
+                </select>
+            </div>
+
+             <div class="item">
+                <div>{{create.titles[4]}}:</div>
+                <div class="typeclass">
+                    <div class="test test1">
+                        <label class="container ct1">{{create.type[0]}}
+                           
+                            <input name="type" 
+                                   value="on" 
+                                   {% if (teacher.type == "on") or (teacher.type == "double") %}
+                                   checked {% endif %} 
+                                   type="checkbox">
+                           
+                            <span class="checkmark" 
+                                  id="check1">
+                                  </span>
+                        </label>
+                    </div>
+                    
+                    <div class="test test2">
+                        <label class="container ct2">{{create.type[1]}}
+                            
+                            <input name="type" 
+                                   value="off" 
+                                   {% if (teacher.type == "off") or (teacher.type == "double") %}
+                                   checked {% endif %} 
+                                   type="checkbox">
+                            <span class="checkmark"
+                                  id="check2">
+                                  </span>
+                        
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Matéria:</div>
+                <input 
+                    type="text" 
+                    name="classes"
+                    placeholder="Informe a matéria que será lecionada..."
+                    value="{{teacher.classes}}"
+                    required
+                    >
+            </div>
+
+            <button type="submit">{{create.save}}</button>
