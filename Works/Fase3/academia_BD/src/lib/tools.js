@@ -32,11 +32,13 @@ module.exports = {
             month,
             year,
             iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`
+            birthDay: `${day}/${month}`,
+            format: `${day}/${month}/${year}`
         };
     },
 
     service(classes) {
+        console.log(classes);
         if (Array.isArray(classes)) {
             return classes
         }

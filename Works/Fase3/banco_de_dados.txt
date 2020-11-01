@@ -1,17 +1,73 @@
 1. Instalar o BD:
-Criando o repositório de configuração
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo apt-get install postgresql
 
-# importando a chave de logein do repositório
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
-# atualizando as listas de updates
-sudo apt-get update
+ṔOSTGRES:
+Checar a instalação:
 
-# Instalando a última versão do PostgreSQL
-sudo apt-get -y install postgresql
+1. Entrar no super usuário postgres que foi criado com a instalação do postgres: sudo -i -u postgres
 
-2.
+2. Logado com esse usuário, digite: psql 
+-Aparecerá a versão instalada e entrará no utilitário de gerenciamento do postgres
+
+3.\conninfo
+- Comando que informa o nome do usuário atual, o nome do banco de dados e a porta que está conectado
+
+4.\l
+- Lista todos os bancos criados
+
+5.\q
+-Sair do psql(utilitário de gerenciamento do postgres)
+
+Ajudas:
+psql --help
+psql --version
+
+\password
+Configurar senha para o usuário(postgres):
+
+\h
+lista todos os comendos
+
+\du
+Lista todos os usuários(roles) no postgres
+
+\c nome_do_banco_de_Dados
+alterar de banco de dados\q
+
+No terminal normal:
+which psql mostra onde o programa ta instalado
+
+No psql:
+show hba_file;
+Esse é o arquivo que é para configurar para que o postgres peça a senha na hora do login
+
+mudar a autentificação de peer para md5(hash de senha)
+
+Logar com senha: psql -U postgres
+
+
+6. Criar usuário(logar com postgres ou outros super usuário
+- createuser -dPs lucas (novo usuário que pode crirar banco de dados,  com uma senha e esse será um super usuário) 
+- ele vai pedir uma senha para esse novo usuário
+e dps vai pedir a senha do usuário atual do usuário postgres
+
+7. Após isso, é necessário alterar o arquivo hba_file, com mais um usuário: 
+ 1 - Logue com o postgres: sudo -i -u postgres e dps psql -U postgres
+ 2 - show hba_file;
+ 3 - Após isso saia do psql, dps saia do usuário postgres e fique em seu usuário padrão e digite: sudo nanor +o caminho passado acima
+ 4 - Após isso veja o arquivo, role pra baixo e veja na seção Database administrative login:
+    1 - A 1º linha é a configuração de login do usuário padrão postgres, na última aba, ou será opção peer(entrar dreto com a senha padrão) ou md5 que pede sempre a senha.
+  5 - Agora, crie uma nova linha nessa parte igual as configs do posgres só mude o nome para o do novo usuário e troque tbm a autentificação para md5.
+
+Por fim, na hora de logar no novo usuário, é necesário que use psql -U nomedoUsuário nomedoBancoDeDados
+
+Exclusão do usuário:
+Logue com postgres(sudo -i -u postgres), e use:
+dropuser nomeDoUsuario
+
+
+
 Inicializar o BD
 sudo /etc/init.d/postgresql-8.3 start
 

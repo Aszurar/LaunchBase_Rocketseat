@@ -9,7 +9,7 @@ const { Pool } = require("pg")
 // credenciais necessarias para acessar o bd e executar as querys
 module.exports = new Pool({
     user: "postgres",
-    password: "postgres",
+    password: "nichi",
     host: "localhost",
     port: 5432,
     database: "gymmanager"

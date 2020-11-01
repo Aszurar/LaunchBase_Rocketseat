@@ -1,12 +1,16 @@
+const Instructor = require('../models/Instructor');
 const { age, date, service } = require('../../lib/tools');
-const { db } = require('../../config/db')
 
 module.exports = {
     
     index(req, res){
-         return res.render("instructors/index");
+        // chamando a função que retorna todos os intrutores do banco de dados
+        Instructor.all(function(instructors){ 
+            return res.render("instructors/index", { instructors });
+        })
     },
     
+    // 
     create(req, res){
         return res.render("instructors/create");
     },
@@ -21,53 +25,40 @@ module.exports = {
             }
 
         });
-        
-        // craindo o tamplate
-        const query = `
-            INSERT INTO instructors(
-                name,
-                avatar_url,
-                gender,
-                services,
-                birth,
-                created_at
-            ) VALUES ($1, $2, $3, $4, $5, $6)
-            RETURNING id
-        `
-
-        const values = [
-            req.body.name,
-            req.body.avatar_url,
-            req.body.gender,
-            req.body.services,
-            date(req.body.birth).iso,
-            date(Date.now()).iso
-
-        ]
-
-       // enviando dados para o banco de dados junto com suas credenciais
-        // passamos por parâmetro a query(tamplate dos dados a serem gravaodos)
-        // os valores que queremos guardar
-        // e por ultimo uma função callbak que nos mostrará resultados e erros caso
-        // ocorram
-        db.query(query, values, function(err, results){
-        //    Caso ocorra algum erro, mostre.
-        // por fim, mostre os resultados
-            console.log(err);
-            console.log(results);
+        // chamando a funçãp que cria um novo instrutor, ou no banco de dados
+        // é enviado o req.body para ela, que são os dados vindo do front-end
+        // e uma função que terá como parâmetro esse novo instrutor
+        Instructor.create(req.body, function(instructor){
+            return res.redirect("/instructors");
         })
-
-        return
     },
 
     show(req, res){
-       return
-        
+        // chamando função que procura o instrutor na tabela pelo id
+        // esse id é passado pela rota
+        Instructor.find(req.params.id, function(instructor){
+            if (!instructor) return res.send('Instructor not found!')
+
+            // aplicação de funções que mmodificam os dados para melhor visualização
+            // no navegador
+            instructor.age = age(instructor.birth)
+            instructor.services = service(instructor.services)
+            instructor.created_at = date(instructor.created_at).format
+
+            return res.render("instructors/show", { instructor })
+        })
     },
 
     edit(req, res){
+        // função que que procura o instutor para a edição
+        Instructor.find(req.params.id, function(instructor){
+            if (!instructor) return res.send("Database Erro")
+            // tratamento da data de aniversário para que ela seja passa no front-end
+            // no formato do input.date   
+            instructor.birth = date(instructor.birth).iso
 
-        return
+            return res.render("instructors/edit", { instructor })
+        })
         
     },
 
@@ -82,12 +73,15 @@ module.exports = {
 
         });
 
-        return
-        
+        Instructor.update(req.body, function(){
+            return res.redirect(`/instructors/${req.body.id}`)
+        })        
     },
 
     delete(req, res){
-        return
+        Instructor.delete(req.body.id, function(){
+            return res.redirect('/instructors')
+        })  
         
     }
 }
