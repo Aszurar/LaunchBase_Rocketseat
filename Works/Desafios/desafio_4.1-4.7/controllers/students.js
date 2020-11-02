@@ -32,7 +32,7 @@ exports.post = function(req, res){
     birth = Date.parse(birth);
 
     let id = 1
-    let lastStudent = data.students[data.students - 1];
+    let lastStudent = data.students[data.students.length - 1];
 
     if (lastStudent) {
         id = lastStudent.id + 1;
@@ -114,7 +114,8 @@ exports.put = function(req, res){
         ...foundStudent,
         ...req.body,
 
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(id)
     }
 
     data.students[index] = student;

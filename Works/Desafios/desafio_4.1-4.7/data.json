@@ -2,16 +2,16 @@
   "students": [
     {
       "id": 1,
-      "name": "Bruna",
+      "name": "Bruna Oliveira",
       "birth": 1103673600000,
       "email": "bru16_m.s@gmail.com",
       "grades": "2",
-      "credits": "35",
+      "credits": "38",
       "avatar_url": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      "id": 1,
-      "name": "Laura",
+      "id": 2,
+      "name": "Laura Marcedo",
       "birth": 1040515200000,
       "email": "laura_art20@gmailcom",
       "grades": "3",
@@ -19,18 +19,27 @@
       "avatar_url": "https://images.unsplash.com/photo-1522010265321-fd346cc64d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Douglas",
       "birth": 1292976000000,
       "email": "doug22_l.silva@gmail.com",
       "grades": "5",
       "credits": "15",
       "avatar_url": "https://images.unsplash.com/photo-1547082661-71362fc3969c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Roberto",
+      "birth": 1198281600000,
+      "email": "roberto_freitas123@gmail.com",
+      "grades": "9",
+      "credits": "25",
+      "avatar_url": "https://images.unsplash.com/photo-1536337005238-94b997371b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
     }
   ],
   "teachers": [
     {
-      "id": "11",
+      "id": 1,
       "name": "Gustavo",
       "type": "on",
       "birth": 643161600000,
@@ -60,7 +69,7 @@
       "created_at": 1600649430241
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Karen",
       "type": "on",
       "birth": 782611200000,
@@ -69,48 +78,25 @@
         "Biologia",
         " Química"
       ],
-      "avatar_url": "https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/105969048_267538964334687_2245683169376221659_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=XceWmFACzdsAX_MMVXh&_nc_tp=19&oh=53a532450208baaabc02b4f5568f496b&oe=5F924BD5",
+      "avatar_url": "https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/121662049_890097008190686_4738823886093598508_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=jPqAVQZsrpsAX9fG9nP&tp=19&oh=f4d6c29b6a60d8fbf10b2511793ba450&oe=5FC6EBFD",
       "created_at": 1600649867101
     },
     {
-      "id": "4",
-      "name": "Thadeu",
-      "type": "off",
-      "birth": 845942400000,
-      "level": "hischool",
-      "classes": [
-        "Física 1",
-        " Álgebra",
-        " Química 1"
+      "id": 4,
+      "name": "Marta",
+      "type": [
+        "on",
+        "off"
       ],
-      "avatar_url": "https://images.unsplash.com/photo-1524383880260-db51af30f5e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80",
-      "created_at": 1600650399673
-    },
-    {
-      "id": 5,
-      "name": "Laura",
-      "type": "on",
-      "birth": 767145600000,
+      "birth": 472521600000,
       "level": "masters",
       "classes": [
-        "Redação ",
-        " Português"
+        "Redação",
+        " Português ",
+        " Literatura"
       ],
-      "avatar_url": "https://images.unsplash.com/photo-1553514029-1318c9127859?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
-      "created_at": 1600651132747
-    },
-    {
-      "id": 6,
-      "name": "Letícia",
-      "type": "on",
-      "birth": 756518400000,
-      "level": "masters",
-      "classes": [
-        "Artes ",
-        " Sociologia"
-      ],
-      "avatar_url": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      "created_at": 1600992370137
+      "avatar_url": "https://images.unsplash.com/photo-1590650213165-c1fef80648c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "created_at": 1604277307067
     }
   ]
 }

@@ -12,11 +12,11 @@ body{
 .card{
     background-color: var(--color-dark-light);
     margin: 1.563rem auto;
-    max-width: 62.5rem;
+    max-width: 70rem;
     max-height: 54.375rem;
 
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 47% 53%;
 
     box-shadow: 0rem 0.125rem 1.25rem 0.5rem var(--color-black);
 
