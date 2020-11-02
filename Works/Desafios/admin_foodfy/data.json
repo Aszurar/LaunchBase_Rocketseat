@@ -279,6 +279,28 @@
         "Retire o papel alumínio e pincele com o molho barbecue toda a peça",
         "Deixe grelhando por mais aproximadamente 5 minutos"
       ]
+    },
+    {
+      "id": 12,
+      "chef": "Neuma Carolina",
+      "info": "Para acompanhar, cuscuz e uma salada de feijão fradinho ou grão de bico são ótimas pedidas!.\r\n\r\n",
+      "title": "Carne de Sol com Nata",
+      "thumbnail": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-carne-de-sol-na-nata-5.jpg",
+      "ingredients": [
+        "1kg de carne de sol cozinha com água durante meia hora em uma panela de pressão e desfiada em seguida",
+        "1 litro de leite",
+        "3 cebolas cortadas em tiras",
+        "200g de queijo mussarela picado",
+        "150g de nata",
+        "1 caixa de creme de leite",
+        "2 colheres de sopa de amido de milho dissolvido em 1 xícara de chá com leite",
+        "3 colheres de sopa de manteiga de garrafa"
+      ],
+      "preparation": [
+        "Em uma panela coloque a manteiga de garrafa para aquecer. Acrescente a carne de sol aos poucos e deixe esquentar.",
+        "Acrescente a cebola, o leite, o creme de leite e o amido de milho dissolvido no leite. Acrescente em seguida o queijo mussarela picado, a nata e misture bem.",
+        "Deixe ferver mantendo em fogo médio por 15 minutos e sempre mexendo. Sirva acompanhado de arroz e de purê de batata. A receita serve até seis pessoas."
+      ]
     }
   ]
 }
