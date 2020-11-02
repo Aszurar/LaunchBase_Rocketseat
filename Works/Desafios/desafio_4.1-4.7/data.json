@@ -35,6 +35,15 @@
       "grades": "9",
       "credits": "25",
       "avatar_url": "https://images.unsplash.com/photo-1536337005238-94b997371b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Yuri",
+      "birth": 1198281600000,
+      "email": "Yuri_satto21@gmail.com",
+      "grades": "9",
+      "credits": "28",
+      "avatar_url": "https://images.unsplash.com/photo-1596495578076-0c3a2be70d43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
     }
   ],
   "teachers": [
@@ -97,6 +106,19 @@
       ],
       "avatar_url": "https://images.unsplash.com/photo-1590650213165-c1fef80648c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
       "created_at": 1604277307067
+    },
+    {
+      "id": 5,
+      "name": "Marcos",
+      "type": "off",
+      "birth": 188438400000,
+      "level": "doctorate",
+      "classes": [
+        "Física ",
+        " Algebra"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1597570889212-97f48e632dad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80",
+      "created_at": 1604356584733
     }
   ]
 }

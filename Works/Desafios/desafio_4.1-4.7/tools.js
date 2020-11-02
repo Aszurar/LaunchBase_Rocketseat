@@ -37,7 +37,7 @@ module.exports = {
 
     type: function(type) {
         let status;
-
+        // método necessário para a página show, de acordo com o svalores salvaos(on, off ou on, off nós imprimos)
         switch (type) {
             case "on":
                 status = ["Online"]
@@ -67,7 +67,7 @@ module.exports = {
     },
 
     typeEdit: function(type) { 
-        
+        // apenas para a pagina de edição, necessário para poder marcar os 2 botões(online e ppresencial)
         if (Array.isArray(type)) {
             return "double"
         }
