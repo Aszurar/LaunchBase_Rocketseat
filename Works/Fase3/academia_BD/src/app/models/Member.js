@@ -1,31 +1,12 @@
 const db = require('../../config/db');
-const { age, date, service } = require('../../lib/tools');
+const { date } = require('../../lib/tools');
 
 module.exports = {
     all(callback){
         // função que seleciona todos os instrutores da tabela de instrutores no banco 
         // de dados verifica se ocorreu algum erro nessa consulta, se não ocorreu, então
         // chame a função callback com todos esses instrutores:
-        // Query -> Selecione todos os instrutores da tabela de instrutores
-        // relacione a tabela de membros com essa teabela de instrutores
-        // por meio do atributo instructor_id da Entidade de Membros com 
-        // o atributo identificador id da Entidade Instructors.
-        // Assim, agrupe os instrutores que forem repetidos, ou seja ,aqueles que possuem 
-        // relação com mais de um membro e conte essas associações e guarde em um novo
-        // atributo chamado total_students
-        // Por fim, retorne uma nova tabela, com todos intrutores(agrupados) com o atributo total_students
-        // para cada instância de instrutor informando no total_studens a quantidade de associações
-        // /relações que cada Instrutor possui.
-        // 
-        // Relacionamento Instrutores 1  <aula> N Membros 
-        // Cada instrutor pode dar aula para vários membros, mas cada membros só
-        // poderá ter aula  com 1 instrutor
-        db.query(`
-        SELECT instructors.*, count(members) AS total_students
-        FROM instructors
-        LEFT JOIN members ON (members.instructor_id = instructors.id)
-        GROUP BY instructors.id
-        ORDER BY total_students DESC`, function (err, results) {
+        db.query(`SELECT * FROM members`, function (err, results) {
             // throw é usado para capturar o erro e lançar no console caso
             // ocorra, imprimido o que é passado
             // e parando toda aplicação 
@@ -41,14 +22,17 @@ module.exports = {
         // craindo o tamplate
         // Instrução de consulta ao banco
         const query = `
-            INSERT INTO instructors(
+            INSERT INTO members(
                 name,
                 avatar_url,
                 gender,
-                services,
+                email,
                 birth,
-                created_at
-            ) VALUES ($1, $2, $3, $4, $5, $6)
+                blood,
+                weight,
+                height,
+                instructor_id
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             RETURNING id
         `
 
@@ -56,10 +40,12 @@ module.exports = {
             data.name,
             data.avatar_url,
             data.gender,
-            data.services,
+            data.email,
             date(data.birth).iso,
-            date(Date.now()).iso
-
+            data.blood,
+            data.weight,
+            data.height,
+            data.instructor
         ]
 
         // enviando dados para o banco de dados junto com suas credenciais
@@ -79,15 +65,15 @@ module.exports = {
     },
 
     find(id, callback){
-        // função que procura no banco de dados, um instrutor em específico
-        // pelo id, a query seria: Selecione todos os instrutores da tabela
-        // Instructors onde seus id seja igual ao id passado no parâmetro
-        // nesse caso só terá 1 id correspondente e com isso
-        // passe o único instrutor que possui tal id 
+        // função que procura no banco de dados, todos os membros e reliza um relacionamento
+        // entre os instrutores aos membros que estão ta dando aula
+        // construindo assim uma nova tabela com as 2 tabelas de instrutores associados aos 
+        // membros correspondentes(pelo id)
         db.query(`
-            SELECT * 
-            FROM instructors 
-            WHERE id = $1`, [id], function(err, results){
+            SELECT members.*, instructors.name AS instructor_name
+            FROM members 
+            LEFT JOIN instructors ON (members.instructor_id = instructors.id)
+            WHERE members.id = $1`, [id], function(err, results){
                 // throw é usado para capturar o erro e lançar no console caso
                 // ocorra, imprimido o que é passado
                 // e parando toda aplicação 
@@ -98,20 +84,28 @@ module.exports = {
 
     update(data, callback){
         const query = `
-            UPDATE instructors SET
+            UPDATE members SET
                 name = ($1),
                 avatar_url = ($2),
                 gender = ($3),
-                services = ($4),
-                birth = ($5)
-            WHERE id = $6
+                email = ($4),
+                birth = ($5),
+                blood = ($6),
+                weight = ($7),
+                height = ($8),
+                instructor_id = ($9)
+            WHERE id = $10
         `
         const values = [
             data.name,
             data.avatar_url,
             data.gender,
-            data.services,
+            data.email,
             date(data.birth).iso,
+            data.blood,
+            data.weight,
+            data.height,
+            data.instructor,
             data.id
         ]
 
@@ -127,10 +121,18 @@ module.exports = {
     },
 
     delete(id, callback){
-        db.query(`DELETE FROM instructors WHERE id = $1`, [id], function(err, results){
+        db.query(`DELETE FROM members WHERE id = $1`, [id], function(err, results){
             if(err) throw `Database Error! ${err}`
 
             return callback()
         })
+    },
+
+    instructorsOptions(callback){
+        db.query(`SELECT name, id FROM instructors`, function(err, results){
+            if (err) throw `Database Erro! ${err}`
+            
+            callback(results.rows)
+        }) 
     }
 }

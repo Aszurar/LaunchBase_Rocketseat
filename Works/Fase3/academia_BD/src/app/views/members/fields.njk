@@ -22,7 +22,8 @@
    <div>Email</div>
    <div>
       <input type="email" 
-             name="email" 
+             name="email"
+             placeholder="exemplo@gmail.com" 
              value="{{member.email}}">
    </div>
 </div>
@@ -111,6 +112,19 @@
              name="height" 
              value="{{member.height}}">
    </div>
+</div>
+
+<div class="item">
+   <div>Instrutores</div>
+
+   <select name="instructor">
+      {% for instructor in instructorsOptions %}  
+         <option value="{{instructor.id}}" {% if member.instructor_id == instructor.id %}selected{% endif %}>
+            {{instructor.name}}
+         </option>
+      {% endfor %}
+
+   </select>
 </div>
 
 <button type="submit">Salvar</button>
