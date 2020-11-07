@@ -36,7 +36,7 @@
 
             <div class="item">
                 <div>Matéria:</div>
-                <div class="classes">
+                <div class="classesShow">
 
                     {% for item in teacher.classes %}
                         <span>{{item}}</span>
@@ -50,9 +50,9 @@
                 <div>{{teacher.created_at}}</div>
             </div>
 
-            <div class="item" id="ultimateButtons">
+            <div id="ultimateButtons">
                 <div class="edit">
-                    <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
+                    <a href="/teachers/{{teacher.id}}/edit">Editar</a>
                 </div>
 
                 <div class="delete">
