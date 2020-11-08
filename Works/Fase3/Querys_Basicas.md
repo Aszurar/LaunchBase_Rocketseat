@@ -69,12 +69,13 @@ ___
     * Por fim, caso quisessemos alterar, modificar algum dado para assim então salvar no banco de dados, podemos aplicar alguma função que criamos nesse útlimo campo do array valeus, como fizemos com a função date().iso
 - Por fim, para a inserção ocorrer, é necessário que importemos o arquivo db, que contém as credenciais do banco de dados e utilizemos a função de inserção:
    
-    ```js
-  $ db.query(query, values, function(err, results){
-      console.log(err)
-      console.log(results)
-      callback(results.row)
-  }) 
+   
+ ```js
+    $ db.query(query, values, function(err, results){
+        console.log(err)
+        console.log(results)
+        callback(results.row)
+    }) 
     ```
  
   * Nessa função, como parâmetros temos:
