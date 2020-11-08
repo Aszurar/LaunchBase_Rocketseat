@@ -70,13 +70,13 @@ ___
 - Por fim, para a inserção ocorrer, é necessário que importemos o arquivo db, que contém as credenciais do banco de dados e utilizemos a função de inserção:
    
    
- ```js
-    $ db.query(query, values, function(err, results){
-        console.log(err)
-        console.log(results)
-        callback(results.row)
-    }) 
-    ```
+      ```js
+      $ db.query(query, values, function(err, results){
+          console.log(err)
+          console.log(results)
+          callback(results.row)
+      }) 
+      ```
  
   * Nessa função, como parâmetros temos:
     * A query: que é a estrutura SQL para inserção no banco de dados explicada anteriormente
