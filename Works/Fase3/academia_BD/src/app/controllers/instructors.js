@@ -6,6 +6,9 @@ module.exports = {
     index(req, res){
         // chamando a função que retorna todos os intrutores do banco de dados
         Instructor.all(function(instructors){ 
+            // for (let instructor in instructors) {
+                // instructor.services = service(instructor.services)
+            // }
             return res.render("instructors/index", { instructors });
         })
     },
@@ -29,7 +32,7 @@ module.exports = {
         // é enviado o req.body para ela, que são os dados vindo do front-end
         // e uma função que terá como parâmetro esse novo instrutor
         Instructor.create(req.body, function(instructor){
-            return res.redirect("/instructors");
+            return res.redirect(`/instructors/${instructor.id}`);
         })
     },
 

@@ -119,11 +119,12 @@ module.exports = {
             // throw é usado para capturar o erro e lançar no console caso
             // ocorra, imprimido o que é passado
             // e parando toda aplicação 
-            if (err) throw `Database erro ${err}`
+            if (err) throw `Database erro! ${err}`
         
+            callback()
+
         })
 
-        callback()
     },
 
     delete(id, callback){

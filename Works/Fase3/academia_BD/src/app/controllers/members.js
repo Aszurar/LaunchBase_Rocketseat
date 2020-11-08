@@ -32,7 +32,7 @@ module.exports = {
         // é enviado o req.body para ela, que são os dados vindo do front-end
         // e uma função que terá como parâmetro esse novo instrutor
         Member.create(req.body, function(member){
-            return res.redirect("/members");
+            return res.redirect(`/members/${member.id}`);
         })
     },
 

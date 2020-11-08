@@ -18,8 +18,10 @@ module.exports = {
 
     create(data, callback){
         // função que recebe os dados do front end e cria um novo instrutor no banco
-        // de dados
-        // craindo o tamplate
+        // de dados, 
+        // como parâmetro temos os dados que vem do front-end
+        // e a função callback que retornar
+        // crndo o tamplate
         // Instrução de consulta ao banco
         const query = `
             INSERT INTO members(
