@@ -68,6 +68,7 @@ ___
     * Portando, é necessário que as ordens dos valores correspondam com as ordens dos campos na query de inserção.
     * Por fim, caso quisessemos alterar, modificar algum dado para assim então salvar no banco de dados, podemos aplicar alguma função que criamos nesse útlimo campo do array valeus, como fizemos com a função date().iso
 - Por fim, para a inserção ocorrer, é necessário que importemos o arquivo db, que contém as credenciais do banco de dados e utilizemos a função de inserção:
+   
     ```js
   $ db.query(query, values, function(err, results){
       console.log(err)
@@ -75,6 +76,7 @@ ___
       callback(results.row)
   }) 
     ```
+ 
   * Nessa função, como parâmetros temos:
     * A query: que é a estrutura SQL para inserção no banco de dados explicada anteriormente
     * O array values que contém os dados advindos do req.body(da página de cadastro em si)
