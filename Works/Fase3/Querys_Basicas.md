@@ -22,8 +22,8 @@
   * Nesse caso acima, o tipo "serial" já é um tipo que configura o dado (id) como inteiro e com incremento automático pelo banco de dados. No PostgreSQL é dito que esse tipo executa 3 configurações de uma vez:
     1. Cria um campo ID com o tipo integer
     2. Cria uma sequence, recurso do PostgreSQL para gerar números sequencias
-    3. Definiu a sequence como valor padrão(defalult value) do campo utilizando a função nextval(), que é responsável por obter o próximo valor de uma sequence. 
-  * Além disso, acima por padrão permite que os campos possam ser valores vazios(NULL). Caso queira que isso seja mudado, temos que adicionar a configuração NOT A NULL:
+    3. Definiu a sequence como valor padrão(defalult value) do campo id utilizando a função nextval(), que é responsável por obter o próximo valor de uma sequence. 
+  * Além disso, o exemplo acima por padrão permite que os campos possam ser valores vazios(NULL). Caso queira que isso seja mudado, temos que adicionar a configuração NOT A NULL:
     ```bash
     $ CREATE TABLE nome_da_tabela(
         id SERIAL PRIMARY KEY,
@@ -65,8 +65,8 @@ ___
     ]
      ```
     * req.body.name é o valor inserido no $1, req.body.avatar_url é o valor inserido no $2, req.body.email é o valor inserido no $3 e assim sucessivamente.   
-    * Portando, é necessário que as ordens dos valores correspondam com as ordens dos campos na query de inserção.
-    * Por fim, caso quisessemos alterar, modificar algum dado para assim então salvar no banco de dados, poderiamos aplicar alguma função que criassemos nesse útlimo campo do array values, como fizemos com a função date().iso
+    * Portanto, é necessário que as ordens dos valores correspondam com as ordens dos campos na query de inserção.
+    * Por fim, caso quisessemos alterar ou modificar algum dado para assim então salvar no banco de dados, poderiamos aplicar alguma função que criassemos nesse útlimo campo do array values, como fizemos com a função date().iso
 - Por fim, para a inserção ocorrer, é necessário que importemos o arquivo db, que contém as credenciais do banco de dados e utilizemos a função de inserção:
    
    
@@ -85,7 +85,7 @@ ___
       *  err: Responsável por armazenar algum erro, caso ocorra. 
       * results: É o resultado da inserção no banco de dados, esse resultado contém os novos dados inseridos e outras informações dessa inserção
   * Além disso há os consoles.logs que são opcionais justamente para imprimir os erros ou resultados caso queira.
-  * O results.row[0] é o novo dado inserido, ele é passado na função callback que retornaá esse novo valor inserido lá no arquivo de controles em que é necessário desse novo dado para redirecionar o usuário para a página members/members.id, ou seja, para a página dos novo membro, novo dado criado, com isso é necessário o id desse novo dado que vem por meio da callback
+  * O results.row[0] é somente o novo dado inserido, ele é passado na função callback que retornará esse novo valor inserido lá no arquivo de controles em que é necessário desse novo dado para redirecionar o usuário para a página members/members.id, ou seja, para a página **do** novo membro, novo dado criado, com isso é necessário o id desse novo dado que vem por meio da callback
 ___
 - Buscando dados no banco:
   * Listagem de todos os dados de uma tabela, ou seja, listagem de todas instâncias de uma Entidade:   
@@ -97,7 +97,7 @@ ___
      })
     }
     ```
-    * O símboldo  * seleciona todos os instrutores da tabela de instrutores no banco de dados
+    * O símbolo  * seleciona todos os instrutores da tabela de instrutores no banco de dados
     * Não precisa do campo values, pois não há nenhum placeholder para ser substituído na query em si.
     * Se um erro ocorre, o if é acionado e com a função throw lança o erro na tela junto com a string passada e para o código
     * results.rows representa todos os dados que foram buscados no banco de dados, no caso é um array dos elementos buscandos na tabela. Todos esses dados são passsados na callback pois serão retornados lá no arquivo de controles para ser renderizada a página de listagem com todos esses dados buscados no banco de dados.
@@ -139,7 +139,7 @@ ___
   ```
    * Após isso, segue a mesma lógica de salvar dados na tabela construindo o vetor dos valores(values) e depois o método db.query, com a única diferença que a função callback não retornará nada, não será usado nehum dado que foi inserido para redirecionar a página ou imprimir na página após salvar a atualização.
    
-      Somente o id que será passado pelo formulário para o redirect direto no arquivo de controles, então
+      Não passaremos callback com o id do dado atual para redirecionar a página, pois o id que será passado pela URL(params) para o redirect direto no arquivo de controles, então
       basta salvar os novos dados normalmente.
 ___
 - Deletando dados(1 instância da tabela) da tabela:
