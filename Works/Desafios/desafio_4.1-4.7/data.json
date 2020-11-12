@@ -44,6 +44,15 @@
       "grades": "9",
       "credits": "28",
       "avatar_url": "https://images.unsplash.com/photo-1596495578076-0c3a2be70d43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      "id": 6,
+      "name": "Tadeu",
+      "birth": 1040515200000,
+      "email": "tadeu_martins45@gmail.com",
+      "grades": "3",
+      "credits": "32",
+      "avatar_url": "https://images.unsplash.com/photo-1596496638503-0980ae36f17a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
     }
   ],
   "teachers": [
@@ -65,12 +74,9 @@
     {
       "id": 2,
       "name": "Bruna",
-      "type": [
-        "on",
-        "off"
-      ],
+      "type": "off",
       "birth": 724982400000,
-      "level": "masters",
+      "level": "hischool",
       "classes": [
         "História"
       ],

@@ -33,7 +33,7 @@ module.exports = {
     },
 
     // show
-    show = function(req, res){
+    show(req, res){
         return
     },
 
@@ -42,7 +42,7 @@ module.exports = {
         return
     },
 
-    put = function(req, res){
+    put(req, res){
         const keys = Object.keys(req.body);
 
         keys.forEach(key => {

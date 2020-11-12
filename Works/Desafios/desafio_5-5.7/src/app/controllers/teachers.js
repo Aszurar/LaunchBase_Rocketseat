@@ -1,4 +1,5 @@
 const { age, graduation, type, classesArray, typeEdit, date } = require('../../lib/tools');
+const Teacher = require('../models/Teacher');
 
 const create = {
     subtitle: "Novo Professor",
@@ -16,7 +17,7 @@ module.exports = {
 
     // Criar - criar - salvar dados
     create(req, res){
-        return res.render("teachers/create",  { create });
+            return res.render("teachers/create");
     },
 
     post(req, res){
@@ -28,10 +29,11 @@ module.exports = {
                 return res.send("Please, fill al fields");
             }
         });
-
-        let {avatar_url, birth, name, type, classes, level} = req.body
-
-        return
+        
+        Teacher.create(req.body, function(teacher){
+            return res.redirect(`/teachers/${teacher.id}`)
+        })
+        
     },
 
     // show

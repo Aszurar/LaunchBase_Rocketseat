@@ -6,7 +6,7 @@ module.exports = {
         // função que seleciona todos os instrutores da tabela de instrutores no banco 
         // de dados verifica se ocorreu algum erro nessa consulta, se não ocorreu, então
         // chame a função callback com todos esses instrutores:
-        db.query(`SELECT * FROM members`, function (err, results) {
+        db.query(`SELECT * FROM members ORDER BY name ASC`, function (err, results) {
             // throw é usado para capturar o erro e lançar no console caso
             // ocorra, imprimido o que é passado
             // e parando toda aplicação 

@@ -132,6 +132,19 @@
       ],
       "avatar_url": "https://images.unsplash.com/photo-1553531580-a000ac8df244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80",
       "created_at": 1603328955466
+    },
+    {
+      "id": 8,
+      "name": "José Alberto",
+      "birth": 724982400000,
+      "gender": "M",
+      "services": [
+        "Musculação",
+        " Crossfit ",
+        " GInástica"
+      ],
+      "avatar_url": "https://images.unsplash.com/photo-1583500178964-98351600826a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "created_at": 1604851394785
     }
   ]
 }
