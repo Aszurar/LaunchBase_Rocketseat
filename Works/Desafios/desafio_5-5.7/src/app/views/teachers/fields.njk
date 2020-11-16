@@ -39,10 +39,10 @@
            <div class="item">
                 <div>{{create.titles[3]}}:</div>
                 <select name="level" value= "{{teacher.level}}">
-                    <option value="hischool">{{create.level[0]}}</option>
-                    <option value="univers">{{create.level[1]}}</option>
-                    <option value="masters">{{create.level[2]}}</option>
-                    <option value="doctorate">{{create.level[3]}}</option>
+                    <option value="hischool"  {% if teacher.level == "hischool" %}selected{% endif %}>{{create.level[0]}}</option>
+                    <option value="univers" {% if teacher.level == "univers" %}selected{% endif %}>{{create.level[1]}}</option>
+                    <option value="masters" {% if teacher.level == "masters" %}selected{% endif %}>{{create.level[2]}}</option>
+                    <option value="doctorate" {% if teacher.level == "doctorate" %}selected{% endif %}>{{create.level[3]}}</option>
                 </select>
             </div>
 
@@ -72,6 +72,7 @@
                                    {% if (teacher.type == "off") or (teacher.type == "double") %}
                                    checked {% endif %} 
                                    type="checkbox">
+                                   
                             <span class="checkmark"
                                   id="check2">
                                   </span>

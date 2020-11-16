@@ -24,14 +24,14 @@ routes.put("/students", students.put);
 routes.delete("/students", students.delete);
 
 
-routes.use(function (req, res) {
-    const errodata = {
-        title: "ERRO 404 | Página não encontrada!",
-        number: "404",
-        description: "Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe. <br><br> Verifique o nome do endereço solicitado.",
-        info: "ERRO"
-    }
-    res.status(404).render("views/not-found", { errodata: errodata });
-});
+// routes.use(function (req, res) {
+    // const errodata = {
+        // title: "ERRO 404 | Página não encontrada!",
+        // number: "404",
+        // description: "Desculpe, mas o conteúdo solicitado não esta disonível ou a página não existe. <br><br> Verifique o nome do endereço solicitado.",
+        // info: "ERRO"
+    // }
+    // res.status(404).render("views/not-found", { errodata: errodata });
+// });
 
 module.exports = routes;

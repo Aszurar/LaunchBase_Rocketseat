@@ -54,11 +54,11 @@ module.exports = {
     },
 
     classesArray(classes) {
-        let subjects;
 
         if(Array.isArray(classes)){
             return classes
         }
+        let subjects;
 
         let re = /\b,|\be/;
         subjects = classes.split(re);
@@ -67,8 +67,8 @@ module.exports = {
     },
 
     typeEdit(type) { 
-        
-        if (Array.isArray(type)) {
+        // console.log(`TIPOS DE AULA: ${type}\nTipo: ${ typeof type }`);
+        if (type == '{"on","off"}') {
             return "double"
         }
         
@@ -76,23 +76,27 @@ module.exports = {
     },
     
     date(timestamp){
+        // console.log(`Valor do Timestamp: ${timestamp}`);
+
         const date = new Date(timestamp);
         const year = date.getUTCFullYear();
         const month = `0${date.getUTCMonth() + 1}`.slice(-2);
         const day = `0${date.getUTCDate()}`.slice(-2);
 
         return {
-            day: day,
-            month: month,
-            year: year,
-            iso:`${year}-${month}-${day}`,
-            birthDay:`${day}/${month}`
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthDay:`${day}/${month}`,
+            format: `${day}/${month}/${year}`
             }
     },
 
     grade(grades){
         let grade; 
 
+        console.log(`grade: ${grades}`);
         if (grades >= 5) {
             grade = grades + "º ano"
         } else {

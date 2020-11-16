@@ -35,7 +35,7 @@ ___
 - **Inserção no Banco de dados**:
     ```js
   $ const query = `
-  INSERT TO nome_da_tabela(
+  INSERT INTO nome_da_tabela(
     name,
     avatar_url,
     email,

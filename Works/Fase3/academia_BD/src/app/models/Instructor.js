@@ -69,9 +69,10 @@ module.exports = {
         // ocorram
         db.query(query, values, function(err, results){
         //    Caso ocorra algum erro, mostre.
-        // por fim, mostre os resultados
+        // por fim, mostre os 
+            if (err) throw `Database Erro! ${err}`
             console.log(err);
-            console.log(results);
+            console.log(results.rows[0]);
 
             // chamando a função que passará o novo instrutor que foi salvo
             callback(results.rows[0])
@@ -93,6 +94,7 @@ module.exports = {
                 // e parando toda aplicação 
                 if(err) throw `Database Error! ${err}` 
                 callback(results.rows[0])
+                // console.log(results.rows[0]);
         })
     },
 

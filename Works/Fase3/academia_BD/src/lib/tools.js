@@ -38,7 +38,7 @@ module.exports = {
     },
 
     service(classes) {
-        console.log(classes);
+        // console.log(classes);
         if (Array.isArray(classes)) {
             return classes
         }
