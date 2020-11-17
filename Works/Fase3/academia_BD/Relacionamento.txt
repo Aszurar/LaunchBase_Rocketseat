@@ -1,0 +1,9 @@
+Relacionamento desse projeto se da entre as entidades Membros e Instrutores:
+
+1. Esse relacionamento indicará quantos alunos/membros cada instrutor terá.
+
+2. Ou seja, será um relacionamento de cardinalidade 1 - n, em que, 1 instrutor poderá ter vários alunos, mas um aluno só poderá ser associado a somente 1 instrutor.
+
+--> Para associar um aluno à um instrutor, no front-end, precisamos adicionar um campo na página de edição e criação de alunos/membros(página fields) em que selecionamos os instrutores.
+--> Nesse caso, adicionamos um campo de instrutor_id, em que, mostre os nomes dos instrutores e cada nome possua seu id como valor no select
+

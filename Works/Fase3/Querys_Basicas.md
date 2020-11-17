@@ -169,6 +169,159 @@ ___
     * A ordenação é feita por meio do comando ORDER BY que é aplicado após a seleção das instâncias desejadas(nesse caso todas) em conjunto com algum atributo da instância será o que determinará a ordenação.
     * Nos exemplos acima, utilzamos a ordenação **por meio do nome**, ou por meio da **altura**, **largura** ou **id**. Além disso é necessário informar como será a ordenação, se será **decrescente(DESC) ou crescente(ASC)**.
 
+
+## Relacionamentos:
+ - ### Método Join:
+    * Responsável por construir os relacionamentos no SQL. Ou seja, obtem dados provenientes de 2 ou mais tabelas, baseado em um relacionamento entre colunas nestas tabelas.
+      EXEMPLO: 2 entidades, alunos e cursos
+    
+    * **INNER JOIN**: INTERSEÇÃO/JUNÇÃO
+      * Retorna somente os dados da Interseção de 2 Entidades(Tabelas), ou seja, aqueles que possuem correspondência entre as 2 tabelas.
+      * Ex: Alunos que possuem cursos e cursos que possuem alunos:
+        <div align="center" ><img src="./innerjoin.png" width="300"></div> 
+     
+      * ALGORITMO:
+          ```sql
+            SELECT ALL colunas FROM tabela1
+            INNER JOIN tabela2
+            ON tabela1.coluna = tabela2.coluna
+          ```
+      * SQL:
+          ```sql
+            SELECT * FROM alunos
+            INNER JOIN cursos
+            ON alunos.ID_curso = cursos.ID_curso
+          ```
+          ```sql
+            SELECT * FROM members
+            INNER JOIN instructors
+            ON members.instructor_id = instructors.id
+          ```
+          ```sql
+           SELECT members.name, members.gender, members.weight, members.height, members.instructor_id, instructors.name, instructors.gender, instructors.id FROM members
+           INNER JOIN instructors
+           ON members.instructor_id = instructors.id
+          ```
+      * Ou seja:
+        ```bash
+          Selecione todas instâncias da Entidade alunos 
+          em conjunto com os instâncias da Entidade cursos,
+          em que, a coluna de id do curso das instâncias da Entidade Alunos seja igual ao id das instâncias das instâncias da Entidade Cursos
+        ```
+
+    * **OUTER JOIN**: "FORA"
+      * Retorna somente as instâncias das tabelas(Entidades) mesmo se não possuem correspondência com a outra tabela(Entidade).
+      * Ex: Todos os alunos e Cursos que não possuem associação entre si, ou seja, todos aqueles fora da interseção(Todos os alunos que não possuem cursos e todos os cursos que não possuem alunos)
+        <div align="center" ><img src="./outerjoin.png" width="600"></div> 
+    
+    * **LEFT JOIN/LEFT OUTER JOIN**: INTERSEÇÃO + LADO ESQUERDO
+      * Retorna os elementos do lado esquerdo da união entre as 2 tabelas mais os elementos da interseção, aqueles que estão se relacionando. Ou seja retornará dados da esquerda mesmo se não houver correspondência com alguma dado da direita.
+      * Todos os elementos do lado esquerdo ou seja, todos os alunos que não possuem curso(nesse caso são os alunos que estão do lado esquerdo, mas poderia ser os cursos caso esse estivessse também no lado esquerdo), mais todos os alunos que possuem cursos, ou seja, mais a interseção.
+        <div align="center" ><img src="./leftjoin.png" width="600"></div> 
+      * ALGORITMO:
+          ```sql
+            SELECT ALL colunas FROM tabela1(left)
+            LEFT JOIN tabela2(right)
+            ON tabela1.coluna = tabela2.coluna
+          ```
+      * SQL:
+          ```sql
+            SELECT * FROM alunos
+            LEFT JOIN cursos
+            ON alunos.ID_curso = cursos.ID_curso
+          ```
+          ```sql
+            SELECT * FROM members
+            LEFT JOIN instructors
+            ON members.instructor_id = instructors.id
+          ```
+          ```sql
+            SELECT instructors.*, count(members) AS total_students
+            FROM instructors
+            LEFT JOIN members
+            ON (members.instructor_id = instructors.id)
+            GROUP BY instructors.id
+            ORDER BY total_instudents
+   
+            'Nesse caso, estamos selecionando todas colunas dos instrutores(tabela a esquerda), criando um contador de membros para cada instância Instrutor,
+            realizando o left join 
+            e agrupando os membros via instructor.id.
+            Além disso, ordenamos os instrutores pela quantidade de membros que cada um possui'
+          ```
+
+    * **RIGHT JOIN/RIGHT OUTER JOIN**: INTERSEÇÃO + LADO DIREITO
+      * Retorna somente os elementos do lado direito da união entre as 2 tabelas mais os elementos da interseção. OU Seja,retorna todos as instâncias do lado direito mesmo se não houver alguma correspondência com o lado esquerdo.
+      * Todos os elementos do lado direito ou seja, todos os cursos que não possuem alunos(nesse caso são os cursos que estão do lado direito, mas poderia ser os alunos caso esse estivessse também nesse lado), mais todos os cursos que possuem alunos, ou seja, mais a interseção.
+        <div align="center" ><img src="./rightjoin.png" width="600"></div> 
+      * ALGORITMO:
+          ```sql
+            SELECT ALL colunas FROM tabela1(left)
+            RIGHT JOIN tabela2(right)
+            ON tabela1.coluna = tabela2.coluna
+          ```
+      * SQL:
+          ```sql
+            SELECT * FROM alunos
+            RIGHT JOIN cursos
+            ON alunos.ID_curso = cursos.ID_curso
+          ```
+          ```sql
+            SELECT * FROM members
+            RIGHT JOIN instructors
+            ON members.instructor_id = instructors.id
+            'Nesse caso, retornará primeiro a tabela de membros e depois a tabela de insturtores assim como foi acima, com o left join.No entando, no left join, temos apenas os intrutores que estão relacionados aos membros já que estamos no left, e a tabela a esquerda é a de membros, então queremos só os membros e instrutores que estejam relacionados a algum membro.
+            Mas, no right join, temos que, queremos os instrutores e somente os membros que estão relacionado aos instrutores, ou seja, terá todos instrutores, até mesmo aqueles que não estão correlacionados com nenhum membro!'
+          ```
+    * **FULL JOIN**: TUDO!.
+    * Retorna todos os elementos do lado esquerdo, que não possuem associação com o lado direito, mais todos os elementos do lado direito, que não possuem associação o lado esquerdo, mais a interseção dos elementos que se relacionam. Ou seja, retorna os elementos que se relacionam e os que não se relacionam das 2 tabelas(direita e esquerda)
+    * Ex: Retorna todos os alunos que não possuem cursos, todos os cursos que não possuem alunos e todos os alunos que possuem cursos e todos os cursos que possuem alunos
+
+      * ALGORITMO:
+          ```sql
+            SELECT ALL colunas FROM tabela1(left)
+            FULL JOIN tabela2(right)
+            ON tabela1.coluna = tabela2.coluna
+          ```
+      * SQL:
+          ```sql
+            SELECT * FROM alunos
+            FULL JOIN cursos
+            ON alunos.ID_curso = cursos.ID_curso
+          ```
+          ```sql
+            SELECT me.id, me.name, me.gender, me.weight, me.instructor_id,ins.id, ins.name FROM members AS me
+            FULL JOIN instructors AS ins
+            ON me.instructor_id = ins.id
+            'Retornando as colunas passadas tendo a relação ou não'
+          ```
+          ```sql
+            SELECT me.id, me.name, me.gender, me.weight, me.instructor_id,ins.id, ins.name FROM members AS me
+            FULL JOIN instructors AS ins
+            ON me.instructor_id = ins.id
+            WHERE me.id IS NULL OR ins.id IS NULL
+            'Retornando somente os dados das instâncias que possuem ou o me.id vazio ou o ins.id vazio'
+          ```
+    *  **SEMI JOIN**: DADOS ESPECÍFICOS DA INTERSEÇÃO
+       *  Dados específicos de uma interseção entre 2 tabelas/entidades.
+       * No caso, esses dados específicos são de alguma das 2 tabelas, mas somente aqueles que estão na associação com outra tabela.
+       * Ou seja, por exemplo, todos os nomes e emails dos alunos que possuem cursos(ou seja, nomes e emails somente dos alunos que estão na interseção)
+     
+     * **ANTI JOIN**: DADOS ESPECÍFICOS DE ELEMENTOS QUE NÃO ESTÃO NA INTERSEÇÃO
+       * No caso, esses dados específicos são de alguma das 2 tabelas, mas somente aqueles que NÃO estão na associação com outra tabela.
+       * Ex: Todos os nomes e emails dos alunos que NÃO possuem cursos(ou seja, nomes e emails somente dos alunos que estão FORA DA INTERSEÇÃO)
+          <div align="center"><img src="./antijoin.png" width="300"></div> 
+
+
+
+
+
+
+
+
+
+
+
+
 ```json
 {   
     "ignore": ["*.json"] 

@@ -2,7 +2,7 @@ const { age, graduation, type, classesArray, date, typeEdit } = require('../../l
 const Teacher = require('../models/Teacher');
 
 const create = {
-    subtitle: "Novo Professor",
+    subtitle: ["Novo Professor", "Editar Professor"],
     titles: ["Avatar URL", "Professor", "Data de Nascimento", "Grau de escolaridade", "Tipo de Aula"],
     type: ["Online", "Presencial"],
     level: ["Ensino Médio Completo", "Ensino Superio Completo", "Mestrado", "Doutarado"],

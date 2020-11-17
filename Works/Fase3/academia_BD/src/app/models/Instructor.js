@@ -7,7 +7,7 @@ module.exports = {
         // de dados verifica se ocorreu algum erro nessa consulta, se não ocorreu, então
         // chame a função callback com todos esses instrutores:
         // Query -> Selecione todos os instrutores da tabela de instrutores
-        // relacione a tabela de membros com essa teabela de instrutores
+        // relacione a tabela de membros a de instrutores
         // por meio do atributo instructor_id da Entidade de Membros com 
         // o atributo identificador id da Entidade Instructors.
         // Assim, agrupe os instrutores que forem repetidos, ou seja ,aqueles que possuem 

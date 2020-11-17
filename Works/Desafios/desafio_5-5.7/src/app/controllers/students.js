@@ -5,7 +5,7 @@ const Teacher = require("../models/Teacher");
 
 
 const create = {
-    subtitle: "Novo Aluno",
+    subtitle: ["Novo Aluno", "Editar Aluno"],
     titles: ["Avatar URL", "Nome", "Data de Nascimento", "Idade", "Email", "Ano Escolar", "Carga horária semanal", "Aniversário" ],
     grades: ["ano", "ano do Ensino Médio"],
     save: "Salvar"
