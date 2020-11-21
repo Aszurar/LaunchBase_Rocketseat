@@ -231,9 +231,9 @@ ___
             ON alunos.ID_curso = cursos.ID_curso
           ```
           ```sql
-            SELECT * FROM members
-            LEFT JOIN instructors
-            ON members.instructor_id = instructors.id
+            SELECT ins.name, ins.gender, ins.id, me.instructor_id, me.name, me.gender, me.weight FROM instructors AS ins
+            LEFT JOIN members AS me
+            ON me.instructor_id = ins.id
           ```
           ```sql
             SELECT instructors.*, count(members) AS total_students
@@ -310,23 +310,19 @@ ___
        * No caso, esses dados específicos são de alguma das 2 tabelas, mas somente aqueles que NÃO estão na associação com outra tabela.
        * Ex: Todos os nomes e emails dos alunos que NÃO possuem cursos(ou seja, nomes e emails somente dos alunos que estão FORA DA INTERSEÇÃO)
           <div align="center"><img src="./antijoin.png" width="300"></div> 
+___
 
-
-
-
-
-
-
-
-
-
-
-
-```json
-{   
-    "ignore": ["*.json"] 
-}
-```
-- Isso previne o projeto de ficar em loop de carregamento "infinito" no navegador quando uma mudança for feita no arquivo json de dados.
+  - **Agrupar e contar**:
+    ```sql
+      SELECT tabela_1.*, count(tabela_2) AS total_unit FROM tabela_1
+      LEFT JOIN tabela_2
+      ON tabela_1.coluna = tabela_2.coluna
+      GROUP BY tabela_1.coluna
+      
+    ```
+    - **GROUP BY**:
+      - É uma instrução que agrupa linhas que possuem os mesmos valores em novas linhas "resumo" desses valores
+      - É frequentemente usada com instruções de agregação como COUNT, MAX, MIN, AVG, SUM...
+      - Será impresso uma nova tabela com as linhas resumos sobre as colunas da tabela 1 em conjunto podendo estar em uma nova coluna gerada por um count() ou sum()
 ___
 Desenvolvido por :star2: Lucas de Lima Martins de Souza.
