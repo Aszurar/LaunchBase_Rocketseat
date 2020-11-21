@@ -4,13 +4,26 @@ const { age, date, service } = require('../../lib/tools');
 module.exports = {
     
     index(req, res){
-        // chamando a função que retorna todos os intrutores do banco de dados
-        Instructor.all(function(instructors){ 
-            for (let instructor of instructors) {
-                instructor.services = service(instructor.services)
-            }
-            return res.render("instructors/index", { instructors });
-        })
+
+        const { filter } = req.query
+
+        if ( filter ) {
+            Instructor.findBy(filter, function(instructors){
+                for (let instructor of instructors) {
+                    instructor.services = service(instructor.services)
+                }
+                return res.render("instructors/index", { instructors, filter });
+            })
+        } else {
+            // chamando a função que retorna todos os intrutores do banco de dados
+            Instructor.all(function(instructors){ 
+                for (let instructor of instructors) {
+                    instructor.services = service(instructor.services)
+                }
+                return res.render("instructors/index", { instructors });
+            })
+
+        }
     },
     
     // 

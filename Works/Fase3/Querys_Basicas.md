@@ -323,6 +323,14 @@ ___
     - **GROUP BY**:
       - É uma instrução que agrupa linhas que possuem os mesmos valores em novas linhas "resumo" desses valores
       - É frequentemente usada com instruções de agregação como COUNT, MAX, MIN, AVG, SUM...
-      - Será impresso uma nova tabela com as linhas resumos sobre as colunas da tabela 1 em conjunto podendo estar em uma nova coluna gerada por um count() ou sum()
-___
+      - Será impresso uma nova tabela com as linhas resumos sobre as colunas da tabela 1 em conjunto podendo estar em uma nova coluna gerada por um count() ou sum()...
+      - Exp:
+        ```sql
+        SELECT ins.name, ins.gender, ins.services, count(me) as total_members
+        FROM instructors AS ins
+        LEFT JOIN members AS me
+        ON (me.instructor_id = ins.id)
+        GROUP BY ins.id
+        ```
+        ___
 Desenvolvido por :star2: Lucas de Lima Martins de Souza.

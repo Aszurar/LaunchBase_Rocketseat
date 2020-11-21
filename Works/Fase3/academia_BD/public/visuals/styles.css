@@ -267,3 +267,33 @@ tbody tr td span + span {
 td:last-child {
   text-align: center;
 }
+
+/* FILTERS */
+.table-container .header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.table-container .header a{
+  margin: 0;
+  width: 12rem;
+}
+
+.table-container .header form{
+  display: grid;
+  grid-template-columns: 1fr 12rem;
+  align-items: center;
+  grid-gap: 0.5rem;
+}
+
+.table-container .header button{
+  margin: 0;
+}
+
+.table-container .header input{
+  border: 0.063rem solid var(--color-yellow);
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}

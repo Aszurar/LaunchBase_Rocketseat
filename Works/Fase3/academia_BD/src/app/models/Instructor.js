@@ -21,11 +21,11 @@ module.exports = {
         // Cada instrutor pode dar aula para vários membros, mas cada membros só
         // poderá ter aula  com 1 instrutor
         db.query(`
-        SELECT instructors.*, count(members) AS total_students
-        FROM instructors
-        LEFT JOIN members ON (members.instructor_id = instructors.id)
-        GROUP BY instructors.id
-        ORDER BY total_students DESC`, function (err, results) {
+            SELECT instructors.*, count(members) AS total_students
+            FROM instructors
+            LEFT JOIN members ON (members.instructor_id = instructors.id)
+            GROUP BY instructors.id
+            ORDER BY total_students DESC`, function (err, results) {
             // throw é usado para capturar o erro e lançar no console caso
             // ocorra, imprimido o que é passado
             // e parando toda aplicação 
@@ -134,6 +134,33 @@ module.exports = {
             if(err) throw `Database Error! ${err}`
 
             return callback()
+        })
+    },
+
+    findBy(filter, callback){
+        const query = `
+            SELECT ins.*, count(me) AS total_students
+            FROM instructors AS ins
+            LEFT JOIN members AS me 
+            ON (ins.id = me.instructor_id)
+            WHERE ins.name ILIKE '%${filter}%'
+            OR 
+            ins.services ILIKE '%${filter}%'
+            GROUP BY ins.id
+            ORDER BY total_students DESC
+            `        
+        // Na função acima, temos que, estamos selecionando os instrutores
+        // junto com o total_students com o left join
+        // mas filtrando com a instrução ILIKE que procura 
+        // no ins.name algo igual ao que é digitado no filter
+        // ou seja, se o filter estiver somente como ana
+        // irá buscar todas pessoas chamadas Ana, além de outros nomes
+        // como Mariana, Diana, Indiana...., 
+            
+        db.query(query, function(err, results){
+            if (err) throw `Database error ${err}`
+            
+            callback(results.rows)
         })
     }
 }
