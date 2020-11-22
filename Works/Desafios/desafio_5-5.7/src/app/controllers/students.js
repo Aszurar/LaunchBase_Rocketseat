@@ -21,7 +21,9 @@ module.exports = {
 
     // Criar - criar - salvar dados
     create(req, res){
-        return res.render("students/create", { create });
+        Student.teachersOptions(function(teacherOptions){
+            return res.render("students/create", { create, teaOptions: teacherOptions });
+         })
     },
 
     post(req, res){
@@ -54,7 +56,11 @@ module.exports = {
     edit(req, res){
         Student.find(req.params.id, function(student){
             student.birth = date(student.birth_date).iso
-            return res.render('students/edit', {create, student})  
+            
+            Student.teachersOptions(function(teacherOptions){
+
+                return res.render('students/edit', {create, student, teaOptions: teacherOptions})  
+            })
         })
     },
 

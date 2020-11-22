@@ -13,7 +13,7 @@ body{
     background-color: var(--color-dark-light);
     margin: 1.563rem auto;
     max-width: 62.5rem;
-    max-height: 54.375rem;
+    max-height: 59.5rem;
 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -528,6 +528,30 @@ tbody tr:last-child td{
     color: var(--color-black);
     background-color: var(--color-green);
 }
+
+.teacher .total_students {
+    text-align: center;
+}
+.teacher .total_students .amount_student{
+    padding: 0.3rem 1rem;
+    border-radius: 80%;
+    font-weight: bold;  
+}
+
+
+.red{
+    background-color: var(--color-red);
+    color: var(--color-black);
+}
+
+.orange{
+    background-color: var(--color-orange);
+    color: var(--color-black);
+}
+
+/* .table-index table tbody .teacher .amount_student{ */
+    /* border: none */
+/* } */
 
 
 

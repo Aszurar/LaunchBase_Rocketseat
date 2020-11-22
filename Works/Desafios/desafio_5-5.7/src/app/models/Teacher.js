@@ -3,7 +3,14 @@ const { date } = require('../../lib/tools')
 
 module.exports = {
     all(callback){
-        const query = `SELECT * FROM teachers ORDER BY name ASC`
+        const query = `
+           SELECT tea.*, count(stu) AS total_students
+           FROM teachers AS tea
+           LEFT JOIN students AS stu
+           ON ( tea.id = stu.teacher_id )
+           GROUP BY tea.id
+           ORDER BY total_students DESC
+           `
 
         db.query(query, function (err, results){
             if(err) throw `Database error ${err}`

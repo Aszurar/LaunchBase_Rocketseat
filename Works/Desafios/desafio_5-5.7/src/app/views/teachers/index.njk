@@ -11,13 +11,14 @@
                     {# coluna do cabeçalho #}
                     <th>Professores</th>
                     <th>Disciplinas</th>
+                    <th>Alunos</th>
                     <th>Sobre</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for teacher in teachers %}
-                    <tr>
+                    <tr class= "teacher">
                         <td>
                             <span style="background-image: url({{teacher.avatar_url}})"></span>
                             {{teacher.name}}
@@ -29,6 +30,10 @@
                             {% endfor %}
                         </td>
 
+                        <td class = "total_students">
+                            <span class="amount_student">{{teacher.total_students}}</span>
+                        </td>
+                        
                         <td class="button-about">
                             <a href="/teachers/{{teacher.id}}">VER</a>
                         </td>
@@ -39,4 +44,5 @@
 
         <a class="buttonCreate" href="/teachers/create">Novo</a>
     </div>
+<script src="/scripts/index_teacher.js"></script>
 {% endblock %}

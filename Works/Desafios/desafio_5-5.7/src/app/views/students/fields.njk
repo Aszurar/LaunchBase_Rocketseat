@@ -68,10 +68,24 @@
             <div class="item">
                 <div>{{create.titles[6]}}:</div>
                 <div>
-                    <input type="number"
-                           name="credits"
-                           value="{{student.credits}}"
+                    <input type ="number"
+                           name ="credits"
+                           value ="{{student.credits}}"
                            >            
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Professores:</div>
+                <div>
+                    <select name = "teacher">
+                        {% for tea in teaOptions %}
+                        
+                            <option value = "{{tea.id}}"
+                            {% if tea.id == student.teacher_id %}selected{% endif %}>{{tea.name}}</option>
+                        
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
 
