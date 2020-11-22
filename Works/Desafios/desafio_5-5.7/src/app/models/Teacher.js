@@ -110,5 +110,23 @@ module.exports = {
             
             return callback()
         })
+    },
+
+    findBy(filter, callback){
+        const query = `SELECT tea.*, count(stu) AS total_students
+                       FROM teachers AS tea
+                       LEFT JOIN students AS stu
+                       ON ( tea.id = stu.teacher_id)
+                       WHERE tea.name ILIKE '%${filter}%'
+                       OR
+                       tea.subjects_taught ILIKE '%${filter}%'
+                       GROUP BY tea.id
+                       ORDER BY total_students DESC
+                      `
+        db.query(query, function(err, results){
+            if (err) throw `Database erro: ${err}`
+
+            callback(results.rows)
+        })
     }
 }

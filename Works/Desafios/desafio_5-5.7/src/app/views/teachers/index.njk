@@ -2,6 +2,19 @@
 
 {% block content %}
     <div class="card table-index">
+       
+        <div class="header">    
+            <a class="buttonCreate" href="/teachers/create">Novo</a>       
+            <form action="/teachers" method="get">
+                <input type ="text" 
+                       name ="filter"
+                       placeholder ="Nome ou Disciplina"
+                       value = "{{filter}}"
+                       >
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+      
         {# tag para formar uma tabela #}
         <table>
             {# cabeçalho da tabela #}
@@ -41,8 +54,6 @@
                 {% endfor %}
             </tbody>
         </table>
-
-        <a class="buttonCreate" href="/teachers/create">Novo</a>
     </div>
 <script src="/scripts/index_teacher.js"></script>
 {% endblock %}

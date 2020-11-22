@@ -71,6 +71,9 @@ module.exports = {
         // entre os instrutores aos membros que estão ta dando aula
         // construindo assim uma nova tabela com as 2 tabelas de instrutores associados aos 
         // membros correspondentes(pelo id)
+        // É necessário alterar o nome da coluna de nomes dos professores
+        // para que troque o . para _ , se não ocorrerá problemas no front-end
+
         db.query(`
             SELECT members.*, instructors.name AS instructor_name
             FROM members 

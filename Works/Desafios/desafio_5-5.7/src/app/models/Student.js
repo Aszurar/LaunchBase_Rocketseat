@@ -4,7 +4,8 @@ const { date } = require("../../lib/tools")
 
 module.exports = {
     all(callback){
-        const query = `SELECT * FROM students`
+        const query = `SELECT * FROM students
+                       ORDER BY name`
         
         db.query(query, function(err,results){
             if(err) throw `Database error: ${err}`
@@ -120,6 +121,17 @@ module.exports = {
         
         db.query(query, function(err, results){
             if (err) throw `Database erro: ${err}`
+
+            callback(results.rows)
+        })
+    },
+
+    findBy(filter, callback){
+        const query = `SELECT * FROM students
+                       WHERE name ILIKE '%${filter}%'
+                       `
+        db.query(query, function(err, results){
+            if (err) `Database erro: ${err}`
 
             callback(results.rows)
         })

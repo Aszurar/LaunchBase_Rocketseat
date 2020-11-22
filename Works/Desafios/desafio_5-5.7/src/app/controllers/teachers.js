@@ -12,13 +12,24 @@ const create = {
 module.exports = {
 
     index(req, res){
-        Teacher.all(function(teachers) {
-            for (let teacher of teachers) {
-                teacher.classes = classesArray(teacher.subjects_taught)
-            }
+        const { filter } = req.query
 
-            return res.render("teachers/index", { teachers });
-        })
+        if (filter) {
+            Teacher.findBy(filter, function(teachers){
+                for (let teacher of teachers) {
+                    teacher.classes = classesArray(teacher.subjects_taught)
+                }
+                return res.render("teachers/index", { teachers, filter });
+            })
+        } else {
+            Teacher.all(function(teachers) {
+                for (let teacher of teachers) {
+                    teacher.classes = classesArray(teacher.subjects_taught)
+                }
+    
+                return res.render("teachers/index", { teachers });
+            })
+    }
     },
 
     // Criar - criar - salvar dados

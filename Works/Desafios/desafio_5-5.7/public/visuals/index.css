@@ -389,6 +389,66 @@ button[type="submit"]:hover{
 
 }
 
+.table-index .header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header a{
+    width: 4rem;
+    align-items: center;
+    text-align: center;
+}
+
+.header form{
+    display: grid;
+    grid-template-columns: 1fr 7.5rem;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header form button{
+    margin-top: 0;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.create_students{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.create_students:hover{
+    transition: 1.3s;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.input_create_student{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.input_create_student::-webkit-input-placeholder {
+    color: var(--color-black);
+ }
+
+.header .filter_student{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.header .filter_student:hover{
+    transition: 1.3s;
+    background-color: var(--color-bluebold);
+    color: var(--color-black);
+}
+
 .table-index table thead tr th{
     color: var(--color-bluebold);
     text-align: center;
@@ -540,7 +600,7 @@ tbody tr:last-child td{
 
 
 .red{
-    background-color: var(--color-red);
+    background-color: var(--color-coral);
     color: var(--color-black);
 }
 
@@ -549,9 +609,6 @@ tbody tr:last-child td{
     color: var(--color-black);
 }
 
-/* .table-index table tbody .teacher .amount_student{ */
-    /* border: none */
-/* } */
 
 
 

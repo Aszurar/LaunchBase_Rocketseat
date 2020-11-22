@@ -13,10 +13,16 @@ const create = {
 
 module.exports = {
     index(req, res){
-        Student.all(function(students){
-            
-            return res.render("students/index", { students });
-        })
+        const { filter } = req.query
+        if ( filter ) {
+            Student.findBy(filter, function(students){
+                return res.render("students/index", { students, filter});                
+            })
+        } else {
+           Student.all(function(students){
+                return res.render("students/index", { students });
+           })
+        }
     },
 
     // Criar - criar - salvar dados

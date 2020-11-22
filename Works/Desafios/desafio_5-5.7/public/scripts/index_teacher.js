@@ -7,7 +7,7 @@ teachers.forEach(teacher => {
     
     if (Number(amount.innerHTML) > 0 && Number(amount.innerHTML) < 5) {
         amount.classList.add('orange')
-    } else if (Number(amount.innerHTML) > 5) {
+    } else if (Number(amount.innerHTML) >= 5) {
         amount.classList.add('red')
     }
 });
