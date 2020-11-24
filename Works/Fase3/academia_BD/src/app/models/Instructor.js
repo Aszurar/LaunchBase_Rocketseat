@@ -1,3 +1,4 @@
+const { query } = require('../../config/db');
 const db = require('../../config/db');
 const { age, date, service } = require('../../lib/tools');
 
@@ -98,6 +99,32 @@ module.exports = {
         })
     },
 
+    findBy(filter, callback){
+        const query = `
+            SELECT ins.*, count(me) AS total_students
+            FROM instructors AS ins
+            LEFT JOIN members AS me 
+            ON (ins.id = me.instructor_id)
+            WHERE ins.name ILIKE '%${filter}%'
+            OR 
+            ins.services ILIKE '%${filter}%'
+            GROUP BY ins.id
+            ORDER BY total_students DESC
+            `        
+        // Na função acima, temos que, estamos selecionando os instrutores
+        // junto com o total_students com o left join
+        // mas filtrando com a instrução ILIKE que procura 
+        // no ins.name algo igual ao que é digitado no filter
+        // ou seja, se o filter estiver somente como ana
+        // irá buscar todas pessoas chamadas Ana, além de outros nomes
+        // como Mariana, Diana, Indiana...., 
+        db.query(query, function(err, results){
+            if (err) throw `Database error ${err}`
+            callback(results.rows)
+        })
+
+    },
+
     update(data, callback){
         const query = `
             UPDATE instructors SET
@@ -137,28 +164,29 @@ module.exports = {
         })
     },
 
-    findBy(filter, callback){
-        const query = `
-            SELECT ins.*, count(me) AS total_students
-            FROM instructors AS ins
-            LEFT JOIN members AS me 
-            ON (ins.id = me.instructor_id)
-            WHERE ins.name ILIKE '%${filter}%'
-            OR 
-            ins.services ILIKE '%${filter}%'
-            GROUP BY ins.id
-            ORDER BY total_students DESC
-            `        
-        // Na função acima, temos que, estamos selecionando os instrutores
-        // junto com o total_students com o left join
-        // mas filtrando com a instrução ILIKE que procura 
-        // no ins.name algo igual ao que é digitado no filter
-        // ou seja, se o filter estiver somente como ana
-        // irá buscar todas pessoas chamadas Ana, além de outros nomes
-        // como Mariana, Diana, Indiana...., 
-            
-        db.query(query, function(err, results){
-            if (err) throw `Database error ${err}`
+    paginate(params){
+        // aqui ficará toda lógica de filtragem de dados do index e da paginação
+        const {filter, limit, offset, callback } = params
+        // começo da query
+        let query = `SELECT instructors.*, count(members) AS total_students
+                 FROM instructors
+                 LEFT JOIN members
+                 ON (instructors.id = members.instructor_id)
+                `
+
+        if (filter) {
+            query = `${query}             
+                     WHERE instructors.name ILIKE '%${filter}%'
+                     OR instructors.services ILIKE '%${filter}%'`
+        }
+
+        query = `${query}
+                 GROUP BY instructors.id
+                 ORDER BY total_students DESC
+                 LIMIT $1 OFFSET $2`
+
+        db.query(query, [limit, offset], function(err, results){
+            if (err) throw `Database erro: ${err}`
             
             callback(results.rows)
         })

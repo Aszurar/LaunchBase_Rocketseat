@@ -15,3 +15,30 @@ menuItems.forEach(item => {
     }    
 });
 
+// Paginação
+// total_pages = 20 
+// selected_Pages = 15
+// Como deve aparecer no front- end as páginas:
+// [1, ..., 13, 14, 15, 16, 17, ... 20]
+// pois não deve aparecer todas as páginas de uma vez, já que fica inviável
+// mostrar algo como todas 200 páginas
+
+let totalPages = 20,
+    selectedPage = 15.
+    pages = []
+
+    for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
+        
+        const firstAndLastPage = currentPage == 1 || currentPage == totalPages
+        const pagesAfterSelectedPage =  currentPage <= selectedPage + 2
+        const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
+
+
+        if (firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+            pages.push(currentPage)
+        }
+    }
+
+    console.log(pages);
+
+

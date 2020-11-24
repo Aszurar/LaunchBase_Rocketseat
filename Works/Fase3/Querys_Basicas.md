@@ -332,5 +332,58 @@ ___
         ON (me.instructor_id = ins.id)
         GROUP BY ins.id
         ```
+
+    - **FILTROS - IN, LIKE e ILIKE**
+      - IN:
+        - Permite especificar multiplos valores em uma cláusula WHERE
+        - É uma forma abreviada para multiplas condições usando o OR. Exemplo: 
+          _WHERE colum = dado OR colume = outro_dado_
+        - Faz distinção entre letras maiúsculas ou minúsculas, ou seja, se buscar por dado = josé, será diferente de dado = José.
+        ```sql
+            SELECT * FROM instructors 
+            WHERE id in (1, 10)
+        ```
+      - LIKE: 
+        - Utilizado para buscar determinados padrões em uma coluna
+        - Ou seja, é utilizado para procurar por palavras/dados em determinada columa que tenham algum padrão, como procurar todos os dados/palavras que comecem com determinada letra, ou que terminam com determinada letra.
+        - Também pode ser usado para achar determinada palavra/dado.
+        - Faz distinção entre letras maiúsculas e minúsculas assim como o IN.
+        - Tanto o LIKE quanto o ILIKE podem ser usados com os auxiliares:
+          - % : Qualquer quantidade de caracteres
+          - _ : Somente um Caracter
+        ```sql
+            Selecione todos os dados de instrutores em que o nome comece com a letra 'B'
+           SELECT * FROM instructors 
+           WHERE name LIKE 'B%'
+        ```
+         ```sql
+            Selecione todos os dados de instrutores em que o nome possua a sílaba 'li'
+            SELECT * FROM NOME_TABELA WHERE name LIKE '%li%'
+         ```
+      - ILIKE
+        - Possui as mesmas características do LIKE, com a única diferença que não faz distinção entre letras maíusculas e minúsculas
+        ```sql
+            SELECT ins.*, count(me) AS total_students
+            FROM instructors AS ins
+            LEFT JOIN members AS me 
+            ON (ins.id = me.instructor_id)
+            WHERE ins.name ILIKE '%${filter}%'
+            OR 
+            ins.services ILIKE '%${filter}%'
+            GROUP BY ins.id
+            ORDER BY total_students DESC
+        ``` 
+          Nos casos abaixo, o resultado será tanto com letras maiúsculas e minúsculas.
+        ```sql
+            Selecione todos os dados de instrutores em que o nome comece com a letra 'B'
+           SELECT * FROM instructors 
+           WHERE name LIKE 'B%'
+        ```
+         ```sql
+            Selecione todos os dados de instrutores em que o nome possua a sílaba 'li'
+            SELECT * FROM NOME_TABELA WHERE name LIKE '%li%'
+         ```
+
+
         ___
 Desenvolvido por :star2: Lucas de Lima Martins de Souza.

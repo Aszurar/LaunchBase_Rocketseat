@@ -4,26 +4,52 @@ const { age, date, service } = require('../../lib/tools');
 module.exports = {
     
     index(req, res){
+        //PAGINAÇÃO!
+        let { filter, page, limit } = req.query
 
-        const { filter } = req.query
+        // quantidade de páginas
+        page = page || 1 
+        //limite de dados mostrados na tela em cada página 
+        // Nesse caso, o padrão é mostrar 2 dados em cada página
+        limit = limit || 2
+        //quais dados serão mostrados na tela, a partir de qual dado mostrará na tela
+        // de acordo com a página selecionada
+        offset = limit * (page - 1) 
+        // Lógica de mostrar na 1º página a partir do elemento 0 da tabela,
+        // contar 2 elementos e na próxima página mostrar a partir do elemento 1
 
-        if ( filter ) {
-            Instructor.findBy(filter, function(instructors){
+        const params = {
+            page,
+            limit,
+            offset,
+            callback(instructors){
                 for (let instructor of instructors) {
                     instructor.services = service(instructor.services)
                 }
+                
                 return res.render("instructors/index", { instructors, filter });
-            })
-        } else {
-            // chamando a função que retorna todos os intrutores do banco de dados
-            Instructor.all(function(instructors){ 
-                for (let instructor of instructors) {
-                    instructor.services = service(instructor.services)
-                }
-                return res.render("instructors/index", { instructors });
-            })
-
+            }
         }
+
+        Instructor.paginate(params)
+
+        // if ( filter ) {
+            // Instructor.findBy(filter, function(instructors){
+                // for (let instructor of instructors) {
+                    // instructor.services = service(instructor.services)
+                // }
+                // return res.render("instructors/index", { instructors, filter });
+            // })
+        // } else {
+            // chamando a função que retorna todos os intrutores do banco de dados
+            // Instructor.all(function(instructors){ 
+                // for (let instructor of instructors) {
+                    // instructor.services = service(instructor.services)
+                // }
+                // return res.render("instructors/index", { instructors });
+            // })
+// 
+        // }
     },
     
     // 
