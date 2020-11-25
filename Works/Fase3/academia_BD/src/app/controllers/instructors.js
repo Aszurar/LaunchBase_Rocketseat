@@ -19,6 +19,7 @@ module.exports = {
         // contar 2 elementos e na próxima página mostrar a partir do elemento 1
 
         const params = {
+            filter,
             page,
             limit,
             offset,
@@ -26,30 +27,18 @@ module.exports = {
                 for (let instructor of instructors) {
                     instructor.services = service(instructor.services)
                 }
+
+                //Abaixo, o total é a quantidade de páginas
+                const pagination = {
+                    total: Math.ceil(instructors[0].total / limit), 
+                    page
+                }
                 
-                return res.render("instructors/index", { instructors, filter });
+                return res.render("instructors/index", { instructors, pagination, filter });
             }
         }
 
         Instructor.paginate(params)
-
-        // if ( filter ) {
-            // Instructor.findBy(filter, function(instructors){
-                // for (let instructor of instructors) {
-                    // instructor.services = service(instructor.services)
-                // }
-                // return res.render("instructors/index", { instructors, filter });
-            // })
-        // } else {
-            // chamando a função que retorna todos os intrutores do banco de dados
-            // Instructor.all(function(instructors){ 
-                // for (let instructor of instructors) {
-                    // instructor.services = service(instructor.services)
-                // }
-                // return res.render("instructors/index", { instructors });
-            // })
-// 
-        // }
     },
     
     // 

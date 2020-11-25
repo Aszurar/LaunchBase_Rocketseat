@@ -167,23 +167,37 @@ module.exports = {
     paginate(params){
         // aqui ficará toda lógica de filtragem de dados do index e da paginação
         const {filter, limit, offset, callback } = params
-        // começo da query
-        let query = `SELECT instructors.*, count(members) AS total_students
+
+        // Caso não tenha filtro, a subquery para retornar o total de instrutores será 
+        // essa
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(SELECT count(*) FROM instructors) AS total`
+
+        if (filter) {
+            // Se a pessoa filtrar, então essa é a lógica dinâmica para que se tenha
+            // o total de elementos filtrados
+            filterQuery = ` WHERE instructors.name ILIKE '%${filter}%'
+                            OR instructors.services ILIKE '%${filter}%'
+                          `
+            totalQuery = `(SELECT count(*) FROM instructors
+                          ${filterQuery}
+                          ) AS total`
+        }
+
+        // a subquery está representada  pela variável totalQuery que 
+        // trará o total de elementos se estiver filtrado ou não para
+        // que a paginação ocorra
+        query = `SELECT instructors.*, ${totalQuery}, 
+                 count(members) AS total_students
                  FROM instructors
                  LEFT JOIN members
                  ON (instructors.id = members.instructor_id)
-                `
-
-        if (filter) {
-            query = `${query}             
-                     WHERE instructors.name ILIKE '%${filter}%'
-                     OR instructors.services ILIKE '%${filter}%'`
-        }
-
-        query = `${query}
+                 ${filterQuery}
                  GROUP BY instructors.id
                  ORDER BY total_students DESC
-                 LIMIT $1 OFFSET $2`
+                 LIMIT $1 OFFSET $2
+                `
 
         db.query(query, [limit, offset], function(err, results){
             if (err) throw `Database erro: ${err}`

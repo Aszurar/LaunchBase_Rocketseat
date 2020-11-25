@@ -297,3 +297,36 @@ td:last-child {
   padding: 0.5rem 1rem;
   box-sizing: border-box;
 }
+
+/* PAGINATION */
+.table-container {
+  display: grid;
+  /* da forma abaixo, defino o tamanho de 3 linhas, e após a barra, defino apenas 1 coluna */
+  grid-template: 4rem 1fr 1rem / 1fr;
+}
+
+.table-container .header {
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination {
+  margin: 0;
+  align-items: end;
+  justify-self: center;
+}
+
+.pagination a, 
+.pagination span{
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.pagination a:hover{
+  /* filter: brightness(50); */
+  transition: 0.5s;
+  color: var(--color-white);
+  border-bottom: 0.063rem solid var(--color-white);
+}
