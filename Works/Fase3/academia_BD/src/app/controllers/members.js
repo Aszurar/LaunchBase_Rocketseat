@@ -3,17 +3,33 @@ const { age, date} = require('../../lib/tools');
 
 module.exports = {
     index(req, res){
-        // chamando a função que retorna todos os intrutores do banco de dados
-        Member.all(function(members){ 
-            return res.render("members/index", { members });
-        })
+        let { filter, page, limit } = req.query
+
+        page = page || 1 
+        limit = limit || 2
+        offset = limit * (page - 1) 
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(members){
+                const pagination = {
+                    total: Math.ceil(members[0].total / limit), 
+                    page
+                }
+                return res.render("members/index", { members, pagination, filter });
+            }
+        }
+        Member.paginate(params)
     },
     
     // 
     create(req, res){
 
-        Member.instructorsOptions(function(options){
-            return res.render("members/create", { instructorsOptions: options });
+        Member.membersOptions(function(options){
+            return res.render("members/create", { membersOptions: options });
         })
 
     },
@@ -58,8 +74,8 @@ module.exports = {
             // no formato do input.date   
             member.birth = date(member.birth).iso
 
-            Member.instructorsOptions(function(options){
-                return res.render("members/edit", { member, instructorsOptions: options });
+            Member.membersOptions(function(options){
+                return res.render("members/edit", { member, membersOptions: options });
             })
         })
         

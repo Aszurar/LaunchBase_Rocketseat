@@ -53,30 +53,37 @@ function paginate(selectedPage, totalPages){
         }
         return pages
 }
-
-
-// pegando os dados de quantidade de páginas e da página atual do back-end
-// e apresentando na tela(front-end)
 const pagination = document.querySelector(".pagination")
-const page = Number(pagination.dataset.page)
-const total = Number(pagination.dataset.total)
-const filter = pagination.dataset.filter
-const pages = paginate(page, total)
 
-
-let elements = ""
-
-for (let page of pages) {
-    if (String(page).includes("...")) {
-        elements += `<span>${page}</span>`
-    } else {
-
-        if ( filter ) {
-            elements += `<a href="?page=${page}&filter=${filter}">${page}</a>`    
-        } else{
-            elements += `<a href="?page=${page}">${page}</a>`    
+function createPagination(pagination){
+    // pegando os dados de quantidade de páginas e da página atual do back-end
+    // e apresentando na tela(front-end)
+    const page = Number(pagination.dataset.page)
+    const total = Number(pagination.dataset.total)
+    const filter = pagination.dataset.filter
+    const pages = paginate(page, total)
+    
+    
+    let elements = ""
+    
+    for (let page of pages) {
+        if (String(page).includes("...")) {
+            elements += `<span>${page}</span>`
+        } else {
+    
+            if ( filter ) {
+                elements += `<a href="?page=${page}&filter=${filter}">${page}</a>`    
+            } else{
+                elements += `<a href="?page=${page}">${page}</a>`    
+            }
         }
     }
+    // console.log(pagination.innerHTML);
+    // console.log(elements);
+    pagination.innerHTML = elements
+    // console.log(pagination.innerHTML);
 }
 
-pagination.innerHTML = elements
+if (pagination) {
+    createPagination(paginate)
+}
