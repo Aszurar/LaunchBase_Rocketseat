@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card table-index">
+    <main class="card table-index">
         {# tag para formar uma tabela #}
         <table>
             {# cabeçalho da tabela #}
@@ -36,9 +36,7 @@
                 {% endfor %}
             </tbody>
         </table>
-
-    <div class="newCreate">
-        <a class="buttonCreate" href="/teachers/create">Novo</a>
-    </div>
-    </div>
+        
+            <a class="buttonCreate" href="/teachers/create">Novo</a>
+    </main>
 {% endblock %}

@@ -4,7 +4,7 @@
     border: none;
 }
 
-body{
+body {
     color: var(--color-dark-light);
     background-color: var(--color-bluebold);
 }
@@ -30,27 +30,27 @@ body{
 
 @keyframes down{
 
-    from{
+    from {
         transform: translateY(-12.5rem);
     }
 
-    to{
+    to {
         opacity: 1;
     }
 }
 
-.details{
+.details {
     padding: 1.25rem 2.5rem;
 }
 
-.details .item{
+.details .item {
     border-bottom: 0.063rem solid var(--color-white);
     padding: 1.25rem 0;
 }
-
-.details .item:last-child{
-    border: none;
-}
+/*  */
+/* .details .item:last-child{ */
+    /* border: none; */
+/* } */
 
 .details h3,
 .details .item div:nth-child(1){
@@ -61,18 +61,20 @@ body{
     font-weight: normal;
 }
 
-.details .item div:nth-child(2){
-    font-size: 1.25rem;
-    color: var(--color-bluebold);
-    font-weight: bold;
-}
-
-.details h3{
+.details h3 {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.5rem;
     color: var(--color-gray);
 }
+
+ .details .item div:nth-child(2){
+    font-size: 1.25rem;
+    color: var(--color-bluebold);
+    font-weight: bold; 
+} 
+
+
 
 .details span {
     padding: 0.5rem 1rem;
@@ -129,33 +131,31 @@ input::placeholder {
 }
 
 
-.typeclass{
+.typeclass {
     display: flex;
     align-items: center;
 }
 
-.typeclass .test1 + .test2{
+.typeclass .test1 + .test2 {
     margin-left: 0.938rem;
 }
 
-.test{
+.test {
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     margin-top: 0.625rem;
 
 }
-.test1{
+.test1 {
     color: var(--color-dark-light);
     background-color: var(--color-green-dark);
 }
 
-.test2{
+.test2 {
     background-color: var(--color-orange-dark);
-    height: 1.75rem;
 }
 
 .container {
-    /* display: block; */
     position: relative;
     padding-left: 1.625rem;
     margin-bottom: 0.75rem;
@@ -175,7 +175,7 @@ input::placeholder {
   width: 0;
 }
 
-.container span{
+.container span {
     background-color: #eee;
     padding: 0;
     margin: 0;
@@ -220,53 +220,52 @@ input::placeholder {
     background: white;
   }
 
-.container:hover{
+.container:hover {
     transition: 1s;
     color: var(--color-black);
 }
 
-.test1:hover{
+.test1:hover {
     transition: 1s;
     background-color: var(--color-green);
 }
 
-.test2:hover{
+.test2:hover {
     transition: 1s;
     background-color: var(--color-orange);
 }
 
-.test1.active{
+.test1.active {
     background-color: var(--color-green);
 }
 
-.test2.active{
+.test2.active {
     background-color: var(--color-orange);
 }
 
-.ct1.active{
+.ct1.active {
     color: var(--color-black);
 }
 
-.ct2.active{
+.ct2.active {
     color: var(--color-black);
 }
 
 
-#ultimateButtons{
+#ultimateButtons {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-#ultimateButtons .edit + .delete{
+#ultimateButtons .edit + .delete {
     margin-left: 2rem;
 }
 
 
 
-button[type="submit"], .edit a
-{
+button[type="submit"], .edit a {
     padding: 1rem 2rem;
     background-color: var(--color-bluebold);
     color: var(--color-black);
@@ -301,29 +300,29 @@ button[type="submit"]:hover, .edit a:hover{
     padding-right: 5.3rem;
 }
 
-.type{
+/* .type{
     font-weight: bold;
-}
+} */
 
-.type span{
+.type span {
     background-color: var(--color-white);
 }
 
-.type span + span{
+.type span + span {
     background-color: var(--color-black);
     color: var(--color-white);
 }
 
 
 /* TABELA */
-.table-index{
+.table-index {
     color: var(--color-white);
     display: block;
     padding: 2.5rem;
     box-sizing: border-box;
 }
 
-.buttonCreate{
+.buttonCreate {
     text-decoration: none;
     color: var(--color-black);
     background-color: var(--color-white);
@@ -333,25 +332,24 @@ button[type="submit"]:hover, .edit a:hover{
     text-transform: uppercase;
 }
 
-.buttonCreate:hover{
+.buttonCreate:hover {
     transition: 1.3s;
     background-color: var(--color-black);
     color: var(--color-white);
 }
 
-.table-index table{
+.table-index table {
     border-spacing: 0;
     width: 100%;
     margin-bottom: 1.7rem;
-
 }
 
-.table-index table thead tr th{
+.table-index table thead tr th {
     color: var(--color-bluebold);
     text-align: center;
 }
 
-td, th{
+td, th {
     padding: 1rem;
     border-bottom: 0.063rem solid var(--color-bluebold);
 }
@@ -362,12 +360,12 @@ th{
     text-shadow: 0.188rem 0.063rem 0.4rem var(--color-black);
 }
 
-tbody tr:last-child td{
+tbody tr:last-child td {
     border-bottom: none;
 }
 
 
-.table-index table tbody tr td:first-child{
+.table-index table tbody tr td:first-child {
     display: grid;
     grid-template-columns: 4rem 2.25rem;
 
@@ -379,7 +377,7 @@ tbody tr:last-child td{
     text-align: center;
 }
 
-.table-index table tbody tr td span{
+.table-index table tbody tr td span {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -390,11 +388,11 @@ tbody tr:last-child td{
 }
 
 
-.button-about{
+.button-about {
     text-align: center;
 }
 
-.button-about a{
+.button-about a {
     text-decoration: none;
     font-weight: bold;
     color: var(--color-white);
@@ -404,21 +402,20 @@ tbody tr:last-child td{
     font-size: 0.8rem;
 }
 
-.button-about a:hover{
+.button-about a:hover {
     transition: 1.3s;
     background-color: var(--color-white);
     color: var(--color-black);
 }
 
-.table-index thead tr th:last-child, td:last-child{
-    text-align: center;
-}
+/* .table-index thead tr th:last-child, td:last-child{ */
+    /* text-align: center; */
+/* } */
 
 .table-index tbody tr td .classes{
     color: var(--color-black);
     border: none;
     display: inline;
-    padding: 0;
     box-shadow: none;
     background-position: unset;
     background-size: unset;
@@ -539,10 +536,6 @@ tbody tr:last-child td{
         height: 6.25rem;
     }
 
-    .newCreate{
-        text-align: center;
-    }
-
     .table-index table tbody tr td:first-child{
         display: flex;
         flex-direction: column;
@@ -559,7 +552,7 @@ tbody tr:last-child td{
     }
 
     .avatar{
-        height: 500px;
+        height: 31.25rem;
     }
 }
 

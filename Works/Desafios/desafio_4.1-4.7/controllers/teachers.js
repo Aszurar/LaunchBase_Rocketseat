@@ -3,7 +3,7 @@ const data = require('../data.json');
 const { age, graduation, type, classesArray, typeEdit, date } = require('../tools');
 
 const create = {
-    subtitle: "Novo Professor",
+    subtitle: ["Novo Professor", "Editar Professor", "Detalhes"],
     titles: ["Avatar URL", "Professor", "Data de Nascimento", "Grau de escolaridade", "Tipo de Aula"],
     type: ["Online", "Presencial"],
     level: ["Ensino Médio Completo", "Ensino Superio Completo", "Mestrado", "Doutarado"],
@@ -14,10 +14,11 @@ exports.index = function(req, res){
     return res.render("teachers/index", { teachers: data.teachers});
 }
 
-// Criar - criar - salvar dados
+// Criar- salvar dados
 exports.create = function(req, res){
-    return res.render("teachers/create",  { create }  );
+    return res.render("teachers/create",  { create } );
 }
+
 exports.post = function(req, res){
 
     const keys = Object.keys(req.body);
@@ -79,7 +80,7 @@ exports.show = function(req, res){
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
     }
 
-    return res.render("teachers/show", { teacher });
+    return res.render("teachers/show", { teacher, create });
 }
 // update - mostrar - atualizar
 exports.edit = function(req, res){
@@ -125,11 +126,7 @@ exports.put = function(req, res){
         id: Number(id)
     }
 
-    console.log(teacher);
-
-    data.teachers[index] = teacher;
-    
-    console.log(data.teachers[index]);
+    data.teachers[index] = teacher;    
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Write file erro");

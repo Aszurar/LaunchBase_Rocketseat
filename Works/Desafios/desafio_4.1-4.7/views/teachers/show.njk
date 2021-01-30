@@ -1,12 +1,17 @@
 {% extends "layout.njk" %}
 
+{% block title %}
+    <title>{{teacher.name}}</title>
+{% endblock %}
+
 {% block content %}
     <div class="card">
-        <section class="avatar" style="background: url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
+        <section class="avatar" 
+                 style="background: url({{teacher.avatar_url}}) no-repeat center center / cover">
+        </section>
 
         <section class="details">
-
-            <h3>Detalhes</h3>
+            <h3>{{create.subtitle[2]}}</h3>
 
             <div class="item">
                 <div>Nome:</div>
@@ -37,7 +42,6 @@
             <div class="item">
                 <div>Matéria:</div>
                 <div class="classesShow">
-
                     {% for item in teacher.classes %}
                         <span>{{item}}</span>
                     {% endfor %}

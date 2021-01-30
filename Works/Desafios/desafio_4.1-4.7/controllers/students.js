@@ -3,7 +3,7 @@ const data = require('../data.json');
 const { date, grade } = require('../tools');
 
 const create = {
-    subtitle: "Novo Aluno",
+    subtitle: ["Novo Aluno", "Detalhes", "Editar Aluno"],
     titles: ["Avatar URL", "Nome", "Data de Nascimento", "Idade", "Email", "Ano Escolar", "Carga horária semanal", "Aniversário" ],
     grades: ["ano", "ano do Ensino Médio"],
     save: "Salvar"
@@ -31,7 +31,7 @@ exports.post = function(req, res){
 
     birth = Date.parse(birth);
 
-    let id = 1
+    let id = 1;
     let lastStudent = data.students[data.students.length - 1];
 
     if (lastStudent) {
@@ -93,15 +93,14 @@ exports.edit = function(req, res){
         birth: date(foundStudent.birth).iso,
     }
 
-
     return res.render("students/edit", { student, create })
 }
+
 exports.put = function(req, res){
     let { id } = req.body
     let index = 0;
     
     const foundStudent = data.students.find(function(student, foundIndex){
-
         if(id == student.id){
             index = foundIndex; 
             return true; 

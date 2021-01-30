@@ -1,5 +1,9 @@
 {% extends "layout.njk" %}
 
+{% block title %}
+    <title>My Student List</title>
+{% endblock %}
+
 {% block content %}
     <div class="card table-index">
         {# tag para formar uma tabela #}
@@ -24,9 +28,9 @@
                             {{student.name}}
                         </td>
 
-                        <td class="email"><p>{{student.email}}</p></td>
+                        <td class="email">{{student.email}}</td>
 
-                        <td> <span class="grades">{{student.grades}}</span></td>
+                        <td><span class="grades">{{student.grades}}</span></td>
 
                         <td class="button-about"><a href="/students/{{student.id}}">VER</a></td>
                     </tr>

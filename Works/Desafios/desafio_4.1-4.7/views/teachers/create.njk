@@ -1,15 +1,18 @@
 {% extends "layout.njk" %}
 
+{% block title %}
+    <title>Novo Professor</title>
+{% endblock %}
+
 {% block content %}
     <form class="card" method="post" action="/teachers">
         <section class="avatar" 
         style="background: url(https://source.unsplash.com/collection/628604/500x500) no-repeat center center / cover"></section>
+        
         <section class="details">
-
-            <h3>{{create.subtitle}}</h3>
-
-    {% include "teachers/fields.njk" %}
-         </section>
+            <h3>{{create.subtitle[0]}}</h3>
+            {% include "teachers/fields.njk" %}
+        </section>
     </form>
 
     <script src="/scripts/create.js"></script>
