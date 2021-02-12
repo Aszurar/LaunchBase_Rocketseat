@@ -3,14 +3,14 @@ const data = require('../data.json');
 const { date, grade } = require('../tools');
 
 const create = {
-    subtitle: ["Novo Aluno", "Detalhes", "Editar Aluno"],
+    subtitle: ["Novo Aluno", "Detalhes", "Editar Aluno", "My Student List"],
     titles: ["Avatar URL", "Nome", "Data de Nascimento", "Idade", "Email", "Ano Escolar", "Carga horária semanal", "Aniversário" ],
     grades: ["ano", "ano do Ensino Médio"],
     save: "Salvar"
 }
 
 exports.index = function(req, res){
-    return res.render("students/index", { students: data.students});
+    return res.render("students/index", { students: data.students, create});
 }
 
 // Criar - criar - salvar dados

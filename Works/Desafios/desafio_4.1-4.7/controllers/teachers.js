@@ -3,7 +3,7 @@ const data = require('../data.json');
 const { age, graduation, type, classesArray, typeEdit, date } = require('../tools');
 
 const create = {
-    subtitle: ["Novo Professor", "Editar Professor", "Detalhes"],
+    subtitle: ["Novo Professor", "Editar Professor", "Detalhes", "My Student List"],
     titles: ["Avatar URL", "Professor", "Data de Nascimento", "Grau de escolaridade", "Tipo de Aula"],
     type: ["Online", "Presencial"],
     level: ["Ensino Médio Completo", "Ensino Superio Completo", "Mestrado", "Doutarado"],
