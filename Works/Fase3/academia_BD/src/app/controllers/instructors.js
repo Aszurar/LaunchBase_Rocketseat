@@ -1,6 +1,11 @@
 const Instructor = require('../models/Instructor');
 const { age, date, service } = require('../../lib/tools');
-
+const texts = {
+    titles: ['Instrutores'],
+    buttons: ['Novo', 'Filtrar'],
+    legends: ['Pesquisar o instrutor pelo nome ou atendimento', 'Tabela dos Instrutores da Academia', ],
+    headTable: ['Instrutor', 'Atendimento', 'Alunos', 'Ação']
+}
 module.exports = {
     
     index(req, res){
@@ -10,13 +15,19 @@ module.exports = {
         // quantidade de páginas
         page = page || 1 
         //limite de dados mostrados na tela em cada página 
-        // Nesse caso, o padrão é mostrar 2 dados em cada página
-        limit = limit || 2
+        // Nesse caso, o padrão é mostrar 3 dados em cada página
+        limit = limit || 3
         //quais dados serão mostrados na tela, a partir de qual dado mostrará na tela
         // de acordo com a página selecionada
         offset = limit * (page - 1) 
         // Lógica de mostrar na 1º página a partir do elemento 0 da tabela,
-        // contar 2 elementos e na próxima página mostrar a partir do elemento 1
+        // contar 3 elementos e na próxima página mostrar a partir do elemento 3
+        /* exp:
+        pagina 1 -> limit = 3 -> offset = 3 * (1 - 1) -> offset = 0 Mostrar a partir do elemento 0 na 1º página
+        pagina 2 -> limit = 3 -> offset = 3 * (2 - 1) -> offset = 3 Mostrar a partir do elemento 3 na 2º página
+        pagina 3 -> limit = 3 -> offset = 3 * (3 - 1) -> offset = 6 Mostrar a partir do elemento 6 na 3º página
+            ...
+        */  
 
         const params = {
             filter,
@@ -34,7 +45,7 @@ module.exports = {
                     page
                 }
                 
-                return res.render("instructors/index", { instructors, pagination, filter });
+                return res.render("instructors/index", { instructors, pagination, filter, texts });
             }
         }
 

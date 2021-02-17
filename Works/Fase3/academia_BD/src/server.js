@@ -6,7 +6,7 @@
  const server = express();
 // Mais um middleware, necessário para que o req.body funcione!
  server.use(express.urlencoded({ extended: true }));
- 
+
  server.use(express.static("public"));
 //  configurando para que o post seja sobescrito por put ou delete antes do servidor ir para as rotas
  server.use(methodOverride('_method'))

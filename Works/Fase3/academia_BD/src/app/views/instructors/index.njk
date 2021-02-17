@@ -1,39 +1,61 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+   <title>{{texts.titles[0]}}</title>
+{% endblock head %}
+
 {% block content %}
-   <div class="card table-container">
+   <main class="card table-container">
 
       <div class="header">
-         <a class="button" href="/instructors/create">Novo</a>
+         <a 
+            class="button" 
+            href="/instructors/create"
+            >{{texts.buttons[0]}}
+         </a>
+         
          <form action="/instructors" method="GET">
+            <label 
+               class="sr-only"
+               for="filter">{{texts.legends[0]}}
+            </label>
+            
             <input 
-            type ="text" 
-            name ="filter" 
-            placeholder ="Nome ou Atendimento"
-            value = {{filter}} 
+               id="filter"
+               type ="search" 
+               name ="filter" 
+               placeholder ="Nome ou Atendimento"
+               value = "{{filter}}" 
             >
-            <button type="submit">Filtrar</button>
+            <button 
+               type="submit"
+               >{{texts.buttons[1]}}
+            </button>
          </form>
       </div>
 
-         <table width=100%>
-
+         <table>
+            <caption 
+               class="sr-only"
+               >{{texts.legends[1]}}
+            </caption>
+            
             <thead>
                <tr>
-                  <th>Instrutor</th>
-                  <th>Atendimento</th>
-                  <th>Alunos</th>
-                  <th>Ação</th>
+                  {% for title in texts.headTable %}
+                     <th scope="col">{{title}}</th>
+                  {% endfor %}
                </tr>
             </thead>
 
             <tbody>
                {% for instructor in instructors %}
-
                   <tr>
                      <td>
-                        <span style="background-image: url({{instructor.avatar_url}});"></span>
-                        {{instructor.name}}
+                        <span 
+                           style="background-image: url({{instructor.avatar_url}});">
+                        </span>
+                        <h3>{{instructor.name}}</h3>
                      </td>
                      
                      <td>
@@ -41,10 +63,11 @@
                            <span class="services">{{service}}</span>
                         {% endfor %}
                      </td>
-                     <td>{{instructor.total_students}}</td>
+                     
+                     <td><span>{{instructor.total_students}}</span></td>
+                     
                      <td><a href="/instructors/{{instructor.id}}">ver</a></td>
                   </tr>
-
                {% endfor %}
             </tbody>
 
@@ -56,5 +79,5 @@
             data-filter = {{pagination.filter}}
          ></div>
 
-   </div>
+   </main>
 {% endblock content%}

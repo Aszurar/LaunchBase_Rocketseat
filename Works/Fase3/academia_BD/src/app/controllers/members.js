@@ -1,12 +1,18 @@
 const Member = require('../models/Member');
 const { age, date} = require('../../lib/tools');
 
+const texts = {
+    titles: ['Membros'],
+    buttons: ['Novo', 'Filtrar'],
+    legends: ['Pesquisar membro por nome ou email', 'Tabela dos Membros da Academia'],
+    headTable: ['Membro', 'Email', 'Peso', 'Altura', 'Ação']
+}
 module.exports = {
     index(req, res){
         let { filter, page, limit } = req.query
 
         page = page || 1 
-        limit = limit || 2
+        limit = limit || 3
         offset = limit * (page - 1) 
 
         const params = {
@@ -19,7 +25,7 @@ module.exports = {
                     total: Math.ceil(members[0].total / limit), 
                     page
                 }
-                return res.render("members/index", { members, pagination, filter });
+                return res.render("members/index", { members, pagination, filter, texts });
             }
         }
         Member.paginate(params)

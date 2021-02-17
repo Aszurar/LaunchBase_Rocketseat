@@ -1,23 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-body {
-  background-color: var(--color-dark-light);
-  font-family: "Roboto", "sans-serif";
-}
 
 .card {
-  background-color: var(--color-bluebold);
+  background-color: var(--color-black);
   max-width: 62.5rem;
-  max-height: 75rem;
+
   /* espaçamento ao centro(funciona apenas com o height/width configurados */
-  margin: 1.875rem auto;
+  margin: 3rem auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   /* caixa de sombras */
   /* 1º - eixo x - eixo y - bluer -  */
-  box-shadow: 0rem 0.125rem 1.25rem -0.125rem var(--color-bluepast);
+  box-shadow: 0rem 0.125rem 1.5rem -0.15rem var(--color-black);
 
   opacity: 0;
 
@@ -50,7 +46,7 @@ body {
 }
 
 .details .item {
-  border-bottom: 0.08rem solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0.08rem solid var(--color-purple);
   padding: 1rem 0;
 }
 
@@ -64,14 +60,14 @@ body {
 .details .item div:nth-child(1) {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: var(--color-black);
+  color: var(--color-orange);
   letter-spacing: 0.044rem;
   font-weight: normal;
 }
 
 .details .item div:nth-child(2) {
   font-size: 1.375rem;
-  color: var(--color-white);
+  color: var(--color-green);
   font-weight: bold;
 }
 
@@ -79,25 +75,40 @@ body {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--color-white);
+  color: var(--color-green);
 }
 
 .details .item span {
   padding: 0.5rem 1rem;
-  background-color: var(--color-yellow);
+  background-color: var(--color-orange);
   border-radius: 1rem;
-  color: var(--color-dark-light);
+  color: var(--color-black);
   margin-right: 0.25rem;
   margin-top: 0.5rem;
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.75rem;
+  cursor: default;
+  border: 1px solid var(--color-black);
+  display: flex;
+  align-items:center;
+  letter-spacing: 1.5px;
 }
 
 .details .item span:hover {
-  background-color: var(--color-orange-card);
   transition: 1.3s;
+  background-color: var(--color-black);
+  color: var(--color-orange);
+  border: 1px solid var(--color-orange);
+  box-shadow: 0.5px 0.5px 10px 1px var(--color-orange);
+}
+
+.container-input-gender span.activate {
+  background-color: var(--color-black);
+  color: var(--color-orange);
+  border: 1px solid var(--color-orange);
+  box-shadow: 0.5px 0.5px 10px 1px var(--color-orange);
 }
 
 /* FORM */
@@ -107,10 +118,10 @@ select {
   width: 100%;
   outline: none;
   font-size: 1.3rem;
-  color: var(--color-dark-light);
+  color: var(--color-green);
   font-weight: bold;
   border-radius: 0.25rem;
-  background-color: var(--color-bluebold);
+  background-color: var(--color-black);
 }
 
 input[type="radio"] {
@@ -122,27 +133,49 @@ input[type="radio"] {
 input::placeholder {
   font-size: 1rem;
   font-weight: normal;
-  color: var(--color-white);
+  color: var(--color-orange);
+  opacity: 0.5;
 }
+
 
 button[type="submit"],
 .button {
-  padding: 1rem 2.5rem;
-  background-color: var(--color-dark-light);
-  color: var(--color-bluebold);
+  padding: 0.6rem;
+  background-color: var(--color-black);
+  box-shadow: 0.5px 0.5px 11px 1px var(--color-purple);
+  color: var(--color-purple);
   width: 100%;
   border-radius: 0.25rem;
   margin-top: 2rem;
   font-size: 1.375rem;
-  font-weight: bold;
+  letter-spacing: 2px;
   cursor: pointer;
+  border: 0.125rem solid var(--color-purple);
 }
 
-button[type="submit"]:hover,
-.button:hover {
-  background-color: var(--color-black);
+.container-input-gender {
+  display: flex;
+  align-items: center;
+}
+
+#filter-members{
+  color: var(--color-orange);
+  border: 0.125rem solid var(--color-orange);
+  box-shadow: 0.5px 0.5px 10px 1px var(--color-orange);
+}
+
+button[type="submit"]:hover{
+  background-color: var(--color-purple);
   transition: 1.3s;
-  color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: none;
+}
+
+#filter-members:hover{
+  background-color: var(--color-orange);
+  transition: 1.3s;
+  color: var(--color-black);
+  box-shadow: none;
 }
 
 .button {
@@ -150,51 +183,105 @@ button[type="submit"]:hover,
   box-sizing: border-box;
   text-decoration: none;
   text-align: center;
+  box-shadow: none;
+  border: none;
+  color: var(--color-black);
+  background-color: var(--color-orange);
+}
+
+.buttons-members {
+  background-color: var(--color-purple);
+}
+
+.button:hover {
+  background-color: var(--color-green);
+  transition: 0.7s;
+  color: var(--color-black);
+  transform: scale(1.05);
 }
 
 #form-delete button {
-  color: var(--color-bluebold);
+  color: var(--color-orange);
   margin-top: 0.5rem;
   background-color: var(--color-gray);
 }
 
 #form-delete button:hover {
   transition: 1.3s;
-  background-color: var(--color-white);
+  background-color: var(--color-green);
   color: var(--color-black);
 }
 
 /* INDEX INSTRUCTORS */
 
 .table-container {
-  color: var(--color-black);
-  display: block;
+  width: 100%;
+  overflow-x: auto;
+  
   padding: 2.5rem;
   box-sizing: border-box;
 }
 
 .table-container table {
   border-spacing: 0;
+  width: 100%;
+  color: var(--color-orange);
 }
 
-thead {
-  color: var(--color-white);
-}
-
-.table-container thead tr th {
-  text-align: left;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 td,
 th {
   padding: 1rem;
-  border-bottom: 0.063rem solid var(--color-white);
+  border-bottom: 0.063rem solid var(--color-purple);
 }
 
 th {
   text-transform: uppercase;
   font-size: 1rem;
   text-shadow: 0.188rem 0.063rem 0.4rem var(--color-black);
+  text-align: center;
+  color: var(--color-orange);
+}
+
+.table-student-purple{
+  color: var(--color-purple);
+  text-align: center;
+}
+
+.table-student-purple th, 
+.table-student-purple td {
+  border-bottom: 0.063rem solid var(--color-orange);
+}
+
+.table-student-purple tbody td:first-child {
+  color: var(--color-purple);
+}
+
+.table-student-purple tbody td:first-child h3{
+  text-align: initial;
+}
+
+.table-student-purple tbody td:first-child span{
+  border-color: var(--color-purple);
+}
+
+.table-student-purple tbody td:nth-child(2) span{
+  color: var(--color-black);
+  background-color: var(--color-purple);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
 tbody tr:last-child td {
@@ -206,22 +293,27 @@ tbody tr td:first-child {
   grid-template-columns: 4rem 1fr;
   align-items: center;
   gap: 1rem;
+
 }
 
-tbody tr td span {
+tbody tr td:first-child span {
   width: 4rem;
   height: 4rem;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
   box-shadow: 0.188rem 0.063rem 0.4rem -0.1rem var(--color-black);
-  border: 0.125rem solid var(--color-bluepast);
+  border: 0.125rem solid var(--color-orange);
+}
+
+tbody tr td:last-child {
+  text-align: center;
 }
 
 tbody tr td:last-child a,
 .table-container > a {
-  color: var(--color-white);
-  background-color: var(--color-dark-light);
+  color: var(--color-black);
+  background-color: var(--color-orange);
   padding: 0.6rem 1.5rem;
   border-radius: 0.25rem;
   text-decoration: none;
@@ -233,10 +325,13 @@ tbody tr td:last-child a,
 tbody tr td:last-child a:hover,
 .table-container > a:hover {
   transition: 1.3s;
-  background-color: var(--color-white);
+  background-color: var(--color-green);
   color: var(--color-black);
 }
 
+.table-student-purple tbody td:last-child a {
+  background-color: var(--color-purple)
+}
 /* sinal de >, indica o filho direto daquele elemento, ou seja,
 caso tenha outros a dentro de outros elementos
 não importará, ele só pegara o a que é filho direto do elemento!*/
@@ -245,46 +340,73 @@ não importará, ele só pegara o a que é filho direto do elemento!*/
   margin-bottom: 1rem;
 }
 
-tbody tr td span + span {
+tbody tr td:nth-child(2) span + span {
   margin-left: 0.5rem;
 }
 
 .services {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
-  background-color: var(--color-yellow);
-  font-weight: bold;
+  color: var(--color-orange);
+  border: 0.125rem solid var(--color-green);
+  font-weight: normal;
   text-transform: uppercase;
-  border: none;
+  letter-spacing: 1.5px;
 }
 
-.services:hover {
+.services:hover, 
+.table-container tbody tr td:nth-child(3) span:hover {
   transition: 1.3s;
-  background-color: var(--color-orange-card);
+  color: var(--color-black);
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  font-weight: normal;
+  cursor: default;
 }
 
-.table-container thead tr th:last-child,
-td:last-child {
+.table-container tbody tr td:nth-child(3) {
+  color: var(--color-orange);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: default;
+}
+
+
+.table-container tbody tr td:nth-child(3) span {
+  background-color: var(--color-black);
+  border: 2px solid var(--color-green);
+  padding: 0.38rem 0.8rem;
+  border-radius: 50%;
+
   text-align: center;
 }
+
+.table-student-purple tbody tr td:nth-child(3) span, 
+.table-student-purple tbody tr td:nth-child(4) span{
+  color: var(--color-purple);
+  font-weight: normal;
+  font-size: 1rem;
+  border: 0.125rem solid var(--color-green);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
 
 /* FILTERS */
 .table-container .header{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-bottom: 2rem;
 }
 
 .table-container .header a{
   margin: 0;
-  width: 12rem;
+  max-width: 12rem;
 }
 
 .table-container .header form{
   display: grid;
   grid-template-columns: 1fr 12rem;
-  align-items: center;
   grid-gap: 0.5rem;
 }
 
@@ -293,10 +415,23 @@ td:last-child {
 }
 
 .table-container .header input{
-  border: 0.063rem solid var(--color-yellow);
   padding: 0.5rem 1rem;
   box-sizing: border-box;
+
+  color: var(--color-green);
+  font-weight: normal;
+  background-color: var(--color-black);
+  border-bottom: 1px solid var(--color-purple);
 }
+
+#members-input {
+  border-bottom: 1px solid var(--color-orange) !important;
+}
+
+#members-input::placeholder {
+  color: var(--color-purple);
+}
+
 
 /* PAGINATION */
 .table-container {
@@ -313,13 +448,13 @@ td:last-child {
 .table-container .pagination {
   margin: 0;
   align-items: end;
-  justify-self: center;
+  text-align: center;
 }
 
 .pagination a, 
 .pagination span{
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--color-orange);
   font-weight: bold;
   margin-right: 1rem;
 }
@@ -327,6 +462,28 @@ td:last-child {
 .pagination a:hover{
   /* filter: brightness(50); */
   transition: 0.5s;
-  color: var(--color-white);
-  border-bottom: 0.063rem solid var(--color-white);
+  color: var(--color-green);
+  border-bottom: 0.063rem solid var(--color-green);
+}
+
+.pagination a.active {
+  color: var(--color-green);
+  border-bottom: 0.063rem solid var(--color-green);
+}
+
+
+@media (max-width: 920px) {
+    td, th {
+      text-align: center;
+    } 
+   
+    .services {
+      display: inline-block;
+      margin: 0;
+      width: fit-content;       
+    }
+
+    tbody tr td:nth-child(2) span + span {
+      margin-top: 0.2rem;
+    }
 }

@@ -133,7 +133,7 @@ module.exports = {
         })
     },
 
-    instructorsOptions(callback){
+    membersOptions(callback){
         db.query(`SELECT name, id FROM instructors`, function(err, results){
             if (err) throw `Database Erro! ${err}`
             

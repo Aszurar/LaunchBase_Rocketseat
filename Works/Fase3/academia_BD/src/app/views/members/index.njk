@@ -1,54 +1,82 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+   <title>{{texts.titles[0]}}</title>
+{% endblock head %}
+
 {% block content %}
    <div class="card table-container">
       
       <div class="header">
-         <a class="button" href="/members/create">Novo</a>
+         <a 
+            class="button buttons-members" 
+            href="/members/create"
+            >{{texts.buttons[0]}}
+         </a>
+        
          <form action="/members" method="GET">
-            <input 
-            type ="text" 
-            name ="filter" 
-            placeholder ="Nome ou Email"
-            value = {{filter}} 
-            >
-            <button type="submit">Filtrar</button>
+            <label 
+               class="sr-only"
+               for="members-input">{{texts.legends[0]}}
+            </label>
+
+            <input
+               id="members-input" 
+               type ="search" 
+               name ="filter" 
+               placeholder ="Nome ou Email"
+               value = {{filter}} 
+               >
+            <button 
+               id="filter-members" 
+               type="submit"
+               >{{texts.buttons[1]}}
+            </button>
          </form>
+     
       </div>
 
-      <table width="100%">
+      <table class="table-student-purple">
+         <caption 
+            class="sr-only"
+            >{{texts.legends[1]}}
+         </caption>
+
          <thead>
             <tr>
-               <th>Membros</th>
-               <th>Email</th>
-               <th>Peso</th>
-               <th>Altura</th>
-               <th>Ação</th>
+               {% for title in texts.headTable %}
+                  <th 
+                      scope="col" 
+                      class="table-student-purple"
+                      >{{title}}
+                  </th>
+               {% endfor %}
             </tr>
          </thead>
 
          <tbody>
             {% for member in members %}
-               {# tr linha/ td colunas dentro do tbody #}
                <tr>
-                  <td>
-                     <span style="background-image: url({{member.avatar_url}});"></span>
-                     <h3>{{member.name}}</h3>
+                  <td>                
+                     <span
+                        style="background-image: url({{member.avatar_url}});">
+                     </span>
+                        <h3>{{member.name}}</h3>
                   </td>
 
                   <td>
-                     <h4>{{member.email}}</h4>
+                     <span>{{member.email}}</span>
                   </td>
                   
                   <td>
-                     {{member.weight}} kg
+                    <span>{{member.weight}} kg</span>
                   </td>
 
                   <td>
-                     {{member.height}} cm
+                     <span>{{member.height}} cm</span>
                   </td>
 
-                  <td>
+                  <td class="table-student-purple">
                      <a href="/members/{{member.id}}">ver</a>
                   </td>
                </tr>

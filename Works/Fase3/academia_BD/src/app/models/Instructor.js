@@ -186,8 +186,8 @@ module.exports = {
         }
 
         // a subquery está representada  pela variável totalQuery que 
-        // trará o total de elementos se estiver filtrado ou não para
-        // que a paginação ocorra
+        // trará o total de elementos se estiver filtrado ou não,  para
+        // que a paginação ocorra.
         query = `SELECT instructors.*, ${totalQuery}, 
                  count(members) AS total_students
                  FROM instructors
@@ -200,9 +200,10 @@ module.exports = {
                 `
 
         db.query(query, [limit, offset], function(err, results){
-            if (err) throw `Database erro: ${err}`
+            if (err) throw `Database erro: Ṕagination Function ${err}`
             
             callback(results.rows)
+            console.log(results.rows);
         })
     }
 }

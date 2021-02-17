@@ -37,20 +37,25 @@
       
       <div class="item">
          <div>Sexo</div>
-            <div>
+            <div class="container-input-gender">
 
-               <span><input type="radio" 
-                            name="gender" 
+               <span id="man-span" ><input type="radio" 
+                            name="gender"
+                            id="man-input"
                             value="M" {% if instructor.gender == "M" %} 
-                            checked {% endif %} 
-                            >Masculino</span>
+                              checked 
+                            {% endif %} 
+                            ><p>Masculino</p></span>
  
                
-               <span><input type="radio" 
+               <span id="girl-span"><input type="radio" 
                             name="gender"
-                            value="F" {% if instructor.gender == "F" %} 
-                             checked {% endif %}
-                            >Feminino</span>
+                            id="girl-input"
+                            value="F" 
+                            {% if instructor.gender == "F" %} 
+                              checked 
+                            {% endif %}
+                            ><p>Feminino</p></span>
             </div>
       </div>
 

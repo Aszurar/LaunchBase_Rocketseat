@@ -1,19 +1,44 @@
 
-// Acessando a página atual no navegador e pegando seu caminho na URL(/members ou /instructor) 
-const currentPage = location.pathname;
-const menuItems = document.querySelectorAll("header .links a");
+// Acessando a página atual no navegador e pegando seu caminho na URL
+const currentPage = location.href;
 
-console.log(currentPage);
+// função que aplica efeito na navbar e no body
+function navbarEffect(currentPage) {
+    const menuItems = document.querySelectorAll("header .links a");
+    const body = document.querySelector(".body")
+    const members = "members"
 
-menuItems.forEach(item => {
-    // includes é uma função que verifica se na string aplicada há a string passada, 
-    // caso tenha ele irá retornar verdadeiro, se não, vai retornar falso
-    // Então aqui é, se no caminho atual tiver members ou instructor, 
-    // irá retornar verdadeiro, se não retorna falso
-    if (currentPage.includes(item.getAttribute("href"))) {
-        item.classList.add("active");
-    }    
-});
+    menuItems.forEach(link => {
+        // includes é uma função que verifica se na string aplicada há a string passada, 
+        // caso tenha ele irá retornar verdadeiro, se não, vai retornar falso
+        // Então aqui é, se no caminho atual tiver members ou instructor, 
+        // irá retornar verdadeiro, se não retorna falso
+        if (currentPage.includes(link.getAttribute("href"))) {
+            link.classList.add("active");
+        }
+        if (currentPage.includes(members)) {
+            body.classList.add(members);
+        }
+    });
+}
+
+navbarEffect(currentPage)
+ 
+// função que aplica o efeito no número da página quando clicado
+function pagesEffect(currentPage){
+    const pagesLinks = document.querySelectorAll(".pagination a")
+    const shorthref = currentPage.split('page')
+
+    if (shorthref.length == 1) {
+        pagesLinks[0].classList.add('active')
+    } else {
+        pagesLinks.forEach(page => {
+            if (shorthref[1].includes(page.innerHTML)) {
+                page.classList.toggle('active')
+            } 
+        })
+    }
+}
 
 // Paginação
 // total_pages = 20 
@@ -22,7 +47,6 @@ menuItems.forEach(item => {
 // [1, ..., 13, 14, 15, 16, 17, ... 20]
 // pois não deve aparecer todas as páginas de uma vez, já que fica inviável
 // mostrar algo como todas 200 páginas
-
 function paginate(selectedPage, totalPages){
     let pages = [],
         oldPage
@@ -51,18 +75,20 @@ function paginate(selectedPage, totalPages){
                 oldPage = currentPage
             }
         }
-        return pages
+    return pages
 }
+
 const pagination = document.querySelector(".pagination")
 
-function createPagination(pagination){
+// function createPagination(pagination){
     // pegando os dados de quantidade de páginas e da página atual do back-end
     // e apresentando na tela(front-end)
     const page = Number(pagination.dataset.page)
     const total = Number(pagination.dataset.total)
     const filter = pagination.dataset.filter
     const pages = paginate(page, total)
-    
+   
+    console.log(pages);
     
     let elements = ""
     
@@ -82,8 +108,12 @@ function createPagination(pagination){
     // console.log(elements);
     pagination.innerHTML = elements
     // console.log(pagination.innerHTML);
-}
+// }
 
-if (pagination) {
-    createPagination(paginate)
-}
+// if (pagination) {
+    // createPagination(paginate)
+// }
+
+
+
+pagesEffect(currentPage)
