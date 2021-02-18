@@ -4,7 +4,8 @@ const texts = {
     titles: ['Instrutores'],
     buttons: ['Novo', 'Filtrar'],
     legends: ['Pesquisar o instrutor pelo nome ou atendimento', 'Tabela dos Instrutores da Academia', ],
-    headTable: ['Instrutor', 'Atendimento', 'Alunos', 'Ação']
+    headTable: ['Instrutor', 'Atendimento', 'Alunos', 'Ação'],
+    inputsFields: ['Avatar_URL', 'Data de Nascimento', 'Sexo', 'Area de Atuação', 'Masculino', 'Feminino']
 }
 module.exports = {
     
@@ -54,7 +55,7 @@ module.exports = {
     
     // 
     create(req, res){
-        return res.render("instructors/create");
+        return res.render("instructors/create", { texts });
     },
     
     post(req, res){

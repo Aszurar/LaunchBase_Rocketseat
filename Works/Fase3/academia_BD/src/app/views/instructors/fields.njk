@@ -1,74 +1,86 @@
       <div class="item">
-         <div>Avatar URL</div>
-         <div>
+         <label>{{texts.inputsFields[0]}}
             <input 
-               type="url" 
+               type="url"
                name="avatar_url"
+               title="Digite a URL da imagem de avatar"
                placeholder="https://..."
                value="{{instructor.avatar_url}}"
+               autocomplete="on"
+               required
                >
-         </div>
+         </label>
       </div>
       
       <div class="item">
-         <div>Instrutor</div>
-         <div>
+         <label>{{texts.headTable[0]}}
             <input 
                type="text" 
                name="name"
-               placeholder="Nome do Instrutor"
-               value="{{instructor.name}}" 
+               title="Digite o nome do {{texts.headTable[0]}}"
+               placeholder="Nome do {{texts.headTable[0]}}"
+               value="{{instructor.name}}"
+               autocomplete="on"
+               required 
                >
-         </div>
+         </label>
       </div>
 
-
       <div class="item">
-         <div>Data de Nascimento</div>
-         <div>
-         {# INPUT TIPO DATE, CONFIGURA PARA RECEBER JÁ UM DATA COM CALENDÁRIO DISPONÍVEL #}
+         <label>{{texts.inputsFields[1]}}
             <input
                type="date" 
                name="birth"
+               title="Digite a data de nascimento"
                value="{{instructor.birth}}"
+               autocomplete="on"
+               required
                >
-         </div>
+         </label>
       </div>
       
       <div class="item">
-         <div>Sexo</div>
+         <fieldset title="Selecione uma das opções">
+            <legend>{{texts.inputsFields[2]}}</legend> 
             <div class="container-input-gender">
+               <label id="man-label">
+                  <input type="radio" 
+                         name="gender"
+                         id="man-input"
+                         value="M"
+                         {% if instructor.gender == "M" %} 
+                           checked 
+                         {% endif %}
+                         required
+                         >{{texts.inputsFields[4]}}
+               </label>
 
-               <span id="man-span" ><input type="radio" 
-                            name="gender"
-                            id="man-input"
-                            value="M" {% if instructor.gender == "M" %} 
-                              checked 
-                            {% endif %} 
-                            ><p>Masculino</p></span>
- 
-               
-               <span id="girl-span"><input type="radio" 
-                            name="gender"
-                            id="girl-input"
-                            value="F" 
-                            {% if instructor.gender == "F" %} 
-                              checked 
-                            {% endif %}
-                            ><p>Feminino</p></span>
-            </div>
+               <label id="girl-label">
+                  <input type="radio" 
+                         name="gender"
+                         id="girl-input"
+                         value="F" 
+                         {% if instructor.gender == "F" %} 
+                           checked 
+                         {% endif %}
+                         required
+                         >{{texts.inputsFields[5]}}
+               </label>
+         </fieldset>
       </div>
 
       <div class="item">
-         <div>Area de Atuação</div>
-            <div>
+         <label>{{texts.inputsFields[3]}}
                <input 
                      type="text" 
                       name="services"
+                      title="Digite seu tipo de atendimento"
                       placeholder="Musculação, Crossfit e Natação"
                       value="{{instructor.services}}"
+                      autocomplete="on"
+                      required
                       >
-            </div>
+         </label>
       </div>
 
       <button type="submit">Salvar</button>

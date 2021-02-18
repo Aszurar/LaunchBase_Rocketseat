@@ -1,20 +1,20 @@
 // função que ativa o css:hover do span dos gêneros
-function spanToggle() {
+function labelToggle() {
     const manInput = document.getElementById('man-input')
     const girlInput = document.getElementById('girl-input')
-    const manSpan = document.getElementById('man-span')
-    const girlSpan = document.getElementById('girl-span')
+    const manLabel = document.getElementById('man-label')
+    const girLabel = document.getElementById('girl-label')
 
     manInput.addEventListener("click", () => {
-        manSpan.classList.add("activate")
-        girlSpan.classList.remove("activate")
+        manLabel.classList.add("activate")
+        girLabel.classList.remove("activate")
     })
 
     girlInput.addEventListener("click", () => {
-            girlSpan.classList.add("activate")
-            manSpan.classList.remove("activate")
+            girLabel.classList.add("activate")
+            manLabel.classList.remove("activate")
     })
 
 }
 
-spanToggle()
+labelToggle()
