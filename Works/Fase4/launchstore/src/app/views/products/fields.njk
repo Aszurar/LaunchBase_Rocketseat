@@ -1,0 +1,103 @@
+<div class="item">
+    <label>Categoria
+        <select name="category_id" required 
+                title="Selecione uma opção">
+            {% for category in categories %}
+                <option 
+                    value="category.id"
+                    {% if product.category_id == category.id %}
+                        selected
+                    {% endif %}
+                    >{{category.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </label>
+</div>
+
+<div class="item">
+    <label>Name
+        <input type="text" 
+               name="name"
+               value="{{product.name}}"
+               placeholder="Digite o título do produto"
+               required
+               >
+    </label>
+</div>
+
+<div class="item">
+    <label>Descrição 
+        <textarea name="description" required>
+            {{product.description}}
+        </textarea>
+    </label>
+</div>
+
+{# Campo de fotos #}
+
+<div class="item">
+    <label>Valor
+        <input type="text" 
+               name="price"
+               placeholder="R$ 0,00"
+               value="{{product.price}}"
+               title="Digite o preço do produto no formato indicado"
+               required
+               >
+    </label>
+    {% if product.old_price %}
+    {# Quando for criado pela 1º vez o produto, não há um old_price
+    Logo, nessa 1º vez o old_price não irá para o cadastro.
+    Assim, haverá uma lógica em que, nessa 1º vez, o old_price
+    será igual ao price.
+    Contudo, na próxima vez, caso se tenha um novo preço, terá uma nova 
+    lógica que o price terá o novo preço e o old_price terá o preço antigo #}
+        <input type="hidden" 
+               name="old_price"
+               value="{{product.old_price}}"
+               >
+    {% endif %}
+</div>
+
+<div class="item">
+    <label>Quantidade
+        <input type="number" 
+               name="quantity"
+               placeholder="Estoque Disponível"
+               value="{{product.quantity}}"
+               title="Digite a quantidade"
+               required
+               >
+    </label>
+</div>
+
+{# Na 1º vez esse campo de status não estará disponível
+pois só faz sentido ele estar disponível para edição! #}
+{% if product.status %}
+    <div class="item">
+        <fieldset>
+            <legend>Disponível ?</legend>
+            <label id='status-on'>
+                <input type="radio" 
+                       name="status"
+                       value='1'
+                       required
+                    {% if product.id == '1' %}
+                        checked
+                    {% endif %}>Sim
+            </label>
+    
+            <label id='status-off'>
+                <input type="radio" 
+                       name="status"
+                       value='0'
+                       required
+                       {% if product.id == '0' %}
+                            checked
+                       {% endif %}>Não
+            </label>
+        </fieldset>
+    </div>
+{% endif %}
+

@@ -13,16 +13,18 @@
             </label>
             <input 
                 id="filter" 
-                type="text" 
+                type="search" 
                 name="filter" 
                 placeholder="Buscar por produtos" 
                 {% if search.term %} 
                     value={{ search.term }} 
                 {% endif %}
+                autocomplete="on"
                 >
         </form>
 
         <nav class="primary">
+            
             <ul>
                 <li>
                     <a href="/ads/create">
@@ -38,7 +40,7 @@
                     </a>
                 </li>
             </ul>
+
         </nav>
     </div>
-
 </header>
