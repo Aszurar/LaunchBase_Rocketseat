@@ -16,11 +16,11 @@
 </div>
 
 <div class="item">
-    <label>Name
+    <label>Título
         <input type="text" 
                name="name"
                value="{{product.name}}"
-               placeholder="Digite o título do produto"
+               placeholder="Digite o título do anúncio"
                required
                >
     </label>
@@ -28,7 +28,10 @@
 
 <div class="item">
     <label>Descrição 
-        <textarea name="description" required>
+        <textarea name="description" 
+                  title="Digite alguma descrição" 
+                  placeholder="Algo sobre o produto"
+                  required>
             {{product.description}}
         </textarea>
     </label>
@@ -40,7 +43,7 @@
     <label>Valor
         <input type="text" 
                name="price"
-               placeholder="R$ 0,00"
+               placeholder="Preço do produto"
                value="{{product.price}}"
                title="Digite o preço do produto no formato indicado"
                required
@@ -76,7 +79,7 @@
 pois só faz sentido ele estar disponível para edição! #}
 {% if product.status %}
     <div class="item">
-        <fieldset>
+        <fieldset title="Selelcione uma opção">
             <legend>Disponível ?</legend>
             <label id='status-on'>
                 <input type="radio" 
