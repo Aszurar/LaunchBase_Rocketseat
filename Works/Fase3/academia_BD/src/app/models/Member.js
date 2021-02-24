@@ -56,7 +56,7 @@ module.exports = {
         // e por ultimo uma função callbak que nos mostrará resultados e erros caso
         // ocorram
         db.query(query, values, function(err, results){
-        //    Caso ocorra algum erro, mostre.
+        //  Caso ocorra algum erro, mostre.
         // por fim, mostre os resultados
             console.log(err);
             console.log(results);
@@ -133,7 +133,7 @@ module.exports = {
         })
     },
 
-    membersOptions(callback){
+    instructorsOptions(callback){
         db.query(`SELECT name, id FROM instructors`, function(err, results){
             if (err) throw `Database Erro! ${err}`
             

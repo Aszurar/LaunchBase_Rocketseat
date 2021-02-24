@@ -5,6 +5,8 @@ function labelToggle() {
     const manLabel = document.getElementById('man-label')
     const girLabel = document.getElementById('girl-label')
 
+
+
     manInput.addEventListener("click", () => {
         manLabel.classList.add("activate")
         girLabel.classList.remove("activate")
@@ -14,6 +16,8 @@ function labelToggle() {
             girLabel.classList.add("activate")
             manLabel.classList.remove("activate")
     })
+    // ativar os CSS na página de edição
+    manInput.getAttributeNames().includes('checked') ?  manLabel.classList.add("activate") :  girLabel.classList.add("activate")
 
 }
 

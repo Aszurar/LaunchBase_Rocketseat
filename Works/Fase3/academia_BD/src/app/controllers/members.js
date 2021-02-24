@@ -1,11 +1,13 @@
 const Member = require('../models/Member');
-const { age, date} = require('../../lib/tools');
+const { age, date, bloods} = require('../../lib/tools');
 
 const texts = {
     titles: ['Membros'],
-    buttons: ['Novo', 'Filtrar'],
-    legends: ['Pesquisar membro por nome ou email', 'Tabela dos Membros da Academia'],
-    headTable: ['Membro', 'Email', 'Peso', 'Altura', 'Ação']
+    buttons: ['Novo', 'Filtrar', 'Editar'],
+    legends: ['Pesquisar membro por nome ou email', 'Tabela dos Membros da Academia', 'Detalhes'],
+    headTable: ['Membro', 'Email', 'Peso', 'Altura', 'Ação'],
+    inputsFields: ['Avatar URL', 'Nome', 'Data de nascimento', 'Sexo', 'Masculino', 'Feminino', 'Tipo Sanguíneo', 'Instrutores', 'Aniversário', 'Aluno de']
+
 }
 module.exports = {
     index(req, res){
@@ -34,8 +36,8 @@ module.exports = {
     // 
     create(req, res){
 
-        Member.membersOptions(function(options){
-            return res.render("members/create", { membersOptions: options });
+        Member.instructorsOptions(function(options){
+            return res.render("members/create", { instructorsOptions: options, texts });
         })
 
     },
@@ -67,8 +69,8 @@ module.exports = {
             // aplicação de funções que mmodificam os dados para melhor visualização
             // no navegador
             member.birth = date(member.birth).birthDay
-
-            return res.render("members/show", { member })
+            member.blood = bloods(member.blood)
+            return res.render("members/show", { member, texts })
         })
     },
 
@@ -80,8 +82,8 @@ module.exports = {
             // no formato do input.date   
             member.birth = date(member.birth).iso
 
-            Member.membersOptions(function(options){
-                return res.render("members/edit", { member, membersOptions: options });
+            Member.instructorsOptions(function(options){
+                return res.render("members/edit", { member, instructorsOptions: options, texts });
             })
         })
         

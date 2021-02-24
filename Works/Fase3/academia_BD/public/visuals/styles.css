@@ -50,6 +50,28 @@
   padding: 1rem 0;
 }
 
+.details .item div:first-child{
+  color: var(--color-purple);
+  padding-bottom: 0.4rem;
+}
+
+.details .item div:last-child{
+  font-weight: bold;
+  color: var(--color-orange);
+}
+
+.details .item.members div:first-child {
+  color: var(--color-orange);
+}
+
+.details .item.members div:last-child {
+  color: var(--color-purple);
+}
+
+.details .item.members:last-child { 
+  border: none;
+}
+
 /* tirar o border do último  */
 .details .item:last-child {
   border: none;
@@ -66,10 +88,11 @@
 }
 
 .details .item input{
-  font-size: 1.375rem;
+  font-size: 1rem;
   color: var(--color-green);
   font-weight: bold;
 }
+
 
 .details h3 {
   font-size: 1.5rem;
@@ -77,6 +100,21 @@
   font-weight: bold;
   color: var(--color-green);
 }
+
+/*============== Forms Members =============== */
+.details .item.members {
+  border-bottom: 0.08rem solid var(--color-orange);
+}
+
+.details .item.members label,
+.details .item.members fieldset {
+  color: var(--color-purple);
+}
+
+.details .item.members input::placeholder {
+  color: var(--color-purple);
+}
+
 
 #man-label,
 #girl-label {
@@ -99,6 +137,11 @@
   cursor: pointer;
 }
 
+.details .item.members fieldset .container-input-gender #man-label,
+.details .item.members fieldset .container-input-gender #girl-label {
+  background-color: var(--color-purple);
+}
+
 #man-label:hover,
 #girl-label:hover {
   transition: 1.3s;
@@ -108,6 +151,16 @@
   box-shadow: 0.5px 0.5px 10px 1px var(--color-orange);
 }
 
+.details .item.members fieldset .container-input-gender #girl-label:hover,
+.details .item.members fieldset .container-input-gender #man-label:hover{
+  transition: 1.3s;
+  background-color: var(--color-black);
+  color: var(--color-purple);
+  border: 1px solid var(--color-purple);
+  box-shadow: 0.5px 0.5px 10px 1px var(--color-purple);
+
+} 
+
 #man-label.activate,
 #girl-label.activate {
   background-color: var(--color-black);
@@ -116,13 +169,22 @@
   box-shadow: 0.5px 0.5px 10px 1px var(--color-orange);
 }
 
+.details .item.members fieldset .container-input-gender #girl-label.activate,
+.details .item.members fieldset .container-input-gender #man-label.activate {
+  color: var(--color-purple);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-purple);
+  box-shadow: 0.5px 0.5px 10px 1px var(--color-purple);
+
+}
+
 /* FORM */
 
 input,
 select {
   width: 100%;
   outline: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--color-green);
   font-weight: bold;
   border-radius: 0.25rem;
@@ -141,7 +203,6 @@ input::placeholder {
   color: var(--color-orange);
   opacity: 0.5;
 }
-
 
 button[type="submit"],
 .button {
@@ -203,18 +264,6 @@ button[type="submit"]:hover{
   transition: 0.7s;
   color: var(--color-black);
   transform: scale(1.05);
-}
-
-#form-delete button {
-  color: var(--color-orange);
-  margin-top: 0.5rem;
-  background-color: var(--color-gray);
-}
-
-#form-delete button:hover {
-  transition: 1.3s;
-  background-color: var(--color-green);
-  color: var(--color-black);
 }
 
 /* INDEX INSTRUCTORS */
@@ -317,10 +366,11 @@ tbody tr td:last-child {
 
 tbody tr td:last-child a,
 .table-container > a {
+  letter-spacing: normal;
+  display: initial;
   color: var(--color-black);
   background-color: var(--color-orange);
   padding: 0.6rem 1.5rem;
-  border-radius: 0.25rem;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -356,7 +406,7 @@ tbody tr td:nth-child(2) span + span {
   border: 0.125rem solid var(--color-green);
   font-weight: normal;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.5px;    
 }
 
 .services:hover, 
@@ -369,6 +419,18 @@ tbody tr td:nth-child(2) span + span {
   cursor: default;
 }
 
+.servicesShow {
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  color: var(--color-black);
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 2px;   
+}
 .table-container tbody tr td:nth-child(3) {
   color: var(--color-orange);
   text-align: center;
@@ -481,12 +543,6 @@ tbody tr td:nth-child(2) span + span {
     td, th {
       text-align: center;
     } 
-   
-    .services {
-      display: inline-block;
-      margin: 0;
-      width: fit-content;       
-    }
 
     tbody tr td:nth-child(2) span + span {
       margin-top: 0.2rem;

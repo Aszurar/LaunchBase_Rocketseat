@@ -1,5 +1,9 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+   <title>{{texts.buttons[2]}} {{texts.headTable[0]}}</title>
+{% endblock %}
+
 {% block content %}
 
    <div class="card">
@@ -11,7 +15,7 @@
 
          <form method="POST" action="/members?_method=PUT">
 
-            <h3>Novo Membro</h3>
+            <h3>{{texts.buttons[2]}} {{texts.headTable[0]}}</h3>
 
             {% include "members/fields.njk" %}
 
@@ -20,11 +24,12 @@
 
          <form id="form-delete" action="/members?_method=DELETE" method="post">
             <input type="hidden" name="id" value={{member.id}}>
-            <button type="submit">Deletar</button>
+            <button id="filter-members" type="submit">Deletar</button>
          </form>
 
       </section>
       
    </div>
-   {% include "../confirm.njk" %}
+      {% include "../confirm.njk" %}
+      <script src="/scripts/gender-toggle.js"></script>
 {% endblock content%}

@@ -40,7 +40,6 @@ module.exports = {
         // função que recebe os dados do front end e cria um novo instrutor no banco
         // de dados
         // craindo o tamplate
-        // Instrução de consulta ao banco
         const query = `
             INSERT INTO instructors(
                 name,
@@ -72,7 +71,6 @@ module.exports = {
         //    Caso ocorra algum erro, mostre.
         // por fim, mostre os 
             if (err) throw `Database Erro! ${err}`
-            console.log(err);
             console.log(results.rows[0]);
 
             // chamando a função que passará o novo instrutor que foi salvo

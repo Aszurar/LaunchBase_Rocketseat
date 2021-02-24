@@ -5,5 +5,16 @@ Relacionamento desse projeto se da entre as entidades Membros e Instrutores:
 2. Ou seja, será um relacionamento de cardinalidade 1 - n, em que, 1 instrutor poderá ter vários alunos, mas um aluno só poderá ser associado a somente 1 instrutor.
 
 --> Para associar um aluno à um instrutor, no front-end, precisamos adicionar um campo na página de edição e criação de alunos/membros(página fields) em que selecionamos os instrutores.
---> Nesse caso, adicionamos um campo de instrutor_id, em que, mostre os nomes dos instrutores e cada nome possua seu id como valor no select
+--> Nesse caso, adicionamos um campo de instrutor_id, em que, mostre os nomes dos instrutores e cada nome possua seu id como valor no select.
+--> Assim, também haverá 2 relacionamentos:
+    # Para mostrar a quantidade de alunos que cada instrutor tem, é necessário relacionar os Instrutores com Alunos.
+        ->Os instrutores sendo a Tabela à esquerda, e os membros sendo a tabela à direita.
+        ->Com isso, selecionamos todos instrutores, com todas seus atributos(colunas) e relacionamos com a tabela de membros, com a regra de que
+          correlacionamos os instrutores aos alunos a partir do id do instrutor e do campo id_instructor que o aluno possui, caso eles sejam iguais,
+          os relacionamos. Com isso, utilizandos o count, e group para concluirmos o cálculo de quanto alunos/membros cada instrutor possui.
+        
+    # O 2º relacionamento vem com a tabela de membros sendo a tabela à esquerda, para enctrarmos o nome do instrutor na tabela de instrutores pelo campo
+    instructor_id que cada membro possui.
+        -> Selecionamos todos os membros, selecionamos o nome dos instrutores, filtramos essa busca pelo id do membro que quer essa consulta, e buscamos 
+        com o Left Join, os nomes dos instrutores de acordo com o campo instructor_id dos membros sendo igual ou não ao campo id dos intrutores.
 

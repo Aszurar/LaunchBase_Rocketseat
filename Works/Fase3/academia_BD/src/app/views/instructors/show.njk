@@ -1,47 +1,53 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+   <title>{{instructor.name}}</title>
+{% endblock %}
+
 {% block content %}
    <div class="card">
       <section 
-      class="avatar"
-      style="background: url({{instructor.avatar_url}}) no-repeat center center / cover"></section>
+         class="avatar"
+         style="background: url({{instructor.avatar_url}}) no-repeat center center / cover">
+      </section>
+     
       <section class="details">
       
-      <h3>Detalhes</h3>
+         <h3>{{texts.legends[2]}}</h3>
 
-      <div class="item">
-         <div>Instrutor</div>
-         <div>{{instructor.name}}</div>
-      </div>
+         <div class="item">
+            <div>{{texts.inputsFields[6]}}</div>
+            <div>{{instructor.name}}</div>
+         </div>
 
-      <div class="item">
-         <div>Idade</div>
-         <div>{{instructor.age}} anos</div>
-      </div>
+         <div class="item">
+            <div>{{texts.inputsFields[7]}}</div>
+            <div>{{instructor.age}} anos</div>
+         </div>
 
-      <div class="item">
-         <div>Sexo</div>
-         <div>{{"Masculino" if instructor.gender == "M" else "Feminino"}}</div>
-      </div>
-      
-      <div class="item">
-         <div>Acompanhamento</div>
-            
-            <div>
-               {% for service in instructor.services %}
-                  <span>{{ service }}</span>
-               {% endfor %}
-            </div>
-      </div>
+         <div class="item">
+            <div>{{texts.inputsFields[2]}}</div>
+            <div>{{"Masculino" if instructor.gender == "M" else "Feminino"}}</div>
+         </div>
+         
+         <div class="item">
+            <div>{{texts.inputsFields[8]}}</div>
+               
+               <div>
+                  {% for service in instructor.services %}
+                     <span class="servicesShow">{{ service }}</span>
+                  {% endfor %}
+               </div>
+         </div>
 
-      <div class="item">
-         <div>Desde</div>
-         <div>{{instructor.created_at}}</div>
-      </div>
-      
-      <div class="item">
-         <a href="/instructors/{{instructor.id}}/edit" class="button">Editar</a>
-      </div>
+         <div class="item">
+            <div>{{texts.inputsFields[9]}}</div>
+            <div>{{instructor.created_at}}</div>
+         </div>
+         
+         <div class="item">
+            <a href="/instructors/{{instructor.id}}/edit" class="button">{{texts.buttons[2]}}</a>
+         </div>
       </section>
    </div>
 {% endblock content%}

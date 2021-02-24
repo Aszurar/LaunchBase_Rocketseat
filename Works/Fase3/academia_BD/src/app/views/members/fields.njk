@@ -1,130 +1,162 @@
-<div class="item">
-   <div>Avatar URL</div>
-   <div>
+<div class="item members">
+   <label>{{texts.inputsFields[0]}}
       <input 
             type="url" 
-            name="avatar_url" 
+            name="avatar_url"
+            title="Digite a URL da imagem de avatar" 
             placeholder="https://..." 
-            value="{{member.avatar_url}}">
-   </div>
+            value="{{member.avatar_url}}"
+            autocomplete="on"
+            required
+            >
+   </label>
 </div>
 
-<div class="item">
-   <div>Nome</div>
-   <div>
+<div class="item members">
+   <label>{{texts.inputsFields[1]}}
       <input type="text"
-             name="name" 
-             value="{{member.name}}">
-   </div>
+             name="name"
+             title="Digite seu nome"
+             placeholder="Nome do membro"
+             autocomplete="on" 
+             value="{{member.name}}"
+             required
+             >
+   </label>
 </div>
 
-<div class="item">
-   <div>Email</div>
-   <div>
+<div class="item members">
+   <label>{{texts.headTable[1]}}
       <input type="email" 
              name="email"
              placeholder="exemplo@gmail.com" 
-             value="{{member.email}}">
-   </div>
+             value="{{member.email}}"
+             title="Digite o seu e-mail"
+             autocomplete="on"
+             required
+             >
+   </label>
 </div>
 
-<div class="item">
-   <div>Data de Nascimento</div>
-   <div>
+<div class="item members">
+   <label>{{texts.inputsFields[2]}}
       {# INPUT TIPO DATE, CONFIGURA PARA RECEBER JÁ UM DATA COM CALENDÁRIO DISPONÍVEL #}
       <input type="date" 
              name="birth" 
-             value="{{member.birth}}">
-   </div>
+             value="{{member.birth}}"
+             title="Digite sua data de nascimento"
+             autocomplete="on"
+             required
+             >
+   </label>
 </div>
 
-<div class="item">
-   <div>Sexo</div>
-   <div class="container-input-gender">
-
-      <span><input type="radio" 
+<div class="item members">
+   <fieldset title="Selecione uma das opções!">
+      <legend>{{texts.inputsFields[3]}}</legend>
+      <div class="container-input-gender">
+         <label id="man-label">
+            <input type="radio"
+                   id="man-input" 
                    name="gender" 
-                   value="M" {% if member.gender == "M" %} 
-                   checked="checked" {% endif %}>
-                   Masculino</span>
+                   value="M" 
+                   {% if member.gender == "M" %} 
+                     checked="checked" 
+                  {% endif %}
+                   required
+                   >{{texts.inputsFields[4]}}
+            </label>
 
-      <span><input type="radio" 
+         <label id="girl-label">
+            <input type="radio" 
                    name="gender" 
-                   value="F" {% if member.gender == "F" %} 
-                   checked="checked" {% endif %}>
-                   Feminino</span>
-   </div>
+                   id="girl-input"
+                   value="F" 
+                   {% if member.gender == "F" %} 
+                     checked="checked" 
+                   {% endif %}
+                   required
+                   >{{texts.inputsFields[5]}}
+         </label>
+      </div>
+   </fieldset>
 </div>
 
-<div class="item">
-   <div>Tipo Sanguíneo</div>
-
-   <select name="blood">
-      
-      <option value="A0" {% if member.blood == "A0" %}selected{% endif %}>
-         A
-      </option>
-      
-      <option value="A1" {% if member.blood == "A1" %}selected{% endif %}>
-         A+
-      </option>
-
-      <option value="B0" {% if member.blood == "B0" %}selected{% endif %}>
-         B
-      </option>
-
-      <option value="B1"{% if member.blood == "B1" %}selected{% endif %}>
-         B+
-      </option>
-      
-      <option value="AB0"{% if member.blood == "AB0" %}selected{% endif %}>
-         AB
-      </option>
-
-      <option value="AB1" {% if member.blood == "AB1" %}selected{% endif %}>
-         AB+
-      </option>
-
-      <option value="O0"{% if member.blood == "O0" %}selected{% endif %}>
-         O
-      </option>
-      
-      <option value="O1"{% if member.blood == "O1" %}selected{% endif %}>
-         O+
-      </option>
-
-   </select>
+<div class="item members">
+   <label>{{texts.inputsFields[6]}}
+      <select name="blood"
+              title="Seleciona um opção"
+              required
+              >
+         <option value="">Selecione uma opção</option>
+         <option value="A0" {% if member.blood == "A0" %}selected{% endif %}>
+            A
+         </option>
+         <option value="A1" {% if member.blood == "A1" %}selected{% endif %}>
+            A+
+         </option>
+         <option value="B0" {% if member.blood == "B0" %}selected{% endif %}>
+            B
+         </option>
+         <option value="B1"{% if member.blood == "B1" %}selected{% endif %}>
+            B+
+         </option>
+         <option value="AB0"{% if member.blood == "AB0" %}selected{% endif %}>
+            AB
+         </option>
+         <option value="AB1" {% if member.blood == "AB1" %}selected{% endif %}>
+            AB+
+         </option>
+         <option value="O0"{% if member.blood == "O0" %}selected{% endif %}>
+            O
+         </option>
+         <option value="O1"{% if member.blood == "O1" %}selected{% endif %}>
+            O+
+         </option>
+      </select>
+   </label>
 </div>
 
-<div class="item">
-   <div>Peso (kg)</div>
-   <div>
+<div class="item members">
+   <label>{{texts.headTable[2]}} (kg)
       <input type="number" 
              name="weight" 
-             value="{{member.weight}}">
-   </div>
+             placeholder="0 kg"
+             value="{{member.weight}}"
+             title="Digite seu peso"
+             required
+             >
+   </label>
 </div>
 
-<div class="item">
-   <div>Altura (cm)</div>
-   <div>
+<div class="item members">
+   <label>{{texts.headTable[3]}} (cm)
       <input type="number" 
              name="height" 
-             value="{{member.height}}">
-   </div>
+             title="Digite sua altura"
+             placeholder="0 cm"
+             value="{{member.height}}"
+             required
+             >
+   </label>
 </div>
 
-<div class="item">
-   <div>Instrutores</div>
-
-   <select name="instructor">
+<div class="item members">
+   <label>{{texts.inputsFields[7]}}
+   <select name="instructor" 
+           titles="Selecione um Instrutor"
+           required>
+      <option value="">Selecione um instrutor</option>     
       {% for instructor in instructorsOptions %}  
-         <option value="{{instructor.id}}" {% if member.instructor_id == instructor.id %}selected{% endif %}>
+         <option value="{{instructor.id}}" 
+         {% if member.instructor_id == instructor.id %}
+            selected
+         {% endif %}>
             {{instructor.name}}
          </option>
       {% endfor %}
-
    </select>
+   </label>
 </div>
 
-<button type="submit">Salvar</button>
+<button id="filter-members" type="submit">Salvar</button>

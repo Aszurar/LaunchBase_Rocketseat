@@ -2,10 +2,10 @@ const Instructor = require('../models/Instructor');
 const { age, date, service } = require('../../lib/tools');
 const texts = {
     titles: ['Instrutores'],
-    buttons: ['Novo', 'Filtrar'],
-    legends: ['Pesquisar o instrutor pelo nome ou atendimento', 'Tabela dos Instrutores da Academia', ],
+    buttons: ['Novo', 'Filtrar', 'Editar'],
+    legends: ['Pesquisar o instrutor pelo nome ou atendimento', 'Tabela dos Instrutores da Academia', 'Detalhes'],
     headTable: ['Instrutor', 'Atendimento', 'Alunos', 'Ação'],
-    inputsFields: ['Avatar_URL', 'Data de Nascimento', 'Sexo', 'Area de Atuação', 'Masculino', 'Feminino']
+    inputsFields: ['Avatar_URL', 'Data de Nascimento', 'Sexo', 'Area de Atuação', 'Masculino', 'Feminino', 'Nome', 'Idade', 'Acompanhamento', 'Desde']
 }
 module.exports = {
     
@@ -88,7 +88,7 @@ module.exports = {
             instructor.services = service(instructor.services)
             instructor.created_at = date(instructor.created_at).format
 
-            return res.render("instructors/show", { instructor })
+            return res.render("instructors/show", { instructor, texts })
         })
     },
 
@@ -100,7 +100,7 @@ module.exports = {
             // no formato do input.date   
             instructor.birth = date(instructor.birth).iso
 
-            return res.render("instructors/edit", { instructor })
+            return res.render("instructors/edit", { instructor, texts })
         })
         
     },

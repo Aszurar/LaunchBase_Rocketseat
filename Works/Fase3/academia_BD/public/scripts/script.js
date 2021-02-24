@@ -7,7 +7,7 @@ function navbarEffect(currentPage) {
     const menuItems = document.querySelectorAll("header .links a");
     const body = document.querySelector(".body")
     const members = "members"
-
+    
     menuItems.forEach(link => {
         // includes é uma função que verifica se na string aplicada há a string passada, 
         // caso tenha ele irá retornar verdadeiro, se não, vai retornar falso

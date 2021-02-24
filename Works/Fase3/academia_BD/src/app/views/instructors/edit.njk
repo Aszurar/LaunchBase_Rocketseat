@@ -1,5 +1,9 @@
 {% extends "layout.njk" %}
 
+{% block head %}
+   <title>{{texts.buttons[2]}} {{texts.headTable[0]}}</title>
+{% endblock %}
+
 {% block content %}
 
    <div class="card">
@@ -11,7 +15,7 @@
 
          <form method="POST" action="/instructors?_method=PUT">
 
-            <h3>Editar Instrutor</h3>
+            <h3>{{texts.buttons[2]}} {{texts.headTable[0]}}</h3>
 
             {% include "instructors/fields.njk" %}
 
@@ -26,5 +30,6 @@
       </section>
    </div>
    
+   <script src="/scripts/gender-toggle.js"></script>
    {% include "../confirm.njk" %}
 {% endblock content%}
