@@ -4,7 +4,7 @@
                 title="Selecione uma opção">
             {% for category in categories %}
                 <option 
-                    value="category.id"
+                    value="{{category.id}}"
                     {% if product.category_id == category.id %}
                         selected
                     {% endif %}
@@ -31,9 +31,7 @@
         <textarea name="description" 
                   title="Digite alguma descrição" 
                   placeholder="Algo sobre o produto"
-                  required>
-            {{product.description}}
-        </textarea>
+                  required>{{product.description}}</textarea>
     </label>
 </div>
 
@@ -46,6 +44,7 @@
                placeholder="Preço do produto"
                value="{{product.price}}"
                title="Digite o preço do produto no formato indicado"
+               onkeydown="Mask.apply(this, 'formatBRL')"
                required
                >
     </label>
@@ -77,30 +76,33 @@
 
 {# Na 1º vez esse campo de status não estará disponível
 pois só faz sentido ele estar disponível para edição! #}
-{% if product.status %}
+{% if (product.status == 1 or product.status == 0) %}
     <div class="item">
         <fieldset title="Selelcione uma opção">
             <legend>Disponível ?</legend>
-            <label id='status-on'>
-                <input type="radio" 
-                       name="status"
-                       value='1'
-                       required
-                    {% if product.id == '1' %}
-                        checked
-                    {% endif %}>Sim
-            </label>
-    
-            <label id='status-off'>
-                <input type="radio" 
-                       name="status"
-                       value='0'
-                       required
-                       {% if product.id == '0' %}
+            <div style="display: flex; ">
+                <label id='status-on' >
+                    <input type="radio" 
+                        name="status"
+                        value='1'
+                        onclick= "Activates.labelToggle(this)"
+                        required
+                        {% if product.status == '1' %}
                             checked
-                       {% endif %}>Não
-            </label>
+                        {% endif %}>Sim
+                </label>
+        
+                <label id='status-off'>
+                    <input type="radio" 
+                        name="status"
+                        value='0'
+                        onclick="Activates.labelToggle(this)"
+                        required
+                        {% if product.status == '0' %}
+                                checked
+                        {% endif %}>Não
+                </label>
+            </div>
         </fieldset>
     </div>
 {% endif %}
-

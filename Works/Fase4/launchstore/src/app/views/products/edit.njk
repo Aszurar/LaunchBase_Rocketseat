@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{texts.titles[1]}}</title>
+{% endblock %}
+
+{% block content %}
+    <section class="container form">
+        <form  method="post" action="/products?_method=PUT">
+            <div class="header">
+                <h3>{{texts.titles[1]}}</h3>
+            </div>
+
+            <input type="hidden" name="id" value="{{product.id}}">
+
+            <div class="fields">
+                {% include "products/fields.njk" %}
+            </div>
+
+            <button class= "button edit" type="submit">{{texts.buttons[1]}}</button>
+        </form>
+
+        <form onsubmit="Activates.deleteAlert(this)" method="post" action="/products?_method=DELETE">
+            <input type="hidden" name="id" value="{{product.id}}">
+            <button class="button delete" type="submit">{{texts.buttons[2]}}</button>
+        </form>
+    </section>
+{% endblock %}
+

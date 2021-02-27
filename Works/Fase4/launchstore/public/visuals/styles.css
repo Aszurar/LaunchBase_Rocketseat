@@ -10,6 +10,9 @@
     --black: black;
     --form-shadow: rgba(60, 60, 60, .9);
     --gray: #777;
+    --light-gray: lightgray;
+    --light-coral-dark: rgb(207, 85, 85);
+    --secundary-color-dark: #1bb2d4;
 }
 
 * {
@@ -68,10 +71,23 @@ body {
     align-self: end;
 }
 
+.button.edit {
+    background-color: var(--secundary-color);
+}
+.button.delete {
+    background-color: var(--light-gray);
+}
+
 .button:hover {
     background-color: var(--primary-color-dark);
 }
 
+.button.edit:hover {
+    background-color: var(--secundary-color-dark) 
+}
+.button.delete:hover {
+    background-color: var(--light-coral-dark)
+}
 /* ==========Header======== */
 header, footer {
     background-color: var(--black);
@@ -205,6 +221,50 @@ form .item input[type="number"] {
     font-size: 1rem;
 }
 
+#status-off,
+#status-on {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-right: 0.25rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items:center;
+
+  border: 1px solid var(--black);
+  background-color: var(--primary-color);
+  color: var(--color-black);  
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+#status-on input,
+#status-off input {
+    margin: 0;
+    margin-right: 0.25rem;
+}
+
+
+#status-on:hover,
+#status-off:hover {
+  transition: 0.7s;
+  background-color: var(--black);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0.5px 0.5px 10px 1px var(--primary-color);
+}
+
+
+#status-on.activate,
+#status-off.activate {
+  transform: scale(1.1);
+  background-color: var(--black);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0.5px 0.5px 10px 1px var(--primary-color);
+}
 
 /* estilização específica para o select */
 
