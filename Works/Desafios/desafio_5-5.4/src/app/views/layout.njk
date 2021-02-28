@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+       <link rel="icon" href="/assets/favicon.ico" type="image/x-icon"/>
+       <link rel="stylesheet" href="/visuals/layout.css">
+       {% block head %}
+          <title>My Class List</title>
+          <link rel="stylesheet" href="/visuals/index.css"> 
+       {% endblock %}
+        <body>
+            <header>
+                <nav class="links">
+                    <a href="/teachers">Teachers</a>
+                    <a href="/students">Students</a>
+                </nav>
+            </header>
+
+            {% block content %}{% endblock %}
+
+            <script src="/scripts/script.js"></script>
+        </body>
+    </html>

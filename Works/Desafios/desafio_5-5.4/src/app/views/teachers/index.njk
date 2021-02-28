@@ -1,0 +1,59 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card table-index">
+       
+        <div class="header">    
+            <a class="buttonCreate" href="/teachers/create">Novo</a>       
+            <form action="/teachers" method="get">
+                <input type ="text" 
+                       name ="filter"
+                       placeholder ="Nome ou Disciplina"
+                       value = "{{filter}}"
+                       >
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+      
+        {# tag para formar uma tabela #}
+        <table>
+            {# cabeçalho da tabela #}
+            <thead>
+                {# linha do cabeçalho  #}
+                <tr>
+                    {# coluna do cabeçalho #}
+                    <th>Professores</th>
+                    <th>Disciplinas</th>
+                    <th>Alunos</th>
+                    <th>Sobre</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr class= "teacher">
+                        <td>
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
+                            {{teacher.name}}
+                        </td>
+
+                        <td>
+                            {% for class in teacher.classes %}
+                                <span class="classes">{{class}}</span>
+                            {% endfor %}
+                        </td>
+
+                        <td class = "total_students">
+                            <span class="amount_student">{{teacher.total_students}}</span>
+                        </td>
+                        
+                        <td class="button-about">
+                            <a href="/teachers/{{teacher.id}}">VER</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<script src="/scripts/index_teacher.js"></script>
+{% endblock %}

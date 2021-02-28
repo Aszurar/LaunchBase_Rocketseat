@@ -1,0 +1,39 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>{{errodata.title}}</title>
+    <link rel="stylesheet" href="/visuals/not-found.css">
+{% endblock %}
+
+{% block content %}
+        <div class="card">
+
+            <div class="erro">
+
+                <div class="erronumber">
+                    <span>{{errodata.number}}</span>
+                </div>
+
+                <div class="card__image-container">
+
+                    <div class="main">
+                        <div class="img__card">
+                            <img src="/assets/{{errodata.number}}.svg" alt="Ícone do erro {{errodata.number}}">
+                        </div>
+
+                        <div class="card__info">
+                            <p>{{errodata.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card__about">
+                    <p>{{errodata.info}}</p>
+                    <p class="erro__number">{{errodata.number}}</p>
+                </div>
+
+            </div>
+
+        </div>
+{% endblock %}
