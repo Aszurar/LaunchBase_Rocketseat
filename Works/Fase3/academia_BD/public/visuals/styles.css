@@ -410,7 +410,8 @@ tbody tr td:nth-child(2) span + span {
 }
 
 .services:hover, 
-.table-container tbody tr td:nth-child(3) span:hover {
+.table-container tbody tr td:nth-child(3) span:hover,
+.table-container tbody tr td:nth-child(4) span:hover {
   transition: 1.3s;
   color: var(--color-black);
   background-color: var(--color-green);
@@ -515,6 +516,7 @@ tbody tr td:nth-child(2) span + span {
 .table-container .pagination {
   margin: 0;
   align-items: end;
+  justify-self: center;
   text-align: center;
 }
 

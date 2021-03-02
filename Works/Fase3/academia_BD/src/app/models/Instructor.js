@@ -1,6 +1,5 @@
-const { query } = require('../../config/db');
 const db = require('../../config/db');
-const { age, date, service } = require('../../lib/tools');
+const { date } = require('../../lib/tools');
 
 module.exports = {
     all(callback){
@@ -158,7 +157,7 @@ module.exports = {
         db.query(`DELETE FROM instructors WHERE id = $1`, [id], function(err, results){
             if(err) throw `Database Error! ${err}`
 
-            return callback()
+            callback()
         })
     },
 
@@ -201,7 +200,7 @@ module.exports = {
             if (err) throw `Database erro: Ṕagination Function ${err}`
             
             callback(results.rows)
-            console.log(results.rows);
+            // console.log(results.rows);
         })
     }
 }

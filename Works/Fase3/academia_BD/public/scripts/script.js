@@ -53,19 +53,22 @@ function paginate(selectedPage, totalPages){
 
         for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
             
-            const firstAndLastPage = currentPage == 1 || currentPage == totalPages
+            const firstAndLastPage = currentPage == 1 || currentPage == totalPages //adicionando a 1º e a última página ao array de paginas
             const pagesAfterSelectedPage =  currentPage <= selectedPage + 2
             const pagesBeforeSelectedPage = currentPage >= selectedPage - 2
 
 
             if (firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage) {
+                // se for a 1º,  a última, as 2 páginas a frente e 
+                //as 2 páginas anteriores adicione no vetor de páginas
+                
                 // Lógica dos "..." na paginação
-                // se a diferença da pagina anterior com a página atual for maior que 2
+                // se o oldpage existir e a diferença da pagina anterior com a página atual for maior que 2
                 // então adicione o "..."  após o pagesAfterSelected
                 if (oldPage && currentPage - oldPage > 2) {
                     pages.push("...")
                 }
-                // Caso seja igual a 2, então mostre o número anterior ao último elemento
+                // Caso o oldpage existir, e a diferença seja igual a 2, então mostre o número anterior ao último elemento
                 if(oldPage && currentPage - oldPage == 2){
                     pages.push(oldPage + 1)
                 }
@@ -78,9 +81,7 @@ function paginate(selectedPage, totalPages){
     return pages
 }
 
-const pagination = document.querySelector(".pagination")
-
-// function createPagination(pagination){
+function createPagination(pagination) {
     // pegando os dados de quantidade de páginas e da página atual do back-end
     // e apresentando na tela(front-end)
     const page = Number(pagination.dataset.page)
@@ -88,8 +89,6 @@ const pagination = document.querySelector(".pagination")
     const filter = pagination.dataset.filter
     const pages = paginate(page, total)
    
-    console.log(pages);
-    
     let elements = ""
     
     for (let page of pages) {
@@ -108,12 +107,12 @@ const pagination = document.querySelector(".pagination")
     // console.log(elements);
     pagination.innerHTML = elements
     // console.log(pagination.innerHTML);
-// }
+}
 
-// if (pagination) {
-    // createPagination(paginate)
-// }
+const pagination = document.querySelector(".pagination")
 
-
+if (pagination) {
+    createPagination(pagination)
+}
 
 pagesEffect(currentPage)

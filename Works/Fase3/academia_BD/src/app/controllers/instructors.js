@@ -20,7 +20,8 @@ module.exports = {
         limit = limit || 3
         //quais dados serão mostrados na tela, a partir de qual dado mostrará na tela
         // de acordo com a página selecionada
-        offset = limit * (page - 1) 
+        let offset = limit * (page - 1) 
+        // deslocamento
         // Lógica de mostrar na 1º página a partir do elemento 0 da tabela,
         // contar 3 elementos e na próxima página mostrar a partir do elemento 3
         /* exp:
@@ -29,7 +30,6 @@ module.exports = {
         pagina 3 -> limit = 3 -> offset = 3 * (3 - 1) -> offset = 6 Mostrar a partir do elemento 6 na 3º página
             ...
         */  
-
         const params = {
             filter,
             page,

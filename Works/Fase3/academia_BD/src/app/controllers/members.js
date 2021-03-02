@@ -1,5 +1,5 @@
 const Member = require('../models/Member');
-const { age, date, bloods} = require('../../lib/tools');
+const { date, bloods} = require('../../lib/tools');
 
 const texts = {
     titles: ['Membros'],
