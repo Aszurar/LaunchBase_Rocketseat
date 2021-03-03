@@ -83,7 +83,7 @@ module.exports = {
             req.body.old_price = results.rows[0].price
         }
 
-        const results = await Product.update(req.body)
+        await Product.update(req.body)
 
         return res.redirect(`/products/${req.body.id}/edit`)
 

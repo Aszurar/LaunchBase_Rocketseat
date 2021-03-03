@@ -49,8 +49,8 @@ const Activates = {
             onLabel.classList.remove("activate")
         }
 
-        console.log(input.value);
-        console.log(input.getAttributeNames().includes('checked'));
+        // console.log(input.value);
+        // console.log(input.getAttributeNames().includes('checked'));
     
         // ativar os CSS na página de edição
     
@@ -62,17 +62,100 @@ const Activates = {
         const offLabel = document.getElementById('status-off')
 
         if (onInput.checked) {
-            console.log(`Input do sim: ${onInput.checked}`);
+            // console.log(`Input do sim: ${onInput.checked}`);
             onLabel.classList.add('activate')
         } else if (offInput.checked){
-            console.log(`Input do Não: ${offInput.checked}`);
+            // console.log(`Input do Não: ${offInput.checked}`);
             offLabel.classList.add('activate')
         }
 
     }
 }
 
-Activates.label()
+const PhotosUpload = {
+    preview: document.querySelector('#photos-preview'),
+    uploadLimit: 6,
+    //função que avisa a pessoa a submetere
+    //somente 6 fotos
+    handleFileInput(event) {
+        //pegando o array de fotos do input
+        const { files: fileList } = event.target
+        
+        if (PhotosUpload.hasLimit(event)) return
+        //Forçando o fileList ser um Array e percorrer cada upload
+        //foto desse array para:
+        Array.from(fileList).forEach(file => {
+            //new fileRedaer cria um objeto no formato BLOB que é do tipo texto, ou seja
+            //a imagem é transformada em um texto
+            const reader = new FileReader()
+
+            //Após ler a imagem atual, aplique essa função que se
+            // tem o  objetivo de mostrar ao usuário as imagens inseridas na página web.
+            reader.onload = () => {
+                const image = new Image() //criando um objeto de imagens
+                //ele é do tipo <img src="" >
+                image.src= String(reader.result) // adicionando a imagem inserida atual nesse objeto
+
+                //cria a lógica de mostrar essa imagem ao usuário
+                const div = PhotosUpload.getContainer(image)
+                //por fim, adicione essa div com a imagem dentro do bloco de photos-preview
+                PhotosUpload.preview.appendChild(div)
+            }
+
+            //leitura da imagem atual do array de imagens e transformando-a em um BLOB
+            reader.readAsDataURL(file)
+        })
+    },
+    
+    hasLimit(event){
+        const { uploadLimit } = PhotosUpload
+        const {files: fileList } = event.target
+        if (fileList.length > uploadLimit) {
+            alert(`Envie no máximo ${uploadLimit} fotos`)
+            event.preventDefault()   
+            return true
+        }
+
+        return false
+    },
+
+    getContainer(image) {
+        //criação do bloco div que contém a imagem lida na função acima
+        const div = document.createElement('div')
+        div.classList.add('photo')    
+        
+        div.appendChild(image)
+        div.onclick = PhotosUpload.removePhoto
+
+        //adiconando o ícone de remover
+        div.appendChild(PhotosUpload.getRemoveButton())
+        return div
+    }, 
+
+    getRemoveButton() {
+        //adcionando o ícone de remover
+        const button = document.createElement('i')
+        button.classList.add('material-icons')
+        button.innerHTML = 'close'
+        return button
+    },
+    removePhoto(event) {
+        //pegando a div.photo que contém a imagem que foi clicada
+        //no caso, o event.targe se refere a todo conteúdo da div.photo, ou seja,
+        //ou a tag img ou a tag i. Colocando o parentNode, nós pegamos o elemento Pai
+        //desss elementos que é sua div.photo
+        const photoDiv = event.target.parentNode
+        // console.log(photoDiv);
+       
+        //pegando o vetor das imagens, ou seja, todos div.photos
+        const photosArray = Array.from(PhotosUpload.preview.children)
+        //buscando no vetor de imagens o íncide da imagem clicada
+        const index = photosArray.indexOf(photoDiv)
+        photoDiv.remove()
+    }
+}
+
+// Activates.label()
 
 // const formDelete = document.querySelector("#form-delete")
 
