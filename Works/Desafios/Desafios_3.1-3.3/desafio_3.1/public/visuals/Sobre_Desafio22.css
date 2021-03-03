@@ -52,7 +52,7 @@ body {
   list-style-position: inside;
 }
 
-form {
+#about {
   background-color: var(--color-dark);
   padding: 20px;
   height: 300px;
@@ -63,11 +63,11 @@ form {
   align-items: center;
 }
 
-form fieldset {
+#about fieldset {
   border: 0;
 }
 
-form legend {
+#about legend {
   margin-bottom: 30px;
   text-align: center;
 

@@ -13,17 +13,20 @@ nunjucks.configure("views", {
     autoescape: false
 });
 
+
+const index = {
+    description: "Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀",
+    hit: "Receba nossos conteúdos exclusivos",
+    button: { buttontext: "Digite seu email", alt: "Enviar" },
+    links: [
+        { title: "Comunidade", link: "https://discordapp.com/invite/gCRAFhc" },
+        { title: "Email", link: "mailto:oi@rocketseat.com.br" },
+        { title: "Telefone", link: "tel:+5547992078767" }
+    ]
+}
+
 server.get("/", function (req, res) {
-    const index = {
-        description: "Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀",
-        hit: "Receba nossos conteúdos exclusivos",
-        button: { buttontext: "Digite seu email", alt: "Enviar" },
-        links: [
-            { title: "Comunidade", link: "https://discordapp.com/invite/gCRAFhc" },
-            { title: "Email", link: "mailto:oi@rocketseat.com.br" },
-            { title: "Telefone", link: "tel:+5547992078767" }
-        ]
-    }
+
     return res.render("index", { index: index });
 });
 
@@ -41,11 +44,11 @@ server.get("/about", function (req, res) {
             "React Native"
         ]
     }
-    return res.render("about", { about: about });
+    return res.render("about", { about: about, index:index });
 });
 
 server.get("/courses", function (req, res) {
-    return res.render("courses", { courses: coursesdata });
+    return res.render("courses", { courses: coursesdata, index });
 });
 
 server.get("/courses/:index", function (req, res) {
@@ -59,7 +62,7 @@ server.get("/courses/:index", function (req, res) {
         return res.send("Video not founded!.");
     }
 
-    return res.render("course", { item: dataId });
+    return res.render("course", { item: dataId, index });
 });
 
 server.use(function (req, res) {
@@ -70,7 +73,7 @@ server.use(function (req, res) {
         info: "ERRO"
     }
 
-    res.status(404).render("not-found", { errodata: errodata });
+    res.status(404).render("not-found", { errodata: errodata, index });
 });
 
 server.listen("5002", function () {

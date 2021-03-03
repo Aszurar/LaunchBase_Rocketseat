@@ -1,0 +1,19 @@
+<footer class="links">
+    <strong>{{index.hit}}</strong>
+
+    <form id="subscribe" action="">
+        <div>
+            <input type="text" placeholder="{{index.button.buttontext}}" value="">
+
+            <button type="submit">
+                <img src="/assets/{{index.button.alt}}.svg" alt="{{index.button.alt}}">
+            </button>
+
+        </div>
+    </form>
+
+    {% for item in index.links %}
+        <a href="{{item.link}}" target="_blank">{{item.title}}</a>
+    {% endfor %}
+
+</footer>

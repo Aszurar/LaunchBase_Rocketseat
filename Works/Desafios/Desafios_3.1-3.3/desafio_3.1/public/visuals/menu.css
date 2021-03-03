@@ -56,12 +56,14 @@ header div {
   line-height: 30px;
   font-weight: bold;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+  
 }
 
 .menu a:hover {
   color: var(--color-orange);
-  border-bottom: 3px solid var(--color-orange);
-  transition: 150ms linear 0s;
+  border-bottom: 2px solid var(--color-orange);
+  transition: 0.35s linear;
 }
 
 .socials {
@@ -85,5 +87,81 @@ header div {
 
 .socials a i:hover {
   color: var(--color-orange);
-  transition: 150ms linear 0s;
+  transition: 0.35s linear 0s;
 }
+
+
+
+
+.links {
+  margin-top: 1rem;
+  padding: 15px 0;
+  text-align: center;
+  border-top: 2px solid #333;
+  background-color: var(--color-purple);
+}
+
+.text p {
+  font-size: 28px;
+  color: var(--color-white);
+  font-weight: bold;
+  max-width: 800px;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.links strong {
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+#subscribe {
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#subscribe div {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-top: 15px;
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+#subscribe div input {
+  font-size: 16px;
+  background-color: var(--color-white);
+  cursor: text;
+  outline: none;
+  width: 300px;
+}
+
+#subscribe div button {
+  cursor: pointer;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  border-bottom: 2px solid transparent;
+
+}
+
+.links a:hover {
+  border-bottom: 2px solid var(--color-orange);
+  color: var(--color-orange);
+  transition: 800ms;
+}
+
