@@ -73,18 +73,25 @@ const Activates = {
 }
 
 const PhotosUpload = {
+    input: "",
     preview: document.querySelector('#photos-preview'),
     uploadLimit: 6,
+    files: [],
     //função que avisa a pessoa a submetere
     //somente 6 fotos
     handleFileInput(event) {
         //pegando o array de fotos do input
         const { files: fileList } = event.target
-        
+        PhotosUpload.input = event.target //pegando o input
+
         if (PhotosUpload.hasLimit(event)) return
         //Forçando o fileList ser um Array e percorrer cada upload
         //foto desse array para:
         Array.from(fileList).forEach(file => {
+
+            //adicionando cada arquivo de imagem no array files
+            PhotosUpload.files.push(file)
+
             //new fileRedaer cria um objeto no formato BLOB que é do tipo texto, ou seja
             //a imagem é transformada em um texto
             const reader = new FileReader()
@@ -105,20 +112,50 @@ const PhotosUpload = {
             //leitura da imagem atual do array de imagens e transformando-a em um BLOB
             reader.readAsDataURL(file)
         })
-    },
-    
+
+        //substituindo os arquivos do navegador, pelos que estão no dataTransfer
+        event.target.files = PhotosUpload.getAllfiles()
+    }, 
     hasLimit(event){
-        const { uploadLimit } = PhotosUpload
-        const {files: fileList } = event.target
+        const { uploadLimit, input, preview } = PhotosUpload
+        const { files: fileList } = input
+
         if (fileList.length > uploadLimit) {
             alert(`Envie no máximo ${uploadLimit} fotos`)
             event.preventDefault()   
             return true
         }
 
+        const photosDiv = []
+        //No input das fotos, percorra por todas div photo(ou seja, por cada imagem)
+        preview.childNodes.forEach( item => {
+            //para cada item, verifique se elee realmente é a div photo
+            //se for, adicione-o no array criado acima
+            if(item.classList && item.classList.value == "photo") {
+                photosDiv.push(item)
+            }
+
+        })
+
+        const totalPhotos = photosDiv.length + fileList.length
+        if (totalPhotos > uploadLimit ) {
+            event.preventDefault()
+            alert("Você atingiu o número máximo de fotos!")
+            return true
+        }
+
         return false
     },
+    getAllfiles() {
+        //não tem como remover os arquivos do filelist, então é necessário essa lógica
+                                //objeto para o Firefox              //objeto para o Chrome
+        const dataTransfer = new ClipboardEvent("").clipboardData || new DataTransfer()
 
+        //adicione cada arquivo de imagem ao dataTransfer
+        PhotosUpload.files.forEach(file => dataTransfer.items.add(file))
+        //assim é criado um filelist dentro do dataTransfer
+        return dataTransfer.files
+    },
     getContainer(image) {
         //criação do bloco div que contém a imagem lida na função acima
         const div = document.createElement('div')
@@ -144,13 +181,18 @@ const PhotosUpload = {
         //no caso, o event.targe se refere a todo conteúdo da div.photo, ou seja,
         //ou a tag img ou a tag i. Colocando o parentNode, nós pegamos o elemento Pai
         //desss elementos que é sua div.photo
-        const photoDiv = event.target.parentNode
+        const photoDiv = event.target.parentNode //<div class="photo">
         // console.log(photoDiv);
        
         //pegando o vetor das imagens, ou seja, todos div.photos
         const photosArray = Array.from(PhotosUpload.preview.children)
         //buscando no vetor de imagens o íncide da imagem clicada
         const index = photosArray.indexOf(photoDiv)
+
+        PhotosUpload.files.splice(index, 1) //removendo o arquivo do files
+        
+        //atualizando os files do input com os files que criamos e removemos o item atual
+        PhotosUpload.input.files = PhotosUpload.getAllfiles()
         photoDiv.remove()
     }
 }
