@@ -51,7 +51,7 @@ module.exports = {
         return db.query(query, value)
     },
 
-    update(data, callback){
+    update(data){
         const query = `
             UPDATE students SET
                 avatar_url = ($1),
@@ -74,25 +74,14 @@ module.exports = {
             data.id
         ]
 
-        db.query(query, values, function(err, results){
-            if (err) throw `Database error: ${err}`
-                
-                console.log('Edição: ');
-                console.log(results.rows[0]);
-
-            callback()
-        })
+        return db.query(query, values)
     },
 
-    delete(id, callback){
+    delete(id){
         const query = `DELETE FROM students WHERE id = $1`
         const value = [id]
 
-        db.query(query, value, function(err, results){
-            if(err) throw `Database error: ${err}`
-           
-            return callback()
-        })
+        return db.query(query, value)
     },
 
     teachersOptions(){

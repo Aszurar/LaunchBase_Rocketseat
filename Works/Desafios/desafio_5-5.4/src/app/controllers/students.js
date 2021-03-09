@@ -36,7 +36,6 @@ module.exports = {
 
     // Criar - criar - salvar dados
     create(req, res){
-
         Student.teachersOptions()
         .then(function(results){
             let teacherOptions = results.rows
@@ -111,15 +110,21 @@ module.exports = {
             }
         });
 
-        Student.update(req.body, function(){
+        Student.update(req.body)
+        .then(() => {
             return res.redirect(`/students/${req.body.id}`)
+        }).catch(function(err){
+            throw new Error(err)
         })
     },
 
     // delete
     delete(req, res){
-        Student.delete(req.body.id, function(){
+        Student.delete(req.body.id)
+        .then(() => {
             return res.redirect('/students')
+        }).catch(function(err){
+            throw new Error(err)
         })
     }
 

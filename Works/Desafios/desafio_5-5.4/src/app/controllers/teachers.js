@@ -49,7 +49,6 @@ module.exports = {
     },
 
     post(req, res){
-
         const keys = Object.keys(req.body);
 
         keys.forEach(key => {
@@ -117,16 +116,22 @@ module.exports = {
             }
         })
 
-        Teacher.update(req.body, function(){
+        Teacher.update(req.body)
+        .then(() => {
             return res.redirect(`/teachers/${req.body.id}`) 
+        }).catch(function(err){
+            throw new Error(err)
         })
     },
 
     // delete
     delete(req, res){
         
-        Teacher.delete(req.body.id, function(){
+        Teacher.delete(req.body.id)
+        .then(() => {
             return res.redirect('/teachers')
+        }).catch(function(err){
+            throw new Error(err)
         })
     }
 }

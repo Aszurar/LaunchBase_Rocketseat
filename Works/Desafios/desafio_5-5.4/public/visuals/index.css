@@ -13,7 +13,6 @@ body{
     background-color: var(--color-dark-light);
     margin: 1.563rem auto;
     max-width: 62.5rem;
-    max-height: 59.5rem;
 
     display: grid;
     grid-template-columns: 40% 60%;

@@ -70,25 +70,14 @@ module.exports = {
             data.id
         ]
 
-        db.query(query, values, function(err, results) {
-            if (err) throw `Database error: ${err}`
-
-            console.log('Edição: ');
-            console.log(results.rows[0]);            
-            
-            callback()
-        })
+        return db.query(query, values)
     },
 
-    delete(id, callback){
+    delete(id){
         const query = `DELETE FROM teachers WHERE id = $1`
         const value = [id]
         
-        db.query(query, value, function(err, results){
-            if(err) throw `Datafese error! ${err}`
-            
-            return callback()
-        })
+       return db.query(query, value)
     },
 
     findBy(filter){
